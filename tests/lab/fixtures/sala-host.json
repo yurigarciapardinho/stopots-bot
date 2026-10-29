@@ -1,9 +1,9 @@
 {
   "url": "https://stopots.com/pt/[sala]",
-  "title": "StopotS - Sala 14929",
+  "title": "StopotS - Sala 19536",
   "visibility": "visible",
   "focused": true,
-  "text": "SALA [teste]\nCONFIGURAÇÕES\nSAIR\nJOGADORES 2/10\n4 Jogadores\n5 Jogadores\n6 Jogadores\n7 Jogadores\n8 Jogadores\n9 Jogadores\n10 Jogadores\n11 Jogadores\n12 Jogadores\n13 Jogadores\n14 Jogadores\n20 Jogadores\n50 Jogadores\n\nLabHost\n\n0\n\nAnonimo614\n\n0\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nRODADAS\n4 Rodadas\n5 Rodadas\n6 Rodadas\n7 Rodadas\n8 Rodadas\n9 Rodadas\n10 Rodadas\n11 Rodadas\n12 Rodadas\n13 Rodadas\n14 Rodadas\n15 Rodadas\n16 Rodadas\n17 Rodadas\n18 Rodadas\nSTOP\nPadrão\nDesativado\nHost\nMaioria\nTEMPO\nRápido\nMédio\nLento\nMais lento\nSENHA\nCATEGORIAS (16)\nBanda\nCantor\nÁrvore\nPalavra em Espanhol\nIngrediente\nCEP\nEletro Eletrônico\nRemédio\nSérie\nTime Esportivo\nTem no aeroporto\nSabor de Sorvete\nCarro\nAve\nVilão\nJLR\nADD\nLETRAS (16)\nA\nB\nC\nD\nE\nF\nG\nH\nI\nJ\nK\nL\nM\nN\nO\nP\nQ\nR\nS\nT\nU\nV\nW\nX\nY\nZ\nAnonimo614\n\nentrou na sala\n\nINICIAR\nSALA [teste]\nCOMPARTILHAR\nMODO STREAM\n\nConvide seus amigos:\n\nstopots.com/pt/[sala]\nCOPIAR LINK\n\nStopotS - Jogo de stop (adedanha ou adedonha) online!",
+  "text": "SALA [teste]\nCONFIGURAÇÕES\nSAIR\nJOGADORES 2/10\n4 Jogadores\n5 Jogadores\n6 Jogadores\n7 Jogadores\n8 Jogadores\n9 Jogadores\n10 Jogadores\n11 Jogadores\n12 Jogadores\n13 Jogadores\n14 Jogadores\n20 Jogadores\n50 Jogadores\n\nLabHost\n\n0\n\nAnonimo311\n\n0\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nRODADAS\n4 Rodadas\n5 Rodadas\n6 Rodadas\n7 Rodadas\n8 Rodadas\n9 Rodadas\n10 Rodadas\n11 Rodadas\n12 Rodadas\n13 Rodadas\n14 Rodadas\n15 Rodadas\n16 Rodadas\n17 Rodadas\n18 Rodadas\nSTOP\nPadrão\nDesativado\nHost\nMaioria\nTEMPO\nRápido\nMédio\nLento\nMais lento\nSENHA\nCATEGORIAS (16)\nApp ou Site\nVerbo\nPersonagem Fictício\nTem no circo\nDesenho Animado\nEsportista\nDoença\nÁrvore\nSabor de Pizza\nPresente\nRaça de Cachorro\nSobrenome\nAtor\nMeio de Transporte\nDoce\nPalavra em Inglês\nADD\nLETRAS (16)\nA\nB\nC\nD\nE\nF\nG\nH\nI\nJ\nK\nL\nM\nN\nO\nP\nQ\nR\nS\nT\nU\nV\nW\nX\nY\nZ\nAnonimo311\n\nentrou na sala\n\nINICIAR\nSALA [teste]\nCOMPARTILHAR\nMODO STREAM\n\nConvide seus amigos:\n\nstopots.com/pt/[sala]\nCOPIAR LINK\n\nStopotS - Jogo de stop (adedanha ou adedonha) online!",
   "fields": [],
   "inputs": [
     {
@@ -583,12 +583,12 @@
       ]
     }
   ],
-  "epoch": "020956db8f9e46739cb54800261e41c6",
-  "observed_at": 1793301607.468128,
+  "epoch": "75435d09d7a441aabe00516c0d755e35",
+  "observed_at": 1793306730.359675,
   "player": "host",
   "phase": "SALA",
   "context": [
-    "020956db8f9e46739cb54800261e41c6",
+    "75435d09d7a441aabe00516c0d755e35",
     "SALA",
     null,
     null,

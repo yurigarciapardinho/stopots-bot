@@ -1,123 +1,90 @@
-<p align="center">
- <img width="500" height="388" src="https://raw.githubusercontent.com/Lucas8x/stopots-bot/gh-pages/assets/answer.gif" alt="">
-</p>
+# StopotS Bot 2.0
 
-<p align="center">
- <img alt="GitHub" src="https://img.shields.io/github/license/lucas8x/stopots-bot?style=flat-square">
- <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/lucas8x/stopots-bot?style=flat-square">
-</p>
+Assistente local em Python 3.12 e Playwright, com interface e mensagens em português. O pacote v2 substitui a integração Selenium 3; o código original permanece em `stopots_bot/` e sua documentação em `docs/LEGADO.md`.
 
-<p align="center">
- <a href="#-requerimentos">Requerimentos</a> •
- <a href="#-instalação">Instalação</a> •
- <a href="#-uso">Como usar</a> •
- <a href="#menu">Menu</a> •
- <a href="#-licença">Licença</a>
-</p>
+**Versão candidata: 2.0.0.** Consulte `docs/v2/VALIDACAO.md` e `stopots-v2 diagnostico` antes de atribuir suporte a uma modalidade. Os testes locais usam DOM sintético; a certificação online exige o pacote instalado e a captura da partida completa.
 
-# stopots-bot
-
-Automatizando sua jogabilidade de StopotS
-
-## 💻 Requerimentos
-
-- [Python 3](https://www.python.org/)
-- selenium
-- webdriver-manager
-- tabulate
-- Navegador
-  - [Chrome](https://www.google.com/chrome/)
-  - [Firefox](https://www.mozilla.org/firefox/new/)
-
-## 🚀 Instalação
-Se você já possui o python e o git instalado:
-```Shell
-# Clone o repositório
-git clone https://github.com/Lucas8x/stopots-bot.git
-
-# Entre na pasta
-cd stopots-bot
-
-# Instale as dependências
-python setup.py install
-```
-Se você possui apenas o python:
-```Shell
-pip install stopots-bot
-```
-
-### Manual
-
-_Se você não possuir o python nem o git instalado._
-
-1. [Download](https://github.com/Lucas8x/stopots-bot/archive/master.zip).
-2. Extrair.
-3. Abrir `run.bat`.
-4. ["Jogar"](#menu).
-
-## 🔨 Uso
+## No ambiente preparado
 
 ```bash
-# Entrando com um nome
-stopots -u lucas
+cd /home/yuzlkk/hack/stopots/stopots-v2
+./scripts/lab.sh testar
+./scripts/v2.sh diagnostico
+./scripts/v2.sh executar
 ```
 
-**NOTA:** Todas as opções são opcionais.
+O último comando abre um Chrome dedicado. Entre na sala pela interface. Por padrão, a v2 preenche campos vazios com candidatos aprovados; as demais ações dependem de opções explícitas:
 
-```
-Opções:
-  -h, --help            mostra esta mensagem de ajuda
-  --user USERNAME, -u USERNAME
-                        seu username
-  --avatar AVATAR, -a AVATAR
-                        número do avatar
-  --room ROOM_ID, -r ROOM_ID
-                        número da sala
-  --auto-stop           habilita stop automático
-  --auto-ready          habilita ready automático
-  --validator {quick,deny,accept,check,null}
-                        tipo do avaliador
-  --driver {chrome,firefox}
-                        seu navegador
-  --dict                abre o menu do dicionário
+```bash
+./scripts/v2.sh executar --modo automatico --stop --votos --avaliar --continuar
+./scripts/v2.sh executar --modo observar
+./scripts/v2.sh pausar
+./scripts/v2.sh retomar
 ```
 
-### Menu
+Pausa e retomada são comandos de outro terminal. A versão carregada do vocabulário fica fixa durante a execução. Texto já presente é preservado; o modo observar não faz alterações. O encerramento por Ctrl+C fecha os recursos próprios da sessão.
 
-1. Entrada Rápida - Ira entrar com o nome definido se não com um nome gerado pelo jogo ex:`Anonimo123`.
-2. Entrar no Jogo - Sempre ira perguntar um nome.
-3. Entrar com ID da Sala - Entra em uma sala específica.
-4. [Configurações](#configurações).
+`--stop` espera o botão habilitado e, por padrão, todos os campos preenchidos. `--no-exigir-todos` altera somente essa política local. Não há número de segundos fixado como regra do servidor. Respostas sem categoria ou candidato aprovado ficam em branco, com possibilidade de preenchimento manual.
 
-## ⚙️ Configurações
+`--votos` marca associações conhecidas e desmarca inicial incompatível. Ausência no dicionário preserva o voto existente. `--avaliar` confirma a etapa quando AVALIAR permite. `--continuar` usa ESTOU PRONTO após ranking de rodada; não inicia outra partida após o ranking final.
 
-1. Abrir `run.bat`.
-2. Digite "4" para abrir as opções.
+## Instalação independente
 
-- Username/nick deve possuir entre 2 e 15 caracteres.
-- Avaliadores:
-  - Rápido - Apenas confirma as respostas sem verificar.
-  - Aceitar - Confirma todas as respostas inclusive as erradas.
-  - Negação - Invalidará todas as respostas inclusive as suas.
-  - Avaliar - Avaliará as respostas com base no dicionario e negará as outras.
-  - Nada - ...
-- STOP! Automático - Irá apertar STOP! caso todas as respostas estejam preenchidas.
-- Ready Automático - Irá apertar Estou Pronto ao mostrar o resultado da rodada.
-- Avatar - Mínimo: 0 Máximo: 36.
-<!-- - <details>
-    <summary>Avatares</summary>
-    a
-  </details> -->
+Com Python 3.12+, Chrome instalado e ambiente virtual:
 
-## ⚠️ Problemas
+```bash
+python -m pip install .
+stopots-v2 diagnostico
+stopots-v2 executar --perfil /caminho/para/perfil-dedicado
+```
 
-- Caso o navegador abra e feche :
-  - Atualizar o navegador instalado chrome/firefox
+As dependências de runtime estão fixadas em `requirements.txt`; o ambiente de testes em `requirements-lab.lock`. `scripts/preparar-lab.sh` refaz a preparação isolada no computador de referência e instala o pacote editável. Nenhuma credencial é necessária no fluxo anônimo.
 
-## 📝 Licença
+Por padrão, dados de execução vão para `.runtime/v2` no diretório atual. `scripts/v2.sh` utiliza o `.runtime` preparado na raiz autorizada. `STOPOTS_RUNTIME` altera essa raiz. Não compartilhe perfis de navegador ou arquivos de controle do laboratório.
 
-Este projeto esta sob a licença [MIT](./LICENSE).
+## Configuração
 
-## 💜 Menção Honrosa
+As flags da CLI prevalecem sobre uma tabela TOML `[automacao]`, passada em `--config`:
 
-Foi utilizado [StopAnswersAPI](https://github.com/nosliper/StopAnswersAPI) por [nosliper](https://github.com/nosliper) para formar um dicionário inicial.
+```toml
+[automacao]
+preencher = true
+stop = false
+exigir_todos = true
+votos = false
+avaliar = false
+continuar = false
+```
+
+Para reutilizar uma página já preparada num Chrome dedicado, use `--cdp http://127.0.0.1:PORTA --url URL_DA_SALA`. A seleção precisa ser única e a conexão não fecha contextos externos.
+
+Outras opções: `--tempo-limite`, `--eventos`, `--controle`, `--semente`, `--vocabulario`, `--url` e `--headless`. Use `stopots-v2 executar --help`.
+
+## Vocabulário e curadoria
+
+A fonte editorial está em `data/source/editorial.json`. A distribuição contém somente a release aprovada em `src/stopots_v2/resources/vocabulary.json`, com checksum e procedência. A migração reproduz 2.688 entradas, 269 células vazias e 10 duplicatas normalizadas excedentes do legado. Importação começa como pendente.
+
+O bootstrap local contém **293 associações aprovadas / 286 lexemas**. Cobre os 16 temas do perfil de validação nas letras A–D, respeitando o limite de 20 unidades UTF-16. Não cobre todos os temas e letras do jogo. Aprovação editorial local não garante consenso entre jogadores. A API do IBGE forneceu 5.571 municípios nesta execução. A release contém **5.864 associações aprovadas / 5.857 lexemas**, somando o bootstrap e os registros geográficos. A regra editorial `ibge-city-v1` valida os pares id/nome e aprova somente Cidade, que pode ser usada por CEP. Homônimos mantêm entidades distintas; candidatos com a mesma palavra não ganham peso adicional. As 2.562 associações restantes do legado seguem pendentes. Wikidata não foi incorporado.
+
+```bash
+./scripts/v2.sh vocabulario cobertura --letras ABCD --temas Animal Ave CEP
+./scripts/v2.sh vocabulario editar data/source/editorial.json Animal Ariranha \
+  --estado approved --fonte bootstrap-2026-10-29 --nota 'Associação revisada: mamífero'
+./scripts/v2.sh vocabulario publicar data/source/editorial.json /caminho/atual.json
+```
+
+Publicar valida antes de substituir; a versão anterior fica em `atual.json.previous`. Editar duas vezes mantém listas e apóstrofos válidos. Acentos são preservados na grafia e normalizados na busca. Inglês é tratado como idioma lexical próprio. Ave inclui-se em Animal, sem a relação inversa; CEP e FLV têm composição explícita. Consulte `docs/v2/ARQUITETURA.md`.
+
+## Verificação
+
+```bash
+./scripts/lab.sh testar
+../.runtime/venv/bin/python tools/build_vocabulary.py
+# --recriar refaz a migração e substitui edições da fonte editorial.
+# Somente quando quiser iniciar partidas privadas reais:
+../.runtime/venv/bin/python tools/validate_v2.py --partidas 3 --cli
+```
+
+O laboratório `tools/stopots_lab.py` é ferramenta de preparação. O bot distribuído está em `src/stopots_v2` e não depende dele. Os ensaios de integração usam o laboratório somente para montar a sala privada. Eventos sanitizados omitem nomes, URLs de sala, senhas e conteúdo de campos pessoais. Evidências de teste ficam em `evidence/v2`.
+
+MIT. Baseado em [Lucas8x/stopots-bot](https://github.com/Lucas8x/stopots-bot).

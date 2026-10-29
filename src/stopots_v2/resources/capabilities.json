@@ -1,0 +1,10 @@
+{
+  "as_of": "2026-10-29",
+  "release_status": "desenvolvimento",
+  "standard_mode_certified": false,
+  "host_mode_certified": false,
+  "disabled_mode_certified": false,
+  "majority_mode_certified": false,
+  "recovery_certified": false,
+  "stop_timing": "Aguardar habilitação observada; mínimo universal não estabelecido"
+}

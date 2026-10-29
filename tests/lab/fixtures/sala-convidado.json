@@ -1,9 +1,9 @@
 {
   "url": "https://stopots.com/pt/[sala]",
-  "title": "StopotS - Sala 14929",
+  "title": "StopotS - Sala 19536",
   "visibility": "visible",
   "focused": true,
-  "text": "SALA [teste]\nCONFIGURAÇÕES\nSAIR\nJOGADORES 2/10\n\n10 Jogadores\n\nLabHost\n\n0\n\nAnonimo614\n\n0\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nRODADAS\n\n8 Rodadas\n\nSTOP\n\nPadrão\n\nTEMPO\n\nMédio\n\nSENHA\nCATEGORIAS (16)\nBanda\nCantor\nÁrvore\nPalavra em Espanhol\nIngrediente\nCEP\nEletro Eletrônico\nRemédio\nSérie\nTime Esportivo\nTem no aeroporto\nSabor de Sorvete\nCarro\nAve\nVilão\nJLR\nLETRAS (16)\nA\nB\nC\nD\nE\nF\nG\nH\nI\nJ\nK\nL\nM\nN\nO\nP\nQ\nR\nS\nT\nU\nV\nW\nX\nY\nZ\n\nENVIE FIGURINHAS\n\nO DONO DA SALA ESTÁ CONFIGURANDO A PARTIDA :)",
+  "text": "SALA [teste]\nCONFIGURAÇÕES\nSAIR\nJOGADORES 2/10\n\n10 Jogadores\n\nLabHost\n\n0\n\nAnonimo311\n\n0\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nRODADAS\n\n8 Rodadas\n\nSTOP\n\nPadrão\n\nTEMPO\n\nMédio\n\nSENHA\nCATEGORIAS (16)\nApp ou Site\nVerbo\nPersonagem Fictício\nTem no circo\nDesenho Animado\nEsportista\nDoença\nÁrvore\nSabor de Pizza\nPresente\nRaça de Cachorro\nSobrenome\nAtor\nMeio de Transporte\nDoce\nPalavra em Inglês\nLETRAS (16)\nA\nB\nC\nD\nE\nF\nG\nH\nI\nJ\nK\nL\nM\nN\nO\nP\nQ\nR\nS\nT\nU\nV\nW\nX\nY\nZ\n\nENVIE FIGURINHAS\n\nO DONO DA SALA ESTÁ CONFIGURANDO A PARTIDA :)",
   "fields": [],
   "inputs": [
     {
@@ -128,12 +128,12 @@
   ],
   "review": [],
   "selects": [],
-  "epoch": "020956db8f9e46739cb54800261e41c6",
-  "observed_at": 1793301607.5220697,
+  "epoch": "75435d09d7a441aabe00516c0d755e35",
+  "observed_at": 1793306730.3671627,
   "player": "convidado",
   "phase": "SALA",
   "context": [
-    "020956db8f9e46739cb54800261e41c6",
+    "75435d09d7a441aabe00516c0d755e35",
     "SALA",
     null,
     null,

@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=78,<83"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "stopots-bot"
+version = "2.0.0"
+description = "Assistente local para StopotS em português"
+readme = "README.md"
+requires-python = ">=3.12"
+license = "MIT"
+dependencies = ["playwright==1.64.1"]
+
+[project.optional-dependencies]
+test = ["pytest==9.2.0"]
+
+[project.scripts]
+stopots-v2 = "stopots_v2.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+stopots_v2 = ["resources/*.json", "adapters/*.js"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests/unit", "tests/contracts", "tests/lab"]
+pythonpath = ["src"]
+markers = ["browser: requer Chrome local, sem conexão externa"]

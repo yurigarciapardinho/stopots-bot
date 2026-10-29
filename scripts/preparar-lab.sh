@@ -10,4 +10,5 @@ export TMPDIR="$task_root/.runtime/tmp"
 mkdir -p "$TMPDIR"
 [[ -x "$task_root/.runtime/venv/bin/python" ]] || uv venv --python /usr/bin/python3 "$task_root/.runtime/venv"
 uv pip sync --python "$task_root/.runtime/venv/bin/python" "$worktree/requirements-lab.lock"
+uv pip install --python "$task_root/.runtime/venv/bin/python" --no-deps -e "$worktree"
 exec "$worktree/scripts/lab.sh" doctor

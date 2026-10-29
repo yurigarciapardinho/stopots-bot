@@ -9,6 +9,6 @@ export TMPDIR="$task_root/.runtime/tmp"
 mkdir -p "$TMPDIR"
 if [[ "${1:-}" == "testar" ]]; then
     cd "$worktree"
-    exec "$task_root/.runtime/venv/bin/python" -m pytest -q tests/lab
+    exec "$task_root/.runtime/venv/bin/python" -m pytest -q
 fi
 exec "$task_root/.runtime/venv/bin/python" "$worktree/tools/stopots_lab.py" "${@:-doctor}"
