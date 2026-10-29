@@ -1,0 +1,142 @@
+{
+  "url": "https://stopots.com/pt/[sala]",
+  "title": "StopotS - Sala 14929",
+  "visibility": "visible",
+  "focused": true,
+  "text": "SALA [teste]\nCONFIGURAÇÕES\nSAIR\nJOGADORES 2/10\n\n10 Jogadores\n\nLabHost\n\n0\n\nAnonimo614\n\n0\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nRODADAS\n\n8 Rodadas\n\nSTOP\n\nPadrão\n\nTEMPO\n\nMédio\n\nSENHA\nCATEGORIAS (16)\nBanda\nCantor\nÁrvore\nPalavra em Espanhol\nIngrediente\nCEP\nEletro Eletrônico\nRemédio\nSérie\nTime Esportivo\nTem no aeroporto\nSabor de Sorvete\nCarro\nAve\nVilão\nJLR\nLETRAS (16)\nA\nB\nC\nD\nE\nF\nG\nH\nI\nJ\nK\nL\nM\nN\nO\nP\nQ\nR\nS\nT\nU\nV\nW\nX\nY\nZ\n\nENVIE FIGURINHAS\n\nO DONO DA SALA ESTÁ CONFIGURANDO A PARTIDA :)",
+  "fields": [],
+  "inputs": [
+    {
+      "id": "",
+      "type": "password",
+      "name": "",
+      "placeholder": "",
+      "maxLength": -1,
+      "value": "[REDACTED]",
+      "disabled": true,
+      "readOnly": false,
+      "label": "",
+      "outer": "<input placeholder=\"\" disabled=\"\" class=\"jsx-2cb4e73d3cac0759\" type=\"password\" value=\"[REDACTED]\">"
+    }
+  ],
+  "buttons": [
+    {
+      "text": "",
+      "disabled": true
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "SAIR",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    }
+  ],
+  "headings": [
+    "JOGADORES 2/10",
+    "RODADAS",
+    "STOP",
+    "TEMPO",
+    "SENHA",
+    "CATEGORIAS (16)",
+    "LETRAS (16)"
+  ],
+  "review": [],
+  "selects": [],
+  "epoch": "020956db8f9e46739cb54800261e41c6",
+  "observed_at": 1793301607.5220697,
+  "player": "convidado",
+  "phase": "SALA",
+  "context": [
+    "020956db8f9e46739cb54800261e41c6",
+    "SALA",
+    null,
+    null,
+    []
+  ]
+}

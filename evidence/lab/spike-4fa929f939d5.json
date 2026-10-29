@@ -1,0 +1,785 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "4fa929f939d5",
+  "subject": "adapter-spike",
+  "status": "failed",
+  "browser": "151.0.7922.137",
+  "final_result_verified": false,
+  "events": [
+    {
+      "event": "preparando_sala",
+      "at": 1793301090.7554023
+    },
+    {
+      "event": "sala_privada_pronta",
+      "at": 1793301103.3874185,
+      "setup": {
+        "private": true,
+        "participants": 2,
+        "phase": "SALA",
+        "epoch": "be3872afb0ba49d8afbf1df9823d6961"
+      }
+    },
+    {
+      "event": "configuracao",
+      "at": 1793301103.3971646,
+      "buttons": [
+        {
+          "text": "",
+          "disabled": true
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "SAIR",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "ADD",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "INICIAR",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "COPIAR LINK",
+          "disabled": false
+        }
+      ],
+      "selects": [
+        {
+          "id": "",
+          "value": "10",
+          "options": [
+            {
+              "value": "4",
+              "text": "4 Jogadores",
+              "selected": false
+            },
+            {
+              "value": "5",
+              "text": "5 Jogadores",
+              "selected": false
+            },
+            {
+              "value": "6",
+              "text": "6 Jogadores",
+              "selected": false
+            },
+            {
+              "value": "7",
+              "text": "7 Jogadores",
+              "selected": false
+            },
+            {
+              "value": "8",
+              "text": "8 Jogadores",
+              "selected": false
+            },
+            {
+              "value": "9",
+              "text": "9 Jogadores",
+              "selected": false
+            },
+            {
+              "value": "10",
+              "text": "10 Jogadores",
+              "selected": true
+            },
+            {
+              "value": "11",
+              "text": "11 Jogadores",
+              "selected": false
+            },
+            {
+              "value": "12",
+              "text": "12 Jogadores",
+              "selected": false
+            },
+            {
+              "value": "13",
+              "text": "13 Jogadores",
+              "selected": false
+            },
+            {
+              "value": "14",
+              "text": "14 Jogadores",
+              "selected": false
+            },
+            {
+              "value": "20",
+              "text": "20 Jogadores",
+              "selected": false
+            },
+            {
+              "value": "50",
+              "text": "50 Jogadores",
+              "selected": false
+            }
+          ]
+        },
+        {
+          "id": "",
+          "value": "4",
+          "options": [
+            {
+              "value": "4",
+              "text": "4 Rodadas",
+              "selected": true
+            },
+            {
+              "value": "5",
+              "text": "5 Rodadas",
+              "selected": false
+            },
+            {
+              "value": "6",
+              "text": "6 Rodadas",
+              "selected": false
+            },
+            {
+              "value": "7",
+              "text": "7 Rodadas",
+              "selected": false
+            },
+            {
+              "value": "8",
+              "text": "8 Rodadas",
+              "selected": false
+            },
+            {
+              "value": "9",
+              "text": "9 Rodadas",
+              "selected": false
+            },
+            {
+              "value": "10",
+              "text": "10 Rodadas",
+              "selected": false
+            },
+            {
+              "value": "11",
+              "text": "11 Rodadas",
+              "selected": false
+            },
+            {
+              "value": "12",
+              "text": "12 Rodadas",
+              "selected": false
+            },
+            {
+              "value": "13",
+              "text": "13 Rodadas",
+              "selected": false
+            },
+            {
+              "value": "14",
+              "text": "14 Rodadas",
+              "selected": false
+            },
+            {
+              "value": "15",
+              "text": "15 Rodadas",
+              "selected": false
+            },
+            {
+              "value": "16",
+              "text": "16 Rodadas",
+              "selected": false
+            },
+            {
+              "value": "17",
+              "text": "17 Rodadas",
+              "selected": false
+            },
+            {
+              "value": "18",
+              "text": "18 Rodadas",
+              "selected": false
+            }
+          ]
+        },
+        {
+          "id": "",
+          "value": "1",
+          "options": [
+            {
+              "value": "1",
+              "text": "Padrão",
+              "selected": true
+            },
+            {
+              "value": "2",
+              "text": "Desativado",
+              "selected": false
+            },
+            {
+              "value": "3",
+              "text": "Host",
+              "selected": false
+            },
+            {
+              "value": "4",
+              "text": "Maioria",
+              "selected": false
+            }
+          ]
+        },
+        {
+          "id": "",
+          "value": "4",
+          "options": [
+            {
+              "value": "1",
+              "text": "Rápido",
+              "selected": false
+            },
+            {
+              "value": "2",
+              "text": "Médio",
+              "selected": false
+            },
+            {
+              "value": "3",
+              "text": "Lento",
+              "selected": false
+            },
+            {
+              "value": "4",
+              "text": "Mais lento",
+              "selected": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "event": "escrita_reconhecida",
+      "at": 1793301109.090782,
+      "count": 5,
+      "fields": [
+        {
+          "id": "inputText-0",
+          "type": "text",
+          "name": "",
+          "placeholder": "",
+          "maxLength": 20,
+          "value": "",
+          "disabled": false,
+          "readOnly": false,
+          "label": "PERSONAGEM FICTÍCIO",
+          "outer": "<input id=\"inputText-0\" maxlength=\"20\" autocomplete=\"off\" tabindex=\"1\" class=\"jsx-42179c218931b741\" type=\"text\" value=\"[REDACTED]\">"
+        },
+        {
+          "id": "inputText-1",
+          "type": "text",
+          "name": "",
+          "placeholder": "",
+          "maxLength": 20,
+          "value": "",
+          "disabled": false,
+          "readOnly": false,
+          "label": "INSTRUMENTO MUSICAL",
+          "outer": "<input id=\"inputText-1\" maxlength=\"20\" autocomplete=\"off\" tabindex=\"2\" class=\"jsx-42179c218931b741\" type=\"text\" value=\"[REDACTED]\">"
+        },
+        {
+          "id": "inputText-2",
+          "type": "text",
+          "name": "",
+          "placeholder": "",
+          "maxLength": 20,
+          "value": "",
+          "disabled": false,
+          "readOnly": false,
+          "label": "BANDA",
+          "outer": "<input id=\"inputText-2\" maxlength=\"20\" autocomplete=\"off\" tabindex=\"3\" class=\"jsx-42179c218931b741\" type=\"text\" value=\"[REDACTED]\">"
+        },
+        {
+          "id": "inputText-3",
+          "type": "text",
+          "name": "",
+          "placeholder": "",
+          "maxLength": 20,
+          "value": "",
+          "disabled": false,
+          "readOnly": false,
+          "label": "DOENÇA",
+          "outer": "<input id=\"inputText-3\" maxlength=\"20\" autocomplete=\"off\" tabindex=\"4\" class=\"jsx-42179c218931b741\" type=\"text\" value=\"[REDACTED]\">"
+        },
+        {
+          "id": "inputText-4",
+          "type": "text",
+          "name": "",
+          "placeholder": "",
+          "maxLength": 20,
+          "value": "",
+          "disabled": false,
+          "readOnly": false,
+          "label": "ANIMAL",
+          "outer": "<input id=\"inputText-4\" maxlength=\"20\" autocomplete=\"off\" tabindex=\"5\" class=\"jsx-42179c218931b741\" type=\"text\" value=\"[REDACTED]\">"
+        }
+      ],
+      "headings": [
+        "PREENCHA AS CATEGORIAS",
+        "PERSONAGEM FICTÍCIO",
+        "INSTRUMENTO MUSICAL",
+        "BANDA",
+        "DOENÇA",
+        "ANIMAL"
+      ]
+    },
+    {
+      "event": "diagnostico",
+      "at": 1793301110.4930224,
+      "player": "host",
+      "phase": "ESCRITA",
+      "text": "RODADAS:\n\n1\n/\n4\n\nF\n\nSAIR\n\nLabHost\n\n0\n\nAnonimo125\n\n0\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nPREENCHA AS CATEGORIAS\n\nPERSONAGEM FICTÍCIO\n\nINSTRUMENTO MUSICAL\n\nBANDA\n\nDOENÇA\n\nANIMAL\n\nMSÉ\n\nNOME MASCULINO\n\nLÍQUIDO\n\nPALAVRA EM INGLÊS\n\nSABOR DE SORVETE\n\nMEIO DE TRANSPORTE\n\nTIME ESPORTIVO\n\nAnonimo125\n\nentrou na sala\n\nSTOP!\n\nStopotS - Jogo de stop (adedanha ou adedonha) online!",
+      "headings": [
+        "PREENCHA AS CATEGORIAS",
+        "PERSONAGEM FICTÍCIO",
+        "INSTRUMENTO MUSICAL",
+        "BANDA",
+        "DOENÇA",
+        "ANIMAL",
+        "MSÉ",
+        "NOME MASCULINO",
+        "LÍQUIDO",
+        "PALAVRA EM INGLÊS",
+        "SABOR DE SORVETE",
+        "MEIO DE TRANSPORTE",
+        "TIME ESPORTIVO"
+      ],
+      "buttons": [
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "SAIR",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "STOP!",
+          "disabled": true
+        }
+      ],
+      "selects": []
+    },
+    {
+      "event": "diagnostico",
+      "at": 1793301110.5012975,
+      "player": "convidado",
+      "phase": "ESCRITA",
+      "text": "RODADAS:\n\n1\n/\n4\n\nF\n\nSAIR\n\nLabHost\n\n0\n\nAnonimo125\n\n0\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nPREENCHA AS CATEGORIAS\n\nPERSONAGEM FICTÍCIO\n\nINSTRUMENTO MUSICAL\n\nBANDA\n\nDOENÇA\n\nANIMAL\n\nMSÉ\n\nNOME MASCULINO\n\nLÍQUIDO\n\nPALAVRA EM INGLÊS\n\nSABOR DE SORVETE\n\nMEIO DE TRANSPORTE\n\nTIME ESPORTIVO\n\nENVIE FIGURINHAS\n\nSTOP!",
+      "headings": [
+        "PREENCHA AS CATEGORIAS",
+        "PERSONAGEM FICTÍCIO",
+        "INSTRUMENTO MUSICAL",
+        "BANDA",
+        "DOENÇA",
+        "ANIMAL",
+        "MSÉ",
+        "NOME MASCULINO",
+        "LÍQUIDO",
+        "PALAVRA EM INGLÊS",
+        "SABOR DE SORVETE",
+        "MEIO DE TRANSPORTE",
+        "TIME ESPORTIVO"
+      ],
+      "buttons": [
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "SAIR",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "STOP!",
+          "disabled": true
+        }
+      ],
+      "selects": []
+    },
+    {
+      "event": "concluido",
+      "at": 1793301110.6502666
+    }
+  ],
+  "assertions": [
+    {
+      "id": "normalizacao",
+      "passed": true,
+      "fill": {
+        "status": "APLICADA",
+        "requested": "águia",
+        "actual": "AGUIA"
+      },
+      "typing": {
+        "status": "APLICADA",
+        "requested": "águia",
+        "actual": "AGUIA"
+      }
+    }
+  ],
+  "limitations": [
+    "Laboratório e adaptador mínimo; não certifica pacote v2 completo.",
+    "Candidatos usados para testar UI não representam vocabulário aprovado."
+  ],
+  "stage": "concluido",
+  "stop_timing": {
+    "anchor": "Primeira observação conjunta da escrita; não é o relógio interno do servidor",
+    "mode": "Padrão",
+    "time_mode": "Mais lento",
+    "players": {
+      "host": {
+        "last_disabled_s": 0.0,
+        "first_enabled_s": null
+      },
+      "convidado": {
+        "last_disabled_s": 0.0,
+        "first_enabled_s": null
+      }
+    },
+    "samples": [
+      {
+        "elapsed_s": 0.0,
+        "players": {
+          "host": {
+            "enabled": false,
+            "filled": 0,
+            "phase": "ESCRITA"
+          },
+          "convidado": {
+            "enabled": false,
+            "filled": 0,
+            "phase": "ESCRITA"
+          }
+        }
+      }
+    ]
+  },
+  "error": "'inputText-5'",
+  "cleanup": {
+    "test_contexts_closed": true,
+    "remaining_pages": [
+      "principal"
+    ]
+  }
+}

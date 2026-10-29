@@ -1,0 +1,77 @@
+{
+  "url": "https://stopots.com/pt/[sala]",
+  "title": "StopotS - Entrar",
+  "text": "HOME\n\nVocê foi convidado para a sala abaixo:\n\nSALA [teste]\nJOGADORES\n\n1/10\n\nRODADAS\n\n0/8\n\nSTOP\n\nPADRÃO\n\nTEMPO\n\nMÉDIO\n\nCATEGORIAS (16)\nNome\nIdioma\nPalavra em Inglês\nInseto\nObjeto\nCantor\nRemédio\nSabor de Sorvete\nFilme\nComida Saudável\nMSÉ\nVestuário\nMúsica\nCarro\nPÁF\nGame\nLETRAS (16)\n\nA\n\nB\n\nC\n\nD\n\nE\n\nF\n\nG\n\nI\n\nL\n\nM\n\nO\n\nP\n\nR\n\nS\n\nT\n\nV\n\nENTRAR\nSALA PRIVADA\n\nDigite a senha para entrar na sala\n\nENTRAR",
+  "fields": [],
+  "inputs": [
+    {
+      "id": "",
+      "type": "text",
+      "name": "",
+      "placeholder": "",
+      "maxLength": 15,
+      "value": "Anonimo919",
+      "disabled": false,
+      "readOnly": false,
+      "label": "",
+      "outer": "<input maxlength=\"15\" class=\"jsx-2cb4e73d3cac0759\" type=\"text\" value=\"[REDACTED]\">"
+    },
+    {
+      "id": "",
+      "type": "password",
+      "name": "",
+      "placeholder": "Senha",
+      "maxLength": 20,
+      "value": "[REDACTED]",
+      "disabled": false,
+      "readOnly": false,
+      "label": "",
+      "outer": "<input placeholder=\"Senha\" maxlength=\"20\" class=\"jsx-55b8a0785879a7af \" type=\"password\" value=\"[REDACTED]\">"
+    }
+  ],
+  "buttons": [
+    {
+      "text": "HOME",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "ENTRAR",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "ENTRAR",
+      "disabled": false
+    }
+  ],
+  "headings": [
+    "SALA [teste]",
+    "JOGADORES",
+    "RODADAS",
+    "STOP",
+    "TEMPO",
+    "CATEGORIAS (16)",
+    "LETRAS (16)",
+    "SALA PRIVADA"
+  ],
+  "review": [],
+  "selects": [],
+  "epoch": "117747357d8a478cb4001445c1d290ef",
+  "observed_at": 1793300274.67836,
+  "player": "convidado",
+  "phase": "ENTRADA_PRIVADA",
+  "context": [
+    "117747357d8a478cb4001445c1d290ef",
+    "ENTRADA_PRIVADA",
+    null,
+    null,
+    []
+  ]
+}

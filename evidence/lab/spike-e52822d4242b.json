@@ -1,0 +1,801 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "e52822d4242b",
+  "subject": "adapter-spike",
+  "status": "failed",
+  "browser": "151.0.7922.137",
+  "final_result_verified": false,
+  "events": [
+    {
+      "event": "preparando_sala",
+      "at": 1793300726.2080472
+    },
+    {
+      "event": "sala_privada_pronta",
+      "at": 1793300739.5394206,
+      "setup": {
+        "private": true,
+        "participants": 2,
+        "phase": "SALA",
+        "epoch": "650e77ebd8d442d38b2c797f8ba69a39"
+      }
+    },
+    {
+      "event": "configuracao",
+      "at": 1793300739.5541892,
+      "buttons": [
+        {
+          "text": "",
+          "disabled": true
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "SAIR",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "ADD",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "INICIAR",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "COPIAR LINK",
+          "disabled": false
+        }
+      ],
+      "selects": [
+        {
+          "id": "",
+          "value": "10",
+          "options": [
+            {
+              "value": "4",
+              "text": "4 Jogadores",
+              "selected": false
+            },
+            {
+              "value": "5",
+              "text": "5 Jogadores",
+              "selected": false
+            },
+            {
+              "value": "6",
+              "text": "6 Jogadores",
+              "selected": false
+            },
+            {
+              "value": "7",
+              "text": "7 Jogadores",
+              "selected": false
+            },
+            {
+              "value": "8",
+              "text": "8 Jogadores",
+              "selected": false
+            },
+            {
+              "value": "9",
+              "text": "9 Jogadores",
+              "selected": false
+            },
+            {
+              "value": "10",
+              "text": "10 Jogadores",
+              "selected": true
+            },
+            {
+              "value": "11",
+              "text": "11 Jogadores",
+              "selected": false
+            },
+            {
+              "value": "12",
+              "text": "12 Jogadores",
+              "selected": false
+            },
+            {
+              "value": "13",
+              "text": "13 Jogadores",
+              "selected": false
+            },
+            {
+              "value": "14",
+              "text": "14 Jogadores",
+              "selected": false
+            },
+            {
+              "value": "20",
+              "text": "20 Jogadores",
+              "selected": false
+            },
+            {
+              "value": "50",
+              "text": "50 Jogadores",
+              "selected": false
+            }
+          ]
+        },
+        {
+          "id": "",
+          "value": "4",
+          "options": [
+            {
+              "value": "4",
+              "text": "4 Rodadas",
+              "selected": true
+            },
+            {
+              "value": "5",
+              "text": "5 Rodadas",
+              "selected": false
+            },
+            {
+              "value": "6",
+              "text": "6 Rodadas",
+              "selected": false
+            },
+            {
+              "value": "7",
+              "text": "7 Rodadas",
+              "selected": false
+            },
+            {
+              "value": "8",
+              "text": "8 Rodadas",
+              "selected": false
+            },
+            {
+              "value": "9",
+              "text": "9 Rodadas",
+              "selected": false
+            },
+            {
+              "value": "10",
+              "text": "10 Rodadas",
+              "selected": false
+            },
+            {
+              "value": "11",
+              "text": "11 Rodadas",
+              "selected": false
+            },
+            {
+              "value": "12",
+              "text": "12 Rodadas",
+              "selected": false
+            },
+            {
+              "value": "13",
+              "text": "13 Rodadas",
+              "selected": false
+            },
+            {
+              "value": "14",
+              "text": "14 Rodadas",
+              "selected": false
+            },
+            {
+              "value": "15",
+              "text": "15 Rodadas",
+              "selected": false
+            },
+            {
+              "value": "16",
+              "text": "16 Rodadas",
+              "selected": false
+            },
+            {
+              "value": "17",
+              "text": "17 Rodadas",
+              "selected": false
+            },
+            {
+              "value": "18",
+              "text": "18 Rodadas",
+              "selected": false
+            }
+          ]
+        },
+        {
+          "id": "",
+          "value": "1",
+          "options": [
+            {
+              "value": "1",
+              "text": "Padrão",
+              "selected": true
+            },
+            {
+              "value": "2",
+              "text": "Desativado",
+              "selected": false
+            },
+            {
+              "value": "3",
+              "text": "Host",
+              "selected": false
+            },
+            {
+              "value": "4",
+              "text": "Maioria",
+              "selected": false
+            }
+          ]
+        },
+        {
+          "id": "",
+          "value": "4",
+          "options": [
+            {
+              "value": "1",
+              "text": "Rápido",
+              "selected": false
+            },
+            {
+              "value": "2",
+              "text": "Médio",
+              "selected": false
+            },
+            {
+              "value": "3",
+              "text": "Lento",
+              "selected": false
+            },
+            {
+              "value": "4",
+              "text": "Mais lento",
+              "selected": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "event": "escrita_reconhecida",
+      "at": 1793300745.4566538,
+      "count": 8,
+      "fields": [
+        {
+          "id": "inputText-0",
+          "type": "text",
+          "name": "",
+          "placeholder": "",
+          "maxLength": 20,
+          "value": "",
+          "disabled": false,
+          "readOnly": false,
+          "label": "AVE",
+          "outer": "<input id=\"inputText-0\" maxlength=\"20\" autocomplete=\"off\" tabindex=\"1\" class=\"jsx-42179c218931b741\" type=\"text\" value=\"[REDACTED]\">"
+        },
+        {
+          "id": "inputText-1",
+          "type": "text",
+          "name": "",
+          "placeholder": "",
+          "maxLength": 20,
+          "value": "",
+          "disabled": false,
+          "readOnly": false,
+          "label": "CARRO",
+          "outer": "<input id=\"inputText-1\" maxlength=\"20\" autocomplete=\"off\" tabindex=\"2\" class=\"jsx-42179c218931b741\" type=\"text\" value=\"[REDACTED]\">"
+        },
+        {
+          "id": "inputText-2",
+          "type": "text",
+          "name": "",
+          "placeholder": "",
+          "maxLength": 20,
+          "value": "",
+          "disabled": false,
+          "readOnly": false,
+          "label": "ADJETIVO",
+          "outer": "<input id=\"inputText-2\" maxlength=\"20\" autocomplete=\"off\" tabindex=\"3\" class=\"jsx-42179c218931b741\" type=\"text\" value=\"[REDACTED]\">"
+        },
+        {
+          "id": "inputText-3",
+          "type": "text",
+          "name": "",
+          "placeholder": "",
+          "maxLength": 20,
+          "value": "",
+          "disabled": false,
+          "readOnly": false,
+          "label": "MÚSICA",
+          "outer": "<input id=\"inputText-3\" maxlength=\"20\" autocomplete=\"off\" tabindex=\"4\" class=\"jsx-42179c218931b741\" type=\"text\" value=\"[REDACTED]\">"
+        },
+        {
+          "id": "inputText-4",
+          "type": "text",
+          "name": "",
+          "placeholder": "",
+          "maxLength": 20,
+          "value": "",
+          "disabled": false,
+          "readOnly": false,
+          "label": "PÁF",
+          "outer": "<input id=\"inputText-4\" maxlength=\"20\" autocomplete=\"off\" tabindex=\"5\" class=\"jsx-42179c218931b741\" type=\"text\" value=\"[REDACTED]\">"
+        },
+        {
+          "id": "inputText-5",
+          "type": "text",
+          "name": "",
+          "placeholder": "",
+          "maxLength": 20,
+          "value": "",
+          "disabled": false,
+          "readOnly": false,
+          "label": "NOME FEMININO",
+          "outer": "<input id=\"inputText-5\" maxlength=\"20\" autocomplete=\"off\" tabindex=\"6\" class=\"jsx-42179c218931b741\" type=\"text\" value=\"[REDACTED]\">"
+        },
+        {
+          "id": "inputText-6",
+          "type": "text",
+          "name": "",
+          "placeholder": "",
+          "maxLength": 20,
+          "value": "",
+          "disabled": false,
+          "readOnly": false,
+          "label": "REMÉDIO",
+          "outer": "<input id=\"inputText-6\" maxlength=\"20\" autocomplete=\"off\" tabindex=\"7\" class=\"jsx-42179c218931b741\" type=\"text\" value=\"[REDACTED]\">"
+        },
+        {
+          "id": "inputText-7",
+          "type": "text",
+          "name": "",
+          "placeholder": "",
+          "maxLength": 20,
+          "value": "",
+          "disabled": false,
+          "readOnly": false,
+          "label": "SABOR DE SORVETE",
+          "outer": "<input id=\"inputText-7\" maxlength=\"20\" autocomplete=\"off\" tabindex=\"8\" class=\"jsx-42179c218931b741\" type=\"text\" value=\"[REDACTED]\">"
+        }
+      ],
+      "headings": [
+        "PREENCHA AS CATEGORIAS",
+        "AVE",
+        "CARRO",
+        "ADJETIVO",
+        "MÚSICA",
+        "PÁF",
+        "NOME FEMININO",
+        "REMÉDIO",
+        "SABOR DE SORVETE"
+      ]
+    },
+    {
+      "event": "preenchimento_confirmado",
+      "at": 1793300746.2902508,
+      "letter": "S",
+      "fields_per_player": {
+        "host": 8,
+        "convidado": 8
+      }
+    },
+    {
+      "event": "diagnostico",
+      "at": 1793300766.3401487,
+      "player": "host",
+      "phase": "ESCRITA",
+      "text": "RODADAS:\n\n1\n/\n4\n\nS\n\nSAIR\n\nLabHost\n\n0\n\nAnonimo671\n\n0\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nPREENCHA AS CATEGORIAS\n\nAVE\n\nCARRO\n\nADJETIVO\n\nMÚSICA\n\nPÁF\n\nNOME FEMININO\n\nREMÉDIO\n\nSABOR DE SORVETE\n\nPROGRAMA DE TV\n\nTEM NA COZINHA\n\nAPP OU SITE\n\nINFLUENCER\n\nAnonimo671\n\nentrou na sala\n\nSTOP!\n\nStopotS - Jogo de stop (adedanha ou adedonha) online!",
+      "headings": [
+        "PREENCHA AS CATEGORIAS",
+        "AVE",
+        "CARRO",
+        "ADJETIVO",
+        "MÚSICA",
+        "PÁF",
+        "NOME FEMININO",
+        "REMÉDIO",
+        "SABOR DE SORVETE",
+        "PROGRAMA DE TV",
+        "TEM NA COZINHA",
+        "APP OU SITE",
+        "INFLUENCER"
+      ],
+      "buttons": [
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "SAIR",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "STOP!",
+          "disabled": true
+        }
+      ],
+      "selects": []
+    },
+    {
+      "event": "diagnostico",
+      "at": 1793300766.3511503,
+      "player": "convidado",
+      "phase": "ESCRITA",
+      "text": "RODADAS:\n\n1\n/\n4\n\nS\n\nSAIR\n\nLabHost\n\n0\n\nAnonimo671\n\n0\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nPREENCHA AS CATEGORIAS\n\nAVE\n\nCARRO\n\nADJETIVO\n\nMÚSICA\n\nPÁF\n\nNOME FEMININO\n\nREMÉDIO\n\nSABOR DE SORVETE\n\nPROGRAMA DE TV\n\nTEM NA COZINHA\n\nAPP OU SITE\n\nINFLUENCER\n\nENVIE FIGURINHAS\n\nSTOP!",
+      "headings": [
+        "PREENCHA AS CATEGORIAS",
+        "AVE",
+        "CARRO",
+        "ADJETIVO",
+        "MÚSICA",
+        "PÁF",
+        "NOME FEMININO",
+        "REMÉDIO",
+        "SABOR DE SORVETE",
+        "PROGRAMA DE TV",
+        "TEM NA COZINHA",
+        "APP OU SITE",
+        "INFLUENCER"
+      ],
+      "buttons": [
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "SAIR",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "STOP!",
+          "disabled": true
+        }
+      ],
+      "selects": []
+    },
+    {
+      "event": "concluido",
+      "at": 1793300766.5532186
+    }
+  ],
+  "assertions": [
+    {
+      "id": "normalizacao",
+      "passed": true,
+      "fill": {
+        "status": "APLICADA",
+        "requested": "águia",
+        "actual": "AGUIA"
+      },
+      "typing": {
+        "status": "APLICADA",
+        "requested": "águia",
+        "actual": "AGUIA"
+      }
+    }
+  ],
+  "limitations": [
+    "Laboratório e adaptador mínimo; não certifica pacote v2 completo.",
+    "Candidatos usados para testar UI não representam vocabulário aprovado."
+  ],
+  "stage": "concluido",
+  "error": "Condição não observada em 20s; participante=host; fase=ESCRITA",
+  "cleanup": {
+    "test_contexts_closed": true,
+    "remaining_pages": [
+      "principal"
+    ]
+  }
+}

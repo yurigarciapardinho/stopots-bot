@@ -1,0 +1,120 @@
+{
+  "url": "https://stopots.com/pt/[sala]",
+  "title": "StopotS - Sala 26465",
+  "text": "RODADAS:\n\n1\n/\n4\n\nSAIR\n\nAnonimo976\n\n0\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nRANKING DA RODADA 1/4\n\n1\n\nAnonimo976\n\n0\n\nPREENCHA AS CATEGORIAS\n\nCELEBRIDADE\n\nESPORTE\n\nSABOR DE SORVETE\n\nÁRVORE\n\nMAMÍFERO\n\nCOMIDA\n\nMEIO DE TRANSPORTE\n\nREMÉDIO\n\nINSTRUMENTO MUSICAL\n\nSUPER-HERÓI\n\nVESTUÁRIO\n\nTEM NO HOSPITAL\n\nLabHost\n\nsaiu da sala\n\nAnonimo976\n\né o novo dono(a) da sala!\n\nSTOP AUTOMÁTICO\n\nO tempo acabou!\n\nESTOU PRONTO\nSTOP!",
+  "fields": [],
+  "inputs": [],
+  "buttons": [
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "SAIR",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "ESTOU PRONTO",
+      "disabled": true
+    }
+  ],
+  "headings": [
+    "RANKING DA RODADA 1/4"
+  ],
+  "review": [],
+  "selects": [],
+  "epoch": "dd19ed49b42741ce9347c079f9d07051",
+  "observed_at": 1793301403.8930924,
+  "player": "convidado",
+  "phase": "RESULTADO",
+  "context": [
+    "dd19ed49b42741ce9347c079f9d07051",
+    "RESULTADO",
+    [
+      "1",
+      "4"
+    ],
+    null,
+    []
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "url": "https://stopots.com/pt",
+  "title": "StopotS - Jogo de stop (adedanha ou adedonha) online!",
+  "text": "STOP ADEDANHA ADEDONHA\nPT\nJOGUE AGORA\nJOGAR\nCRIAR SALA\nSALAS\nCOMO JOGAR\n5. VENÇA COM ESTILO!\n\nRespostas válidas e exclusivas valem 10 pontos. Respostas repetidas valem 5 pontos\n\n2009 - 2026 Onrizon\n\nStopotS é um jogo de categorias, também conhecido como Adedanha ou Adedonha. Jogadores recebem uma letra aleatória e preenchem categorias com palavras que comecem com ela. O primeiro a completar grita “STOP!”. Então, os jogadores avaliam as respostas: 10 pontos para válidas, 5 para repetidas e 0 para incorretas.\nAndroid\niOS\nCONTATO\n|\nTERMOS\n|\nPRIVACIDADE\n|\nASSETS\n|\nNOTÍCIAS",
+  "fields": [],
+  "inputs": [
+    {
+      "id": "",
+      "type": "text",
+      "name": "",
+      "placeholder": "",
+      "maxLength": 15,
+      "value": "Anonimo514",
+      "disabled": false,
+      "readOnly": false,
+      "label": "",
+      "outer": "<input maxlength=\"15\" class=\"jsx-2cb4e73d3cac0759\" type=\"text\" value=\"[REDACTED]\">"
+    }
+  ],
+  "buttons": [
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "PT",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "JOGAR",
+      "disabled": false
+    },
+    {
+      "text": "CRIAR SALA",
+      "disabled": false
+    },
+    {
+      "text": "SALAS",
+      "disabled": false
+    }
+  ],
+  "headings": [
+    "STOP ADEDANHA ADEDONHA",
+    "JOGUE AGORA",
+    "COMO JOGAR",
+    "StopotS é um jogo de categorias, também conhecido como Adedanha ou Adedonha. Jogadores recebem uma letra aleatória e preenchem categorias com palavras que comecem com ela. O primeiro a completar grita “STOP!”. Então, os jogadores avaliam as respostas: 10 pontos para válidas, 5 para repetidas e 0 para incorretas."
+  ],
+  "review": [],
+  "selects": [],
+  "epoch": "7a923040f5634fa2b5fd2ab74bfafc56",
+  "observed_at": 1793296155.9521515,
+  "player": "principal",
+  "phase": "INICIO",
+  "context": [
+    "7a923040f5634fa2b5fd2ab74bfafc56",
+    "INICIO",
+    null,
+    null,
+    []
+  ]
+}
