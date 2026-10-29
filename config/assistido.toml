@@ -1,0 +1,7 @@
+[automacao]
+preencher = true
+stop = false
+exigir_todos = true
+votos = false
+avaliar = false
+continuar = false

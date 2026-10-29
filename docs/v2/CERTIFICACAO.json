@@ -1,0 +1,126 @@
+{
+  "schema_version": 1,
+  "version": "2.0.0",
+  "as_of": "2026-10-29T18:38:51-03:00",
+  "code_base_commit": "aa7ae2dfa1c987d601318e2408d6cc689ee970c1",
+  "package_tested": {
+    "adapter": "web-2.0.dev0",
+    "chrome": "151.0.7922.137",
+    "package": "2.0.0",
+    "package_sha256": "6749c1a82d3b1f90c33d3b297bdd60d720062ad73e10646f1a5feef9def7a264",
+    "playwright": "1.64.1",
+    "vocabulary": "d5a0a35bdd1a55810e9376e78f7d1db2d0ae894e5d1b57dd1b6104d6c6380382"
+  },
+  "run_id": "b03849d5f071",
+  "subject": "v2-cli-package",
+  "standard_mode_certified": true,
+  "consecutive_private_matches": 3,
+  "rounds_per_match": 4,
+  "participants": 2,
+  "rounds_verified": 12,
+  "review_observations": 288,
+  "scores": [
+    [
+      [
+        "participante_1",
+        250
+      ],
+      [
+        "participante_2",
+        250
+      ]
+    ],
+    [
+      [
+        "participante_1",
+        245
+      ],
+      [
+        "participante_2",
+        245
+      ]
+    ],
+    [
+      [
+        "participante_1",
+        245
+      ],
+      [
+        "participante_2",
+        245
+      ]
+    ]
+  ],
+  "duplicate_applied_actions": 0,
+  "action_statuses": {
+    "APLICADA": 586,
+    "INDETERMINADA": 49,
+    "OBSOLETA": 6
+  },
+  "edge_run_id": "45d76f79ce58",
+  "edge_assertions": [
+    {
+      "id": "blank_preserved",
+      "passed": true
+    },
+    {
+      "id": "wrong_initial_unchecked",
+      "passed": true
+    },
+    {
+      "id": "unknown_preserved",
+      "passed": true
+    },
+    {
+      "id": "round_rankings",
+      "passed": true
+    }
+  ],
+  "cleanup": {
+    "owned_browsers_disconnected": true,
+    "owned_contexts_closed": true
+  },
+  "limits": [
+    "Host, Desativado, Maioria e recuperação de rede não certificados",
+    "Perfil certificado: 16 temas, letras A–D, Padrão, Mais lento",
+    "Mínimo universal de STOP não estabelecido; usar habilitação da UI"
+  ],
+  "post_validation_changes": "Revisão posterior de normalização de hífen/apóstrofo e equivalência na apuração, validada por 42 testes e sonda real do adaptador; candidatos do perfil certificado comprovadamente iguais. Base editorial e release de vocabulário preservadas.",
+  "normalization_revision_commit": "98cfefe4e37de1deddbcfead6fceb841c2f61a59",
+  "normalization_probe": {
+    "subject": "v2-adapter-normalization",
+    "observed_at": "2026-10-29T18:51:00.534158-03:00",
+    "status": "passed",
+    "game_input_version": "stopots-web-pt-2026-10-29",
+    "profile_candidates_unchanged": true,
+    "vocabulary": "d5a0a35bdd1a55810e9376e78f7d1db2d0ae894e5d1b57dd1b6104d6c6380382",
+    "cases": [
+      {
+        "requested": "Bem-te-vi",
+        "actual": "BEM TE VI",
+        "status": "APLICADA"
+      },
+      {
+        "requested": "D'Ávila",
+        "actual": "DAVILA",
+        "status": "APLICADA"
+      }
+    ],
+    "cleanup": {
+      "owned_browsers_disconnected": true
+    }
+  },
+  "local_tests_passed": 42,
+  "owned_browser_smoke": {
+    "subject": "v2-cli-owned-browser-smoke",
+    "passed": true,
+    "exit_code": 2,
+    "expected_end": "prazo_encerrado",
+    "home_observed": true,
+    "same_profile_reopened": true,
+    "owned_profile_process_running_after_close": false,
+    "stale_lock_artifact": true,
+    "live_test_controls_remaining": 0
+  },
+  "final_wheel_sha256": "c6a8a8df468d3e54588b1bfe1da91d0770b2145f8e7d0f4e67f472b6f31a7835"
+}

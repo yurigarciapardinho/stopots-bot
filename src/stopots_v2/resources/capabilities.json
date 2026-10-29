@@ -1,10 +1,30 @@
 {
   "as_of": "2026-10-29",
-  "release_status": "desenvolvimento",
-  "standard_mode_certified": false,
+  "release_status": "validado_padrao",
+  "standard_mode_certified": true,
   "host_mode_certified": false,
   "disabled_mode_certified": false,
   "majority_mode_certified": false,
   "recovery_certified": false,
-  "stop_timing": "Aguardar habilitação observada; mínimo universal não estabelecido"
+  "stop_timing": "Aguardar habilitação observada; mínimo universal não estabelecido",
+  "certification_run": "b03849d5f071",
+  "certified_environment": {
+    "date": "2026-10-29",
+    "os": "Linux Pop!_OS",
+    "chrome": "151.0.7922.137",
+    "playwright": "1.64.1",
+    "participants": 2,
+    "matches": 3,
+    "rounds_per_match": 4
+  },
+  "edge_probe": {
+    "run_id": "45d76f79ce58",
+    "headed_host": true,
+    "all_assertions_passed": true
+  },
+  "final_screen": "FIM DE JOGO!",
+  "local_tests_passed": 42,
+  "normalization_revision_commit": "98cfefe4e37de1deddbcfead6fceb841c2f61a59",
+  "game_input_normalization": "stopots-web-pt-2026-10-29",
+  "normalization_probe_passed": true
 }

@@ -2,7 +2,7 @@
 
 Assistente local em Python 3.12 e Playwright, com interface e mensagens em português. O pacote v2 substitui a integração Selenium 3; o código original permanece em `stopots_bot/` e sua documentação em `docs/LEGADO.md`.
 
-**Versão candidata: 2.0.0.** Consulte `docs/v2/VALIDACAO.md` e `stopots-v2 diagnostico` antes de atribuir suporte a uma modalidade. Os testes locais usam DOM sintético; a certificação online exige o pacote instalado e a captura da partida completa.
+**Versão 2.0.0: modo Padrão validado em três partidas privadas consecutivas.** Consulte `docs/v2/VALIDACAO.md` e `stopots-v2 diagnostico` antes de atribuir suporte a uma modalidade. Os testes locais usam DOM sintético; a certificação online exige o pacote instalado e a captura da partida completa.
 
 ## No ambiente preparado
 
@@ -12,6 +12,8 @@ cd /home/yuzlkk/hack/stopots/stopots-v2
 ./scripts/v2.sh diagnostico
 ./scripts/v2.sh executar
 ```
+
+Os exemplos `config/assistido.toml` e `config/automatico.toml` podem ser carregados com `--config`.
 
 O último comando abre um Chrome dedicado. Entre na sala pela interface. Por padrão, a v2 preenche campos vazios com candidatos aprovados; as demais ações dependem de opções explícitas:
 
@@ -73,7 +75,7 @@ O bootstrap local contém **293 associações aprovadas / 286 lexemas**. Cobre o
 ./scripts/v2.sh vocabulario publicar data/source/editorial.json /caminho/atual.json
 ```
 
-Publicar valida antes de substituir; a versão anterior fica em `atual.json.previous`. Editar duas vezes mantém listas e apóstrofos válidos. Acentos são preservados na grafia e normalizados na busca. Inglês é tratado como idioma lexical próprio. Ave inclui-se em Animal, sem a relação inversa; CEP e FLV têm composição explícita. Consulte `docs/v2/ARQUITETURA.md`.
+Publicar valida antes de substituir; a versão anterior fica em `atual.json.previous`. Editar duas vezes mantém listas e apóstrofos válidos. Acentos são preservados na grafia e normalizados na busca. Na UI medida, hífen vira espaço e apóstrofo é removido; o adaptador confirma a forma resultante e reconhece essa forma na apuração. Inglês é tratado como idioma lexical próprio. Ave inclui-se em Animal, sem a relação inversa; CEP e FLV têm composição explícita. Consulte `docs/v2/ARQUITETURA.md`.
 
 ## Verificação
 
@@ -88,3 +90,5 @@ Publicar valida antes de substituir; a versão anterior fica em `atual.json.prev
 O laboratório `tools/stopots_lab.py` é ferramenta de preparação. O bot distribuído está em `src/stopots_v2` e não depende dele. Os ensaios de integração usam o laboratório somente para montar a sala privada. Eventos sanitizados omitem nomes, URLs de sala, senhas e conteúdo de campos pessoais. Evidências de teste ficam em `evidence/v2`.
 
 MIT. Baseado em [Lucas8x/stopots-bot](https://github.com/Lucas8x/stopots-bot).
+
+Os inicializadores `.bat` preservados pertencem à v1. A entrada da v2 é `stopots-v2`; a matriz de validação atual cobre Linux e Chrome no computador de referência.

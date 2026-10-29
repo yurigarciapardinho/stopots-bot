@@ -1,6 +1,6 @@
 # Alterações
 
-## 2.0.0 — candidata de 29/10/2026
+## 2.0.0 — 29/10/2026, Padrão validado
 
 - Novo pacote Python com domínio imutável, controlador serial, adaptador Playwright e CLI pt-BR.
 - Descoberta dinâmica dos campos, revalidação antes de ações e preservação de edição manual.

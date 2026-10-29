@@ -39,3 +39,5 @@ A taxonomia só inclui equivalências explícitas. Relações de inclusão são 
 A embalagem nova utiliza `pyproject.toml`, pacote `src/stopots_v2` e comando `stopots-v2`. A árvore Python e o JavaScript legados permanecem como referência e não são instalados pelo caminho da v2. O adaptador não usa XPath legado, classes com hash, índices globais de resposta ou botões desabilitados para decidir ações.
 
 Referências de API consultadas: [locators](https://playwright.dev/python/docs/api/class-locator) e [actionability](https://playwright.dev/python/docs/actionability). As verificações do Playwright complementam a revalidação do domínio; o retorno de `click` não substitui a leitura do efeito.
+
+A normalização de input observada em 29/10/2026 transforma Bem-te-vi em BEM TE VI e D'Ávila em DAVILA. A busca lexical preserva hífen e apóstrofo. A revisão compara grafia e forma de jogo; não reaplica cegamente a transformação ao texto recebido, pois a remoção de pontuação pode criar espaços. O comportamento foi aferido por fill e por teclas e a confirmação do adaptador foi verificada no Chrome.

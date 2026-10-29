@@ -1,6 +1,6 @@
 # Laboratório de preparação do StopotS v2
 
-Raiz: /home/yuzlkk/hack/stopots. Desenvolvimento no worktree stopots-v2, branch codex/v2-preparacao. O bot completo ainda será implementado. Ler ../planejamento-v2/RETOMADA_V2.md para resultados e pendências atuais.
+Raiz: /home/yuzlkk/hack/stopots. Desenvolvimento no worktree stopots-v2, branch codex/v2-desenvolvimento. A implementação v2 está em src/stopots_v2, com entrada por scripts/v2.sh; este documento descreve o laboratório auxiliar. Ler ../planejamento-v2/RETOMADA_V2.md para resultados e pendências atuais.
 
 ## Início rápido
 

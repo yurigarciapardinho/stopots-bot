@@ -1,0 +1,11 @@
+{
+  "subject": "v2-cli-owned-browser-smoke",
+  "passed": true,
+  "exit_code": 2,
+  "expected_end": "prazo_encerrado",
+  "home_observed": true,
+  "same_profile_reopened": true,
+  "owned_profile_process_running_after_close": false,
+  "stale_lock_artifact": true,
+  "live_test_controls_remaining": 0
+}
