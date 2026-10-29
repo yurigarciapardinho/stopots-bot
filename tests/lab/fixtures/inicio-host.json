@@ -3,7 +3,7 @@
   "title": "StopotS - Jogo de stop (adedanha ou adedonha) online!",
   "visibility": "visible",
   "focused": true,
-  "text": "STOP ADEDANHA ADEDONHA\nPT\nJOGUE AGORA\nJOGAR\nCRIAR SALA\nSALAS\nCOMO JOGAR\n1. SORTEIO DA LETRA\n\nCada rodada começa com uma letra aleatória\n\n2009 - 2026 Onrizon\n\nStopotS é um jogo de categorias, também conhecido como Adedanha ou Adedonha. Jogadores recebem uma letra aleatória e preenchem categorias com palavras que comecem com ela. O primeiro a completar grita “STOP!”. Então, os jogadores avaliam as respostas: 10 pontos para válidas, 5 para repetidas e 0 para incorretas.\nAndroid\niOS\nCONTATO\n|\nTERMOS\n|\nPRIVACIDADE\n|\nASSETS\n|\nNOTÍCIAS",
+  "text": "STOP ADEDANHA ADEDONHA\nPT\nJOGUE AGORA\nJOGAR\nCRIAR SALA\nSALAS\nCOMO JOGAR\n2. TIC-TAC\n\nPreencha as categorias com palavras que comecem com a letra sorteada\n\n2009 - 2026 Onrizon\n\nStopotS é um jogo de categorias, também conhecido como Adedanha ou Adedonha. Jogadores recebem uma letra aleatória e preenchem categorias com palavras que comecem com ela. O primeiro a completar grita “STOP!”. Então, os jogadores avaliam as respostas: 10 pontos para válidas, 5 para repetidas e 0 para incorretas.\nAndroid\niOS\nCONTATO\n|\nTERMOS\n|\nPRIVACIDADE\n|\nASSETS\n|\nNOTÍCIAS",
   "fields": [],
   "inputs": [
     {
@@ -65,12 +65,12 @@
   ],
   "review": [],
   "selects": [],
-  "epoch": "293724ffb3ef459e85d0226e9687b442",
-  "observed_at": 1793307590.7610657,
+  "epoch": "5262fdbfecdc446fb4f1e4ba7a231fbd",
+  "observed_at": 1793308269.5464878,
   "player": "host",
   "phase": "INICIO",
   "context": [
-    "293724ffb3ef459e85d0226e9687b442",
+    "5262fdbfecdc446fb4f1e4ba7a231fbd",
     "INICIO",
     null,
     null,

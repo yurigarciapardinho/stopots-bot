@@ -3,7 +3,7 @@ from dataclasses import replace
 import json
 
 from stopots_v2.application import Controller, EventLog, Planner, Policy
-from stopots_v2.domain import ActionResult, Context, Control, Field, Group, Kind, Observation, Phase, Status, Supervisor
+from stopots_v2.domain import ActionResult, Context, Control, Field, Group, Kind, Observation, Phase, Ranking, Status, Supervisor
 from stopots_v2.identity import ContextTracker
 from stopots_v2.vocabulary import Vocabulary
 
@@ -116,3 +116,10 @@ def test_log_does_not_record_input_or_url(tmp_path):
     log.emit("observacao", obs)
     assert "TEXTO PESSOAL" not in log.path.read_text()
     assert "#secret" not in log.path.read_text()
+
+
+def test_continue_waits_for_captured_ranking():
+    p = Planner(Vocabulary.bundled(), Policy(continue_results=True))
+    obs = writing(phase=Phase.ROUND_RESULT, proceed=Control('#ready',True), ranking=None)
+    assert p.plan(obs) is None
+    assert p.plan(replace(obs, ranking=Ranking((('participante_1',65),),'rodada'))).kind == Kind.CONTINUE

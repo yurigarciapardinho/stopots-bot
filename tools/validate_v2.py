@@ -240,6 +240,16 @@ async def main(args):
                         match['edge'] = edge
                 results = await asyncio.gather(*(ctl.step() for ctl in controllers.values()))
                 for who, (obs, result) in zip(controllers, results):
+                    before = controllers[who].last_observation
+                    if before and before.context.round_index:
+                        record = match['rounds'].setdefault(str(before.context.round_index), {})
+                        player = record.setdefault(who, {'review_steps':[], 'stop':{'last_disabled_s':None,'first_enabled_s':None}})
+                        if before.phase==Phase.ROUND_RESULT and before.ranking:
+                            player['ranking'] = asdict(before.ranking)
+                        if before.phase==Phase.REVIEW:
+                            if before.context.review_index not in player['review_steps']:
+                                player['review_steps'].append(before.context.review_index)
+                            player['review_total'] = before.review_total
                     if result:
                         event = controllers[who].events.events[-1]
                         match['actions'].append({k: v for k, v in event.items() if k in ('action_id', 'kind', 'status', 'reason') } | {'player': who})

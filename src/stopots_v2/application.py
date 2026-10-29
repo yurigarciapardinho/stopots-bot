@@ -71,7 +71,7 @@ class Planner:
                             return action
             if p.confirm_review and obs.confirm and obs.confirm.enabled:
                 return self.action(obs, Kind.CONFIRM, obs.confirm.ref)
-        if obs.phase == Phase.ROUND_RESULT and p.continue_results and obs.proceed and obs.proceed.enabled:
+        if obs.phase == Phase.ROUND_RESULT and p.continue_results and obs.ranking and obs.proceed and obs.proceed.enabled:
             return self.action(obs, Kind.CONTINUE, obs.proceed.ref)
         return None
 
@@ -95,6 +95,8 @@ class EventLog:
             data.update(context=asdict(observation.context), phase=observation.phase,
                         connected=observation.connected, fields=len(observation.fields),
                         review_index=observation.context.review_index, review_total=observation.review_total)
+            if observation.ranking:
+                data['ranking'] = asdict(observation.ranking)
         if action:
             data.update(action_id=action.id, kind=action.kind)
         if result:
@@ -135,7 +137,7 @@ class Controller:
             if self.supervisor != new_state:
                 self.events.emit("supervisor", observation, reason=new_state)
             self.supervisor = new_state
-            signature = (observation.context, observation.phase, observation.connected)
+            signature = (observation.context, observation.phase, observation.connected, observation.ranking)
             if signature != self.last_signature:
                 self.events.emit("observacao", observation)
                 self.last_signature = signature

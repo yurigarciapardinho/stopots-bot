@@ -33,6 +33,7 @@
   const resultHeadings=headings.filter(h=>/^RANKING\s+(DA\s+RODADA|FINAL)/.test(txt(h)));
   const finals=resultHeadings.filter(h=>/^RANKING\s+FINAL/.test(txt(h)));
   const resultHeading=finals.length===1?finals:resultHeadings;
+  const endHeading=headings.filter(h=>/^FIM\s+DE\s+JOGO!?$/.test(txt(h)));
   const writingHeading=headings.filter(h=>txt(h)==='PREENCHA AS CATEGORIAS');
   const inputs=q('input[id^="inputText-"]');
   const bodyText=document.body.innerText;
@@ -41,14 +42,24 @@
   let phase='DESCONHECIDO', review_theme=null, groups=[], ranking=null;
   let review_index=null, review_total=null;
   let result_round=null, result_total=null;
-  if (resultHeading.length===1) {
+  if (endHeading.length===1) {
+    phase='RESULTADO_PARTIDA';
+    const root=endHeading[0].closest('.end');
+    if(root) {
+      const rows=q('.rkg',root).filter(e=>e.querySelector('h4') && e.querySelector(':scope > p'))
+        .map(e=>({ref:ref(e),name:txt(e.querySelector('h4')),points:txt(e.querySelector(':scope > p')).replace(/\s*pts?\.?$/i,'').trim()}));
+      ranking={rows,round_index:null,semantic:'total_partida'};
+    }
+  } else if (resultHeading.length===1) {
     phase=/RANKING\s+FINAL/.test(txt(resultHeading[0]))?'RESULTADO_PARTIDA':'RESULTADO_RODADA';
     const m=txt(resultHeading[0]).match(/(\d+)\s*\/\s*(\d+)/);
     if(m) {result_round=+m[1];result_total=+m[2];}
     // O adaptador só extrai linhas de ranking de um painel que contém o título.
     let root=resultHeading[0].closest('.ranking') || resultHeading[0].parentElement;
     while(root!==document.body && !root.querySelector('.userRkg')) root=root.parentElement;
-    const rows=q('.userRkg',root).filter(active).map(e=>({ref:ref(e),name:txt(e.querySelector('.nick')),points:txt(e.querySelector('.points'))}));
+    // O painel está ativo; linhas com animação de opacidade já pertencem ao
+    // ranking e não podem ser omitidas da coleção, como nos campos de escrita.
+    const rows=q('.userRkg',root).map(e=>({ref:ref(e),name:txt(e.querySelector('.nick')),points:txt(e.querySelector('.points'))}));
     ranking={rows,round_index:result_round,semantic:phase==='RESULTADO_PARTIDA'?'total_partida':'rodada'};
   } else if (reviewHeading.length===1) {
     phase='REVISAO';

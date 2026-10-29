@@ -1,6 +1,7 @@
 """Contratos em Chrome local com DOM sintético; não certificam o site online."""
 import asyncio
 from dataclasses import replace
+from pathlib import Path
 import pytest
 
 from stopots_v2.adapters.web import StopotsWeb
@@ -122,4 +123,17 @@ def test_ranking_uses_own_counter_and_final_over_background():
         assert (await port.observe()).phase == Phase.FINAL_RESULT
         now[0] += 1
         assert (await port.observe()).ranking.rows == (("participante_1", 250),)
+    browser_test(case)
+
+
+def test_actual_end_screen_and_animated_rows():
+    async def case(page, now):
+        await page.set_content((Path(__file__).parent/'fixtures/fim-de-jogo.html').read_text())
+        port = StopotsWeb(page, clock=lambda: now[0])
+        obs = await port.observe()
+        assert obs.phase == Phase.FINAL_RESULT and obs.ranking is None
+        now[0] += 1
+        obs = await port.observe()
+        assert obs.ranking.rows == (("participante_1",250),("participante_2",250))
+        assert obs.ranking.semantic == 'total_partida'
     browser_test(case)
