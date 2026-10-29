@@ -24,7 +24,7 @@ from stopots_v2 import __version__
 from stopots_v2.adapters.web import ADAPTER_VERSION, StopotsWeb
 from stopots_v2.application import Controller, EventLog, Policy
 from stopots_v2.domain import Kind, Phase, Status
-from stopots_v2.normalization import lookup
+from stopots_v2.normalization import lookup, game_value
 from stopots_v2.vocabulary import Vocabulary, atomic_write, canonical
 
 POOL = ["Profissão", "Programa de TV", "Fantasia", "Vilão", "Animal", "Carro", "Brinquedo", "Objeto",
@@ -119,11 +119,11 @@ async def diagnostic(page):
     # Só títulos/controles e estrutura do painel; nunca body, chat ou perfil.
     return await page.evaluate('''() => {
       const visible=e=>!!e.getClientRects().length && getComputedStyle(e).visibility!=='hidden';
-      const hs=[...document.querySelectorAll('h1,h2,h3,h4,legend')].filter(visible);
+      const hs=[...document.querySelectorAll('h1,h2,h3,h4,h5,h6,legend')].filter(visible);
       const titles=hs.map(x=>x.innerText);
       const relevant=hs.filter(x=>/VALIDE AS RESPOSTAS|RANKING/.test(x.innerText));
       const panels=relevant.map(x=>{const copy=x.parentElement.parentElement.cloneNode(true);copy.querySelectorAll('svg,figure,img,script').forEach(e=>e.remove());return copy.outerHTML.replace(/jsx-[a-z0-9]+/g,'').slice(0,22000)});
-      return {titles,panels,buttons:[...document.querySelectorAll('button')].filter(visible).map(e=>({text:e.innerText,disabled:e.disabled}))};
+      return {titles,panels,text:(document.querySelector('main')?.innerText||'').slice(0,12000),buttons:[...document.querySelectorAll('button')].filter(visible).map(e=>({text:e.innerText,disabled:e.disabled}))};
     }''')
 
 
@@ -136,7 +136,8 @@ async def main(args):
                 "versions": {"package": __version__, "adapter": ADAPTER_VERSION,
                              "playwright": importlib.metadata.version('playwright')},
                 "scenario": {"private": True, "participants": 2, "category_pool": POOL, "letters": list('ABCD'),
-                             "rounds": 4, "stop_mode": "Padrão", "time_mode": "Mais lento", "matches_requested": args.partidas},
+                             "rounds": 4, "stop_mode": "Padrão", "time_mode": "Mais lento", "matches_requested": args.partidas,
+                             "edge_probe": args.casos_limite},
                 "matches": [], "assertions": [], "final_result_verified": False, "cleanup": {}}
     vocab = Vocabulary.bundled()
     evidence['versions']['vocabulary'] = vocab.version
@@ -144,6 +145,7 @@ async def main(args):
         atomic_write(dest, canonical(evidence) + b'\n')
     lab = Lab()
     children = []
+    live = RUNTIME / ('v2-live-'+run_id+'.json')
     RUNTIME.mkdir(parents=True, exist_ok=True)
     (RUNTIME / 'tmp').mkdir(exist_ok=True)
     os.environ['TMPDIR'] = str(RUNTIME / 'tmp')
@@ -161,7 +163,11 @@ async def main(args):
             cdp_port = sock.getsockname()[1]
         lab.browser = await lab.pw.chromium.launch(channel='chrome', headless=not args.visivel,
                                                   args=[f'--remote-debugging-port={cdp_port}'] if args.cli else [])
-        lab.guest_browser = await lab.pw.chromium.launch(channel='chrome', headless=True)
+        with socket.socket() as sock:
+            sock.bind(('127.0.0.1', 0))
+            guest_port = sock.getsockname()[1]
+        lab.guest_browser = await lab.pw.chromium.launch(channel='chrome', headless=True,
+                                                       args=[f'--remote-debugging-port={guest_port}'] if args.cli else [])
         lab.context = await lab.browser.new_context(locale='pt-BR')
         lab.pages['principal'] = await lab.context.new_page()
         evidence['versions']['chrome'] = lab.browser.version
@@ -172,9 +178,15 @@ async def main(args):
             save()
             await lab.create_private()
             await configure(lab)
+            if args.cli:
+                live.write_text(json.dumps({'pid':os.getpid(), 'host':{'endpoint':f'http://127.0.0.1:{cdp_port}','url':lab.pages['host'].url},
+                                             'convidado':{'endpoint':f'http://127.0.0.1:{guest_port}','url':lab.pages['convidado'].url}}))
+                live.chmod(0o600)
             ports = {who: StopotsWeb(lab.pages[who]) for who in ('host', 'convidado')}
             controllers = {who: Controller(ports[who], vocab,
-                           Policy(request_stop=True, set_votes=True, confirm_review=True, continue_results=True,
+                           Policy(fill_blanks=not (args.casos_limite and who=='convidado'),
+                                  request_stop=not (args.casos_limite and who=='convidado'), set_votes=True, confirm_review=True,
+                                  continue_results=not args.casos_limite,
                                   seed='validacao-'+who),
                            EventLog(RUNTIME / f'v2-{run_id}-{match_index}-{who}.jsonl')) for who in ports}
             cli_process = None
@@ -202,7 +214,30 @@ async def main(args):
             deadline = time.monotonic() + args.tempo_limite
             anchors = {}
             last_save = 0
+            last_diagnostic = {}
+            edge = None
             while time.monotonic() < deadline and len(match['final']) < 2:
+                if args.casos_limite and edge is None:
+                    obs = await ports['convidado'].observe()
+                    if obs.phase == Phase.WRITING and obs.fields_stable and len(obs.fields)>=3:
+                        expected = {}
+                        for i, field in enumerate(obs.fields):
+                            candidate = vocab.choose(field.label, obs.letter, field.max_length, 'edge')
+                            if not candidate:
+                                raise ValueError('Sonda sem candidato para tema')
+                            value = 'ZEBRA' if i==0 else ('' if i==1 else (obs.letter+'XYZ' if i==2 else candidate[1]))
+                            await lab.pages['convidado'].locator(field.ref).fill(value)
+                            expected[field.ref] = game_value(value)
+                        await lab.pages['convidado'].locator(obs.fields[-1].ref).press('Tab')
+                        actual = await ports['convidado'].observe()
+                        if any(expected.get(f.ref)!=f.value for f in actual.fields):
+                            raise ValueError('Valores de teste do convidado não confirmados')
+                        edge = {'round':obs.context.round_index,'letter':obs.letter,
+                                'wrong_theme':obs.fields[0].label,'wrong_answer':'ZEBRA',
+                                'blank_theme':obs.fields[1].label,'blank_confirmed':not actual.fields[1].value,
+                                'unknown_theme':obs.fields[2].label,'unknown_answer':obs.letter+'XYZ',
+                                'wrong_unchecked':{},'unknown_preserved':{},'rankings':{}}
+                        match['edge'] = edge
                 results = await asyncio.gather(*(ctl.step() for ctl in controllers.values()))
                 for who, (obs, result) in zip(controllers, results):
                     if result:
@@ -229,20 +264,39 @@ async def main(args):
                             player['review_total'] = obs.review_total
                             player['max_groups'] = max(player.get('max_groups', 0), len(obs.groups))
                             player.setdefault('themes', {})[str(step)] = obs.review_theme
+                            if edge:
+                                for group in obs.groups:
+                                    if lookup(obs.review_theme or '') == lookup(edge['wrong_theme']) and group.text == edge['wrong_answer']:
+                                        edge['wrong_unchecked'][who] = not group.checked
+                                    if lookup(obs.review_theme or '') == lookup(edge['unknown_theme']) and group.text == edge['unknown_answer']:
+                                        edge['unknown_preserved'][who] = group.checked
                         elif obs.phase == Phase.ROUND_RESULT and obs.ranking:
                             player['ranking'] = asdict(obs.ranking)
+                            if edge:
+                                edge['rankings'][who] = asdict(obs.ranking)
                     if obs.phase == Phase.FINAL_RESULT and obs.ranking:
                         match['final'][who] = asdict(obs.ranking)
                         print(json.dumps({'match': match_index, 'player': who, 'final': asdict(obs.ranking)}), flush=True)
                     if obs.phase in (Phase.UNKNOWN, Phase.ROUND_RESULT, Phase.FINAL_RESULT):
                         key = who + ':' + str(index) + ':' + obs.phase
-                        if key not in match['diagnostic']:
+                        if key not in match['diagnostic'] or (obs.phase==Phase.UNKNOWN and time.monotonic()-last_diagnostic.get(key,0)>2):
                             diag = await diagnostic(lab.pages[who])
                             safe = re.sub(r'Anonimo\d+|LabHost|LabGuest', '[participante]', json.dumps(diag, ensure_ascii=False))
-                            match['diagnostic'][key] = json.loads(safe)
+                            match['diagnostic'][key] = lab.clean(json.loads(safe))
+                            last_diagnostic[key] = time.monotonic()
                         if args.sondar_ranking and obs.phase == Phase.ROUND_RESULT:
                             save()
                             raise ProbeComplete()
+                if edge and len(edge['rankings'])==2:
+                    evidence['assertions'] = [
+                        {'id':'blank_preserved','passed':edge['blank_confirmed']},
+                        {'id':'wrong_initial_unchecked','passed':edge['wrong_unchecked']=={'host':True,'convidado':True}},
+                        {'id':'unknown_preserved','passed':edge['unknown_preserved']=={'host':True,'convidado':True}},
+                        {'id':'round_rankings','passed':True}]
+                    if not all(a['passed'] for a in evidence['assertions']):
+                        raise ValueError('Sonda de casos limite falhou: '+repr(evidence['assertions']))
+                    save()
+                    raise ProbeComplete()
                 if time.monotonic() - last_save > 2:
                     match['stage'] = {who: {'phase': ctl.last_observation.phase, 'round': ctl.last_observation.context.round_index,
                         'review': ctl.last_observation.context.review_index, 'connected': ctl.last_observation.connected,
@@ -322,6 +376,7 @@ async def main(args):
                         pass
         print(json.dumps({'status': 'failed', 'reason': evidence['error']}), flush=True)
     finally:
+        live.unlink(missing_ok=True)
         for child in children:
             if child.returncode is None:
                 child.terminate()
@@ -353,4 +408,5 @@ if __name__ == '__main__':
     parser.add_argument('--visivel', action='store_true')
     parser.add_argument('--sondar-ranking', action='store_true', help='Encerra após capturar estrutura do primeiro ranking; não certifica partida')
     parser.add_argument('--cli', action='store_true', help='Executa o comando distribuído como único escritor do host')
+    parser.add_argument('--casos-limite', action='store_true', help='Sonda uma rodada com vazio, inicial errada e palavra desconhecida; não é certificação de partida')
     raise SystemExit(asyncio.run(main(parser.parse_args())))

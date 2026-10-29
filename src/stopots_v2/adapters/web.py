@@ -56,7 +56,7 @@ class StopotsWeb:
             names.add(name)
             alias = self.player_ids.setdefault(name, "participante_" + str(len(self.player_ids) + 1))
             rows.append((alias, int(score)))
-        signature = (raw['semantic'], tuple(rows))
+        signature = (raw['semantic'], raw.get('round_index'), tuple(rows))
         if signature != self.ranking_signature:
             self.ranking_signature, self.ranking_since = signature, self.clock()
         if self.clock() - self.ranking_since < .75:

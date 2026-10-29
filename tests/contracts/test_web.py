@@ -110,3 +110,16 @@ def test_16_fields_20_groups_and_round_final_rankings():
         obs = await port.observe()
         assert obs.phase == Phase.FINAL_RESULT and obs.ranking.semantic == "total_partida"
     browser_test(case)
+
+
+def test_ranking_uses_own_counter_and_final_over_background():
+    async def case(page, now):
+        await page.set_content('<header>RODADAS: 3 / 4 A</header><section class="ranking"><h2>RANKING DA RODADA 2/4</h2><div class="userRkg"><span class="nick">A</span><span class="points">65</span></div></section>')
+        port = StopotsWeb(page, clock=lambda: now[0])
+        obs = await port.observe()
+        assert obs.context.round_index == 2
+        await page.set_content('<section class="ranking" style="opacity:0"><h2>RANKING DA RODADA 4/4</h2><div class="userRkg"><span class="nick">A</span><span class="points">60</span></div></section><section class="ranking"><h2>RANKING\nFINAL</h2><div class="userRkg"><span class="nick">A</span><span class="points">250</span></div></section>')
+        assert (await port.observe()).phase == Phase.FINAL_RESULT
+        now[0] += 1
+        assert (await port.observe()).ranking.rows == (("participante_1", 250),)
+    browser_test(case)
