@@ -263,7 +263,7 @@ class Vocabulary:
                 if max_length is None or utf16_length(game_value(display)) <= max_length:
                     # Homônimos mantêm IDs/fonte; a palavra digitada não ganha
                     # peso extra por existir em vários municípios/categorias.
-                    result.setdefault(key, (lid, display))
+                    result.setdefault(game_value(display), (lid, display))
         return tuple(result[k] for k in sorted(result))
 
     def choose(self, label, letter, max_length=None, seed=""):
@@ -282,7 +282,9 @@ class Vocabulary:
         resolution = self.taxonomy.resolve(label)
         if resolution.state != "resolved":
             return Verdict.UNKNOWN, resolution.reason
-        if any(lookup(display) == key for _, display in self.candidates(label, letter)):
+        # A resposta já veio da UI: não reaplicar uma transformação que pode
+        # gerar novos espaços ao remover pontuação. Aceitar grafia e forma UI.
+        if any(key in (lookup(display), lookup(game_value(display))) for _, display in self.candidates(label, letter)):
             return Verdict.COMPATIBLE, "associação aprovada"
         return Verdict.UNKNOWN, "ausência na base não prova invalidade"
 

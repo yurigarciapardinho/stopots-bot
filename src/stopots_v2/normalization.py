@@ -3,6 +3,7 @@ import re
 import unicodedata
 
 NORMALIZATION_VERSION = "lookup-1"
+GAME_INPUT_VERSION = "stopots-web-pt-2026-10-29"
 
 
 def lookup(value: str) -> str:
@@ -11,7 +12,11 @@ def lookup(value: str) -> str:
 
 
 def game_value(value: str) -> str:
-    return "".join(c for c in unicodedata.normalize("NFD", value) if not unicodedata.combining(c)).upper().strip()
+    # Contrato medido no campo real: espaços repetidos são reduzidos antes
+    # da remoção de pontuação; hífen vira espaço, apóstrofo é removido.
+    value = re.sub(r"\s+", " ", value).replace("-", " ")
+    value = "".join(c for c in unicodedata.normalize("NFD", value) if not unicodedata.combining(c)).upper()
+    return re.sub(r"[^A-Z0-9 ]", "", value).strip()
 
 
 def utf16_length(value: str) -> int:

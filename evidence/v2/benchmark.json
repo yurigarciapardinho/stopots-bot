@@ -4,10 +4,10 @@
   "vocabulary": "d5a0a35bdd1a55810e9376e78f7d1db2d0ae894e5d1b57dd1b6104d6c6380382",
   "python": "3.12.3",
   "iterations": 2000,
-  "load_ms": 84.812,
-  "median_ms": 0.0085,
-  "p95_ms": 0.5799,
-  "max_ms": 2.4021,
+  "load_ms": 82.044,
+  "median_ms": 0.0102,
+  "p95_ms": 1.712,
+  "max_ms": 4.1488,
   "scope": "Consulta com limite 20 UTF-16; exclui navegador, parsing e rede",
   "city_coverage": {
     "Cidade": {

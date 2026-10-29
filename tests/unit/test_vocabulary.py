@@ -30,6 +30,25 @@ def test_normalization_and_utf16():
     assert utf16_length("a😀") == 3
 
 
+def test_observed_real_input_normalization_fixture():
+    fixture = json.loads((ROOT/'tests/contracts/fixtures/normalizacao-real.json').read_text())
+    assert fixture['status']=='probe_completed'
+    for case in fixture['cases']:
+        actual = case.get('after_blur', case.get('actual'))
+        assert game_value(case['requested']) == actual
+    # Busca lexical preserva grafia; a compatibilidade usa a forma renderizada.
+    assert lookup('Bem-te-vi') == 'bem-te-vi'
+
+
+def test_review_recognizes_observed_game_spelling(editorial):
+    v = Vocabulary.bundled()
+    assert v.evaluate('Ave', 'B', 'BEM TE VI')[0] == Verdict.COMPATIBLE
+    assert v.evaluate('Animal', 'B', 'BEM TE VI')[0] == Verdict.COMPATIBLE
+    assert v.evaluate('Ave', 'B', 'Bem-te-vi')[0] == Verdict.COMPATIBLE
+    fixture = upsert(editorial, 'Marca', 'A & B', 'approved', 'bootstrap-2026-10-29', 'Marca sintética de fixture')
+    assert Vocabulary(compile_release(fixture)).evaluate('Marca', 'A', 'A  B')[0] == Verdict.COMPATIBLE
+
+
 def test_directional_composition_and_unknown():
     v = Vocabulary.bundled()
     assert v.evaluate("Animal", "A", "Águia")[0] == Verdict.COMPATIBLE
