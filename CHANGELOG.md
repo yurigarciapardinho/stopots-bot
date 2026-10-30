@@ -1,5 +1,13 @@
 # Alterações
 
+## 2.0.1 — 29/10/2026, integração pública exercitada
+
+- Aceita a rota `/pt/game` e reconhece lobby com senha desabilitada.
+- Segmento público real das rodadas 3–8 até FIM DE JOGO!, com CLI concluída e pódio reconciliado.
+- 47 testes locais aprovados; monitor corrigido após corrida de conclusão e encerramento.
+- Vocabulário cobriu 5/72 campos públicos observados. Partida pública desde a primeira rodada e autonomia ampla seguem pendentes.
+- STOP com campos incompletos foi recusado pela interface; tempo mínimo não foi estabelecido.
+
 ## 2.0.0 — 29/10/2026, Padrão validado
 
 - Novo pacote Python com domínio imutável, controlador serial, adaptador Playwright e CLI pt-BR.

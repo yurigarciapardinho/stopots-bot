@@ -2,7 +2,7 @@
 
 Assistente local em Python 3.12 e Playwright, com interface e mensagens em português. O pacote v2 substitui a integração Selenium 3; o código original permanece em `stopots_bot/` e sua documentação em `docs/LEGADO.md`.
 
-**Versão 2.0.0: modo Padrão validado em três partidas privadas consecutivas.** Consulte `docs/v2/VALIDACAO.md` e `stopots-v2 diagnostico` antes de atribuir suporte a uma modalidade. Os testes locais usam DOM sintético; a certificação online exige o pacote instalado e a captura da partida completa.
+**Versão 2.0.1: entrada pública corrigida e segmento das rodadas 3–8 acompanhado até o final.** O modo Padrão foi validado anteriormente em três partidas privadas na 2.0.0. A cobertura aprovada foi de apenas 5/72 campos no ensaio público; consulte `docs/v2/VALIDACAO_PUBLICA.md` antes de atribuir autonomia geral ao bot. Consulte `docs/v2/VALIDACAO.md` e `stopots-v2 diagnostico` antes de atribuir suporte a uma modalidade. Os testes locais usam DOM sintético; a certificação online exige o pacote instalado e a captura da partida completa.
 
 ## No ambiente preparado
 

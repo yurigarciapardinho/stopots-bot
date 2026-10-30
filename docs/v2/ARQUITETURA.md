@@ -41,3 +41,13 @@ A embalagem nova utiliza `pyproject.toml`, pacote `src/stopots_v2` e comando `st
 Referências de API consultadas: [locators](https://playwright.dev/python/docs/api/class-locator) e [actionability](https://playwright.dev/python/docs/actionability). As verificações do Playwright complementam a revalidação do domínio; o retorno de `click` não substitui a leitura do efeito.
 
 A normalização de input observada em 29/10/2026 transforma Bem-te-vi em BEM TE VI e D'Ávila em DAVILA. A busca lexical preserva hífen e apóstrofo. A revisão compara grafia e forma de jogo; não reaplica cegamente a transformação ao texto recebido, pois a remoção de pontuação pode criar espaços. O comportamento foi aferido por fill e por teclas e a confirmação do adaptador foi verificada no Chrome.
+
+## Evidência pública da versão 2.0.1
+
+O fluxo JOGAR usa `/pt/game`; a listagem pública também pode abrir caminho numérico. A URL, isoladamente, não identifica visibilidade nem uma sala pública única. Manter invalidação por navegação e fases; não inventar identificador de servidor para a rota compartilhada. Lobby com senha desabilitada não é formulário de entrada.
+
+O botão STOP habilitado não prova aceitação: a UI recusou a ação com categorias incompletas. A política padrão de exigir todos permanece. Avisos conhecidos precisam de classificação explícita de bloqueio; a sonda atual registrou efeito indeterminado e fechou o aviso pela UI. Medir tempo mínimo somente com as demais pré-condições satisfeitas.
+
+O final público observado exibiu três posições do pódio. A camada de apresentação deve distinguir linhas retornadas, pódio e ranking completo; não atribuir ao participante controlado um total que a evidência não reconciliou. Valores no formulário não equivalem a ações do pacote: separar capacidade lexical, preenchimento observado e autoria registrada.
+
+O monitor deve aceitar a conclusão explícita da CLI mesmo quando sua observação independente ainda estabiliza. Sucesso do segmento não implica cobertura das rodadas anteriores; manter essa informação nos contratos de evidência. Ver VALIDACAO_PUBLICA.md.

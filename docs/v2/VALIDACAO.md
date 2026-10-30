@@ -41,3 +41,7 @@ Todos os navegadores e contextos criados pelos ensaios foram encerrados. O acess
 A sonda evidence/v2/normalizacao-real.json registrou caixa, acentos, hífen, apóstrofo, espaços, dígito e emoji. Hífen vira espaço; apóstrofo é removido. A grafia editorial e sua chave lexical permanecem preservadas. A comparação da apuração aceita a forma renderizada pela UI, sem transformar novamente o texto recebido. Isso corrigiu as sete confirmações de preenchimento indeterminadas de Bem-te-vi na execução inicial. Validade semântica de respostas de um caractere e Unicode fora dos exemplos medidos não foi certificada.
 
 Smoke da CLI com navegador próprio: home reconhecida, prazo controlado encerrado e mesmo perfil reaberto. O PID que detinha o perfil não permaneceu ativo após fechamento; o Chrome pode deixar um arquivo de lock residual. Evidência: smoke-navegador-proprio.json.
+
+## Ensaio público posterior — 2.0.1
+
+O comando instalado concluiu um segmento público das rodadas 3–8 com código 0 e FIM DE JOGO! capturado. Pódio 490/215/170 reconciliado. A base cobriu 5/72 campos; houve valores não atribuíveis às ações da CLI. São 47 testes locais após correções de rota, lobby e monitor. Não é certificação pública desde a rodada 1. Detalhes, limites e evidências em [VALIDACAO_PUBLICA.md](VALIDACAO_PUBLICA.md).

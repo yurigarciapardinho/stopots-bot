@@ -122,5 +122,38 @@
     "stale_lock_artifact": true,
     "live_test_controls_remaining": 0
   },
-  "final_wheel_sha256": "c6a8a8df468d3e54588b1bfe1da91d0770b2145f8e7d0f4e67f472b6f31a7835"
+  "final_wheel_sha256": "c6a8a8df468d3e54588b1bfe1da91d0770b2145f8e7d0f4e67f472b6f31a7835",
+  "current_release_version": "2.0.1",
+  "latest_document_update": "2026-10-29T21:43:42.351690-03:00",
+  "public_validation": {
+    "run_id": "af6fb103c8a8",
+    "as_of": "2026-10-29T21:43:42.351690-03:00",
+    "version": "2.0.1",
+    "subject": "installed-v2-cli-public",
+    "cli_concluded": true,
+    "final_independently_verified": true,
+    "writing_rounds": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "complete_public_match_certified": false,
+    "podium_points": [
+      490,
+      215,
+      170
+    ],
+    "podium_sums_reconciled": true,
+    "own_final_score_verified": false,
+    "approved_covered_fields": 5,
+    "observed_fields": 72,
+    "local_tests_passed": 47,
+    "report": "docs/v2/VALIDACAO_PUBLICA.md",
+    "evidence": "evidence/v2/PUBLICA_RESULTADO.json",
+    "wheel_sha256": "6b6c137c8ff6a1296c0a888fd5b66f6d1a03823cdd2012cb71663fd640ac286b",
+    "harness_patched_after_run": true
+  }
 }

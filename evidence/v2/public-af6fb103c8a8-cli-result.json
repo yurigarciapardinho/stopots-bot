@@ -1,0 +1,21 @@
+{
+  "status": "concluido",
+  "final_result_verified": true,
+  "ranking": {
+    "rows": [
+      [
+        "participante_16",
+        490
+      ],
+      [
+        "participante_21",
+        215
+      ],
+      [
+        "participante_24",
+        170
+      ]
+    ],
+    "semantic": "total_partida"
+  }
+}
