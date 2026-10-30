@@ -1,5 +1,14 @@
 # Alterações
 
+## 2.1.0 — aplicativo desktop
+
+- Interface Qt Quick/PySide6 em português, com temas claro, escuro e sistema, superfícies orgânicas e painel compacto expansível.
+- Perfis Só preencher, Só observar, Automático e Personalizado; permissões aplicadas ao executor em execução, com confirmação da revisão.
+- Chrome dedicado com vida independente do aplicativo; fechamento pelo X preserva o navegador, final pausa a ajuda e reabertura observa inicialmente pausada.
+- Entrada por convite com apelido salvo editável, senha condicional preservada exatamente e confirmação de sala. Aviso vazio de acessibilidade não é tratado como modal bloqueante.
+- Empacotamento Linux portátil e `.deb`, autoverificação das telas e instalador por fonte para Windows.
+- Vocabulário e decisões editoriais da 2.0.3 preservados. O alcance específico desta entrega está em docs/v2/DESKTOP_2_1.md; evidências históricas mantêm suas versões.
+
 ## 2.0.3 — 30/10/2026, catálogo e cobertura dos temas
 
 - Cinco coletas públicas úteis, 31 temas observados; seis entradas porque uma encontrou somente o final.

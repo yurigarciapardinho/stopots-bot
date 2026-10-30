@@ -1,10 +1,10 @@
-# Trabalho no StopotS v2
+# Trabalho no StopotS desktop 2.1
 
-Usar este worktree para desenvolver. A raiz autorizada no computador é /home/yuzlkk/hack/stopots. O clone stopots-bot é o baseline legado; este worktree fica em stopots-v2. Conferir branch e alterações do usuário antes de editar.
+Usar este worktree para desenvolver. A raiz autorizada no computador é /home/yuzlkk/hack/stopots. O clone stopots-bot é o baseline legado; stopots-v2 preserva a versão funcional 2.0.3. Este worktree é stopots-desktop, branch codex/v2-desktop. Conferir branch e alterações do usuário antes de editar.
 
-Ler primeiro ../planejamento-v2/RETOMADA_V2.md, depois PLANO_V2_PTBR.md e BACKLOG_V2.json apenas nas partes do marco em execução. Não reinstalar nem repetir o estudo inicial sem uma causa concreta. As skills stopots-v2-desenvolver e stopots-ui-validar complementam o procedimento.
+Ler primeiro docs/v2/DESKTOP_2_1.md e evidence/v2/DESKTOP_RESULTADO.json. O checkpoint ../.runtime/checkpoint-v2-desenvolvimento.json identifica a entrega atual. ../planejamento-v2/RETOMADA_V2.md e os arquivos associados conservam o histórico da 2.0.3; não tratá-los como descrição da interface desktop atual. Não reinstalar nem repetir o estudo inicial sem uma causa concreta. As skills stopots-v2-desenvolver e stopots-ui-validar complementam o procedimento.
 
-Ambiente: ../.runtime/venv/bin/python, requirements-lab.lock e scripts/lab.sh. Executar scripts/lab.sh testar para regressão local e scripts/lab.sh doctor para diagnóstico. O laboratório e o adaptador mínimo estão em tools/stopots_lab.py; eles não são a implementação completa da v2. Consultar docs/LABORATORIO.md.
+Ambiente desktop: ../.runtime/venv-desktop/bin/python. Wheel isolado: ../.runtime/venv-desktop-release/bin/python. scripts/desktop.sh abre a interface; executar python -m pytest -q pelo ambiente desktop para regressão e stopots-assistente --verificar-ui para telas sem partida. O laboratório antigo usa ../.runtime/venv e scripts/lab.sh; tools/stopots_lab.py continua sendo preparação auxiliar. Não misturar o resultado do helper com o da GUI distribuída. Consultar docs/LABORATORIO.md e o guia desktop.
 
 Separar domínio/controlador/adaptador/curadoria na v2. Tema cadastrado, campo da rodada e grupo de revisão são coleções distintas. Descobrir a lista completa de campos e confirmar estabilidade antes de preencher. Não interpretar snapshots parciais de animação como formulário completo.
 

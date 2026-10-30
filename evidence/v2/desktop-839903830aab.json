@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "run_id": "839903830aab",
+  "version": "2.1.0",
+  "subject": "desktop-gui",
+  "scenario": {
+    "private": true,
+    "participants": 2,
+    "rounds": 4,
+    "letters": "ABCD",
+    "pool": [
+      "Profissão",
+      "Programa de TV",
+      "Fantasia",
+      "Vilão",
+      "Animal",
+      "Carro",
+      "Brinquedo",
+      "Objeto",
+      "Sabor de Pizza",
+      "Palavra em Inglês",
+      "Tem na academia",
+      "Remédio",
+      "Comida",
+      "Time Esportivo",
+      "Música",
+      "Ave"
+    ]
+  },
+  "events": [],
+  "cleanup": {
+    "host_closed": true,
+    "gui_closed": true,
+    "dedicated_chrome_closed": true
+  }
+}

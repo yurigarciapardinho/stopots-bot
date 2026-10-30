@@ -1,0 +1,193 @@
+{
+  "schema_version": 1,
+  "run_id": "desktop-release-2.1.0-20261030",
+  "observed_at": "2026-10-30T15:48:43.536638-03:00",
+  "subject": "desktop_release_evidence_aggregation",
+  "version": "2.1.0",
+  "branch": "codex/v2-desktop",
+  "base_commit": "38906ec5bc1937b993003c3dfcfa48c246e42ff4",
+  "backup": {
+    "archive": "/home/yuzlkk/hack/stopots/backups/stopots-v2-2.0.3-20261030-121948.tar.gz",
+    "bytes": 32221816,
+    "sha256": "3481d13082bdb5d09db96f75df9fc2c43fc6a68b22f7b1af85357a6c3508392c",
+    "verified_files": 148,
+    "restoration_verified": true,
+    "git_bundle_verified": true,
+    "baseline_commit": "38906ec5bc1937b993003c3dfcfa48c246e42ff4"
+  },
+  "native_tests": {
+    "passed": 69,
+    "duration_s": 20.55,
+    "evidence": "DESKTOP_TESTES.json"
+  },
+  "ubuntu": {
+    "versions": [
+      "24.04",
+      "26.04"
+    ],
+    "installed_deb_passed": true,
+    "source_contracts_24_04": {
+      "passed": 69,
+      "duration_s": 30.05
+    },
+    "ui_backends": [
+      "offscreen",
+      "xcb/Xvfb"
+    ],
+    "scales": [
+      1,
+      1.25,
+      1.5
+    ],
+    "scope": "isolated_userspace_not_all_desktop_compositors",
+    "evidence": "DESKTOP_UBUNTU.json"
+  },
+  "package": {
+    "installed_wheel": true,
+    "matched_runtime_files": 25,
+    "frozen_assets_match": true,
+    "installed_gui_exit": 0,
+    "playwright": "1.64.1",
+    "pyside6": "6.10.2",
+    "artifacts": {
+      "stopots-assistente_2.1.0_amd64.deb": {
+        "bytes": 260668454,
+        "sha256": "3859a4d2cf8a0f722c485712eafd9b844d10a3de66ad08a6ada8516d1debdef1"
+      },
+      "stopots_bot-2.1.0-py3-none-any.whl": {
+        "bytes": 522924,
+        "sha256": "29391135973dc580f6a3e06867f85e42de06dd4245ba16ef425f5d63357e6e54"
+      },
+      "stopots-assistente-2.1.0-linux-x86_64.tar.gz": {
+        "bytes": 260762266,
+        "sha256": "5c11fa1b717fe779c874cf15c0a2cab7087ae8b4a69b0f39379c8b0442edf0fa"
+      }
+    },
+    "evidence": "DESKTOP_PACOTE.json"
+  },
+  "private_gui_validation": {
+    "subject": "real_desktop_gui_from_source_not_frozen_binary_online",
+    "run_id": "20d13cd64f18",
+    "scenario": {
+      "private": true,
+      "participants": 2,
+      "rounds": 4,
+      "letters": "ABCD",
+      "pool": [
+        "Profissão",
+        "Programa de TV",
+        "Fantasia",
+        "Vilão",
+        "Animal",
+        "Carro",
+        "Brinquedo",
+        "Objeto",
+        "Sabor de Pizza",
+        "Palavra em Inglês",
+        "Tem na academia",
+        "Remédio",
+        "Comida",
+        "Time Esportivo",
+        "Música",
+        "Ave"
+      ]
+    },
+    "final_result_verified": true,
+    "scores": [
+      240,
+      240
+    ],
+    "paused_on_final": true,
+    "chrome_survived_app_exit": true,
+    "reopened_paused_same_chrome": true,
+    "cleanup": {
+      "host_closed": true,
+      "gui_closed": true,
+      "dedicated_chrome_closed": true
+    },
+    "evidence": "desktop-20d13cd64f18.json",
+    "later_changes": [
+      "Refill nickname on invitation after navigation",
+      "Focus password error only once",
+      "Additional GUI diagnostics"
+    ],
+    "same_full_match_rerun_after_later_changes": false
+  },
+  "public_controlled_entry": {
+    "run_id": "368bbcd541a4",
+    "participants": 2,
+    "rounds_completed": 0,
+    "nickname_applied": true,
+    "native_qt_platform": "wayland",
+    "chrome_survived_app_exit": true,
+    "reopened_paused_same_chrome": true,
+    "immediate_cleanup": {
+      "host_closed": true,
+      "gui_closed": true,
+      "dedicated_chrome_closed": false
+    },
+    "evidence": "desktop-368bbcd541a4.json"
+  },
+  "cleanup_audit": {
+    "observed_at": "2026-10-30T15:48:43.536638-03:00",
+    "owned_test_chrome_profile_processes": [],
+    "owned_test_containers": [],
+    "method": "process arguments restricted to owned test profile prefixes and Docker ancestor image filters",
+    "previous_immediate_false_preserved": true
+  },
+  "vocabulary": {
+    "approved_associations": 7986,
+    "lexemes": 7762,
+    "pending_associations": 2050,
+    "sha256": "2712e9fa400d53fc6d5f7e8e3961931cabf79a495ee90048f9088e44822bc658",
+    "source_sha256": "5ea76a5b843a6f96b4bea5e40221cd4f72f71565aeb8d32654f3a94ff65d3909",
+    "changed_from_2_0_3": false
+  },
+  "environment": {
+    "native_desktop": "Pop!_OS 24.04 LTS / COSMIC / Wayland",
+    "chrome": "151.0.7922.137",
+    "ubuntu_package_architecture": "amd64",
+    "gui_render_backend_default": "software"
+  },
+  "launch": {
+    "shortcut": "/home/yuzlkk/hack/stopots/StopotS Assistente.desktop",
+    "development": "/home/yuzlkk/hack/stopots/stopots-desktop/scripts/desktop.sh",
+    "default_profile": "Só preencher",
+    "dedicated_chrome_stays_open": true,
+    "application_x_stops_assistance": true,
+    "end_of_match_pauses": true,
+    "reopen_paused": true
+  },
+  "platforms": {
+    "ubuntu": "deb_install_and_ui_in_24_04_and_26_04_containers",
+    "pop_os": "native_wayland_real_gui_entry_and_private_match",
+    "windows": "source_installer_available_native_validation_pending",
+    "macos": "later_priority_native_validation_pending"
+  },
+  "historical_standard_certification": {
+    "version": "2.0.0",
+    "run_id": "b03849d5f071",
+    "profile": "private_standard_ABCD_16_themes"
+  },
+  "limitations": [
+    "A partida privada GUI foi executada a partir do fonte; o pacote final instalado foi verificado sem nova partida online.",
+    "Entrada pública controlada sem senha não certifica uma partida pública integral.",
+    "Windows, macOS, Host, Maioria, Desativado e recuperação geral de rede não foram certificados nesta entrega.",
+    "Tempo mínimo universal de STOP não foi estabelecido.",
+    "Pausa não desfaz ações já enviadas. Manter Chrome aberto não evita inatividade ou expiração imposta pelo servidor."
+  ],
+  "environment_diagnostic": "DESKTOP_AMBIENTE_DIAGNOSTICO.json",
+  "prior_attempt_evidence": [
+    "DESKTOP_UBUNTU_ANTES_DEPENDENCIAS_CHROME.json",
+    "DESKTOP_UBUNTU_ANTES_RETOMADA.json",
+    "DESKTOP_UBUNTU_CDP_CHROME_INDEPENDENTE.json",
+    "DESKTOP_UBUNTU_CDP_CONTEXTO_TEMPORARIO.json",
+    "DESKTOP_UBUNTU_CDP_DIAGNOSTICO.json",
+    "DESKTOP_UBUNTU_CDP_PERFIL_PERSISTENTE.json",
+    "DESKTOP_UBUNTU_MEMORIA_COMPARTILHADA.json",
+    "DESKTOP_UBUNTU_TENTATIVA_CAPTURA_FD.json"
+  ],
+  "legacy_baseline_preserved": true,
+  "functional_2_0_3_preserved": true,
+  "github_pushed": false
+}

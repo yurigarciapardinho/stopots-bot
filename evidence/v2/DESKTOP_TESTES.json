@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "version": "2.1.0",
+  "observed_at": "2026-10-30T18:46:11.157414+00:00",
+  "subject": "source_native_contracts_and_units",
+  "exit_code": 0,
+  "output": ".....................................................................    [100%]\n69 passed in 20.55s\n",
+  "stderr": ""
+}

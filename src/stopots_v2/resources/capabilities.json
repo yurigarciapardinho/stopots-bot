@@ -1,6 +1,6 @@
 {
   "as_of": "2026-10-30",
-  "release_status": "validado_padrao",
+  "release_status": "desktop_gui_com_validacao_dirigida",
   "standard_mode_certified": true,
   "host_mode_certified": false,
   "disabled_mode_certified": false,
@@ -23,12 +23,12 @@
     "all_assertions_passed": true
   },
   "final_screen": "FIM DE JOGO!",
-  "local_tests_passed": 58,
+  "local_tests_passed": 69,
   "normalization_revision_commit": "98cfefe4e37de1deddbcfead6fceb841c2f61a59",
   "game_input_normalization": "stopots-web-pt-2026-10-29",
   "normalization_probe_passed": true,
   "certified_release_version": "2.0.0",
-  "current_release_certification": "validacao_local_e_catalogo_publico",
+  "current_release_certification": "testes_locais_e_gui_privada_ver_DESKTOP_RESULTADO",
   "current_public_coverage_replay": {
     "subject": "offline",
     "baseline": 64,
@@ -50,5 +50,23 @@
     "entries": 6,
     "topics": 31,
     "full_matches_completed": 0
+  },
+  "desktop": {
+    "implemented": true,
+    "default_profile": "Só preencher",
+    "chrome_survives_app_exit": true,
+    "pause_on_final": true,
+    "reopen_paused": true,
+    "live_policy_revision": true,
+    "private_gui_run": "20d13cd64f18",
+    "private_gui_rounds": 4,
+    "private_gui_scores": [
+      240,
+      240
+    ],
+    "vocabulary_changed": false,
+    "windows_native_verified": false,
+    "macos_native_verified": false,
+    "ubuntu_package_verification": "evidence/v2/DESKTOP_RESULTADO.json"
   }
 }

@@ -117,6 +117,7 @@ def parser():
     p.add_argument("--version", action="version", version=__version__)
     sub = p.add_subparsers(dest="command", required=True)
     sub.add_parser("diagnostico", help="Versões, base instalada e capacidades verificadas")
+    sub.add_parser("desktop", help="Abrir o aplicativo visual (requer opção desktop)")
     run = sub.add_parser("executar", help="Abrir Chrome dedicado e acompanhar uma partida")
     run.add_argument("--modo", choices=["observar", "assistido", "automatico"], default="assistido",
                      help="As opções de ação são explícitas em qualquer modo")
@@ -161,6 +162,9 @@ def parser():
 def main(argv=None):
     args = parser().parse_args(argv)
     try:
+        if args.command == "desktop":
+            from .desktop import main as desktop_main
+            return desktop_main()
         if args.command == "executar":
             import re
             if not re.fullmatch(r"https://stopots\.com/pt(?:/(?:\d+|game))?/?", args.url):

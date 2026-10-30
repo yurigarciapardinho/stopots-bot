@@ -1,0 +1,81 @@
+{
+  "platforms": [
+    {
+      "ubuntu": "26.04",
+      "passed": true,
+      "steps": [
+        {
+          "step": "install_deb",
+          "exit": 0,
+          "output": "Selecting previously unselected package stopots-assistente.\n(Reading database ... 10784 files and directories currently installed.)\nPreparing to unpack .../stopots-assistente_2.1.0_amd64.deb ...\nUnpacking stopots-assistente (2.1.0) ...\nSetting up stopots-assistente (2.1.0) ...\n",
+          "stderr": ""
+        },
+        {
+          "step": "installed_offscreen",
+          "exit": 0,
+          "output": "{\"passed\": true, \"frames\": [{\"theme\": \"claro\", \"compact\": false, \"width\": 940, \"height\": 730, \"logical_height\": 730, \"dpr\": 1.0}, {\"theme\": \"escuro\", \"compact\": false, \"width\": 940, \"height\": 730, \"logical_height\": 730, \"dpr\": 1.0}, {\"theme\": \"escuro\", \"compact\": true, \"width\": 380, \"height\": 580, \"logical_height\": 580, \"dpr\": 1.0}, {\"theme\": \"claro\", \"compact\": false, \"width\": 940, \"height\": 730, \"logical_height\": 730, \"dpr\": 1.0}], \"qml_errors\": [], \"driver_ready\": true, \"online\": false}\n",
+          "stderr": "This plugin does not support propagateSizeHints()\nThis plugin does not support propagateSizeHints()\nThis plugin does not support propagateSizeHints()\nThis plugin does not support propagateSizeHints()\n"
+        },
+        {
+          "step": "installed_xcb",
+          "exit": 0,
+          "output": "{\"passed\": true, \"frames\": [{\"theme\": \"claro\", \"compact\": false, \"width\": 940, \"height\": 730, \"logical_height\": 730, \"dpr\": 1.0}, {\"theme\": \"escuro\", \"compact\": false, \"width\": 940, \"height\": 730, \"logical_height\": 730, \"dpr\": 1.0}, {\"theme\": \"escuro\", \"compact\": true, \"width\": 380, \"height\": 580, \"logical_height\": 580, \"dpr\": 1.0}, {\"theme\": \"claro\", \"compact\": false, \"width\": 940, \"height\": 730, \"logical_height\": 730, \"dpr\": 1.0}], \"qml_errors\": [], \"driver_ready\": true, \"online\": false}\n",
+          "stderr": ""
+        },
+        {
+          "step": "installed_scale_1.25",
+          "exit": 0,
+          "output": "{\"passed\": true, \"frames\": [{\"theme\": \"claro\", \"compact\": false, \"width\": 1175, \"height\": 913, \"logical_height\": 730, \"dpr\": 1.0}, {\"theme\": \"escuro\", \"compact\": false, \"width\": 1175, \"height\": 913, \"logical_height\": 730, \"dpr\": 1.0}, {\"theme\": \"escuro\", \"compact\": true, \"width\": 475, \"height\": 725, \"logical_height\": 580, \"dpr\": 1.0}, {\"theme\": \"claro\", \"compact\": false, \"width\": 1175, \"height\": 913, \"logical_height\": 730, \"dpr\": 1.0}], \"qml_errors\": [], \"driver_ready\": true, \"online\": false}\n",
+          "stderr": "This plugin does not support propagateSizeHints()\nThis plugin does not support propagateSizeHints()\nThis plugin does not support propagateSizeHints()\nThis plugin does not support propagateSizeHints()\n"
+        },
+        {
+          "step": "installed_scale_1.5",
+          "exit": 0,
+          "output": "{\"passed\": true, \"frames\": [{\"theme\": \"claro\", \"compact\": false, \"width\": 1410, \"height\": 1095, \"logical_height\": 730, \"dpr\": 1.0}, {\"theme\": \"escuro\", \"compact\": false, \"width\": 1410, \"height\": 1095, \"logical_height\": 730, \"dpr\": 1.0}, {\"theme\": \"escuro\", \"compact\": true, \"width\": 570, \"height\": 870, \"logical_height\": 580, \"dpr\": 1.0}, {\"theme\": \"claro\", \"compact\": false, \"width\": 1410, \"height\": 1095, \"logical_height\": 730, \"dpr\": 1.0}], \"qml_errors\": [], \"driver_ready\": true, \"online\": false}\n",
+          "stderr": "This plugin does not support propagateSizeHints()\nThis plugin does not support propagateSizeHints()\nThis plugin does not support propagateSizeHints()\nThis plugin does not support propagateSizeHints()\n"
+        }
+      ],
+      "scope": "isolated_userspace_offscreen_xvfb_no_online_match"
+    },
+    {
+      "ubuntu": "24.04",
+      "passed": false,
+      "steps": [
+        {
+          "step": "install_deb",
+          "exit": 0,
+          "output": "Selecting previously unselected package stopots-assistente.\n(Reading database ... 21385 files and directories currently installed.)\nPreparing to unpack .../stopots-assistente_2.1.0_amd64.deb ...\nUnpacking stopots-assistente (2.1.0) ...\nSetting up stopots-assistente (2.1.0) ...\nProcessing triggers for hicolor-icon-theme (0.17-2) ...\n",
+          "stderr": ""
+        },
+        {
+          "step": "installed_offscreen",
+          "exit": 0,
+          "output": "{\"passed\": true, \"frames\": [{\"theme\": \"claro\", \"compact\": false, \"width\": 940, \"height\": 730, \"logical_height\": 730, \"dpr\": 1.0}, {\"theme\": \"escuro\", \"compact\": false, \"width\": 940, \"height\": 730, \"logical_height\": 730, \"dpr\": 1.0}, {\"theme\": \"escuro\", \"compact\": true, \"width\": 380, \"height\": 580, \"logical_height\": 580, \"dpr\": 1.0}, {\"theme\": \"claro\", \"compact\": false, \"width\": 940, \"height\": 730, \"logical_height\": 730, \"dpr\": 1.0}], \"qml_errors\": [], \"driver_ready\": true, \"online\": false}\n",
+          "stderr": "This plugin does not support propagateSizeHints()\nThis plugin does not support propagateSizeHints()\nThis plugin does not support propagateSizeHints()\nThis plugin does not support propagateSizeHints()\n"
+        },
+        {
+          "step": "installed_xcb",
+          "exit": 0,
+          "output": "{\"passed\": true, \"frames\": [{\"theme\": \"claro\", \"compact\": false, \"width\": 940, \"height\": 730, \"logical_height\": 730, \"dpr\": 1.0}, {\"theme\": \"escuro\", \"compact\": false, \"width\": 940, \"height\": 730, \"logical_height\": 730, \"dpr\": 1.0}, {\"theme\": \"escuro\", \"compact\": true, \"width\": 380, \"height\": 580, \"logical_height\": 580, \"dpr\": 1.0}, {\"theme\": \"claro\", \"compact\": false, \"width\": 940, \"height\": 730, \"logical_height\": 730, \"dpr\": 1.0}], \"qml_errors\": [], \"driver_ready\": true, \"online\": false}\n",
+          "stderr": ""
+        },
+        {
+          "step": "installed_scale_1.25",
+          "exit": 0,
+          "output": "{\"passed\": true, \"frames\": [{\"theme\": \"claro\", \"compact\": false, \"width\": 1175, \"height\": 913, \"logical_height\": 730, \"dpr\": 1.0}, {\"theme\": \"escuro\", \"compact\": false, \"width\": 1175, \"height\": 913, \"logical_height\": 730, \"dpr\": 1.0}, {\"theme\": \"escuro\", \"compact\": true, \"width\": 475, \"height\": 725, \"logical_height\": 580, \"dpr\": 1.0}, {\"theme\": \"claro\", \"compact\": false, \"width\": 1175, \"height\": 913, \"logical_height\": 730, \"dpr\": 1.0}], \"qml_errors\": [], \"driver_ready\": true, \"online\": false}\n",
+          "stderr": "This plugin does not support propagateSizeHints()\nThis plugin does not support propagateSizeHints()\nThis plugin does not support propagateSizeHints()\nThis plugin does not support propagateSizeHints()\n"
+        },
+        {
+          "step": "installed_scale_1.5",
+          "exit": 0,
+          "output": "{\"passed\": true, \"frames\": [{\"theme\": \"claro\", \"compact\": false, \"width\": 1410, \"height\": 1095, \"logical_height\": 730, \"dpr\": 1.0}, {\"theme\": \"escuro\", \"compact\": false, \"width\": 1410, \"height\": 1095, \"logical_height\": 730, \"dpr\": 1.0}, {\"theme\": \"escuro\", \"compact\": true, \"width\": 570, \"height\": 870, \"logical_height\": 580, \"dpr\": 1.0}, {\"theme\": \"claro\", \"compact\": false, \"width\": 1410, \"height\": 1095, \"logical_height\": 730, \"dpr\": 1.0}], \"qml_errors\": [], \"driver_ready\": true, \"online\": false}\n",
+          "stderr": "This plugin does not support propagateSizeHints()\nThis plugin does not support propagateSizeHints()\nThis plugin does not support propagateSizeHints()\nThis plugin does not support propagateSizeHints()\n"
+        },
+        {
+          "failure": "TimeoutExpired"
+        }
+      ],
+      "scope": "isolated_userspace_offscreen_xvfb_no_online_match"
+    }
+  ]
+}

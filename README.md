@@ -1,10 +1,24 @@
-# StopotS Bot 2.0
+# StopotS Assistente 2.1
+
+Aplicativo local em pt-BR, com painel compacto, temas claro/escuro e ajuda ajustável durante o jogo. O perfil padrão **Só preencher** mantém STOP, votos e avanço sob seu controle. O Chrome dedicado permanece aberto quando você fecha o aplicativo; ao final de uma partida a ajuda é pausada.
+
+## Aplicativo visual
+
+No computador preparado, abra `StopotS Assistente.desktop` na pasta `/home/yuzlkk/hack/stopots`. O desenvolvimento 2.1 fica em `stopots-desktop/`; `stopots-v2/` conserva a versão funcional 2.0.3. Também é possível iniciar com `stopots-desktop/scripts/desktop.sh`.
+
+Escolha **Entrar por convite**, cole o link, confira seu apelido e selecione **Sim** ou **Não** para senha. Com **Sim**, informe a senha exatamente como recebeu. O aplicativo preenche a entrada pela interface real do jogo e confirma a sala antes de iniciar a ajuda. O código `08193` mantém seu zero inicial. A senha não é salva nas preferências ou no histórico.
+
+Em **Sua ajuda**, escolha um perfil e ajuste cada ação. Mudanças valem para as próximas ações após a indicação de aplicação. Trocar o perfil mantém uma pausa existente. **Pausar ajuda** mantém o jogo disponível para você; **Retomar ajuda** lê novamente a situação da partida.
+
+O pacote Ubuntu `.deb` e a distribuição portátil ficam em `../.runtime/dist-desktop`. O Chrome é necessário para jogar. Instalação por fonte: `python -m pip install '.[desktop]'` e `stopots-assistente`. A autoverificação `stopots-assistente --verificar-ui` exercita as telas em um runtime separado sem entrar em uma partida. Guia, alcance dos testes e opções Windows em [DESKTOP_2_1.md](docs/v2/DESKTOP_2_1.md).
+
+## Núcleo e vocabulário preservados
 
 Assistente local em Python 3.12 e Playwright, com interface e mensagens em português. O pacote v2 substitui a integração Selenium 3; o código original permanece em `stopots_bot/` e sua documentação em `docs/LEGADO.md`.
 
 **Versão 2.0.3: catálogo público e vocabulário nos 80 temas cadastrados.** Cinco coletas rápidas trouxeram 31 temas; a base ganhou 2.000 aprovações e reconhece PDA, PCH, JLR, PÁF e as siglas da sogra. A matriz atende 1.692/2.080 células; todos os temas têm candidatos, com lacunas de letras explícitas. Os replays são offline e a partida pública integral permanece pendente. Consulte `docs/v2/CATALOGO_E_VOCABULARIO.md` e `stopots-v2 diagnostico` para o alcance atual. A certificação histórica de partidas mantém suas versões e perfis.
 
-## No ambiente preparado
+## CLI da versão funcional preservada
 
 ```bash
 cd /home/yuzlkk/hack/stopots/stopots-v2
