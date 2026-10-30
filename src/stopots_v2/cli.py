@@ -163,7 +163,7 @@ def main(argv=None):
     try:
         if args.command == "executar":
             import re
-            if not re.fullmatch(r"https://stopots\.com/pt(?:/\d+)?/?", args.url):
+            if not re.fullmatch(r"https://stopots\.com/pt(?:/(?:\d+|game))?/?", args.url):
                 raise ValueError("Use a home ou URL de sala do StopotS em português")
             result = asyncio.run(execute(args))
         elif args.command in ("pausar", "retomar"):

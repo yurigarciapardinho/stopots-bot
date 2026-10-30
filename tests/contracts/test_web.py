@@ -46,6 +46,17 @@ def test_active_review_over_old_writing_and_hidden_disconnection():
     browser_test(case)
 
 
+def test_public_lobby_disabled_password_is_not_entry_form():
+    async def case(page, now):
+        await page.set_content('<h6>CONFIGURAÇÕES</h6><h4>CATEGORIAS (12)</h4>'
+                               '<input type="password" disabled placeholder="Sala pública">')
+        port = StopotsWeb(page, clock=lambda: now[0])
+        assert (await port.observe()).phase == Phase.ROOM
+        await page.set_content('<input type="password"><button>ENTRAR</button>')
+        assert (await port.observe()).phase == Phase.ENTERING
+    browser_test(case)
+
+
 def test_fill_normalization_manual_race_and_round_invalidation():
     async def case(page, now):
         await page.set_content(WRITING)

@@ -73,7 +73,7 @@
     const themes=q('h2,h3,h4,legend',root).filter(h=>h!==reviewHeading[0]);
     if (themes.length===1) review_theme=txt(themes[0]);
   } else if(writingHeading.length===1 && inputs.length && round && letter) phase='ESCRITA';
-  else if(q('input[type="password"]').length || (control('ENTRAR') && /Você foi convidado/.test(bodyText))) phase='ENTRANDO';
+  else if(q('input[type="password"]').some(e=>!e.disabled && !e.readOnly) || (control('ENTRAR') && /Você foi convidado/.test(bodyText))) phase='ENTRANDO';
   else if(control('CRIAR SALA')) phase='INICIO';
   else if(headings.some(h=>/^CATEGORIAS \(\d+\)/.test(txt(h))) && /CONFIGURAÇÕES/.test(bodyText)) phase='SALA';
   const fields=phase==='ESCRITA'?inputs.map(e=>({ref:ref(e),label:[...(e.labels||[])].map(txt).join(' ') || txt(e.closest('fieldset')?.querySelector('legend')),
