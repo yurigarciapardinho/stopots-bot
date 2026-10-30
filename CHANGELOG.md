@@ -1,5 +1,14 @@
 # Alterações
 
+## 2.0.3 — 30/10/2026, catálogo e cobertura dos temas
+
+- Cinco coletas públicas úteis, 31 temas observados; seis entradas porque uma encontrou somente o final.
+- Significados e aliases de PDA, PCH, JLR, PÁF, MSÉ, MST, MSU, CEP e FLV registrados conforme definição do usuário. PÁF e JLR têm composição explícita.
+- Mais 2.000 aprovações: 7.986 associações / 7.762 lexemas, com 2.050 pendências preservadas.
+- Todos os 80 temas têm candidatos em pelo menos oito iniciais; matriz 1.692/2.080 células. Replay da coleta 16→38/38; recorte histórico 64→72/72, ambos offline.
+- Revisão em lote com preservação de decisões/grafia e validação de fontes, idioma, aliases e snapshots; 58 testes aprovados.
+- Partida pública integral e modalidades adicionais permanecem sem certificação desta versão.
+
 ## 2.0.2 — 30/10/2026, curadoria e controle de avisos
 
 - Revisão factual de 122 associações, com 56 referências e 12 entidades Wikidata selecionadas; total de 5.986 associações aprovadas e 5.973 lexemas.

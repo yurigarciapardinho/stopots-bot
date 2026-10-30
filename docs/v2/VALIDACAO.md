@@ -49,3 +49,7 @@ O comando instalado concluiu um segmento público das rodadas 3–8 com código 
 ## Curadoria e controles — 2.0.2
 
 A revisão adiciona 122 associações factualmente revisadas e o tratamento da recusa de STOP. O replay offline do recorte público passou de 5/72 para 64/72; a matriz de 73 rótulos por 26 letras possui 441/1.898 células com candidato. Foram aprovados 54 testes locais, incluindo mudança de seletor após controle já enviado. O ensaio privado FIMO, a identificação do wheel e as limitações estão em [VALIDACAO_CURADORIA.md](VALIDACAO_CURADORIA.md). A certificação histórica das três partidas acima continua vinculada à versão 2.0.0.
+
+## Catálogo e dados — 2.0.3
+
+58 testes locais aprovados; cinco coletas públicas de temas e instalação limpa do pacote. Todos os 80 temas têm candidatos, com 1.692/2.080 células atendidas. O recorte atual cobre 38/38 pares e o histórico 72/72 em replay offline. A coleta não escreve respostas nem certifica partida pública integral. Ver [CATALOGO_E_VOCABULARIO.md](CATALOGO_E_VOCABULARIO.md).

@@ -123,8 +123,8 @@
     "live_test_controls_remaining": 0
   },
   "final_wheel_sha256": "c6a8a8df468d3e54588b1bfe1da91d0770b2145f8e7d0f4e67f472b6f31a7835",
-  "current_release_version": "2.0.2",
-  "latest_document_update": "2026-10-29T23:19:02.916265-03:00",
+  "current_release_version": "2.0.3",
+  "latest_document_update": "2026-10-30T10:51:20.871868-03:00",
   "public_validation": {
     "run_id": "af6fb103c8a8",
     "as_of": "2026-10-29T21:43:42.351690-03:00",
@@ -176,5 +176,36 @@
     "full_public_match_certified": false,
     "report": "docs/v2/VALIDACAO_CURADORIA.md",
     "evidence": "evidence/v2/CURADORIA_RESULTADO.json"
+  },
+  "catalog_validation": {
+    "version": "2.0.3",
+    "subject": "read-only-ui-catalog-and-offline-vocabulary",
+    "local_tests_passed": 58,
+    "useful_public_samples": 5,
+    "public_entries": 6,
+    "visible_topics": 31,
+    "vocabulary": {
+      "approved_associations": 7986,
+      "lexemes": 7762,
+      "pending_associations": 2050,
+      "sha256": "2712e9fa400d53fc6d5f7e8e3961931cabf79a495ee90048f9088e44822bc658",
+      "source_sha256": "5ea76a5b843a6f96b4bea5e40221cd4f72f71565aeb8d32654f3a94ff65d3909"
+    },
+    "registered_categories": 80,
+    "matrix_nonempty": 1692,
+    "matrix_cells": 2080,
+    "offline_quick_replay": [
+      38,
+      38
+    ],
+    "offline_historical_replay": [
+      72,
+      72
+    ],
+    "full_public_match_certified": false,
+    "report": "docs/v2/CATALOGO_E_VOCABULARIO.md",
+    "evidence": "evidence/v2/CATALOGO_COBERTURA.json",
+    "installed_wheel_sha256": "6e6c5d80c4c963aaeb13c81d5033844c1df165e00aa91509acb19f9cd3c20ad5",
+    "package_files_matched": 14
   }
 }

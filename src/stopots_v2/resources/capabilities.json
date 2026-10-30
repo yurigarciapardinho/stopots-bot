@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-10-29",
+  "as_of": "2026-10-30",
   "release_status": "validado_padrao",
   "standard_mode_certified": true,
   "host_mode_certified": false,
@@ -23,18 +23,32 @@
     "all_assertions_passed": true
   },
   "final_screen": "FIM DE JOGO!",
-  "local_tests_passed": 54,
+  "local_tests_passed": 58,
   "normalization_revision_commit": "98cfefe4e37de1deddbcfead6fceb841c2f61a59",
   "game_input_normalization": "stopots-web-pt-2026-10-29",
   "normalization_probe_passed": true,
   "certified_release_version": "2.0.0",
-  "current_release_certification": "validacao_direcionada",
+  "current_release_certification": "validacao_local_e_catalogo_publico",
   "current_public_coverage_replay": {
     "subject": "offline",
-    "baseline": 5,
-    "current": 64,
+    "baseline": 64,
+    "current": 72,
     "fields": 72,
-    "vocabulary": "b690d5ae4225c48dbed21351e94e83040d8d7638abba62afaae17159db3368d0"
+    "vocabulary": "2712e9fa400d53fc6d5f7e8e3961931cabf79a495ee90048f9088e44822bc658"
   },
-  "stop_incomplete_notice_handling": "implementado_com_contrato_local"
+  "stop_incomplete_notice_handling": "implementado_com_contrato_local",
+  "current_vocabulary": {
+    "categories": 80,
+    "categories_with_answers": 80,
+    "approved_associations": 7986,
+    "lexemes": 7762,
+    "matrix_nonempty": 1692,
+    "matrix_cells": 2080
+  },
+  "public_topic_catalog": {
+    "useful_samples": 5,
+    "entries": 6,
+    "topics": 31,
+    "full_matches_completed": 0
+  }
 }

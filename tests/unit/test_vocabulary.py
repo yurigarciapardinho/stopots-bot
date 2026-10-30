@@ -70,7 +70,7 @@ def test_english_limit_and_determinism():
     assert v.evaluate("Palavra em Inglês", "A", "Apple")[0] == Verdict.COMPATIBLE
     assert not v.candidates("Palavra em Inglês", "A", 3)
     assert v.choose("Animal", "A", 20, "seed") == v.choose("Animal", "A", 20, "seed")
-    assert not v.candidates("Vilão", "Z", 20)
+    assert not v.candidates("Tema sem categoria cadastrada", "Z", 20)
 
 
 def test_two_edits_apostrophe_accent_and_snapshot(editorial, tmp_path):

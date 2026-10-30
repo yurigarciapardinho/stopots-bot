@@ -63,3 +63,9 @@ A identidade de STOP e CONTINUAR usa sessão/sala/partida/rodada e tipo; CONFIRM
 `tools/review_vocabulary.py` trabalha offline sobre uma cópia validada da fonte editorial. Cada revisão declara checksum de base, identidade, fontes e decisões. O registro de revisão torna a reaplicação exata idempotente; uma revisão divergente ou edição concorrente é rejeitada. Entidades Wikidata exigem revisão e checksum do snapshot, nome confirmado, categoria revisada e idioma compatível. Nenhuma resposta de jogador vira aprovação automática. Publicação mantém a distribuição anterior e não altera a versão carregada por processos em andamento.
 
 O ensaio configurável valida o requisito observado de letras selecionadas pelo menos igual ao número de rodadas, antes de iniciar. A UI oferece no mínimo quatro rodadas no perfil observado. Resultados e restrições desta revisão: [VALIDACAO_CURADORIA.md](VALIDACAO_CURADORIA.md).
+
+## Catálogo e curadoria 2.0.3
+
+A observação pública de temas é ferramenta auxiliar de leitura e fecha cada cliente. Seu relatório separa entrada, tema visto e partida completa; não usa a rota compartilhada como ID de servidor. As definições fornecidas pelo usuário são procedência própria da taxonomia. Revisões adicionam aliases sem substituir categorias existentes; colisões são rejeitadas. PÁF e JLR usam inclusão direcional de categorias componentes, e MSÉ/MST/MSU têm associações próprias.
+
+A revisão em lote faz uma cópia editorial, indexa lexemas/associações, preserva decisões e grafias revisadas e valida antes de escrever. O teste de equivalência mantém o contrato do editor. Snapshots tabulares têm checksum, tabela e categorias permitidas; uma correspondência de nome não autoriza promoção em outra categoria. O runtime continua sem acesso à rede para consultar palavras e fixa a versão carregada. Resultados e lacunas estão em CATALOGO_E_VOCABULARIO.md.
