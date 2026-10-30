@@ -147,4 +147,41 @@ def test_actual_end_screen_and_animated_rows():
         obs = await port.observe()
         assert obs.ranking.rows == (("participante_1",250),("participante_2",250))
         assert obs.ranking.semantic == 'total_partida'
+        assert obs.ranking.scope == 'podium'
+    browser_test(case)
+
+
+def test_stop_rejection_is_blocked_acknowledged_and_not_retried():
+    async def case(page, now):
+        popup="<div class='popupSystem'><h4>AVISO</h4><p>Preencha corretamente todas as categorias para dar Stop</p><button onclick='this.parentElement.remove()'>OK</button></div>"
+        import json
+        await page.set_content(WRITING.replace('disabled','')+'<script>document.querySelector("#stop").onclick=()=>document.body.insertAdjacentHTML("beforeend",'+json.dumps(popup)+')</script>')
+        port=StopotsWeb(page,clock=lambda:now[0])
+        await port.observe();now[0]+=2
+        obs=await port.observe()
+        planner=Planner(Vocabulary.bundled(),Policy(fill_blanks=False,request_stop=True,require_all_filled=False))
+        action=planner.plan(obs)
+        result=await port.apply(action)
+        assert result.status==Status.BLOCKED and result.attempted
+        assert result.observed.notice is None
+        assert await page.locator('.popupSystem').count()==0
+        planner.record(action,result)
+        assert planner.plan(await port.observe()) is None
+    browser_test(case)
+
+
+def test_existing_unknown_or_manual_notice_is_preserved():
+    async def case(page, now):
+        await page.set_content(WRITING)
+        port=StopotsWeb(page,clock=lambda:now[0])
+        await port.observe();now[0]+=2
+        planner=Planner(Vocabulary.bundled())
+        action=planner.plan(await port.observe())
+        await page.locator('body').evaluate("e=>e.insertAdjacentHTML('beforeend','<div class=\"popupSystem\"><p>Aviso que exige leitura manual</p><button>OK</button></div>')")
+        obs=await port.observe()
+        assert obs.notice.code=='UNKNOWN' and obs.notice.acknowledge is None
+        assert planner.plan(obs) is None
+        assert (await port.apply(action)).status==Status.STALE
+        assert await page.locator('.popupSystem').count()==1
+        assert not await page.locator('#inputText-0').input_value()
     browser_test(case)

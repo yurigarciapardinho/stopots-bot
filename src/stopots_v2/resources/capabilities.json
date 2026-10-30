@@ -23,8 +23,18 @@
     "all_assertions_passed": true
   },
   "final_screen": "FIM DE JOGO!",
-  "local_tests_passed": 42,
+  "local_tests_passed": 54,
   "normalization_revision_commit": "98cfefe4e37de1deddbcfead6fceb841c2f61a59",
   "game_input_normalization": "stopots-web-pt-2026-10-29",
-  "normalization_probe_passed": true
+  "normalization_probe_passed": true,
+  "certified_release_version": "2.0.0",
+  "current_release_certification": "validacao_direcionada",
+  "current_public_coverage_replay": {
+    "subject": "offline",
+    "baseline": 5,
+    "current": 64,
+    "fields": 72,
+    "vocabulary": "b690d5ae4225c48dbed21351e94e83040d8d7638abba62afaae17159db3368d0"
+  },
+  "stop_incomplete_notice_handling": "implementado_com_contrato_local"
 }

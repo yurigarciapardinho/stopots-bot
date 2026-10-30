@@ -48,7 +48,7 @@
     if(root) {
       const rows=q('.rkg',root).filter(e=>e.querySelector('h4') && e.querySelector(':scope > p'))
         .map(e=>({ref:ref(e),name:txt(e.querySelector('h4')),points:txt(e.querySelector(':scope > p')).replace(/\s*pts?\.?$/i,'').trim()}));
-      ranking={rows,round_index:null,semantic:'total_partida'};
+      ranking={rows,round_index:null,semantic:'total_partida',scope:'podium'};
     }
   } else if (resultHeading.length===1) {
     phase=/RANKING\s+FINAL/.test(txt(resultHeading[0]))?'RESULTADO_PARTIDA':'RESULTADO_RODADA';
@@ -60,7 +60,7 @@
     // O painel está ativo; linhas com animação de opacidade já pertencem ao
     // ranking e não podem ser omitidas da coleção, como nos campos de escrita.
     const rows=q('.userRkg',root).map(e=>({ref:ref(e),name:txt(e.querySelector('.nick')),points:txt(e.querySelector('.points'))}));
-    ranking={rows,round_index:result_round,semantic:phase==='RESULTADO_PARTIDA'?'total_partida':'rodada'};
+    ranking={rows,round_index:result_round,semantic:phase==='RESULTADO_PARTIDA'?'total_partida':'rodada',scope:'visible_rows'};
   } else if (reviewHeading.length===1) {
     phase='REVISAO';
     const m=txt(reviewHeading[0]).match(/(\d+)\s*\/\s*(\d+)/);
@@ -83,11 +83,19 @@
   const timeSelect=selected.find(e=>e.options.includes('Mais lento'));
   const letters=q('label[for]').filter(e=>/^[A-Z]$/.test(e.htmlFor) && document.getElementById(e.htmlFor)?.checked).map(e=>e.htmlFor);
   const disconnected=q('*').some(e=>e.children.length===0 && /Conexão perdida|foi removido por inatividade|Você foi desconectado/i.test(txt(e)));
+  const popups=q('.popupSystem').filter(active);
+  let notice=null;
+  if(popups.length) {
+    const root=popups.length===1?popups[0]:null;
+    const code=root && /Preencha corretamente todas as categorias para dar Stop/i.test(txt(root))?'STOP_INCOMPLETE':'UNKNOWN';
+    const ok=root?q('button',root).filter(e=>txt(e)==='OK'):[];
+    notice={ref:root?ref(root):'',code,acknowledge:code==='STOP_INCOMPLETE' && ok.length===1?{ref:ref(ok[0]),enabled:!ok[0].disabled}:null};
+  }
   return {phase,room_key:/\/pt\/\d+\/?$/.test(location.pathname)?location.pathname:null,
     round_index:phase==='RESULTADO_RODADA'?result_round:(round?+round[1]:null),total_rounds:result_total||(round?+round[2]:null),
     letter:letter?letter[1]:null,fields,groups,review_theme,review_index,review_total,
     stop:phase==='ESCRITA'?control('STOP!'):null,confirm:phase==='REVISAO'?control('AVALIAR'):null,
     proceed:phase==='RESULTADO_RODADA'?control('ESTOU PRONTO'):null,
     connected:!disconnected,rules:{stop_mode:stopSelect?.value||null,time_mode:timeSelect?.value||null,
-      letters,category_pool:q('.listThemes .theme').map(txt),is_host:stopSelect?!stopSelect.disabled:null},ranking};
+      letters,category_pool:q('.listThemes .theme').map(txt),is_host:stopSelect?!stopSelect.disabled:null},ranking,notice};
 }

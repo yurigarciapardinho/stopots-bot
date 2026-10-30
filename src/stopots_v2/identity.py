@@ -64,7 +64,7 @@ class ContextTracker:
             self.previous_review = review_key
         relevant = (phase, index, raw.get("letter"), raw.get("review_theme"), review_index,
                     [(f["ref"], f["label"], f.get("max_length")) for f in raw.get("fields", [])],
-                    [(g["ref"], g["text"]) for g in raw.get("groups", [])], raw.get("rules", {}))
+                    [(g["ref"], g["text"]) for g in raw.get("groups", [])], raw.get("rules", {}), raw.get('notice'))
         fingerprint = hashlib.sha256(json.dumps(relevant, sort_keys=True).encode()).hexdigest()
         if fingerprint != self.fingerprint:
             c = replace(c, ui_revision=c.ui_revision + 1)

@@ -1,0 +1,233 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-29T23:19:02.916265-03:00",
+  "version": "2.0.2",
+  "subject": "curated-vocabulary-and-stop-controls",
+  "status": "passed_directed_scope",
+  "source_base_commit": "05b53eed507d2fe37e1df47dc446ea9856302fdc",
+  "local_tests": {
+    "passed": 54,
+    "duration_s": 13.16
+  },
+  "package_tested": {
+    "adapter": "web-2.0.2",
+    "chrome": "151.0.7922.137",
+    "package": "2.0.2",
+    "vocabulary": "b690d5ae4225c48dbed21351e94e83040d8d7638abba62afaae17159db3368d0",
+    "wheel_sha256": "d572802d7167ef956005f3fa2798659a33b21c6302069798038c6f7ad8a5ba33"
+  },
+  "wheel_source_verification": {
+    "matched_runtime_files": 14,
+    "missing": [],
+    "different": [],
+    "rollback_file_excluded": true
+  },
+  "vocabulary": {
+    "approved_associations": 5986,
+    "lexemes": 5973,
+    "pending_associations": 2531,
+    "sha256": "b690d5ae4225c48dbed21351e94e83040d8d7638abba62afaae17159db3368d0",
+    "source_sha256": "f0a9f52a39104c29618d13299c41acfe1b7a8efff8cb3d2cf6d2155b795d7288"
+  },
+  "offline_public_replay": {
+    "after": 64,
+    "all_categories_alphabet": {
+      "after_nonempty": 441,
+      "before_nonempty": 356,
+      "labels": 73,
+      "letters": 26
+    },
+    "baseline_version": "d5a0a35bdd1a55810e9376e78f7d1db2d0ae894e5d1b57dd1b6104d6c6380382",
+    "before": 5,
+    "limitations": [
+      "Reprodução offline dos rótulos e letras; não é nova partida pública nem garantia de consenso.",
+      "PDA, PCH e JLR permanecem sem aprovação semântica."
+    ],
+    "new_associations": 122,
+    "new_version": "b690d5ae4225c48dbed21351e94e83040d8d7638abba62afaae17159db3368d0",
+    "observed_fields": 72,
+    "private_profile_candidates_unchanged": true,
+    "public_run": "af6fb103c8a8",
+    "rounds": [
+      {
+        "after": 11,
+        "before": 2,
+        "fields": 12,
+        "letter": "F",
+        "remaining": [
+          "PDA"
+        ],
+        "round": 3
+      },
+      {
+        "after": 10,
+        "before": 1,
+        "fields": 12,
+        "letter": "M",
+        "remaining": [
+          "JLR",
+          "PDA"
+        ],
+        "round": 4
+      },
+      {
+        "after": 12,
+        "before": 1,
+        "fields": 12,
+        "letter": "I",
+        "remaining": [],
+        "round": 5
+      },
+      {
+        "after": 10,
+        "before": 1,
+        "fields": 12,
+        "letter": "O",
+        "remaining": [
+          "PDA",
+          "PCH"
+        ],
+        "round": 6
+      },
+      {
+        "after": 11,
+        "before": 0,
+        "fields": 12,
+        "letter": "G",
+        "remaining": [
+          "FANTASIA"
+        ],
+        "round": 7
+      },
+      {
+        "after": 10,
+        "before": 0,
+        "fields": 12,
+        "letter": "P",
+        "remaining": [
+          "PCH",
+          "JLR"
+        ],
+        "round": 8
+      }
+    ],
+    "schema_version": 1,
+    "source_references": 56,
+    "subject": "offline-vocabulary-coverage-replay"
+  },
+  "private_validation": {
+    "run_id": "bfa590fc26f8",
+    "scenario": {
+      "configured_rounds": 4,
+      "controlled_clients": 2,
+      "letters": [
+        "F",
+        "I",
+        "M",
+        "O"
+      ],
+      "pool": [
+        "Vestuário",
+        "Série",
+        "Time Esportivo",
+        "FLV",
+        "Cantor",
+        "Sabor de Sorvete",
+        "Vilão",
+        "Instrumento Musical",
+        "Tem na academia",
+        "Game",
+        "Sobrenome",
+        "Palavra em Inglês",
+        "Profissão",
+        "Animal",
+        "Objeto",
+        "Ave"
+      ],
+      "private": true,
+      "time_mode": "Rápido"
+    },
+    "round_letters": {
+      "1": "O",
+      "2": "M",
+      "3": "I",
+      "4": "F"
+    },
+    "assertions": {
+      "all_letters_observed": true,
+      "all_twelve_filled": true,
+      "cli_exit_zero": true,
+      "cli_filled_remaining_eleven": true,
+      "cli_final_verified": true,
+      "cli_requested_stop": true,
+      "finals_agree": true,
+      "no_duplicate_applied_ids": true,
+      "notice_closed": true,
+      "partial_stop_blocked": true,
+      "retry_suppressed": true,
+      "review_observed": true,
+      "round_sums_reconciled": true,
+      "single_cli_stop_in_target_round": true,
+      "two_finals": true
+    },
+    "cli_exit_code": 0,
+    "final": {
+      "rows": [
+        [
+          "participante_1",
+          155
+        ],
+        [
+          "participante_2",
+          155
+        ]
+      ],
+      "scope": "podium",
+      "semantic": "total_partida"
+    },
+    "partial_stop": {
+      "attempted": true,
+      "elapsed_s": 20.851,
+      "fields": 12,
+      "filled": 1,
+      "notice_closed": true,
+      "same_round_retry_suppressed": true,
+      "status": "BLOQUEADA"
+    },
+    "stop_immediate_status": [
+      "INDETERMINADA"
+    ],
+    "later_review_observed": true,
+    "transition_from_first_writing_observation_s": 29.012,
+    "cleanup": {
+      "owned_browsers_disconnected": true
+    },
+    "report": "evidence/v2/curadoria-bfa590fc26f8.json",
+    "events": "evidence/v2/curadoria-bfa590fc26f8-cli.jsonl"
+  },
+  "public_full_match_certified": false,
+  "universal_stop_minimum_seconds": null,
+  "additional_modes_certified": false,
+  "limitations": [
+    "Cenário privado FIMO; não certifica autonomia pública nem todas as modalidades.",
+    "Uma resposta e a tentativa parcial de STOP são sondas separadas do adaptador, antes da retomada da CLI.",
+    "Tempos são desde a primeira observação de escrita; mínimo universal não estabelecido.",
+    "PDA, PCH e JLR sem expansão semântica confirmada.",
+    "441/1898 células com candidato não representam autonomia geral."
+  ],
+  "prior_attempts": [
+    "d80c35a2aedf",
+    "ab6bbbfaf2f0",
+    "28767b56ad98",
+    "f77887875872"
+  ],
+  "installed_package_verification": {
+    "isolated_site_packages": true,
+    "matched_runtime_files": 14,
+    "mismatches": []
+  },
+  "cleanup_verified": {
+    "owned_headless_profile_processes": 0,
+    "run_control_file_exists": false
+  }
+}

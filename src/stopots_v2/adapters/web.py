@@ -6,11 +6,11 @@ from importlib.resources import files
 import re
 import time
 
-from ..domain import ActionResult, Control, Field, Group, Kind, Observation, Phase, Ranking, Rules, Status
+from ..domain import ActionResult, Control, Field, Group, Kind, Notice, Observation, Phase, Ranking, Rules, Status
 from ..identity import ContextTracker
 from ..normalization import game_value, utf16_length
 
-ADAPTER_VERSION = "web-2.0.dev0"
+ADAPTER_VERSION = "web-2.0.2"
 SNAPSHOT = files("stopots_v2").joinpath("adapters/snapshot.js").read_text(encoding="utf-8")
 
 
@@ -56,12 +56,12 @@ class StopotsWeb:
             names.add(name)
             alias = self.player_ids.setdefault(name, "participante_" + str(len(self.player_ids) + 1))
             rows.append((alias, int(score)))
-        signature = (raw['semantic'], raw.get('round_index'), tuple(rows))
+        signature = (raw['semantic'], raw.get('round_index'), raw.get('scope','unknown'), tuple(rows))
         if signature != self.ranking_signature:
             self.ranking_signature, self.ranking_since = signature, self.clock()
         if self.clock() - self.ranking_since < .75:
             return None
-        return Ranking(tuple(rows), raw["semantic"]) if rows else None
+        return Ranking(tuple(rows), raw["semantic"], raw.get('scope','unknown')) if rows else None
 
     async def observe(self):
         if self.closed or self.page.is_closed():
@@ -92,18 +92,23 @@ class StopotsWeb:
                         "letters": self.rules.letters, "category_pool": self.rules.category_pool,
                         "is_host": self.rules.is_host}
         context, seq, stable = self.tracker.update(raw)
+        notice=raw.get('notice')
+        if notice:
+            notice=Notice(notice['ref'],notice['code'],Control(**notice['acknowledge']) if notice.get('acknowledge') else None)
         return Observation(context, seq, self.clock(), phase, raw.get("letter"), raw.get("total_rounds"),
                            tuple(Field(**f) for f in raw.get("fields", [])), stable,
                            raw.get("review_theme"), raw.get("review_total"),
                            tuple(Group(**g) for g in raw.get("groups", [])),
                            *(Control(**raw[k]) if raw.get(k) else None for k in ("stop", "confirm", "proceed")),
-                           raw.get("connected", True), self.rules, self._ranking(raw.get("ranking")))
+                           raw.get("connected", True), self.rules, self._ranking(raw.get("ranking")),notice)
 
     def _precondition(self, action, obs):
         if action.deadline <= self.clock():
             return Status.STALE, "Prazo da ação expirou"
         if action.context != obs.context or not obs.connected:
             return Status.STALE, "Contexto mudou ou conexão indisponível"
+        if obs.notice:
+            return Status.BLOCKED, "Aviso ativo na interface; interação suspensa"
         if action.kind == Kind.FILL:
             field = next((f for f in obs.fields if f.ref == action.target), None)
             if obs.phase != Phase.WRITING or not obs.fields_stable or not field or field.label != action.expected_label:
@@ -144,7 +149,7 @@ class StopotsWeb:
             if failure:
                 return ActionResult(*failure, before)
             if action.id in self.attempted:
-                return ActionResult(Status.INDETERMINATE, "Ação já enviada; repetição suspensa", before)
+                return ActionResult(Status.INDETERMINATE, "Ação já enviada; repetição suspensa", before,True)
             target = self.page.locator(action.target)
             if await target.count() != 1:
                 return ActionResult(Status.BLOCKED, "Alvo ausente ou ambíguo", before)
@@ -181,12 +186,29 @@ class StopotsWeb:
             return await self._confirm(action, before)
 
     async def _confirm(self, action, before, timed_out=False):
+        from playwright.async_api import Error
         end = min(action.deadline, self.clock() + 3)
         after = before
         while self.clock() < end:
             after = await self.observe()
             same_round = (after.context.room_epoch, after.context.match_epoch, after.context.round_epoch) == (
                 before.context.room_epoch, before.context.match_epoch, before.context.round_epoch)
+            if action.kind==Kind.STOP and same_round and before.notice is None and after.phase==Phase.WRITING and after.notice and after.notice.code=='STOP_INCOMPLETE':
+                # Somente a recusa conhecida surgida após nossa própria ação.
+                current=await self.observe()
+                if current.context==after.context and current.notice==after.notice and current.notice.acknowledge and current.notice.acknowledge.enabled:
+                    ok=self.page.locator(current.notice.acknowledge.ref)
+                    if await ok.count()==1 and self.clock()<action.deadline:
+                        try:
+                            await ok.click(timeout=max(1,min(1000,int((action.deadline-self.clock())*1000))))
+                            remaining=max(1,min(800,int((action.deadline-self.clock())*1000)))
+                            await self.page.locator(current.notice.ref).wait_for(state='hidden',timeout=remaining)
+                        except Error:
+                            pass  # recusa comprovada; um clique incerto nunca é repetido
+                        current=await self.observe()
+                reason='STOP recusado: categorias incompletas'
+                if current.notice is None:reason+='; aviso fechado'
+                return ActionResult(Status.BLOCKED,reason,current,True)
             if action.kind == Kind.FILL:
                 field = next((f for f in after.fields if f.ref == action.target), None)
                 confirmed = same_round and after.phase == Phase.WRITING and field and field.value == game_value(str(action.desired))
@@ -204,11 +226,11 @@ class StopotsWeb:
                 confirmed = after.phase == Phase.WRITING and after.context.round_epoch != before.context.round_epoch
                 confirmed = confirmed or (after.context == before.context and after.proceed is not None and not after.proceed.enabled)
             if confirmed:
-                return ActionResult(Status.APPLIED, "Efeito confirmado após timeout" if timed_out else "Efeito confirmado", after)
+                return ActionResult(Status.APPLIED, "Efeito confirmado após timeout" if timed_out else "Efeito confirmado", after,True)
             if after.context != before.context:
                 break
             await asyncio.sleep(.05)
-        return ActionResult(Status.INDETERMINATE, "Efeito ainda não confirmado; não repetir automaticamente", after)
+        return ActionResult(Status.INDETERMINATE, "Efeito ainda não confirmado; não repetir automaticamente", after,True)
 
     async def close(self):
         if not self.closed:

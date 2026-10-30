@@ -2,7 +2,7 @@
 
 Assistente local em Python 3.12 e Playwright, com interface e mensagens em português. O pacote v2 substitui a integração Selenium 3; o código original permanece em `stopots_bot/` e sua documentação em `docs/LEGADO.md`.
 
-**Versão 2.0.1: entrada pública corrigida e segmento das rodadas 3–8 acompanhado até o final.** O modo Padrão foi validado anteriormente em três partidas privadas na 2.0.0. A cobertura aprovada foi de apenas 5/72 campos no ensaio público; consulte `docs/v2/VALIDACAO_PUBLICA.md` antes de atribuir autonomia geral ao bot. Consulte `docs/v2/VALIDACAO.md` e `stopots-v2 diagnostico` antes de atribuir suporte a uma modalidade. Os testes locais usam DOM sintético; a certificação online exige o pacote instalado e a captura da partida completa.
+**Versão 2.0.2: curadoria factual, tratamento da recusa de STOP e identificação explícita do pódio.** A reprodução offline dos 72 campos do ensaio público passou de 5 para 64 com candidato aprovado; isso não representa nova partida pública. A base geral ainda tem lacunas. Consulte `docs/v2/VALIDACAO_CURADORIA.md` para o ensaio privado e os limites atuais, `docs/v2/VALIDACAO_PUBLICA.md` para o segmento público histórico e `stopots-v2 diagnostico` para as capacidades. A certificação de três partidas privadas da 2.0.0 mantém seu escopo histórico.
 
 ## No ambiente preparado
 
@@ -26,7 +26,7 @@ O último comando abre um Chrome dedicado. Entre na sala pela interface. Por pad
 
 Pausa e retomada são comandos de outro terminal. A versão carregada do vocabulário fica fixa durante a execução. Texto já presente é preservado; o modo observar não faz alterações. O encerramento por Ctrl+C fecha os recursos próprios da sessão.
 
-`--stop` espera o botão habilitado e, por padrão, todos os campos preenchidos. `--no-exigir-todos` altera somente essa política local. Não há número de segundos fixado como regra do servidor. Respostas sem categoria ou candidato aprovado ficam em branco, com possibilidade de preenchimento manual.
+`--stop` espera o botão habilitado e, por padrão, todos os campos preenchidos. `--no-exigir-todos` altera somente essa política local. A recusa conhecida por categorias incompletas é retornada como bloqueio; o adaptador fecha o aviso somente quando ele surge após sua própria tentativa. Avisos anteriores ou desconhecidos suspendem as ações. Uma tentativa de controle é deduplicada pela rodada/etapa, mesmo que o seletor mude. Não há número de segundos fixado como regra do servidor. Respostas sem categoria ou candidato aprovado ficam em branco, com possibilidade de preenchimento manual.
 
 `--votos` marca associações conhecidas e desmarca inicial incompatível. Ausência no dicionário preserva o voto existente. `--avaliar` confirma a etapa quando AVALIAR permite. `--continuar` usa ESTOU PRONTO após ranking de rodada; não inicia outra partida após o ranking final.
 
@@ -66,7 +66,7 @@ Outras opções: `--tempo-limite`, `--eventos`, `--controle`, `--semente`, `--vo
 
 A fonte editorial está em `data/source/editorial.json`. A distribuição contém somente a release aprovada em `src/stopots_v2/resources/vocabulary.json`, com checksum e procedência. A migração reproduz 2.688 entradas, 269 células vazias e 10 duplicatas normalizadas excedentes do legado. Importação começa como pendente.
 
-O bootstrap local contém **293 associações aprovadas / 286 lexemas**. Cobre os 16 temas do perfil de validação nas letras A–D, respeitando o limite de 20 unidades UTF-16. Não cobre todos os temas e letras do jogo. Aprovação editorial local não garante consenso entre jogadores. A API do IBGE forneceu 5.571 municípios nesta execução. A release contém **5.864 associações aprovadas / 5.857 lexemas**, somando o bootstrap e os registros geográficos. A regra editorial `ibge-city-v1` valida os pares id/nome e aprova somente Cidade, que pode ser usada por CEP. Homônimos mantêm entidades distintas; candidatos com a mesma palavra não ganham peso adicional. As 2.562 associações restantes do legado seguem pendentes. Wikidata não foi incorporado.
+O bootstrap local contém **293 associações aprovadas / 286 lexemas**. Cobre os 16 temas do perfil de validação nas letras A–D, respeitando o limite de 20 unidades UTF-16. Não cobre todos os temas e letras do jogo. Aprovação editorial local não garante consenso entre jogadores. A API do IBGE forneceu 5.571 municípios nesta execução. A release contém **5.986 associações aprovadas / 5.973 lexemas**, incluindo 122 associações da revisão factual posterior ao ensaio público. A regra editorial `ibge-city-v1` valida os pares id/nome e aprova somente Cidade, que pode ser usada por CEP. Homônimos mantêm entidades distintas; candidatos com a mesma palavra não ganham peso adicional. Há 2.531 associações pendentes. A revisão registra 56 referências e inclui 12 entidades Wikidata selecionadas e revisadas, sem importar sugestões em massa. PDA, PCH e JLR continuam sem significado confirmado. A matriz de 73 rótulos × 26 letras tem candidatos em 441/1.898 células; os 64/72 do recorte público não se estendem a todo o jogo.
 
 ```bash
 ./scripts/v2.sh vocabulario cobertura --letras ABCD --temas Animal Ave CEP
@@ -74,6 +74,8 @@ O bootstrap local contém **293 associações aprovadas / 286 lexemas**. Cobre o
   --estado approved --fonte bootstrap-2026-10-29 --nota 'Associação revisada: mamífero'
 ./scripts/v2.sh vocabulario publicar data/source/editorial.json /caminho/atual.json
 ```
+
+Revisões em lote usam `tools/review_vocabulary.py`: exigem checksum da fonte, referência factual e decisão explícita; entradas sem decisão ficam pendentes. Decisões anteriores e grafias já revisadas são preservadas. A revisão aplicada fica identificada por hash para impedir reaplicação divergente.
 
 Publicar valida antes de substituir; a versão anterior fica em `atual.json.previous`. Editar duas vezes mantém listas e apóstrofos válidos. Acentos são preservados na grafia e normalizados na busca. Na UI medida, hífen vira espaço e apóstrofo é removido; o adaptador confirma a forma resultante e reconhece essa forma na apuração. Inglês é tratado como idioma lexical próprio. Ave inclui-se em Animal, sem a relação inversa; CEP e FLV têm composição explícita. Consulte `docs/v2/ARQUITETURA.md`.
 

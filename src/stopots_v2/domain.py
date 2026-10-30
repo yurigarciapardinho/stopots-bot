@@ -85,6 +85,13 @@ class Control:
 
 
 @dataclass(frozen=True)
+class Notice:
+    ref: str
+    code: str
+    acknowledge: Control | None = None
+
+
+@dataclass(frozen=True)
 class Rules:
     locale: str = "pt-BR"
     stop_mode: str | None = None
@@ -99,6 +106,7 @@ class Rules:
 class Ranking:
     rows: tuple[tuple[str, int], ...] = ()
     semantic: str = "desconhecida"
+    scope: str = "unknown"
 
 
 @dataclass(frozen=True)
@@ -120,6 +128,7 @@ class Observation:
     connected: bool = True
     rules: Rules = Rules()
     ranking: Ranking | None = None
+    notice: Notice | None = None
 
 
 @dataclass(frozen=True)
@@ -139,6 +148,7 @@ class ActionResult:
     status: Status
     reason: str
     observed: Observation | None = None
+    attempted: bool = False
 
 
 class BrowserPort(Protocol):

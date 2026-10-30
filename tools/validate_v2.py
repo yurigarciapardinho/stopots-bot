@@ -55,8 +55,13 @@ async def wait(predicate, timeout=15):
     raise TimeoutError("Pós-condição da configuração não observada")
 
 
-async def configure(lab):
+async def configure(lab, pool=POOL, letters='ABCD'):
     page = lab.pages["host"]
+    letters=letters.upper()
+    rounds=page.locator('select').filter(has=page.locator('option',has_text=re.compile(r'^4 Rodadas$')))
+    if await rounds.count()!=1:raise ValueError('Controle de rodadas ausente ou ambíguo')
+    if len(set(letters))<int(await rounds.input_value()):
+        raise ValueError('O cenário precisa de pelo menos uma letra selecionada por rodada')
     # O compartilhamento pode abrir depois da entrada do convidado.
     share = page.locator('.popupSystem.share').filter(visible=True)
     try:
@@ -84,7 +89,7 @@ async def configure(lab):
         async def removed(row=row):
             return await row.count() == 0
         await wait(removed)
-    for label in POOL:
+    for label in pool:
         await dismiss_share()
         await page.get_by_placeholder('Categoria', exact=True).fill(label)
         await page.get_by_role('button', name='ADD', exact=True).click(timeout=4000)
@@ -98,16 +103,16 @@ async def configure(lab):
         target = page.locator('[id=' + json.dumps(letter) + ']')
         if await target.count() != 1:
             raise ValueError("Letra de configuração ambígua")
-        desired = letter in 'ABCD'
+        desired = letter in letters
         if await target.is_checked() != desired:
             await page.locator('label[for=' + json.dumps(letter) + ']').click(timeout=4000)
     for who in ('host', 'convidado'):
         async def synced(who=who):
             s = await lab.observe(who)
-            letters = {r['for'] for r in s['review'] if r['checked'] and re.fullmatch('[A-Z]', r['for'])}
             # O convidado recebe letras somente para leitura, sem checkboxes.
-            letters_ok = letters == set('ABCD') if who == 'host' else 'LETRAS (4)' in s['headings']
-            return set(lookup(x) for x in await lab.pages[who].locator('.listThemes .theme').all_inner_texts()) == set(map(lookup, POOL)) and letters_ok
+            selected = {r['for'] for r in s['review'] if r['checked'] and re.fullmatch('[A-Z]', r['for'])}
+            letters_ok = selected == set(letters) if who == 'host' else f'LETRAS ({len(letters)})' in s['headings']
+            return set(lookup(x) for x in await lab.pages[who].locator('.listThemes .theme').all_inner_texts()) == set(map(lookup, pool)) and letters_ok
         try:
             await wait(synced)
         except TimeoutError:

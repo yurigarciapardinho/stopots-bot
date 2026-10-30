@@ -29,11 +29,13 @@ class Planner:
         self.attempted = set()
 
     def action(self, obs, kind, ref, desired=None, expected=None, label=None):
-        # Não inclui ui_revision: animação da mesma etapa não autoriza outro clique.
+        # Etapa/rodada identifica controles únicos; o seletor pode mudar no DOM.
+        # O alvo atual continua sendo revalidado pelo adaptador antes de agir.
         c = obs.context
+        identity_target = ref if kind in (Kind.FILL, Kind.VOTE) else None
         identity = [c.session_id, c.room_epoch, c.match_epoch, c.round_epoch,
                     c.round_index, c.review_epoch if kind in (Kind.VOTE, Kind.CONFIRM) else None,
-                    kind, ref, desired]
+                    kind, identity_target, desired]
         aid = hashlib.sha256(json.dumps(identity, sort_keys=True).encode()).hexdigest()[:24]
         if aid in self.attempted:
             return None
@@ -41,7 +43,7 @@ class Planner:
 
     def plan(self, obs):
         p = self.policy
-        if p.observe_only or not obs.connected:
+        if p.observe_only or not obs.connected or obs.notice:
             return None
         if obs.phase == Phase.WRITING and obs.fields_stable:
             if p.fill_blanks:
@@ -76,7 +78,7 @@ class Planner:
         return None
 
     def record(self, action, result):
-        if result.status in (Status.APPLIED, Status.SATISFIED, Status.INDETERMINATE, Status.FAILED):
+        if result.attempted or result.status in (Status.APPLIED, Status.SATISFIED, Status.INDETERMINATE, Status.FAILED):
             self.attempted.add(action.id)
 
 
@@ -94,13 +96,15 @@ class EventLog:
         if observation:
             data.update(context=asdict(observation.context), phase=observation.phase,
                         connected=observation.connected, fields=len(observation.fields),
-                        review_index=observation.context.review_index, review_total=observation.review_total)
+                        filled=sum(bool(f.value.strip()) for f in observation.fields),
+                        review_index=observation.context.review_index, review_total=observation.review_total,
+                        notice_code=observation.notice.code if observation.notice else None)
             if observation.ranking:
                 data['ranking'] = asdict(observation.ranking)
         if action:
             data.update(action_id=action.id, kind=action.kind)
         if result:
-            data.update(status=result.status, reason=result.reason)
+            data.update(status=result.status, reason=result.reason,interaction_attempted=result.attempted)
         if reason:
             data["reason"] = reason
         self.events.append(data)

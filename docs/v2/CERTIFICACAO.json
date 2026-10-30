@@ -123,8 +123,8 @@
     "live_test_controls_remaining": 0
   },
   "final_wheel_sha256": "c6a8a8df468d3e54588b1bfe1da91d0770b2145f8e7d0f4e67f472b6f31a7835",
-  "current_release_version": "2.0.1",
-  "latest_document_update": "2026-10-29T21:43:42.351690-03:00",
+  "current_release_version": "2.0.2",
+  "latest_document_update": "2026-10-29T23:19:02.916265-03:00",
   "public_validation": {
     "run_id": "af6fb103c8a8",
     "as_of": "2026-10-29T21:43:42.351690-03:00",
@@ -155,5 +155,26 @@
     "evidence": "evidence/v2/PUBLICA_RESULTADO.json",
     "wheel_sha256": "6b6c137c8ff6a1296c0a888fd5b66f6d1a03823cdd2012cb71663fd640ac286b",
     "harness_patched_after_run": true
+  },
+  "curation_validation": {
+    "version": "2.0.2",
+    "as_of": "2026-10-29T23:19:02.916265-03:00",
+    "run_id": "bfa590fc26f8",
+    "scope": "directed_private_FIMO",
+    "local_tests_passed": 54,
+    "private_final_points": [
+      155,
+      155
+    ],
+    "cli_exit_code": 0,
+    "wheel_sha256": "d572802d7167ef956005f3fa2798659a33b21c6302069798038c6f7ad8a5ba33",
+    "vocabulary": "b690d5ae4225c48dbed21351e94e83040d8d7638abba62afaae17159db3368d0",
+    "offline_replay_fields": [
+      64,
+      72
+    ],
+    "full_public_match_certified": false,
+    "report": "docs/v2/VALIDACAO_CURADORIA.md",
+    "evidence": "evidence/v2/CURADORIA_RESULTADO.json"
   }
 }

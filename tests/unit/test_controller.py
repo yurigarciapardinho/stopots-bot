@@ -45,6 +45,28 @@ def test_indeterminate_click_is_not_repeated_after_ui_revision():
     assert p.plan(replace(obs, context=replace(obs.context, review_epoch=2))) is not None
 
 
+def test_control_relocation_does_not_authorize_another_attempt():
+    scenarios = [
+        (Policy(request_stop=True, fill_blanks=False, require_all_filled=False),
+         writing(), 'stop', 'round_epoch'),
+        (Policy(confirm_review=True),
+         writing(phase=Phase.REVIEW, confirm=Control('#confirm', True)), 'confirm', 'review_epoch'),
+        (Policy(continue_results=True),
+         writing(phase=Phase.ROUND_RESULT, proceed=Control('#ready', True),
+                 ranking=Ranking((('participante_1', 65),), 'rodada')), 'proceed', 'round_epoch'),
+    ]
+    for policy, obs, control, epoch in scenarios:
+        for status in (Status.INDETERMINATE, Status.BLOCKED):
+            planner = Planner(Vocabulary.bundled(), policy)
+            action = planner.plan(obs)
+            planner.record(action, ActionResult(status, 'Enviada', attempted=True))
+            moved = replace(obs, **{control: Control('#new-container button', True)},
+                            context=replace(obs.context, ui_revision=8))
+            assert planner.plan(moved) is None
+            following = replace(moved, context=replace(moved.context, **{epoch: getattr(moved.context, epoch) + 1}))
+            assert planner.plan(following) is not None
+
+
 def test_letter_repeated_new_round_and_new_match():
     clock = [0.0]
     t = ContextTracker("test", clock=lambda: clock[0])

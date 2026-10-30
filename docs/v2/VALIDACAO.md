@@ -45,3 +45,7 @@ Smoke da CLI com navegador próprio: home reconhecida, prazo controlado encerrad
 ## Ensaio público posterior — 2.0.1
 
 O comando instalado concluiu um segmento público das rodadas 3–8 com código 0 e FIM DE JOGO! capturado. Pódio 490/215/170 reconciliado. A base cobriu 5/72 campos; houve valores não atribuíveis às ações da CLI. São 47 testes locais após correções de rota, lobby e monitor. Não é certificação pública desde a rodada 1. Detalhes, limites e evidências em [VALIDACAO_PUBLICA.md](VALIDACAO_PUBLICA.md).
+
+## Curadoria e controles — 2.0.2
+
+A revisão adiciona 122 associações factualmente revisadas e o tratamento da recusa de STOP. O replay offline do recorte público passou de 5/72 para 64/72; a matriz de 73 rótulos por 26 letras possui 441/1.898 células com candidato. Foram aprovados 54 testes locais, incluindo mudança de seletor após controle já enviado. O ensaio privado FIMO, a identificação do wheel e as limitações estão em [VALIDACAO_CURADORIA.md](VALIDACAO_CURADORIA.md). A certificação histórica das três partidas acima continua vinculada à versão 2.0.0.

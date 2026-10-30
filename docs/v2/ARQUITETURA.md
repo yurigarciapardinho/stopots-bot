@@ -46,8 +46,20 @@ A normalização de input observada em 29/10/2026 transforma Bem-te-vi em BEM TE
 
 O fluxo JOGAR usa `/pt/game`; a listagem pública também pode abrir caminho numérico. A URL, isoladamente, não identifica visibilidade nem uma sala pública única. Manter invalidação por navegação e fases; não inventar identificador de servidor para a rota compartilhada. Lobby com senha desabilitada não é formulário de entrada.
 
-O botão STOP habilitado não prova aceitação: a UI recusou a ação com categorias incompletas. A política padrão de exigir todos permanece. Avisos conhecidos precisam de classificação explícita de bloqueio; a sonda atual registrou efeito indeterminado e fechou o aviso pela UI. Medir tempo mínimo somente com as demais pré-condições satisfeitas.
+O botão STOP habilitado não prova aceitação: a UI recusou a ação com categorias incompletas. A política padrão de exigir todos permanece. Na 2.0.1, a sonda registrou confirmação indeterminada e fechou o aviso pela UI. A 2.0.2 implementa a classificação explícita abaixo. Medir tempo mínimo somente com as demais pré-condições satisfeitas.
 
 O final público observado exibiu três posições do pódio. A camada de apresentação deve distinguir linhas retornadas, pódio e ranking completo; não atribuir ao participante controlado um total que a evidência não reconciliou. Valores no formulário não equivalem a ações do pacote: separar capacidade lexical, preenchimento observado e autoria registrada.
 
 O monitor deve aceitar a conclusão explícita da CLI mesmo quando sua observação independente ainda estabiliza. Sucesso do segmento não implica cobertura das rodadas anteriores; manter essa informação nos contratos de evidência. Ver VALIDACAO_PUBLICA.md.
+
+## Revisão 2.0.2
+
+`Observation.notice` carrega somente código, referência e controle de reconhecimento. Enquanto há aviso ativo, o planejador suspende ações. Após uma tentativa própria de STOP, o adaptador reconhece a mensagem específica de categorias incompletas, exige a mesma rodada e um único OK habilitado, fecha esse aviso e retorna `BLOQUEADA` com `attempted=True`. Um aviso que já existia, desconhecido ou ambíguo é preservado. O aviso participa da revisão de contexto para invalidar ações preparadas antes de seu surgimento.
+
+A identidade de STOP e CONTINUAR usa sessão/sala/partida/rodada e tipo; CONFIRMAR também inclui a etapa da apuração. O seletor corrente serve à revalidação e à interação, mas não cria permissão de repetir esses controles quando muda. Tentativas já enviadas, inclusive recusadas ou indeterminadas, são registradas. Campos e votos conservam identidade pelo alvo e estado desejado. A sonda privada encontrou duas solicitações de STOP com seletores diferentes; o contrato de regressão cobre essa mudança de estrutura.
+
+`Ranking.scope` distingue `podium`, `visible_rows` e `unknown`. A extração de FIM DE JOGO! indica pódio; não implica que todos os participantes estejam nessa lista. Os aliases são locais a cada observador, portanto a comparação entre clientes usa os placares; a soma de rodadas e final é conciliada pelos aliases do mesmo cliente.
+
+`tools/review_vocabulary.py` trabalha offline sobre uma cópia validada da fonte editorial. Cada revisão declara checksum de base, identidade, fontes e decisões. O registro de revisão torna a reaplicação exata idempotente; uma revisão divergente ou edição concorrente é rejeitada. Entidades Wikidata exigem revisão e checksum do snapshot, nome confirmado, categoria revisada e idioma compatível. Nenhuma resposta de jogador vira aprovação automática. Publicação mantém a distribuição anterior e não altera a versão carregada por processos em andamento.
+
+O ensaio configurável valida o requisito observado de letras selecionadas pelo menos igual ao número de rodadas, antes de iniciar. A UI oferece no mínimo quatro rodadas no perfil observado. Resultados e restrições desta revisão: [VALIDACAO_CURADORIA.md](VALIDACAO_CURADORIA.md).
