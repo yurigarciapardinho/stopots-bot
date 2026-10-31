@@ -8,6 +8,7 @@ contém somente associações aprovadas, com manifesto, contagens e hashes.
 
 | Fonte | Aquisição e uso |
 | --- | --- |
+| StopAnswersAPI, de nosliper | Origem do dicionário inicial, conforme [crédito de Lucas8x](https://github.com/Lucas8x/stopots-bot/blob/92eda1341cb391da77bad21bbe6a82417928a3c6/README.md) |
 | Dicionário de Lucas8x/stopots-bot | Commit 92eda1341cb391da77bad21bbe6a82417928a3c6; 2.688 entradas importadas de `stopots_bot/dictionary.json` como pendentes |
 | Curadoria própria | Seleção e revisão editorial pt-BR, incluindo categorias, siglas e exemplos; organização e curadoria sob MIT |
 | `publico-revisado-v1.json` | 122 associações revisadas, com 56 referências datadas |

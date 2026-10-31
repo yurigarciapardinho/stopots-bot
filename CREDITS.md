@@ -10,6 +10,11 @@ no código e no histórico. A referência original é o commit
 92eda1341cb391da77bad21bbe6a82417928a3c6. O cliente Selenium e o JavaScript
 legados estão disponíveis para consulta e não integram o wheel atual.
 
+O projeto de Lucas8x atribui a formação do dicionário inicial a
+**StopAnswersAPI, de nosliper**, conforme o
+[crédito no README original](https://github.com/Lucas8x/stopots-bot/blob/92eda1341cb391da77bad21bbe6a82417928a3c6/README.md).
+Essa atribuição é preservada para a origem dos dados legados.
+
 O aplicativo utiliza Python, Playwright, Qt/PySide6 e Shiboken; a distribuição
 desktop é construída com PyInstaller. Seus autores, licenças e avisos estão em
 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) e nos arquivos legais dos pacotes.
