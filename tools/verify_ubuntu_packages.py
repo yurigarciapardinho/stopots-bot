@@ -50,7 +50,8 @@ sys.exit(0 if passed else 1)
 
 def main():
     versions=sys.argv[1:] or ['24.04','26.04']
-    out=ROOT/'evidence/releases/2.0.0/ubuntu.json'
+    out=RUNTIME/'validation/ubuntu.json'
+    out.parent.mkdir(parents=True,exist_ok=True)
     reports=[r for r in json.loads(out.read_text(encoding="utf-8")).get('platforms',[]) if r['ubuntu'] not in versions] if out.exists() else []
     for version in versions:
         target=RUNTIME/('ubuntu-package-'+version);target.mkdir(exist_ok=True)

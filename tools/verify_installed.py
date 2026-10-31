@@ -16,7 +16,7 @@ BUILD = Path(os.environ.get('STOPOTS_BUILD_ROOT', ROOT / '.runtime')).resolve()
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--dist', type=Path, default=BUILD / 'dist')
-    parser.add_argument('--report', type=Path, default=ROOT / 'evidence/releases/2.0.0/installed.json')
+    parser.add_argument('--report', type=Path, default=BUILD / 'validation/installed.json')
     parser.add_argument('--skip-frozen', action='store_true')
     args = parser.parse_args()
     installed = Path(stopots_v2.__file__).resolve().parent

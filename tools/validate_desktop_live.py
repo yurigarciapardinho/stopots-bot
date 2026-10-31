@@ -252,7 +252,7 @@ def main():
                 await asyncio.sleep(.1)
             return False
         report['cleanup']={'host_closed':not host.is_alive(),'gui_closed':not gui or not gui.is_alive(),'dedicated_chrome_closed':asyncio.run(cleanup())}
-        target=ROOT/'evidence/releases/2.0.0'/('desktop-'+run_id+'.json');target.parent.mkdir(parents=True,exist_ok=True)
+        target=build/'validation'/('desktop-'+run_id+'.json');target.parent.mkdir(parents=True,exist_ok=True)
         target.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n', encoding="utf-8")
         print('REPORT',target.name,flush=True)
     return 0 if report.get('reopened_paused_same_chrome') and all(report['cleanup'].values()) else 1

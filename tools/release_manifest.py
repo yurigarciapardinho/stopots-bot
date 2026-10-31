@@ -35,7 +35,7 @@ def main():
                     '--output-file',str(out/'SBOM.cdx.json')],check=True)
     extensions = ('.whl','.tar.gz','.deb','.zip')
     files = {p.name:{'sha256':digest(p),'bytes':p.stat().st_size} for p in sorted(out.iterdir())
-             if p.is_file() and (p.name.endswith(extensions) or p.name in ('SBOM.cdx.json','THIRD_PARTY_SOURCES.json','DESKTOP_MANIFESTO.json'))}
+             if p.is_file() and (p.name.endswith(extensions) or p.name in ('SBOM.cdx.json','THIRD_PARTY_SOURCES.json','DESKTOP_MANIFESTO.json','INSTALLED_VALIDATION.json'))}
     assert any(n.endswith('.whl') for n in files)
     assert any(n.endswith('.deb') for n in files) if os.name!='nt' else True
     report = {'schema_version':1,'version':__version__,'source_commit':sha,'source_dirty':dirty,

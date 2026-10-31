@@ -53,6 +53,7 @@ jobs:
       - run: uv run --frozen --no-sync python tools/third_party_sources.py
       - run: uv run --frozen --no-sync python tools/package_desktop.py
       - run: uv run --frozen --no-sync python tools/ci_install_wheel.py --frozen
+      - run: cp .runtime/validation/installed.json .runtime/dist/INSTALLED_VALIDATION.json
       - run: uv run --frozen --no-sync python tools/release_manifest.py
       - uses: actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6
         with:
