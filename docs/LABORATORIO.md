@@ -1,43 +1,64 @@
-# Laboratório de preparação do StopotS v2
+# Laboratório de testes
 
-Raiz: /home/yuzlkk/hack/stopots. Desenvolvimento no worktree stopots-v2, branch codex/v2-desenvolvimento. A implementação v2 está em src/stopots_v2, com entrada por scripts/v2.sh; este documento descreve o laboratório auxiliar. Ler ../planejamento-v2/RETOMADA_V2.md para resultados e pendências atuais.
+O laboratório é uma ferramenta auxiliar para observar a interface, reproduzir
+transições e criar cenários privados com dois participantes controlados. O
+aplicativo distribuído não depende desse serviço.
 
-## Início rápido
+## Preparação
 
-    cd /home/yuzlkk/hack/stopots/stopots-v2
-    ./scripts/lab.sh doctor
-    ./scripts/lab.sh testar
+O fluxo principal de dependências e testes está em
+[DESENVOLVIMENTO.md](DESENVOLVIMENTO.md). O laboratório possui um ambiente
+auxiliar, preparado a partir de `requirements-lab.lock`:
 
-O preparo reproduzível é ./scripts/preparar-lab.sh. Reutiliza ambiente/cache e sincroniza requirements-lab.lock. Python 3.12.3, Playwright 1.64.1 e Chrome 151.0.7922.137 foram instalados/verificados.
+```bash
+./scripts/preparar-lab.sh
+./scripts/lab.sh doctor
+```
+
+Esses scripts criam ou reutilizam `../.runtime`, ao lado do clone, incluindo o
+ambiente Python, caches e arquivos de controle. Escolha um diretório de
+trabalho onde essa criação seja apropriada. O preparo instala o projeto de
+forma editável para o laboratório; a validação de distribuição usa o wheel
+instalado em ambiente separado.
 
 ## Comandos
 
 | Comando | Efeito |
 | --- | --- |
-| ./scripts/lab.sh iniciar | Inicia serviço local e Chrome de teste; reutiliza serviço saudável |
-| ./scripts/lab.sh sala | Inicia se necessário e cria sala privada nova com dois participantes |
-| ./scripts/lab.sh observar --player host | Captura observação sanitizada do anfitrião |
-| ./scripts/lab.sh teste-chrome | Inicia ensaio assíncrono de uma rodada e medição do STOP; retorna ID, sem declarar sucesso |
-| ./scripts/lab.sh resultado | Mostra resultado/progresso compacto |
-| ./scripts/lab.sh replay | Reclassifica snapshots locais sem partida |
-| ./scripts/lab.sh testar | Executa testes locais sem conexão ao jogo |
-| ./scripts/lab.sh limpar | Fecha contextos da sala de teste |
-| ./scripts/lab.sh encerrar | Fecha serviço e navegadores próprios |
+| ./scripts/lab.sh iniciar | Inicia serviço e Chrome de teste; reutiliza um serviço saudável |
+| ./scripts/lab.sh sala | Cria uma sala privada com dois participantes próprios |
+| ./scripts/lab.sh observar --player host | Captura uma observação sanitizada do anfitrião |
+| ./scripts/lab.sh `teste-chrome` | Inicia um ensaio de uma rodada e retorna sua identificação |
+| ./scripts/lab.sh resultado | Consulta progresso e resultado |
+| ./scripts/lab.sh replay | Reclassifica snapshots sem entrar no jogo |
+| ./scripts/lab.sh testar | Executa os testes com o ambiente auxiliar |
+| ./scripts/lab.sh limpar | Fecha os contextos da sala de teste |
+| ./scripts/lab.sh encerrar | Encerra o serviço e seus navegadores |
 
-Não presumir que a sala sobreviva à inatividade. Durante desenvolvimento, usar replay e testar. Para UI real, criar outra sala com sala ou teste-chrome. A senha é gerada em memória; não exige conta pessoal. O convidado pode aparecer com nome anônimo do site; o laboratório identifica o contexto, sem depender da persistência de um nome após navegação.
+Use replay e a suíte de testes durante o desenvolvimento. Uma sala pode expirar
+por inatividade; crie outra quando houver um objetivo de validação real. O
+laboratório não precisa de uma conta pessoal. Senhas são geradas em memória.
 
-## Implementação e evidências
+## Observações e evidências
 
-Anfitrião: Chrome visível com perfil dedicado. Convidado: outra instância Chrome headless. A observação registra visibilidade/foco para investigar diferenças de temporização. Nenhum perfil pessoal é usado. Controle HTTP somente em loopback, com segredo em ../.runtime/lab-control.json; não compartilhar esse arquivo.
+O anfitrião usa Chrome visível com perfil dedicado; o convidado usa outra
+instância. O controle HTTP fica em loopback, com segredo em
+../.runtime/lab-control.json. Esse arquivo é privado e não deve ser compartilhado.
 
-A entrada privada exige convite, ENTRAR e formulário de senha. O botão da senha fica restrito ao formulário, pois outro ENTRAR pode coexistir ao fundo. O popup de compartilhamento é fechado pelo controle publicado antes de iniciar. Opacidade de animação não reduz artificialmente a enumeração dos campos.
+Fixtures de transição ficam em tests/lab/fixtures. Relatórios devem distinguir
+ensaio iniciado, rodada concluída e partida completa. Um snapshot parcial pode
+servir a uma regressão, mas não estabelece o número universal de campos do jogo.
+Uma execução de `teste-chrome` deve ser acompanhada por resultado; sua
+identificação isolada não comprova sucesso.
 
-Snapshots: tests/lab/fixtures. Relatórios: evidence/lab/spike-*.json. O mais recente não é necessariamente aprovado: conferir status, assertions e limitações. Snapshots de transição podem estar parciais e servem para regressão. Não certificam quantidade fixa de campos.
+Textos sintéticos verificam controles e não aprovam palavras para o vocabulário.
+Amostras de tempo são relativas à observação; o pedido de STOP continua
+dependendo do controle disponível na interface. A validade da medição deve
+considerar também o preenchimento exigido pela sala.
 
-O ensaio compara fill e digitação, verifica valores depois da atualização da UI, deixa inicialmente o convidado sem respostas e amostra STOP. Relógio relativo à observação, não ao servidor. Medição inconsistente não vira tempo mínimo oficial. O pedido continua condicionado ao botão disponível.
+## Encerramento e recuperação
 
-Textos sintéticos testam controles; não aprovam vocabulário. Uma rodada do laboratório não certifica partida completa nem substitui M2–M6. A pendência está no checkpoint.
-
-## Recuperação
-
-Se o Chrome de teste fechar, consultar doctor e executar encerrar antes de iniciar. Não usar pkill global. Se o processo próprio não responder, conferir PID/caminho em .runtime antes de encerrar. Runtime é descartável após fechar o serviço; código, lock e fixtures permanecem no worktree.
+Consulte doctor e use encerrar antes de reiniciar um laboratório inconsistente.
+Confira a identidade de um processo antes de encerrá-lo e limite a limpeza aos
+recursos do próprio ensaio. Não use comandos globais para matar instâncias do
+Chrome. Preserve código, lock e fixtures ao descartar dados temporários.

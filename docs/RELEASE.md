@@ -1,32 +1,53 @@
-# Preparar e publicar uma release
+# Publicar uma release
 
-1. Preserve o snapshot funcional e a versão anterior. Faça as mudanças em branch.
-2. Atualize a versão autoritativa do pyproject e a versão exposta; execute o
-   check de metadados, regressão e instalação limpa do wheel.
-3. Confira autoria, mapa de licenças, avisos, fontes de terceiros e conteúdo do
-   pacote. O publicador PyPI legado não faz parte deste fluxo.
-4. Construa todos os assets a partir de um SHA aprovado na história da main.
-   Teste instalação, interface e o cenário dirigido necessário.
-5. Gere SBOM, inventários, SHA256SUMS e manifesto. Vincule-os ao commit e ao
-   digest de cada arquivo; atestação de procedência não prova correção funcional.
-6. Acione release.yml manualmente ou crie a branch `release-candidate/X.Y.Z`
-   apontando para o SHA aprovado na main. O workflow gera os artifacts
-   `release-linux` e, quando aprovado no runner, `release-windows-experimental`.
-7. O mantenedor baixa os artifacts, verifica seus hashes, instala o wheel para
-   o ensaio online e anexa `VALIDACAO_X.Y.Z.json` ao conjunto. Cria a tag
-   `vX.Y.Z` no mesmo SHA e uma release em rascunho, usando sua credencial com
-   permissão Contents. Depois de conferir evidências, fontes e assets, publica
-   o conjunto aprovado. Windows sem ensaio no jogo permanece experimental.
+## Preparar a versão
 
-Se houver interrupção, confira SHA, versão e hashes antes de retomar. Não
-sobrescreva asset publicado com bytes diferentes. Corrija em nova versão e
-documente o problema. Uma tag pública não é deslocada silenciosamente.
+1. Crie uma branch a partir do ramo principal e preserve a versão anterior.
+2. Atualize a versão em `pyproject.toml` e `src/stopots_v2/__init__.py` e sincronize o lock.
+3. Revise CHANGELOG, instruções de instalação, autoria, licenças e avisos de terceiros.
+4. Execute os checks de metadados, testes e instalação limpa do wheel.
+5. Integre a alteração somente com os checks exigidos pelo repositório aprovados.
 
-Para o ensaio online, use o wheel instalado sem fonte no sys.path. Capture o
-final real e comprove pausa, X, persistência do Chrome, reabertura e limpeza.
-Partidas públicas não são iniciadas automaticamente pela CI.
+Os comandos de preparação estão em [DESENVOLVIMENTO.md](DESENVOLVIMENTO.md).
+Revisões documentais devem conferir também o README incorporado aos metadados,
+os arquivos legais e o conteúdo da distribuição fonte.
 
-Permissões de PR são somente leitura. A CI constrói candidatos, sem publicar
-automaticamente. O job Linux pode escrever atestações e obter identidade OIDC;
-não recebe escrita de código. O PAT de preparação não é colocado em secrets de CI. Regras de
-branch só exigem checks depois de sua primeira execução bem-sucedida.
+## Construir os pacotes
+
+Acione o workflow `release.yml` manualmente ou crie uma branch
+`release-candidate/X.Y.Z` apontando para um commit aprovado no ramo principal.
+O workflow verifica essa origem e produz `release-linux` e, quando o job
+correspondente conclui, release-windows-experimental.
+
+O pacote Linux inclui wheel, distribuição fonte, portátil, `.deb`, avisos,
+fontes de terceiros e registros de integridade. Confira o resultado dos jobs,
+os hashes dos arquivos e os relatórios de instalação. O SBOM e a atestação
+devem identificar o conjunto a que se referem.
+
+## Verificar e publicar
+
+Teste o formato instalado, a interface e o cenário funcional necessário à
+mudança. Para teste no jogo, use o wheel instalado sem o código-fonte no
+sys.path. Capture o final real, pausa, fechamento da janela, persistência do
+Chrome, reabertura e limpeza. Partidas públicas não são iniciadas pela CI.
+
+Uma revisão só de texto pode usar evidência funcional anterior, desde que
+a comparação do código e das dependências seja registrada e o alcance fique
+claro. Não apresente essa comparação como uma nova partida executada.
+
+Crie `VALIDACAO_X.Y.Z.json` com o commit, os pacotes, os testes e os limites.
+Gere o manifesto final e `SHA256SUMS_FINAL` para os arquivos publicados. Crie
+a tag vX.Y.Z no mesmo commit e prepare uma release em rascunho. Confira a
+descrição, os downloads e os avisos antes de publicar.
+
+## Integridade e permissões
+
+Uma tag pública e os arquivos já distribuídos permanecem imutáveis. Correções
+de conteúdo dos pacotes geram uma nova versão. O texto da página da release
+pode ser atualizado sem substituir silenciosamente seus arquivos.
+
+Os workflows de PR usam permissões somente de leitura. A CI constrói os
+candidatos; a publicação é uma ação separada do mantenedor. O job Linux tem
+permissões específicas para atestações e identidade OIDC, sem escrita de código.
+Credenciais de publicação não devem integrar o repositório ou os pacotes.
+Uma atestação registra procedência e não substitui teste funcional.

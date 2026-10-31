@@ -1,17 +1,18 @@
 # Segurança
 
-A linha pública atual é 2.0.x. O código Selenium legado é histórico e não recebe
-promessa de manutenção. Nenhum prazo de resposta garantido é oferecido.
+A linha mantida é a 2.0.x. O cliente Selenium legado é histórico e não tem
+compromisso de manutenção. Não há prazo de resposta garantido para relatos.
+
+Para relatar uma vulnerabilidade, informe versão, sistema, impacto e passos
+de reprodução sem dados pessoais. Use o relato privado na aba Security quando
+disponível. Se a opção não estiver disponível, abra uma issue sem detalhes
+exploráveis e solicite um canal privado.
 
 Não publique credenciais, cookies, perfis Chrome, URLs privadas de sala ou
-endpoints CDP em uma issue. Para vulnerabilidade com conteúdo sensível, use a
-opção de relato privado na aba Security quando disponível; caso não esteja,
-abra uma issue sem detalhes exploráveis solicitando um canal privado.
+endpoints CDP. O aplicativo usa um perfil Chrome exclusivo e um endpoint local
+vinculado ao próprio perfil. Essa porta não deve ser exposta à rede. A senha de
+sala é transitória e não deve ser persistida em arquivos de configuração.
 
-Informe versão, sistema, impacto e reprodução sanitizada. A execução do Chrome
-usa perfil exclusivo e endpoint local vinculado ao próprio perfil. Não exponha
-essa porta à rede. A senha de sala é transitória; não deve ser persistida.
-
-Dependências são verificadas pela automação. Um relatório limpo não comprova
-ausência de vulnerabilidades; falhas serão avaliadas com contexto e correção
-verificada. Tokens usados para preparar a release não fazem parte do produto.
+As dependências são verificadas pela automação. As falhas relatadas serão
+avaliadas no contexto do aplicativo, com verificação da correção; a aprovação
+das verificações automatizadas não garante ausência de vulnerabilidades.
