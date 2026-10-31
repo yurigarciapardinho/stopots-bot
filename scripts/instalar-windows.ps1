@@ -1,6 +1,6 @@
 $ErrorActionPreference = "Stop"
 $ProjectRoot = Split-Path -Parent $PSScriptRoot
-$RuntimePath = Join-Path (Split-Path -Parent $ProjectRoot) ".runtime"
+$RuntimePath = Join-Path $ProjectRoot ".runtime"
 $EnvironmentPath = Join-Path $RuntimePath "venv-desktop-windows"
 Set-Location $ProjectRoot
 py -3.12 -m venv $EnvironmentPath

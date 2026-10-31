@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "version": "2.0.0",
+  "status": "validacao_offline_concluida",
+  "observed_at": "2026-10-31T16:45:51.831066+00:00",
+  "base_commit": "ce6f1e255827adedd86e7264f206b82fe3c176ec",
+  "version_policy": "Consolida a linha funcional mais recente, antes identificada internamente como 2.1.0.",
+  "offline": {
+    "native_tests_passed": 69,
+    "ubuntu24_contracts_passed": 69,
+    "ubuntu_packages": [
+      "24.04",
+      "26.04"
+    ],
+    "checks": [
+      "metadata",
+      "ruff-critical",
+      "wheel-installed",
+      "frozen-assets",
+      "offscreen",
+      "xcb-xvfb",
+      "scale-125",
+      "scale-150",
+      "actionlint",
+      "gitleaks-history",
+      "gitleaks-tree",
+      "pip-audit-runtime-and-build"
+    ]
+  },
+  "candidate_wheel": {
+    "name": "stopots_bot-2.0.0-py3-none-any.whl",
+    "sha256": "e028b6e62c3bd5630da0a038aba186dd1575c2adf6246e9cc4b03950dddeb4e4",
+    "scope": "pacote local de preparação; o candidato CI terá identidade própria"
+  },
+  "final_validation": "https://github.com/yurigarciapardinho/stopots-bot/releases/download/v2.0.0/VALIDACAO_2.0.0.json",
+  "historical_evidence": "evidence/v2/DESKTOP_RESULTADO.json",
+  "limitations": [
+    "Este arquivo registra preparação offline anterior ao commit; a prova online do pacote CI é publicada como asset separado.",
+    "Windows experimental; macOS posterior.",
+    "Container/Xvfb não certifica todos os compositores.",
+    "Sem nova certificação para todos os modos ou duração mínima universal de STOP."
+  ]
+}

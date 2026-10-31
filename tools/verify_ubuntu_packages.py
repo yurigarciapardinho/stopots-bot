@@ -6,8 +6,8 @@ import subprocess
 import sys
 
 ROOT=Path(__file__).resolve().parents[1]
-RUNTIME=ROOT.parent/'.runtime'
-DIST=RUNTIME/'dist-desktop'
+RUNTIME=Path(os.environ.get('STOPOTS_BUILD_ROOT',ROOT/'.runtime')).resolve()
+DIST=RUNTIME/'dist'
 
 SCRIPT=r'''
 from pathlib import Path
@@ -50,14 +50,14 @@ sys.exit(0 if passed else 1)
 
 def main():
     versions=sys.argv[1:] or ['24.04','26.04']
-    out=ROOT/'evidence/v2/DESKTOP_UBUNTU.json'
+    out=ROOT/'evidence/releases/2.0.0/ubuntu.json'
     reports=[r for r in json.loads(out.read_text()).get('platforms',[]) if r['ubuntu'] not in versions] if out.exists() else []
     for version in versions:
         target=RUNTIME/('ubuntu-package-'+version);target.mkdir(exist_ok=True)
         command=['docker','run','--rm','--network','none','--shm-size=512m',
                  '-e','TEST_UBUNTU='+version,'-e','HOST_UID='+str(os.getuid()),'-e','HOST_GID='+str(os.getgid()),
                  '-v',str(DIST)+':/release:ro','-v',str(target)+':/runtime',
-                 '-v',str(ROOT)+':/src:ro','-v',str(RUNTIME/'venv-desktop')+':/venv:ro',
+                 '-v',str(ROOT)+':/src:ro','-v',str(Path(sys.prefix))+':/venv:ro',
                  '-v','/opt/google/chrome:/opt/google/chrome:ro','stopots-ui-test:'+version,'python3','-u','-c',SCRIPT]
         result=subprocess.run(command,text=True,capture_output=True,timeout=360)
         print('UBUNTU',version,'EXIT',result.returncode,flush=True)

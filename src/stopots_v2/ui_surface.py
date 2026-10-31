@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: LicenseRef-YGP-NoResale-1.0
+# Copyright (c) 2026 Yuri Garcia Pardinho
 """Superfície orgânica vetorial, com antialiasing no renderer software."""
 from PySide6.QtCore import Property, Signal, Qt
 from PySide6.QtGui import QColor, QPainter, QPainterPath, QPen

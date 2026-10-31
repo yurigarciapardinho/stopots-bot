@@ -125,3 +125,11 @@ dmypy.json
 *.pyc
 .runtime/
 *.json.previous
+
+# Credenciais e saídas locais de release
+.token
+token
+token(*)
+*.sealed
+*.pem
+release-private/

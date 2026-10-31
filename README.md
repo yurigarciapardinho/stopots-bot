@@ -1,110 +1,99 @@
-# StopotS Assistente 2.1
+# StopotS Assistente 2.0
 
-Aplicativo local em pt-BR, com painel compacto, temas claro/escuro e ajuda ajustável durante o jogo. O perfil padrão **Só preencher** mantém STOP, votos e avanço sob seu controle. O Chrome dedicado permanece aberto quando você fecha o aplicativo; ao final de uma partida a ajuda é pausada.
+**Projeto de Yuri Garcia Pardinho.** Assistente desktop em português para jogar
+com ajuda ajustável: painel compacto, temas claro/escuro/sistema, perfis e entrada
+por convite. A versão 2.0.0 consolida todo o desenvolvimento mais recente,
+incluindo a interface desktop anteriormente numerada internamente como 2.1.0.
 
-## Aplicativo visual
+[Downloads](https://github.com/yurigarciapardinho/stopots-bot/releases) ·
+[Instalação](docs/INSTALACAO.md) · [Como usar](docs/USO.md) ·
+[Reportar problema](https://github.com/yurigarciapardinho/stopots-bot/issues) ·
+[Créditos](CREDITS.md) · [Licença](LICENSE)
 
-No computador preparado, abra `StopotS Assistente.desktop` na pasta `/home/yuzlkk/hack/stopots`. O desenvolvimento 2.1 fica em `stopots-desktop/`; `stopots-v2/` conserva a versão funcional 2.0.3. Também é possível iniciar com `stopots-desktop/scripts/desktop.sh`.
+## Começar no Ubuntu
 
-Escolha **Entrar por convite**, cole o link, confira seu apelido e selecione **Sim** ou **Não** para senha. Com **Sim**, informe a senha exatamente como recebeu. O aplicativo preenche a entrada pela interface real do jogo e confirma a sala antes de iniciar a ajuda. O código `08193` mantém seu zero inicial. A senha não é salva nas preferências ou no histórico.
-
-Em **Sua ajuda**, escolha um perfil e ajuste cada ação. Mudanças valem para as próximas ações após a indicação de aplicação. Trocar o perfil mantém uma pausa existente. **Pausar ajuda** mantém o jogo disponível para você; **Retomar ajuda** lê novamente a situação da partida.
-
-O pacote Ubuntu `.deb` e a distribuição portátil ficam em `../.runtime/dist-desktop`. O Chrome é necessário para jogar. Instalação por fonte: `python -m pip install '.[desktop]'` e `stopots-assistente`. A autoverificação `stopots-assistente --verificar-ui` exercita as telas em um runtime separado sem entrar em uma partida. Guia, alcance dos testes e opções Windows em [DESKTOP_2_1.md](docs/v2/DESKTOP_2_1.md).
-
-## Núcleo e vocabulário preservados
-
-Assistente local em Python 3.12 e Playwright, com interface e mensagens em português. O pacote v2 substitui a integração Selenium 3; o código original permanece em `stopots_bot/` e sua documentação em `docs/LEGADO.md`.
-
-**Versão 2.0.3: catálogo público e vocabulário nos 80 temas cadastrados.** Cinco coletas rápidas trouxeram 31 temas; a base ganhou 2.000 aprovações e reconhece PDA, PCH, JLR, PÁF e as siglas da sogra. A matriz atende 1.692/2.080 células; todos os temas têm candidatos, com lacunas de letras explícitas. Os replays são offline e a partida pública integral permanece pendente. Consulte `docs/v2/CATALOGO_E_VOCABULARIO.md` e `stopots-v2 diagnostico` para o alcance atual. A certificação histórica de partidas mantém suas versões e perfis.
-
-## CLI da versão funcional preservada
+Baixe o `.deb` da release e instale pelo gerenciador de aplicativos, ou use:
 
 ```bash
-cd /home/yuzlkk/hack/stopots/stopots-v2
-./scripts/lab.sh testar
-./scripts/v2.sh diagnostico
-./scripts/v2.sh executar
+sudo apt install ./stopots-assistente_2.0.0_amd64.deb
 ```
 
-Os exemplos `config/assistido.toml` e `config/automatico.toml` podem ser carregados com `--config`.
+É necessário ter Google Chrome instalado. Abra **StopotS Assistente** no
+lançador. O portátil Linux é alternativa sem instalação do aplicativo no sistema.
 
-O último comando abre um Chrome dedicado. Entre na sala pela interface. Por padrão, a v2 preenche campos vazios com candidatos aprovados; as demais ações dependem de opções explícitas:
+1. Deixe **Só preencher**, escolha **Escolher no jogo** e entre normalmente.
+2. Para convite, cole o link, confira o apelido e escolha se a sala tem senha.
+3. O assistente preenche campos vazios; você controla STOP, votos e avanço.
+4. Expanda o painel para ajustar permissões. Ao fim da partida a ajuda pausa.
+
+**Fechar a janela mantém o Chrome aberto.** Reabrir o assistente reutiliza a
+sessão dedicada existente e começa pausado. Fechar jogo e aplicativo é uma ação
+separada. Pausar não desfaz cliques ou texto já enviados.
+
+## O que está incluído
+
+- Núcleo Python/Playwright com contexto de partida, ações revalidadas e proteção
+  de edições manuais; ausência de vocabulário não significa resposta inválida.
+- Perfis Só preencher, Só observar, Automático e Personalizado, com mudanças
+  aplicadas às próximas ações e confirmação da revisão.
+- Convites com zero inicial, apelido editável e senha exata, incluindo acentos
+  e símbolos. Senhas de sala não entram nas preferências ou nos eventos.
+- 80 temas cadastrados, 7.986 associações aprovadas e 7.762 lexemas; cobertura
+  de 1.692/2.080 células tema/letra. Há lacunas e 2.050 associações pendentes
+  que não são distribuídas como respostas aprovadas.
+
+## Plataformas e limites
+
+| Plataforma | Alcance |
+| --- | --- |
+| Ubuntu 24.04 amd64 | Plataforma principal da distribuição Linux |
+| Ubuntu 26.04 amd64 | Instalação e smoke em ambiente isolado |
+| Pop!_OS 24.04/COSMIC | Referência física da interface e do Chrome dedicado |
+| Windows | Segunda prioridade; suporte experimental até validação nativa suficiente |
+| macOS | Planejado para etapa posterior |
+
+O [relatório de validação](docs/VALIDACAO.md) identifica testes, versão e formato
+de pacote realmente exercitados. Container/Xvfb não certifica todos os
+compositores. Modos Host/Maioria/Desativado, recuperação geral de rede e partida
+pública integral não são anunciados como certificados. STOP aguarda habilitação
+real; não há um tempo mínimo universal inventado. O servidor pode expulsar por
+inatividade mesmo com o Chrome aberto.
+
+## Instalar por fonte
+
+Com Python 3.12 e Chrome, em ambiente virtual:
 
 ```bash
-./scripts/v2.sh executar --modo automatico --stop --votos --avaliar --continuar
-./scripts/v2.sh executar --modo observar
-./scripts/v2.sh pausar
-./scripts/v2.sh retomar
+git clone https://github.com/yurigarciapardinho/stopots-bot.git
+cd stopots-bot
+python3 -m venv .venv
+. .venv/bin/activate
+python -m pip install '.[desktop]'
+stopots-assistente
 ```
 
-Pausa e retomada são comandos de outro terminal. A versão carregada do vocabulário fica fixa durante a execução. Texto já presente é preservado; o modo observar não faz alterações. O encerramento por Ctrl+C fecha os recursos próprios da sessão.
+A CLI é `stopots-v2`; o aplicativo é `stopots-assistente`. Consulte
+[configuração](docs/CONFIGURACAO.md), [desenvolvimento](docs/DESENVOLVIMENTO.md)
+e [problemas comuns](docs/TROUBLESHOOTING.md). A autoverificação
+`stopots-assistente --verificar-ui` exercita a interface sem entrar no jogo.
 
-`--stop` espera o botão habilitado e, por padrão, todos os campos preenchidos. `--no-exigir-todos` altera somente essa política local. A recusa conhecida por categorias incompletas é retornada como bloqueio; o adaptador fecha o aviso somente quando ele surge após sua própria tentativa. Avisos anteriores ou desconhecidos suspendem as ações. Uma tentativa de controle é deduplicada pela rodada/etapa, mesmo que o seletor mude. Não há número de segundos fixado como regra do servidor. Respostas sem categoria ou candidato aprovado ficam em branco, com possibilidade de preenchimento manual.
+## Privacidade
 
-`--votos` marca associações conhecidas e desmarca inicial incompatível. Ausência no dicionário preserva o voto existente. `--avaliar` confirma a etapa quando AVALIAR permite. `--continuar` usa ESTOU PRONTO após ranking de rodada; não inicia outra partida após o ranking final.
+O programa usa um perfil Chrome dedicado. Não descobre o perfil pessoal nem
+envia telemetria própria. Chrome e o serviço StopotS mantêm suas comunicações
+normais. Dados de execução ficam no dispositivo; veja os caminhos no guia de
+configuração. Nunca publique perfis, cookies, senhas ou endpoints CDP em issues.
 
-## Instalação independente
+## Autoria e licença
 
-Com Python 3.12+, Chrome instalado e ambiente virtual:
+A geração 2.0 é desenvolvida e mantida sob a direção de **Yuri Garcia Pardinho**,
+com origem em [Lucas8x/stopots-bot](https://github.com/Lucas8x/stopots-bot).
+Créditos, licença MIT da base e histórico são preservados. Dependências e dados
+não são atribuídos como obras exclusivas de Yuri.
 
-```bash
-python -m pip install .
-stopots-v2 diagnostico
-stopots-v2 executar --perfil /caminho/para/perfil-dedicado
-```
-
-As dependências de runtime estão fixadas em `requirements.txt`; o ambiente de testes em `requirements-lab.lock`. `scripts/preparar-lab.sh` refaz a preparação isolada no computador de referência e instala o pacote editável. Nenhuma credencial é necessária no fluxo anônimo.
-
-Por padrão, dados de execução vão para `.runtime/v2` no diretório atual. `scripts/v2.sh` utiliza o `.runtime` preparado na raiz autorizada. `STOPOTS_RUNTIME` altera essa raiz. Não compartilhe perfis de navegador ou arquivos de controle do laboratório.
-
-## Configuração
-
-As flags da CLI prevalecem sobre uma tabela TOML `[automacao]`, passada em `--config`:
-
-```toml
-[automacao]
-preencher = true
-stop = false
-exigir_todos = true
-votos = false
-avaliar = false
-continuar = false
-```
-
-Para reutilizar uma página já preparada num Chrome dedicado, use `--cdp http://127.0.0.1:PORTA --url URL_DA_SALA`. A seleção precisa ser única e a conexão não fecha contextos externos.
-
-Outras opções: `--tempo-limite`, `--eventos`, `--controle`, `--semente`, `--vocabulario`, `--url` e `--headless`. Use `stopots-v2 executar --help`.
-
-## Vocabulário e curadoria
-
-A fonte editorial está em `data/source/editorial.json`. A distribuição contém somente a release aprovada em `src/stopots_v2/resources/vocabulary.json`, com checksum e procedência. A migração reproduz 2.688 entradas, 269 células vazias e 10 duplicatas normalizadas excedentes do legado. Importação começa como pendente.
-
-O bootstrap local contém **293 associações aprovadas / 286 lexemas**. Cobre os 16 temas do perfil de validação nas letras A–D, respeitando o limite de 20 unidades UTF-16. Não cobre todos os temas e letras do jogo. Aprovação editorial local não garante consenso entre jogadores. A API do IBGE forneceu 5.571 municípios nesta execução. A release contém **7.986 associações aprovadas / 7.762 lexemas**, incluindo as revisões posteriores ao ensaio público. A regra editorial `ibge-city-v1` valida os pares id/nome e aprova somente Cidade, que pode ser usada por CEP. Homônimos mantêm entidades distintas; candidatos com a mesma palavra não ganham peso adicional. Há 2.050 associações pendentes. A curadoria atual combina decisões editoriais locais e seleções revisadas de Wikidata, IBGE e CBKC. As siglas fornecidas pelo usuário têm fonte explícita e aliases completos. PÁF e JLR são composições, e PDA permanece separado de Desenho Animado. A matriz de 80 temas × 26 letras tem candidatos em 1.692/2.080 células; os 72/72 do recorte público são replay offline.
-
-```bash
-./scripts/v2.sh vocabulario cobertura --letras ABCD --temas Animal Ave CEP
-./scripts/v2.sh vocabulario editar data/source/editorial.json Animal Ariranha \
-  --estado approved --fonte bootstrap-2026-10-29 --nota 'Associação revisada: mamífero'
-./scripts/v2.sh vocabulario publicar data/source/editorial.json /caminho/atual.json
-```
-
-Revisões em lote usam `tools/review_vocabulary.py`: exigem checksum da fonte, referência factual e decisão explícita; entradas sem decisão ficam pendentes. Decisões anteriores e grafias já revisadas são preservadas. A revisão aplicada fica identificada por hash para impedir reaplicação divergente.
-
-Publicar valida antes de substituir; a versão anterior fica em `atual.json.previous`. Editar duas vezes mantém listas e apóstrofos válidos. Acentos são preservados na grafia e normalizados na busca. Na UI medida, hífen vira espaço e apóstrofo é removido; o adaptador confirma a forma resultante e reconhece essa forma na apuração. Inglês é tratado como idioma lexical próprio. Ave inclui-se em Animal, sem a relação inversa; CEP e FLV têm composição explícita. Consulte `docs/v2/ARQUITETURA.md`.
-
-## Verificação
-
-```bash
-./scripts/lab.sh testar
-../.runtime/venv/bin/python tools/build_vocabulary.py
-# --recriar refaz a migração e substitui edições da fonte editorial.
-# Somente quando quiser iniciar partidas privadas reais:
-../.runtime/venv/bin/python tools/validate_v2.py --partidas 3 --cli
-```
-
-O laboratório `tools/stopots_lab.py` é ferramenta de preparação. O bot distribuído está em `src/stopots_v2` e não depende dele. Os ensaios de integração usam o laboratório somente para montar a sala privada. Eventos sanitizados omitem nomes, URLs de sala, senhas e conteúdo de campos pessoais. Evidências de teste ficam em `evidence/v2`.
-
-MIT. Baseado em [Lucas8x/stopots-bot](https://github.com/Lucas8x/stopots-bot).
-
-Os inicializadores `.bat` preservados pertencem à v1. A entrada da v2 é `stopots-v2`; a matriz de validação atual cobre Linux e Chrome no computador de referência.
+Os componentes próprios abrangidos pela YGP NoResale podem ser redistribuídos
+gratuitamente; sua venda exige autorização separada. Direitos MIT já concedidos
+e licenças de terceiros permanecem válidos. Leia [LICENSE](LICENSE),
+[procedência](docs/PROCEDENCIA.md) e [avisos](THIRD_PARTY_NOTICES.md).
+É código disponível com termos específicos, não uma declaração de licença
+open source aprovada pela OSI. Projeto independente, sem vínculo oficial com o jogo.

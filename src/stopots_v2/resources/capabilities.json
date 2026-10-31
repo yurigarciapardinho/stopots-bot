@@ -1,6 +1,6 @@
 {
   "as_of": "2026-10-30",
-  "release_status": "desktop_gui_com_validacao_dirigida",
+  "release_status": "consolidacao_publica_com_validacao_dirigida",
   "standard_mode_certified": true,
   "host_mode_certified": false,
   "disabled_mode_certified": false,
@@ -68,5 +68,7 @@
     "windows_native_verified": false,
     "macos_native_verified": false,
     "ubuntu_package_verification": "evidence/v2/DESKTOP_RESULTADO.json"
-  }
+  },
+  "public_release_version": "2.0.0",
+  "historical_numbering_notice": "Numerações internas preservadas; consultar docs/VALIDACAO.md."
 }

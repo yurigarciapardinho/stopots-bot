@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: LicenseRef-YGP-NoResale-1.0
+# Copyright (c) 2026 Yuri Garcia Pardinho
 from __future__ import annotations
 
 import asyncio
@@ -11,6 +13,7 @@ import threading
 
 from .desktop_model import Invitation, Preferences
 from .desktop_engine import DesktopEngine
+from . import __version__, __author__
 
 
 def main(argv=None, on_ready=None):
@@ -41,7 +44,8 @@ def main(argv=None, on_ready=None):
     lock.setStaleLockTime(0)
     app = QGuiApplication(arguments)
     app.setApplicationName('StopotS Assistente')
-    app.setOrganizationName('StopotsLocal')
+    app.setApplicationVersion(__version__)
+    app.setOrganizationName('Yuri Garcia Pardinho')
     app.setDesktopFileName('stopots-assistente')
     if not lock.tryLock(100):
         print('O assistente já está aberto para esta sessão.', file=sys.stderr)
@@ -75,6 +79,13 @@ ApplicationWindow {
         incoming = Signal(dict)
         finished = Signal()
         sessionReady = Signal()
+
+        @Property('QVariantMap', constant=True)
+        def product(self):
+            return {'version': __version__, 'author': __author__,
+                    'credits': 'Origem: Lucas8x/stopots-bot (MIT). Evolução e manutenção: Yuri Garcia Pardinho.',
+                    'license': 'Componentes próprios: YGP NoResale 1.0. Direitos MIT anteriores e licenças de terceiros preservados. Qt/PySide6: LGPL; substituição das bibliotecas permitida.',
+                    'url': 'https://github.com/yurigarciapardinho/stopots-bot'}
 
         def __init__(self):
             super().__init__()

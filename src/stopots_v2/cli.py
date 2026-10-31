@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: LicenseRef-YGP-NoResale-1.0
+# Copyright (c) 2026 Yuri Garcia Pardinho
 from __future__ import annotations
 
 import argparse

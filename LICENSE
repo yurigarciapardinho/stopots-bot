@@ -1,21 +1,16 @@
-MIT License
+Licenciamento do StopotS Assistente 2.0
 
-Copyright (c) 2019 Lucas8x
+Copyright (c) 2026 Yuri Garcia Pardinho, pelas contribuições autorais identificadas.
+Copyright (c) 2019 Lucas8x, pela base original preservada.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+Os componentes autorais da geração 2.0 identificados em docs/PROCEDENCIA.md são
+oferecidos sob LicenseRef-YGP-NoResale-1.0, cujo texto integral está em
+LICENSES/LicenseRef-YGP-NoResale-1.0.txt.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+A base legada, os dados e os componentes identificados como MIT permanecem sob
+LICENSES/MIT.txt. Os avisos de copyright anteriores são preservados. A política
+YGP não revoga permissões já concedidas por versões anteriormente licenciadas.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+Dependências mantêm seus próprios termos. Os direitos de terceiros, inclusive
+LGPL, e os direitos legais que independem de licença não são limitados pela YGP.
+Consulte THIRD_PARTY_NOTICES.md e docs/LICENCIAMENTO.md.

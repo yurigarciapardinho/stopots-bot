@@ -4,7 +4,7 @@ import QtQuick.Layouts
 
 ApplicationWindow {
     id: win
-    title: "StopotS · Assistente local"
+    title: "StopotS Assistente " + backend.product.version
     visible: true
     property bool compact: false
     property int tab: 0
@@ -40,6 +40,29 @@ ApplicationWindow {
     }
     Shortcut { sequence: "Ctrl+P"; onActivated: backend.command(backend.state.active ? "pause" : "resume"); }
     Shortcut { sequence: "Ctrl+,"; onActivated: {win.compact=false;win.tab=1;} }
+    Shortcut { sequence: "Ctrl+I"; onActivated: {win.compact=false;about.open();} }
+    Dialog {
+        id: about
+        objectName: "aboutDialog"
+        anchors.centerIn: parent
+        width: Math.min(win.width-32,620)
+        modal: true
+        title: "StopotS Assistente " + backend.product.version
+        standardButtons: Dialog.Ok
+        palette.windowText: win.ink
+        palette.text: win.ink
+        palette.buttonText: win.ink
+        palette.button: win.surface
+        background: OrganicPanel {fillColor:win.surface;borderColor:win.line}
+        contentItem: ColumnLayout {
+            spacing: 14
+            LabelText { text: "Projeto de " + backend.product.author; font.bold:true; Layout.fillWidth:true }
+            LabelText { text: backend.product.credits; Layout.fillWidth:true }
+            HelpText { text: backend.product.license; Layout.fillWidth:true }
+            HelpText { text: "Textos completos e fontes: pasta legal da distribuição e documentação de licenciamento."; Layout.fillWidth:true }
+            HelpText { text: backend.product.url; Layout.fillWidth:true }
+        }
+    }
 
     component LabelText: Text {
         color: win.ink
@@ -126,6 +149,7 @@ ApplicationWindow {
                 LabelText {text:"StopotS";font.pixelSize:22;font.bold:true}
                 HelpText {text:win.compact?"Assistente local":"Sua ajuda, do seu jeito."}
             }
+            SoftButton {text:"Sobre";visible:!win.compact;implicitWidth:90;onClicked:about.open()}
             SoftButton {text:win.compact?"Expandir":"Recolher";implicitWidth:100;onClicked:win.compact=!win.compact}
         }
 

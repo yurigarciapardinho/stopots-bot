@@ -1,5 +1,6 @@
 """Uma partida privada dirigida pela GUI. Segredos transitam somente por Pipe."""
 from __future__ import annotations
+from datetime import datetime, timezone
 import asyncio
 import hashlib
 import json
@@ -8,10 +9,12 @@ import os
 from pathlib import Path
 import re
 import secrets
+import subprocess
 import time
 import uuid
 
 from stopots_v2 import __version__
+import stopots_v2
 from stopots_v2.adapters.web import StopotsWeb
 from stopots_v2.adapters.chrome_session import ChromeSession
 from stopots_v2.application import Controller, Policy
@@ -118,7 +121,7 @@ def gui_process(connection, runtime, mode, invitation=None):
     os.environ['QT_QUICK_BACKEND']='software'
     from PySide6.QtCore import QTimer, QObject
     from stopots_v2.desktop import main
-    started=time.monotonic();joined=False
+    started=time.monotonic();joined=False;last_progress=None
     def ready(app,bridge,window):
         nonlocal joined
         if mode in ('join','entry'):
@@ -145,8 +148,14 @@ def gui_process(connection, runtime, mode, invitation=None):
                     bridge.shutdown(False)
             QTimer.singleShot(200,submit)
         def poll():
-            nonlocal joined
+            nonlocal joined,last_progress
             s=bridge.state
+            if mode == 'join' and s.get('phase') in (Phase.WRITING, Phase.REVIEW, Phase.ROUND_RESULT):
+                progress={k:s.get(k) for k in ('phase','round','letter','filled','total','ranking_scope')}
+                progress['scores']=sorted(x['points'] for x in s.get('ranking',[]))
+                if progress != last_progress:
+                    last_progress=progress
+                    connection.send({'event':'gui_progress',**progress})
             if s.get('error_code'):
                 diagnostic=[]
                 if bridge.engine.chrome.page:
@@ -177,13 +186,22 @@ def gui_process(connection, runtime, mode, invitation=None):
 
 
 def main():
+    installed = 'site-packages' in Path(stopots_v2.__file__).resolve().parts
+    if os.environ.get('STOPOTS_EXPECT_INSTALLED') == '1':
+        assert installed, 'O ensaio exige wheel instalado, sem fonte editável'
     context=mp.get_context('spawn');run_id=uuid.uuid4().hex[:12]
     entry_only=os.environ.get('STOPOTS_VALIDATE_ENTRY_ONLY')=='1'
     runtime=ROOT.parent/'.runtime'/('desktop-live-'+run_id);runtime.mkdir()
     os.environ['TMPDIR']=str(ROOT.parent/'.runtime/tmp-desktop')
     host_conn,host_child=context.Pipe();host=context.Process(target=host_process,args=(host_child,not entry_only));host.start()
-    gui=None;report={'schema_version':1,'run_id':run_id,'version':__version__,'subject':'desktop-gui',
+    gui=None;report={'schema_version':1,'run_id':run_id,'version':__version__,'subject':'desktop-gui-installed-wheel' if installed else 'desktop-gui-source','installed_wheel':installed,
                      'scenario':{'private':not entry_only,'participants':2,'rounds':0 if entry_only else 4,'letters':'' if entry_only else 'ABCD','pool':[] if entry_only else POOL},'events':[]}
+    report['observed_at']=datetime.now(timezone.utc).isoformat()
+    report['source_commit']=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
+    build=Path(os.environ.get('STOPOTS_BUILD_ROOT',ROOT/'.runtime'))
+    wheels=list((build/'dist').glob('*.whl'))
+    if installed and len(wheels)==1:
+        report['wheel']={'name':wheels[0].name,'sha256':hashlib.sha256(wheels[0].read_bytes()).hexdigest()}
     try:
         assert host_conn.poll(75),'Host não criou a sala'
         room=host_conn.recv();assert room['event']=='room',room
@@ -234,7 +252,8 @@ def main():
                 await asyncio.sleep(.1)
             return False
         report['cleanup']={'host_closed':not host.is_alive(),'gui_closed':not gui or not gui.is_alive(),'dedicated_chrome_closed':asyncio.run(cleanup())}
-        target=ROOT/'evidence/v2'/('desktop-'+run_id+'.json');target.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
+        target=ROOT/'evidence/releases/2.0.0'/('desktop-'+run_id+'.json');target.parent.mkdir(parents=True,exist_ok=True)
+        target.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
         print('REPORT',target.name,flush=True)
     return 0 if report.get('reopened_paused_same_chrome') and all(report['cleanup'].values()) else 1
 

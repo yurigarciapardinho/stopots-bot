@@ -14,7 +14,7 @@ Fonte oficial: https://servicodados.ibge.gov.br/api/v1/localidades/municipios?or
 Documentação: https://servicodados.ibge.gov.br/api/docs/localidades  
 Política de dados abertos: https://www.ibge.gov.br/acesso-informacao/dados-abertos.html
 
-O identificador nominal de licença não é fornecido pela resposta da API e está registrado assim nos metadados. A atribuição da fonte acompanha os fatos geográficos. A licença MIT do projeto abrange o código e sua curadoria própria.
+O identificador nominal de licença não é fornecido pela resposta da API e está registrado assim nos metadados. A atribuição da fonte acompanha os fatos geográficos. A organização e a curadoria própria destes dados preservam a licença MIT. O código atual do aplicativo tem o licenciamento delimitado em ../LICENSE e ../docs/PROCEDENCIA.md.
 
 A importação IBGE começa pendente. A regra `ibge-city-v1` confere esquema, códigos únicos, integridade do snapshot e correspondência exata dos pares id/nome; aprova somente Cidade. CEP aceita Cidade pela relação explícita da taxonomia. Nenhuma outra categoria é aprovada por essa regra. O código de origem diferencia municípios homônimos, enquanto a seleção elimina repetição da palavra digitada.
 
@@ -26,6 +26,6 @@ A revisão factual acrescenta somente palavras e associações explicitamente co
 
 `tools/review_vocabulary.py data/source/publico-revisado-v1.json --publicar` é idempotente para a revisão exata já aplicada. Um ID reutilizado com conteúdo diferente, checksum divergente, idioma incompatível ou snapshot alterado interrompe a operação antes da escrita. As pendências continuam fora da distribuição. A revisão seguinte registrou as definições de siglas fornecidas pelo usuário e acrescentou curadoria em todos os temas.
 
-Na 2.0.3, `catalogo-revisado-v1.json` e `catalogo-reforco-r-v1.json` registram mais 2.000 aprovações. `catalogo-fatos-2026-10-30.json` preserva registros e revisões de origem; dados presentes nele não são automaticamente distribuídos. A seleção usa nomes de raças da CBKC, UFs do IBGE e registros Wikidata, além de revisão editorial local declarada. A lista de sementes em `data/review/` é uma proposta; somente as decisões explícitas das revisões publicadas entram no índice.
+Na etapa interna 2.0.3, `catalogo-revisado-v1.json` e `catalogo-reforco-r-v1.json` registram mais 2.000 aprovações. `catalogo-fatos-2026-10-30.json` preserva registros e revisões de origem; dados presentes nele não são automaticamente distribuídos. A seleção usa nomes de raças da CBKC, UFs do IBGE e registros Wikidata, além de revisão editorial local declarada. A lista de sementes em `data/review/` é uma proposta; somente as decisões explícitas das revisões publicadas entram no índice.
 
 As definições PDA/PCH/JLR/FLV/CEP/MSÉ/MST/MSU/PÁF têm origem na mensagem do usuário. Elas não são atribuídas à UI oficial. Fontes de definições do usuário têm data, texto e exemplos, sem URL externa fictícia. JLR aceita Jornal/Livro/Revista e PÁF aceita Planta/Árvore/Flor. A revisão não transforma automaticamente MSU em Objeto nem PDA em Desenho Animado.
