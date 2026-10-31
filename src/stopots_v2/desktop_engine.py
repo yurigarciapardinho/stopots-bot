@@ -66,7 +66,7 @@ class DesktopEngine:
         if self.port:
             await self.port.close()
         page = await self.chrome.connect(pw)
-        self.port = StopotsWeb(page)
+        self.port = StopotsWeb(page, cancelled=lambda: not self.active.is_set())
         self.controller = Controller(self.port, self.vocabulary, self.policy,
                                      EventLog(self.directory / 'events.jsonl'))
         self.controller.paused = lambda: not self.active.is_set()

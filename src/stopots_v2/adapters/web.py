@@ -12,15 +12,16 @@ from ..domain import ActionResult, Control, Field, Group, Kind, Notice, Observat
 from ..identity import ContextTracker
 from ..normalization import game_value, utf16_length
 
-ADAPTER_VERSION = "web-2.0.2"
+ADAPTER_VERSION = "web-2.0.3"
 SNAPSHOT = files("stopots_v2").joinpath("adapters/snapshot.js").read_text(encoding="utf-8")
 
 
 class StopotsWeb:
     """Um escritor serial por página; nenhuma dependência do harness de preparação."""
 
-    def __init__(self, page, owner=None, clock=time.monotonic):
+    def __init__(self, page, owner=None, clock=time.monotonic, cancelled=None):
         self.page, self.owner, self.clock = page, owner, clock
+        self.cancelled = cancelled or (lambda: False)
         self.tracker = ContextTracker(clock=clock)
         self.lock = asyncio.Lock()
         self.attempted = set()
@@ -105,6 +106,8 @@ class StopotsWeb:
                            raw.get("connected", True), self.rules, self._ranking(raw.get("ranking")),notice)
 
     def _precondition(self, action, obs):
+        if self.cancelled():
+            return Status.BLOCKED, "Ajuda pausada; interação suspensa"
         if action.deadline <= self.clock():
             return Status.STALE, "Prazo da ação expirou"
         if action.context != obs.context or not obs.connected:
@@ -143,6 +146,19 @@ class StopotsWeb:
                 return Status.BLOCKED, "Aguardando habilitação real do controle"
         return None
 
+    async def _dispatch(self, action, operation, *args, **kwargs):
+        # Conferir após a última espera e antes de enviar cada interação.
+        # Uma interação já enviada não pode ser desfeita por uma pausa posterior.
+        if self.cancelled():
+            return False
+        self.attempted.add(action.id)  # inclusive timeout após envio
+        await operation(*args, **kwargs)
+        return True
+
+    def _paused_result(self, action, observation):
+        return ActionResult(Status.BLOCKED, "Ajuda pausada; interação suspensa",
+                            observation, action.id in self.attempted)
+
     async def apply(self, action):
         from playwright.async_api import Error, TimeoutError as PlaywrightTimeout
         async with self.lock:
@@ -155,6 +171,8 @@ class StopotsWeb:
             target = self.page.locator(action.target)
             if await target.count() != 1:
                 return ActionResult(Status.BLOCKED, "Alvo ausente ou ambíguo", before)
+            if self.cancelled():
+                return self._paused_result(action, before)
             await self.page.bring_to_front()
             # Foco pode permitir uma transição: observar novamente antes da mutação.
             fresh = await self.observe()
@@ -162,26 +180,29 @@ class StopotsWeb:
             if failure:
                 return ActionResult(*failure, fresh)
             timeout = max(1, min(2500, int((action.deadline - self.clock()) * 1000)))
-            self.attempted.add(action.id)  # inclusive timeout após envio
             try:
                 if action.kind == Kind.FILL:
                     # Leitura imediatamente anterior impede sobrescrita detectável.
                     if await target.input_value() != action.expected_value:
                         return ActionResult(Status.STALE, "Edição manual preservada", await self.observe())
-                    await target.fill(str(action.desired), timeout=timeout)
-                    await target.press("Tab", timeout=timeout)
+                    if not await self._dispatch(action, target.fill, str(action.desired), timeout=timeout):
+                        return self._paused_result(action, fresh)
+                    await self._dispatch(action, target.press, "Tab", timeout=timeout)
                 elif action.kind == Kind.VOTE:
                     group = next(g for g in fresh.groups if g.ref == action.target)
                     if await target.is_checked() != action.desired:
                         if await target.is_visible():
-                            await target.set_checked(bool(action.desired), timeout=timeout)
+                            if not await self._dispatch(action, target.set_checked, bool(action.desired), timeout=timeout):
+                                return self._paused_result(action, fresh)
                         else:
                             label = self.page.locator(group.label_ref)
                             if await label.count() != 1:
                                 return ActionResult(Status.BLOCKED, "Rótulo do voto ambíguo", fresh)
-                            await label.click(timeout=timeout)
+                            if not await self._dispatch(action, label.click, timeout=timeout):
+                                return self._paused_result(action, fresh)
                 else:
-                    await target.click(timeout=timeout)
+                    if not await self._dispatch(action, target.click, timeout=timeout):
+                        return self._paused_result(action, fresh)
             except (PlaywrightTimeout, Error):
                 # Não repete clique cujo efeito pode já ter sido enviado.
                 return await self._confirm(action, before, timed_out=True)
@@ -202,7 +223,8 @@ class StopotsWeb:
                     ok=self.page.locator(current.notice.acknowledge.ref)
                     if await ok.count()==1 and self.clock()<action.deadline:
                         try:
-                            await ok.click(timeout=max(1,min(1000,int((action.deadline-self.clock())*1000))))
+                            if not await self._dispatch(action, ok.click, timeout=max(1,min(1000,int((action.deadline-self.clock())*1000)))):
+                                return self._paused_result(action, current)
                             remaining=max(1,min(800,int((action.deadline-self.clock())*1000)))
                             await self.page.locator(current.notice.ref).wait_for(state='hidden',timeout=remaining)
                         except Error:

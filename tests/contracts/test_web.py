@@ -185,3 +185,94 @@ def test_existing_unknown_or_manual_notice_is_preserved():
         assert await page.locator('.popupSystem').count()==1
         assert not await page.locator('#inputText-0').input_value()
     browser_test(case)
+
+
+@pytest.mark.parametrize('kind,pause_at', [
+    (Kind.FILL,'focus'),(Kind.FILL,'observation'),(Kind.FILL,'read'),
+    (Kind.VOTE,'focus'),(Kind.VOTE,'observation'),(Kind.VOTE,'read'),
+    (Kind.CONFIRM,'focus'),(Kind.CONFIRM,'observation'),
+])
+def test_pause_during_pending_action_prevents_dispatch_and_allows_resume(kind,pause_at,monkeypatch,tmp_path):
+    async def case(page, now):
+        from playwright.async_api import Locator
+        from stopots_v2.desktop_engine import DesktopEngine
+        engine=DesktopEngine(tmp_path,Policy(),lambda _:None)
+        engine.active.set()
+        await page.set_content(WRITING if kind==Kind.FILL else '<header>RODADAS: 1 / 4 A</header>'+REVIEW)
+        port=StopotsWeb(page,clock=lambda:now[0],cancelled=lambda:not engine.active.is_set())
+        await port.observe();now[0]+=2
+        policy=Policy(set_votes=kind==Kind.VOTE,confirm_review=kind==Kind.CONFIRM)
+        action=Planner(Vocabulary.bundled(),policy).plan(await port.observe())
+        assert action.kind==kind
+        if pause_at=='focus':
+            original=page.bring_to_front
+            async def focus():
+                engine.submit('pause')
+                await original()
+            monkeypatch.setattr(page,'bring_to_front',focus)
+        elif pause_at=='observation':
+            original=port.observe;calls=0
+            async def observe():
+                nonlocal calls
+                obs=await original();calls+=1
+                if calls==2:engine.submit('pause')
+                return obs
+            monkeypatch.setattr(port,'observe',observe)
+        else:
+            method='input_value' if kind==Kind.FILL else 'is_visible'
+            original=getattr(Locator,method)
+            async def read(locator,*args,**kwargs):
+                value=await original(locator,*args,**kwargs)
+                engine.submit('pause')
+                return value
+            monkeypatch.setattr(Locator,method,read)
+        result=await port.apply(action)
+        assert result.status==Status.BLOCKED and not result.attempted
+        assert action.id not in port.attempted
+        if kind==Kind.FILL:assert await page.locator('#inputText-0').input_value()==''
+        elif kind==Kind.VOTE:assert await page.locator('#g').is_checked()
+        else:assert await page.locator('#confirm').is_enabled()
+        monkeypatch.undo();engine.active.set()
+        assert (await port.apply(action)).status==Status.APPLIED
+    browser_test(case)
+
+
+def test_pause_after_fill_prevents_followup_tab(monkeypatch):
+    async def case(page,now):
+        from playwright.async_api import Locator
+        paused=False
+        await page.set_content(WRITING+'<script>window.tabs=0;document.onkeydown=e=>{if(e.key==="Tab")window.tabs++}</script>')
+        port=StopotsWeb(page,clock=lambda:now[0],cancelled=lambda:paused)
+        await port.observe();now[0]+=2
+        action=Planner(Vocabulary.bundled()).plan(await port.observe())
+        original=Locator.fill
+        async def fill(locator,*args,**kwargs):
+            nonlocal paused
+            await original(locator,*args,**kwargs);paused=True
+        monkeypatch.setattr(Locator,'fill',fill)
+        result=await port.apply(action)
+        assert result.status==Status.APPLIED and result.attempted
+        assert await page.evaluate('window.tabs')==0
+    browser_test(case)
+
+
+def test_pause_preserves_stop_rejection_notice(monkeypatch):
+    async def case(page,now):
+        import json
+        paused=False
+        popup='<div class="popupSystem"><p>Preencha corretamente todas as categorias para dar Stop</p><button onclick="this.parentElement.remove()">OK</button></div>'
+        await page.set_content(WRITING.replace('disabled','')+'<script>document.querySelector("#stop").onclick=()=>document.body.insertAdjacentHTML("beforeend",'+json.dumps(popup)+')</script>')
+        port=StopotsWeb(page,clock=lambda:now[0],cancelled=lambda:paused)
+        await port.observe();now[0]+=2
+        action=Planner(Vocabulary.bundled(),Policy(fill_blanks=False,request_stop=True,require_all_filled=False)).plan(await port.observe())
+        original=port.observe
+        async def observe():
+            nonlocal paused
+            obs=await original()
+            if obs.notice:paused=True
+            return obs
+        monkeypatch.setattr(port,'observe',observe)
+        result=await port.apply(action)
+        assert result.status==Status.BLOCKED and result.attempted
+        assert await page.locator('.popupSystem').count()==1
+    browser_test(case)

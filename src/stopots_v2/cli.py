@@ -106,6 +106,7 @@ async def execute(args):
             print("Chrome pronto. Entre na sala pela interface. Controle:", control, flush=True)
             print("Ações:", json.dumps(asdict(policy), ensure_ascii=False), flush=True)
             controller = Controller(port, vocab, policy, events, control)
+            port.cancelled = controller.paused
             result = await controller.run(args.tempo_limite)
             await port.close()
             return result
