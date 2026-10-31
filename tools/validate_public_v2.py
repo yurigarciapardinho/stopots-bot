@@ -31,7 +31,7 @@ def cli_completion(exit_code, log_path):
     if exit_code != 0:
         return None
     try:
-        log=log_path.read_text()
+        log=log_path.read_text(encoding="utf-8")
         starts=list(re.finditer(r'(?m)^\{\n  "status":',log))
         if not starts:return None
         result=json.JSONDecoder().raw_decode(log[starts[-1].start():])[0]
@@ -107,15 +107,15 @@ async def main():
             await page.get_by_role('button',name='JOGAR' if args.jogar else 'SALAS',exact=True).click(timeout=6000)
             if args.jogar:
                 await page.wait_for_url(re.compile(r'https://stopots\.com/pt/(?:\d+|game)/?$'),timeout=30000)
-                command_path.write_text(json.dumps({'id':uuid.uuid4().hex,'op':'run','scenario':{'entry':'public_quick_play'}}))
+                command_path.write_text(json.dumps({'id':uuid.uuid4().hex,'op':'run','scenario':{'entry':'public_quick_play'}}), encoding="utf-8")
             report['status']='selecting_public_room';save()
             print(json.dumps({'run_id':run_id,'status':report['status'],'state_file':str(state_path),'command_file':str(command_path)}),flush=True)
             deadline=time.monotonic()+args.tempo_limite+180;last_save=0
             while time.monotonic()<deadline:
-                state_path.write_text(json.dumps({'pid':os.getpid(),'host':{'endpoint':f'http://127.0.0.1:{port}','url':page.url},'command_file':str(command_path)}))
+                state_path.write_text(json.dumps({'pid':os.getpid(),'host':{'endpoint':f'http://127.0.0.1:{port}','url':page.url},'command_file':str(command_path)}), encoding="utf-8")
                 state_path.chmod(0o600)
                 if command_path.exists():
-                    try:command=json.loads(command_path.read_text())
+                    try:command=json.loads(command_path.read_text(encoding="utf-8"))
                     except ValueError:command={}
                     if command.get('id')!=last_command and command.get('op'):
                         last_command=command['id']
@@ -175,7 +175,7 @@ async def main():
         report['cleanup']={'owned_browser_disconnected':browser is None or not browser.is_connected()}
         state_path.unlink(missing_ok=True);command_path.unlink(missing_ok=True)
         if events_path.exists():
-            events=[json.loads(line) for line in events_path.read_text().splitlines() if line]
+            events=[json.loads(line) for line in events_path.read_text(encoding="utf-8").splitlines() if line]
             actions=[e for e in events if e['event']=='acao']
             from collections import Counter
             report['actions']={'by_status':dict(Counter(e['status'] for e in actions)), 'by_kind':dict(Counter(e['kind'] for e in actions))}

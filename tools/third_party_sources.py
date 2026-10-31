@@ -60,8 +60,8 @@ def main():
     out.mkdir(parents=True,exist_ok=True)
     manifest = {'qt_version':version,'pyside_version':pyside,'sources':records,
                 'notice':'Fontes independentes mantêm suas próprias licenças; não estão sob YGP NoResale.'}
-    (source_dir/'SOURCES.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n')
-    (out/'THIRD_PARTY_SOURCES.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n')
+    (source_dir/'SOURCES.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n', encoding="utf-8")
+    (out/'THIRD_PARTY_SOURCES.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n', encoding="utf-8")
     bundle=out/f'third-party-sources-qt-{version}.tar.gz'
     with tarfile.open(bundle,'w:gz',compresslevel=1) as archive:
         for path in sorted(source_dir.iterdir()):

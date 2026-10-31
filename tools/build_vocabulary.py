@@ -44,7 +44,7 @@ def build(recreate=False):
         print(json.dumps({'existing_editorial_preserved': True, 'release': manifest}, ensure_ascii=False))
         return
     original = ROOT / "stopots_bot/dictionary.json"
-    labels = {label for cell in json.loads(original.read_text()).values() for label in cell}
+    labels = {label for cell in json.loads(original.read_text(encoding="utf-8")).values() for label in cell}
     labels |= set(BOOTSTRAP) | {"Estado", "Legume", "Verdura", "Nome", "Tem na academia"}
     taxonomy = {category_id(label): {"label": label, "language": "pt", "aliases": [], "includes": []} for label in sorted(labels)}
     for cid, language in [("palavra_em_ingles", "en"), ("palavra_em_espanhol", "es")]:

@@ -32,7 +32,7 @@ def ready(app, bridge, window):
             result = {'frames': frames, 'qml_errors': errors, 'local_simulation': True,
                       'online_game_started': False}
             RUNTIME.mkdir(parents=True, exist_ok=True)
-            (RUNTIME / 'result.json').write_text(json.dumps(result, ensure_ascii=False, indent=2))
+            (RUNTIME / 'result.json').write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
             bridge.shutdown(False)
             return
         theme, compact, tab = steps[index]

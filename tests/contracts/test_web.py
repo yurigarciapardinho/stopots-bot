@@ -139,7 +139,7 @@ def test_ranking_uses_own_counter_and_final_over_background():
 
 def test_actual_end_screen_and_animated_rows():
     async def case(page, now):
-        await page.set_content((Path(__file__).parent/'fixtures/fim-de-jogo.html').read_text())
+        await page.set_content((Path(__file__).parent/'fixtures/fim-de-jogo.html').read_text(encoding="utf-8"))
         port = StopotsWeb(page, clock=lambda: now[0])
         obs = await port.observe()
         assert obs.phase == Phase.FINAL_RESULT and obs.ranking is None

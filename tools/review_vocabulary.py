@@ -34,7 +34,7 @@ def apply_review(document, patch, source_root=ROOT):
         if source.get('kind') in ('wikidata_snapshot_review','tabular_snapshot_review'):
             path=(source_root/source['snapshot']).resolve()
             if not path.is_relative_to(source_root.resolve()):raise ValueError('Snapshot fora do projeto')
-            if str(path) not in snapshots:snapshots[str(path)]=json.loads(path.read_text())
+            if str(path) not in snapshots:snapshots[str(path)]=json.loads(path.read_text(encoding="utf-8"))
             snapshot=snapshots[str(path)]
             if digest(snapshot['payload'])!=source['snapshot_sha256']:
                 raise ValueError('Checksum do snapshot factual inválido')
@@ -121,10 +121,10 @@ def main():
     parser.add_argument('--publicar',action='store_true')
     args=parser.parse_args()
     path=ROOT/'data/source/editorial.json'
-    original=json.loads(path.read_text())
-    result=apply_review(original,json.loads(args.patch.read_text()))
+    original=json.loads(path.read_text(encoding="utf-8"))
+    result=apply_review(original,json.loads(args.patch.read_text(encoding="utf-8")))
     release=compile_release(result)
-    if digest(json.loads(path.read_text()))!=digest(original):raise ValueError('Fonte editada durante a revisão')
+    if digest(json.loads(path.read_text(encoding="utf-8")))!=digest(original):raise ValueError('Fonte editada durante a revisão')
     atomic_write(path,canonical(result)+b'\n')
     if args.publicar:publish(result,ROOT/'src/stopots_v2/resources/vocabulary.json')
     print(json.dumps({'review_saved':True,'published':args.publicar,'manifest':release['manifest']},ensure_ascii=False))

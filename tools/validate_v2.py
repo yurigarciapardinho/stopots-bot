@@ -185,7 +185,7 @@ async def main(args):
             await configure(lab)
             if args.cli:
                 live.write_text(json.dumps({'pid':os.getpid(), 'host':{'endpoint':f'http://127.0.0.1:{cdp_port}','url':lab.pages['host'].url},
-                                             'convidado':{'endpoint':f'http://127.0.0.1:{guest_port}','url':lab.pages['convidado'].url}}))
+                                             'convidado':{'endpoint':f'http://127.0.0.1:{guest_port}','url':lab.pages['convidado'].url}}), encoding="utf-8")
                 live.chmod(0o600)
             ports = {who: StopotsWeb(lab.pages[who]) for who in ('host', 'convidado')}
             controllers = {who: Controller(ports[who], vocab,
@@ -333,7 +333,7 @@ async def main(args):
                     except ValueError:
                         pass
                 if cli_events.exists():
-                    cli_actions = [json.loads(line) for line in cli_events.read_text().splitlines() if line]
+                    cli_actions = [json.loads(line) for line in cli_events.read_text(encoding="utf-8").splitlines() if line]
                     match['actions'].extend({k: v for k, v in event.items() if k in ('action_id', 'kind', 'status', 'reason')} | {'player': 'host'}
                                             for event in cli_actions if event['event'] == 'acao')
             assertions = []

@@ -44,13 +44,13 @@ def main():
         'exe = EXE(pyz, a.scripts, [], exclude_binaries=True, name="StopotsAssistente", '
         'debug=False, strip=False, upx=False, console=False)\n'
         'coll = COLLECT(exe, a.binaries, a.datas, strip=False, upx=False, name="StopotsAssistente")\n'
-    )
+    , encoding="utf-8")
     command = [sys.executable, '-m', 'PyInstaller', '--noconfirm', '--clean',
                '--distpath', str(output / 'portable'), '--workpath', str(BUILD / 'pyinstaller'), str(spec)]
     with (output / 'build.log').open('w') as log:
         result = subprocess.run(command, cwd=ROOT, stdout=log, stderr=subprocess.STDOUT)
     if result.returncode:
-        print((output / 'build.log').read_text()[-10000:])
+        print((output / 'build.log').read_text(encoding="utf-8")[-10000:])
         return result.returncode
     app = output / 'portable/StopotsAssistente'
     legal = app / 'legal'
@@ -87,7 +87,7 @@ def main():
         raise RuntimeError('Módulos Qt fora do conjunto aprovado: ' + ', '.join(bad))
     inventory = {str(p.relative_to(app)): {'bytes': p.stat().st_size, 'sha256': digest(p)}
                  for p in sorted(app.rglob('*')) if p.is_file() and not p.is_symlink()}
-    (legal / 'FILES.json').write_text(json.dumps(inventory, indent=2) + '\n')
+    (legal / 'FILES.json').write_text(json.dumps(inventory, indent=2) + '\n', encoding="utf-8")
     arch = 'x86_64' if platform.machine().lower() in ('amd64', 'x86_64') else platform.machine().lower()
     if sys.platform == 'win32':
         archive = Path(shutil.make_archive(str(output / f'stopots-assistente-{__version__}-windows-{arch}'), 'zip', app.parent, app.name))
@@ -105,19 +105,19 @@ def main():
         if stage.exists():
             shutil.rmtree(stage)
         (stage / 'DEBIAN').mkdir(parents=True)
-        deps = 'libegl1, libgl1, libfontconfig1, libxkbcommon0, libxkbcommon-x11-0, libxcb-cursor0, libxcb-icccm4, libxcb-image0, libxcb-keysyms1, libxcb-randr0, libxcb-render-util0, libxcb-shape0, libxcb-sync1, libxcb-xfixes0, libxcb-xinerama0, libxcb-xkb1, libdbus-1-3, libglib2.0-0t64, libstdc++6, libgcc-s1, zlib1g, libexpat1, libbz2-1.0, liblzma5, libffi8, libssl3t64, libsqlite3-0, libuuid1'
-        (stage / 'DEBIAN/control').write_text(f'Package: stopots-assistente\nVersion: {__version__}\nArchitecture: amd64\nMaintainer: Yuri Garcia Pardinho\nHomepage: https://github.com/yurigarciapardinho/stopots-bot\nDepends: {deps}\nDescription: Assistente local do StopotS em portugues\n')
+        deps = 'libegl1, libgl1, libopengl0, libfontconfig1, libxkbcommon0, libxkbcommon-x11-0, libxcb-cursor0, libxcb-icccm4, libxcb-image0, libxcb-keysyms1, libxcb-randr0, libxcb-render-util0, libxcb-shape0, libxcb-sync1, libxcb-xfixes0, libxcb-xinerama0, libxcb-xkb1, libdbus-1-3, libglib2.0-0t64, libstdc++6, libgcc-s1, zlib1g, libexpat1, libbz2-1.0, liblzma5, libffi8, libssl3t64, libsqlite3-0, libuuid1'
+        (stage / 'DEBIAN/control').write_text(f'Package: stopots-assistente\nVersion: {__version__}\nArchitecture: amd64\nMaintainer: Yuri Garcia Pardinho\nHomepage: https://github.com/yurigarciapardinho/stopots-bot\nDepends: {deps}\nDescription: Assistente local do StopotS em portugues\n', encoding="utf-8")
         shutil.copytree(app, stage / 'opt/stopots-assistente', symlinks=True)
         launch = stage / 'usr/bin/stopots-assistente'
         launch.parent.mkdir(parents=True)
-        launch.write_text('#!/bin/sh\nexec /opt/stopots-assistente/StopotsAssistente "$@"\n')
+        launch.write_text('#!/bin/sh\nexec /opt/stopots-assistente/StopotsAssistente "$@"\n', encoding="utf-8")
         launch.chmod(0o755)
         icon = stage / 'usr/share/icons/hicolor/scalable/apps/stopots-assistente.svg'
         icon.parent.mkdir(parents=True)
         shutil.copy2(ROOT / 'src/stopots_v2/ui/icon.svg', icon)
         desktop = stage / 'usr/share/applications/stopots-assistente.desktop'
         desktop.parent.mkdir(parents=True)
-        desktop.write_text('[Desktop Entry]\nType=Application\nName=StopotS Assistente\nComment=Sua ajuda, do seu jeito\nExec=stopots-assistente\nIcon=stopots-assistente\nTerminal=false\nCategories=Game;\nStartupWMClass=StopotS Assistente\n')
+        desktop.write_text('[Desktop Entry]\nType=Application\nName=StopotS Assistente\nComment=Sua ajuda, do seu jeito\nExec=stopots-assistente\nIcon=stopots-assistente\nTerminal=false\nCategories=Game;\nStartupWMClass=StopotS Assistente\n', encoding="utf-8")
         shutil.copytree(legal, stage / 'usr/share/doc/stopots-assistente')
         deb = output / f'stopots-assistente_{__version__}_amd64.deb'
         subprocess.run(['dpkg-deb', '--root-owner-group', '-Zgzip', '-z6', '--build', str(stage), str(deb)], check=True)
@@ -125,7 +125,7 @@ def main():
     manifest = {'version': __version__, 'platform': sys.platform, 'architecture': arch,
                 'files': {p.name: {'sha256': digest(p), 'bytes': p.stat().st_size} for p in artifacts},
                 'qt_policy': 'PySide6-Essentials, QML permitido, bibliotecas dinamicas'}
-    (output / 'DESKTOP_MANIFESTO.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n')
+    (output / 'DESKTOP_MANIFESTO.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n', encoding="utf-8")
     print(json.dumps(manifest, ensure_ascii=False), flush=True)
     return 0
 

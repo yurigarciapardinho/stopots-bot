@@ -51,7 +51,7 @@ sys.exit(0 if passed else 1)
 def main():
     versions=sys.argv[1:] or ['24.04','26.04']
     out=ROOT/'evidence/releases/2.0.0/ubuntu.json'
-    reports=[r for r in json.loads(out.read_text()).get('platforms',[]) if r['ubuntu'] not in versions] if out.exists() else []
+    reports=[r for r in json.loads(out.read_text(encoding="utf-8")).get('platforms',[]) if r['ubuntu'] not in versions] if out.exists() else []
     for version in versions:
         target=RUNTIME/('ubuntu-package-'+version);target.mkdir(exist_ok=True)
         command=['docker','run','--rm','--network','none','--shm-size=512m',
@@ -62,8 +62,8 @@ def main():
         result=subprocess.run(command,text=True,capture_output=True,timeout=360)
         print('UBUNTU',version,'EXIT',result.returncode,flush=True)
         print(result.stdout[-6000:],result.stderr[-2500:],flush=True)
-        reports.append(json.loads((target/'package-result.json').read_text()))
-    out.write_text(json.dumps({'platforms':reports},ensure_ascii=False,indent=2)+'\n')
+        reports.append(json.loads((target/'package-result.json').read_text(encoding="utf-8")))
+    out.write_text(json.dumps({'platforms':reports},ensure_ascii=False,indent=2)+'\n', encoding="utf-8")
     return 0 if all(r['passed'] for r in reports) else 1
 
 

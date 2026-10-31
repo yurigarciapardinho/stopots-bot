@@ -7,8 +7,8 @@ import tomllib
 ROOT = Path(__file__).resolve().parents[1]
 
 def main():
-    project = tomllib.loads((ROOT / 'pyproject.toml').read_text())['project']
-    tree = ast.parse((ROOT / 'src/stopots_v2/__init__.py').read_text())
+    project = tomllib.loads((ROOT / 'pyproject.toml').read_text(encoding="utf-8"))['project']
+    tree = ast.parse((ROOT / 'src/stopots_v2/__init__.py').read_text(encoding="utf-8"))
     version = next(ast.literal_eval(n.value) for n in tree.body if isinstance(n, ast.Assign)
                    and any(isinstance(t, ast.Name) and t.id == '__version__' for t in n.targets))
     assert version == project['version'] and re.fullmatch(r'\d+\.\d+\.\d+', version)
@@ -20,10 +20,10 @@ def main():
                  'LICENSES/LGPL-3.0-only.txt', 'LICENSES/GPL-3.0-only.txt', 'AUTHORS.md', 'CREDITS.md',
                  'THIRD_PARTY_NOTICES.md', 'docs/PROCEDENCIA.md', 'uv.lock'):
         assert (ROOT / name).is_file(), name
-    assert 'Copyright (c) 2019 Lucas8x' in (ROOT / 'LICENSES/MIT.txt').read_text()
+    assert 'Copyright (c) 2019 Lucas8x' in (ROOT / 'LICENSES/MIT.txt').read_text(encoding="utf-8")
     count = 0
     for file in (ROOT / '.github/workflows').glob('*.yml'):
-        text = file.read_text()
+        text = file.read_text(encoding="utf-8")
         for action in re.findall(r'uses:\s*([^\s#]+)', text):
             if not action.startswith('./'):
                 assert re.fullmatch(r'[^@]+@[a-f0-9]{40}', action), (file.name, action)

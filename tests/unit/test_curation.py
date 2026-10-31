@@ -63,9 +63,9 @@ def test_batch_preserves_public_editorial_upsert_contract():
 
 def test_snapshot_corruption_blocks_review(tmp_path):
     doc,patch=case();payload={'records':[{'id':'Q1','lastrevid':1,'labels':{'pt':{'value':'Baleia'}}}]}
-    snapshot=tmp_path/'snapshot.json';snapshot.write_text(json.dumps({'payload':payload}))
+    snapshot=tmp_path/'snapshot.json';snapshot.write_text(json.dumps({'payload':payload}), encoding="utf-8")
     patch['sources']['review'].update(kind='wikidata_snapshot_review',snapshot='snapshot.json',snapshot_sha256=digest(payload),entity_id='Q1',revision=1)
-    payload['records'][0]['lastrevid']=2;snapshot.write_text(json.dumps({'payload':payload}))
+    payload['records'][0]['lastrevid']=2;snapshot.write_text(json.dumps({'payload':payload}), encoding="utf-8")
     with pytest.raises(ValueError,match='Checksum'):curation.apply_review(doc,patch,tmp_path)
 
 
@@ -96,7 +96,7 @@ def test_user_definitions_are_explicit_and_alias_conflicts_are_rejected():
 def test_tabular_proof_cannot_promote_another_category(tmp_path):
     doc,patch=case()
     payload={'tables':{'animals':{'records':[{'id':'1','name':word} for word in ['Gato','Arara','Baleia','Capivara']]}}}
-    (tmp_path/'facts.json').write_text(json.dumps({'payload':payload}))
+    (tmp_path/'facts.json').write_text(json.dumps({'payload':payload}), encoding="utf-8")
     patch['sources']['review'].update(kind='tabular_snapshot_review',snapshot='facts.json',snapshot_sha256=digest(payload),
                                       table='animals',allowed_categories=['animal'])
     with pytest.raises(ValueError,match='essa categoria'):curation.apply_review(doc,patch,tmp_path)

@@ -38,9 +38,9 @@ def test_preferences_presets_and_persistence_are_explicit(tmp_path):
     assert q.policy == Policy()
     q.preset('Só observar')
     assert q.policy.observe_only and not q.policy.fill_blanks
-    data=json.loads(q.path.read_text())
+    data=json.loads(q.path.read_text(encoding="utf-8"))
     assert not {'password','url','active','endpoint'} & data.keys()
-    q.path.write_text('[]')
+    q.path.write_text('[]', encoding="utf-8")
     assert Preferences(q.path).policy == Policy()
 
 

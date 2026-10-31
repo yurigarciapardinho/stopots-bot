@@ -11,9 +11,9 @@ def test_flags_are_explicit_even_in_automatic_mode():
 def test_pause_and_resume_commands(tmp_path, capsys):
     path = tmp_path / 'control.json'
     assert main(['pausar', '--controle', str(path)]) == 0
-    assert json.loads(path.read_text()) == {'paused': True}
+    assert json.loads(path.read_text(encoding="utf-8")) == {'paused': True}
     assert main(['retomar', '--controle', str(path)]) == 0
-    assert json.loads(path.read_text()) == {'paused': False}
+    assert json.loads(path.read_text(encoding="utf-8")) == {'paused': False}
 
 
 def test_invalid_website_rejected_before_launch(capsys):

@@ -9,7 +9,7 @@ import re
 async def main(args):
     from playwright.async_api import async_playwright
     from stopots_v2.adapters.web import SNAPSHOT
-    state = json.loads(args.controle.read_text())
+    state = json.loads(args.controle.read_text(encoding="utf-8"))
     target = state[args.player]
     if not re.fullmatch(r'http://127\.0\.0\.1:\d+', target['endpoint']):
         raise ValueError('Endpoint local inválido')

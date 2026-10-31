@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parents[2]
 
 @pytest.fixture
 def editorial():
-    return json.loads((ROOT / "data/source/editorial.json").read_text())
+    return json.loads((ROOT / "data/source/editorial.json").read_text(encoding="utf-8"))
 
 
 def test_import_counts_and_pending(editorial):
@@ -31,7 +31,7 @@ def test_normalization_and_utf16():
 
 
 def test_observed_real_input_normalization_fixture():
-    fixture = json.loads((ROOT/'tests/contracts/fixtures/normalizacao-real.json').read_text())
+    fixture = json.loads((ROOT/'tests/contracts/fixtures/normalizacao-real.json').read_text(encoding="utf-8"))
     assert fixture['status']=='probe_completed'
     for case in fixture['cases']:
         actual = case.get('after_blur', case.get('actual'))
@@ -105,7 +105,7 @@ def test_corrupt_release_and_alias_ambiguity(editorial, tmp_path):
     path = tmp_path / "v.json"
     release = compile_release(editorial)
     release["payload"]["lexemes"][0]["display"] = "alterado"
-    path.write_text(json.dumps(release))
+    path.write_text(json.dumps(release), encoding="utf-8")
     with pytest.raises(ValueError, match="Checksum"):
         read_release(path)
     tax = json.loads(json.dumps(editorial["categories"]))
@@ -132,7 +132,7 @@ def test_valid_previous_release_loaded_without_overwriting_corruption(editorial,
     path = tmp_path / "v.json"
     publish(editorial, path)
     publish(editorial, path)
-    path.write_text('{"truncado":')
+    path.write_text('{"truncado":', encoding="utf-8")
     recovered = load_vocab(path)
     assert recovered.version == read_release(path.with_suffix('.json.previous'))['manifest']['sha256']
-    assert path.read_text() == '{"truncado":'
+    assert path.read_text(encoding="utf-8") == '{"truncado":'

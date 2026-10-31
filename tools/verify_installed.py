@@ -53,7 +53,7 @@ def main():
               'installed_gui_exit': result.returncode, 'playwright': importlib.metadata.version('playwright'),
               'pyside6_essentials': importlib.metadata.version('PySide6_Essentials'), 'subject': 'installed-wheel-and-ui-offline'}
     args.report.parent.mkdir(parents=True, exist_ok=True)
-    args.report.write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
+    args.report.write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n', encoding="utf-8")
     print(json.dumps({k: v for k, v in report.items() if k != 'runtime_source_sha256'}), flush=True)
     return 0
 

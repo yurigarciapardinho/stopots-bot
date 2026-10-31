@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 BUILD = Path(os.environ.get('STOPOTS_BUILD_ROOT', ROOT / '.runtime')).resolve()
 
 def tool(name):
-    data = json.loads((ROOT / 'tools/security-tools.json').read_text())[name]
+    data = json.loads((ROOT / 'tools/security-tools.json').read_text(encoding="utf-8"))[name]
     target = BUILD / 'security-tools' / data['executable']
     target.parent.mkdir(parents=True, exist_ok=True)
     if not target.exists():
@@ -55,7 +55,7 @@ def main():
                                    '--progress-spinner','off','--format','json','--output',str(out/'dependencies.json')],cwd=ROOT).returncode)
     shutil.rmtree(tree)
     (out/'summary.json').write_text(json.dumps({'actionlint':results[0],'gitleaks_history':results[1],
-                                              'gitleaks_tree':results[2],'runtime_and_build_audit':results[3]},indent=2)+'\n')
+                                              'gitleaks_tree':results[2],'runtime_and_build_audit':results[3]},indent=2)+'\n', encoding="utf-8")
     return 0 if not any(results) else 1
 
 if __name__ == '__main__':

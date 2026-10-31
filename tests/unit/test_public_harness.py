@@ -12,16 +12,16 @@ def test_cli_completion_accepts_real_log_with_preamble(tmp_path):
     result = {'status': 'concluido', 'final_result_verified': True,
               'ranking': {'rows': [['participante_1', 490]], 'semantic': 'total_partida'}}
     log = tmp_path / 'cli.log'
-    log.write_text('Chrome pronto.\nAções: {}\n' + json.dumps(result, indent=2))
+    log.write_text('Chrome pronto.\nAções: {}\n' + json.dumps(result, indent=2), encoding="utf-8")
     assert harness.cli_completion(0, log) == result
     assert harness.cli_completion(2, log) is None
 
 
 def test_cli_completion_rejects_timeout_and_truncated_output(tmp_path):
     log = tmp_path / 'cli.log'
-    log.write_text(json.dumps({'status': 'prazo_encerrado', 'final_result_verified': False}, indent=2))
+    log.write_text(json.dumps({'status': 'prazo_encerrado', 'final_result_verified': False}, indent=2), encoding="utf-8")
     assert harness.cli_completion(0, log) is None
-    log.write_text('{\n  "status": "concluido",')
+    log.write_text('{\n  "status": "concluido",', encoding="utf-8")
     assert harness.cli_completion(0, log) is None
 
 

@@ -131,7 +131,7 @@ class Controller:
         if not self.control_file or not self.control_file.exists():
             return False
         try:
-            return bool(json.loads(self.control_file.read_text())["paused"])
+            return bool(json.loads(self.control_file.read_text(encoding="utf-8"))["paused"])
         except (ValueError, OSError, KeyError):
             return True  # controle inválido suspende mutações
 

@@ -46,7 +46,7 @@ def test_recorded_fixtures_do_not_reinvent_field_count():
     fixtures = list((Path(__file__).parent / "fixtures").glob("escrita-*.json"))
     assert fixtures, "Capture a fixture real de escrita antes do aceite do laboratório"
     for p in fixtures:
-        s = json.loads(p.read_text())
+        s = json.loads(p.read_text(encoding="utf-8"))
         assert lab.classify(s) == "ESCRITA"
         assert len(s["fields"]) > 0
         assert len({f["id"] for f in s["fields"]}) == len(s["fields"])

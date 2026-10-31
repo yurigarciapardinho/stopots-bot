@@ -35,7 +35,7 @@ class UiDiagnostic:
                 self.passed=not self.errors and len(self.frames)==4 and driver_ready
                 report={'passed':self.passed,'frames':self.frames,'qml_errors':self.errors,'driver_ready':driver_ready,'online':False}
                 self.directory.mkdir(parents=True,exist_ok=True)
-                (self.directory/'result.json').write_text(json.dumps(report,ensure_ascii=False,indent=2))
+                (self.directory/'result.json').write_text(json.dumps(report,ensure_ascii=False,indent=2), encoding="utf-8")
                 print(json.dumps(report,ensure_ascii=False),flush=True)
                 bridge.shutdown(False);return
             theme,compact,tab=steps[i]

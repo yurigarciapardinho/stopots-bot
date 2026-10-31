@@ -44,9 +44,9 @@ def main():
               'pyside6_essentials':importlib.metadata.version('PySide6_Essentials'),
               'pyinstaller':importlib.metadata.version('PyInstaller'),'files':files}
     manifest = out/'MANIFESTO.json'
-    manifest.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
+    manifest.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n', encoding="utf-8")
     checksums = {**files,'MANIFESTO.json':{'sha256':digest(manifest)}}
-    (out/'SHA256SUMS').write_text(''.join(v['sha256']+'  '+n+'\n' for n,v in sorted(checksums.items())))
+    (out/'SHA256SUMS').write_text(''.join(v['sha256']+'  '+n+'\n' for n,v in sorted(checksums.items())), encoding="utf-8")
     print(json.dumps({'version':__version__,'source_commit':sha,'files':len(files),'source_dirty':dirty}))
     return 0
 

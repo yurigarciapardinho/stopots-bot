@@ -142,7 +142,7 @@ class Lab:
         if save:
             FIXTURES.mkdir(parents=True, exist_ok=True)
             dest = FIXTURES / f"{safe['phase'].lower()}-{player}.json"
-            dest.write_text(json.dumps(safe, ensure_ascii=False, indent=2) + "\n")
+            dest.write_text(json.dumps(safe, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         return safe
 
     async def click(self, player, text, role="button"):
@@ -273,7 +273,7 @@ class Lab:
         EVIDENCE.mkdir(parents=True, exist_ok=True)
         target = EVIDENCE / ("spike-" + self.report["run_id"] + ".json")
         temp = target.with_suffix(".novo")
-        temp.write_text(json.dumps(self.report, ensure_ascii=False, indent=2) + "\n")
+        temp.write_text(json.dumps(self.report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         temp.replace(target)
 
     async def set_vote(self, player, group, desired):
@@ -553,7 +553,7 @@ class Lab:
         self.server = ThreadingHTTPServer(("127.0.0.1", 0), Handler)
         state = {"pid": os.getpid(), "port": self.server.server_port, "token": token,
                  "root": str(ROOT), "epoch": self.epoch, "started_at": time.time()}
-        STATE.write_text(json.dumps(state))
+        STATE.write_text(json.dumps(state), encoding="utf-8")
         STATE.chmod(0o600)
         threading.Thread(target=self.server.serve_forever, daemon=True).start()
         print(json.dumps({"ready": True, "pid": os.getpid(), "browser": self.browser.version}), flush=True)
@@ -563,7 +563,7 @@ class Lab:
 
 
 def request(payload):
-    state = json.loads(STATE.read_text())
+    state = json.loads(STATE.read_text(encoding="utf-8"))
     req = urllib.request.Request(f"http://127.0.0.1:{state['port']}/", data=json.dumps(payload).encode(),
                                  headers={"Authorization": "Bearer " + state["token"], "Content-Type": "application/json"})
     result = json.load(urllib.request.urlopen(req, timeout=190))
@@ -585,7 +585,7 @@ def start():
             raise RuntimeError("Sessão anterior ainda está encerrando")
     except Exception:
         if STATE.exists():
-            state = json.loads(STATE.read_text())
+            state = json.loads(STATE.read_text(encoding="utf-8"))
             pid = state.get("pid")
             cmdline = Path(f"/proc/{pid}/cmdline")
             if cmdline.exists() and str(Path(__file__).resolve()).encode() in cmdline.read_bytes():
@@ -625,7 +625,7 @@ def main():
         except Exception:
             data["lab"] = "parado; execute iniciar"
     elif args.command == "replay":
-        data = [{"fixture": p.name, "phase": classify(json.loads(p.read_text())), "fields": len(json.loads(p.read_text()).get("fields", []))} for p in sorted(FIXTURES.glob("*.json"))]
+        data = [{"fixture": p.name, "phase": classify(json.loads(p.read_text(encoding="utf-8"))), "fields": len(json.loads(p.read_text(encoding="utf-8")).get("fields", []))} for p in sorted(FIXTURES.glob("*.json"))]
     elif args.command == "acao":
         data = request(json.loads(args.json))
     elif args.command in ["sala", "teste-chrome", "resultado"]:

@@ -123,10 +123,10 @@ def test_pause_resume_and_serial_execution(tmp_path):
     async def scenario():
         port = FakePort()
         ctl = Controller(port, Vocabulary.bundled(), control_file=control)
-        control.write_text('{"paused":true}')
+        control.write_text('{"paused":true}', encoding="utf-8")
         await ctl.step()
         assert port.calls == 0 and ctl.supervisor == Supervisor.PAUSED
-        control.write_text('{"paused":false}')
+        control.write_text('{"paused":false}', encoding="utf-8")
         await asyncio.gather(ctl.step(), ctl.step())
         assert port.calls == 1 and port.max_active == 1
     asyncio.run(scenario())
@@ -136,8 +136,8 @@ def test_log_does_not_record_input_or_url(tmp_path):
     log = EventLog(tmp_path / "events.jsonl")
     obs = writing(fields=(Field("#secret", "Animal", "TEXTO PESSOAL", True, 20),))
     log.emit("observacao", obs)
-    assert "TEXTO PESSOAL" not in log.path.read_text()
-    assert "#secret" not in log.path.read_text()
+    assert "TEXTO PESSOAL" not in log.path.read_text(encoding="utf-8")
+    assert "#secret" not in log.path.read_text(encoding="utf-8")
 
 
 def test_continue_waits_for_captured_ranking():

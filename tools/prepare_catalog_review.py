@@ -14,9 +14,9 @@ from stopots_v2.vocabulary import Taxonomy,digest
 
 def main():
  now=datetime.now(ZoneInfo('America/Sao_Paulo')).isoformat()
- document=json.loads((ROOT/'data/source/editorial.json').read_text())
- snapshot=json.loads((ROOT/'data/source/catalogo-fatos-2026-10-30.json').read_text())
- seeds=json.loads((ROOT/'data/review/catalogo-sementes-2026-10-30.json').read_text())
+ document=json.loads((ROOT/'data/source/editorial.json').read_text(encoding="utf-8"))
+ snapshot=json.loads((ROOT/'data/source/catalogo-fatos-2026-10-30.json').read_text(encoding="utf-8"))
+ seeds=json.loads((ROOT/'data/review/catalogo-sementes-2026-10-30.json').read_text(encoding="utf-8"))
  definitions={'pda':'Personagem de Desenho Animado','pch':'Partes do Corpo Humano','jlr':'Jornal, Livro ou Revista',
               'flv':'Fruta, Legume ou Verdura','cep':'Cidade, Estado ou País','mse':'Minha Sogra É','mst':'Minha Sogra Tem','msu':'Minha Sogra Usa','paf':'Planta, Árvore ou Flor'}
  user_id='definicoes-usuario-2026-10-30';local_id='editorial-catalogo-2026-10-30'
@@ -90,7 +90,7 @@ def main():
                          'external_records_not_automatically_approved':sum(len(t['records']) for t in snapshot['payload']['tables'].values())}
  path=ROOT/'data/source/catalogo-revisado-v1.json'
  if path.exists():raise ValueError('Revisão já preparada; não sobrescrever uma identidade publicada')
- path.write_text(json.dumps(patch,ensure_ascii=False,indent=2)+'\n')
+ path.write_text(json.dumps(patch,ensure_ascii=False,indent=2)+'\n', encoding="utf-8")
  print(json.dumps({'review_pairs':len(patch['entries']),'sources':len(sources),'excluded':len(excluded),'new_categories':len(new)},ensure_ascii=False))
 
 

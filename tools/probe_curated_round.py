@@ -131,7 +131,7 @@ async def main():
                 report['status']='probe_completed';break
             save();await asyncio.sleep(.1)
         else:raise TimeoutError('Sonda excedeu o prazo')
-        cli_events=[json.loads(line) for line in events.read_text().splitlines() if line]
+        cli_events=[json.loads(line) for line in events.read_text(encoding="utf-8").splitlines() if line]
         actions=[e for e in cli_events if e['event']=='acao']
         fills=[e for e in actions if e['kind']=='PREENCHER' and e['context']['round_index']==target_round];stops=[e for e in actions if e['kind']=='PEDIR_STOP' and e['context']['round_index']==target_round]
         report['all_fields_filled_verified']=report.get('all_fields_filled_verified',False) or any(e.get('filled')==12 and e.get('fields')==12 for e in stops)

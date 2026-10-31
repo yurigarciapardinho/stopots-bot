@@ -184,7 +184,7 @@ def main(argv=None):
             result = {"version": __version__, "python": sys.version.split()[0],
                       "playwright": importlib.metadata.version("playwright"), "chrome": chrome,
                       "vocabulary": v.version,
-                      "capabilities": json.loads(files("stopots_v2").joinpath("resources/capabilities.json").read_text())}
+                      "capabilities": json.loads(files("stopots_v2").joinpath("resources/capabilities.json").read_text(encoding="utf-8"))}
         elif args.operation == "importar-legado":
             doc = import_legacy(args.origem, json.loads(args.taxonomia.read_text(encoding="utf-8")))
             atomic_write(args.destino, canonical(doc) + b"\n")

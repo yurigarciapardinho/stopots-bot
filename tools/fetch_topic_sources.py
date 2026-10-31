@@ -106,7 +106,7 @@ def main():
  snapshot={'schema_version':1,'observed_at':datetime.now(ZoneInfo('America/Sao_Paulo')).isoformat(),
            'subject':'source-facts-not-editorial-approval','sha256':hashlib.sha256(canonical).hexdigest(),
            'wikidata_license':'CC0','wikidata_attribution':'Wikidata contributors','payload':payload}
- path.write_text(json.dumps(snapshot,ensure_ascii=False,indent=2)+'\n')
+ path.write_text(json.dumps(snapshot,ensure_ascii=False,indent=2)+'\n', encoding="utf-8")
  print(json.dumps({'saved':str(path.relative_to(ROOT)),'tables':len(tables),'records':sum(len(t['records']) for t in tables.values()),'sha256':snapshot['sha256']}),flush=True)
 
 

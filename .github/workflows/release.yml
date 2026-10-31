@@ -46,6 +46,7 @@ jobs:
           version: '0.11.16'
           enable-cache: true
           cache-suffix: ${{ github.event_name }}-${{ runner.os }}
+      - run: bash tools/setup_ci_linux.sh
       - run: uv sync --frozen --extra desktop --extra test --group build --group audit
       - run: uv run --frozen --no-sync pytest -q
       - run: uv build --out-dir .runtime/dist

@@ -9,6 +9,7 @@ from pathlib import Path
 import shutil
 import subprocess
 import sys
+import tempfile
 import urllib.request
 
 
@@ -38,7 +39,7 @@ class ChromeSession:
 
     def endpoint(self):
         try:
-            lines = (self.profile / 'DevToolsActivePort').read_text().splitlines()
+            lines = (self.profile / 'DevToolsActivePort').read_text(encoding="utf-8").splitlines()
             port = int(lines[0])
             if not 0 < port < 65536 or not lines[1].startswith('/devtools/browser/'):
                 return None
@@ -66,7 +67,9 @@ class ChromeSession:
                 args.append('--headless=new')
             args.append('about:blank')
             env = os.environ.copy()
-            temporary = Path(env.get('TMPDIR', str(self.directory / 'tmp')))
+            # O socket Unix do Chrome tem limite curto de caminho. Não aninhar
+            # seus temporários sob o perfil, que pode estar em diretório longo.
+            temporary = Path(env.get('TMPDIR', tempfile.gettempdir()))
             temporary.mkdir(parents=True, exist_ok=True)
             env['TMPDIR'] = str(temporary)
             with (self.directory / 'chrome.log').open('ab') as output:

@@ -10,9 +10,9 @@ ROOT = Path(__file__).resolve().parents[2]
 
 
 def documents():
-    editorial = json.loads((ROOT/'data/source/editorial.json').read_text())
+    editorial = json.loads((ROOT/'data/source/editorial.json').read_text(encoding="utf-8"))
     legacy = import_legacy(ROOT/'stopots_bot/dictionary.json', editorial['categories'])
-    snapshot = json.loads((ROOT/'data/source/ibge-municipios.json').read_text())
+    snapshot = json.loads((ROOT/'data/source/ibge-municipios.json').read_text(encoding="utf-8"))
     return legacy, snapshot
 
 
