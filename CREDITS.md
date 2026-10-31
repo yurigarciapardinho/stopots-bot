@@ -1,22 +1,29 @@
-# Créditos e origem
+# Créditos
 
-StopotS Assistente 2.0 é um projeto de **Yuri Garcia Pardinho**, desenvolvido a
-partir do estudo e da evolução de [Lucas8x/stopots-bot](https://github.com/Lucas8x/stopots-bot).
-O ancestral comum `92eda1341cb391da77bad21bbe6a82417928a3c6` e os commits posteriores
-permanecem no histórico. Não há reatribuição de commits antigos.
+**Yuri Garcia Pardinho** é responsável pelo desenvolvimento e manutenção do
+StopotS Assistente, incluindo o núcleo Python/Playwright, o controlador por
+contexto, a interface Qt e a curadoria própria do vocabulário.
 
-O núcleo Python/Playwright, o controlador por contexto, a taxonomia editorial e
-a interface Qt da geração 2.0 foram desenvolvidos nesta evolução. O legado
-Selenium continua disponível para consulta, fora da instalação corrente.
+O projeto tem origem em [Lucas8x/stopots-bot](https://github.com/Lucas8x/stopots-bot).
+A base de Lucas8x, com copyright de 2019 e licença MIT, permanece identificada
+no código e no histórico. A referência original é o commit
+92eda1341cb391da77bad21bbe6a82417928a3c6. O cliente Selenium e o JavaScript
+legados estão disponíveis para consulta e não integram o wheel atual.
 
-Dependências principais: Python/PSF, Playwright/Microsoft, Qt/PySide6/The Qt
-Company e contribuidores, Shiboken, PyInstaller e seus contribuidores. Direitos
-e avisos específicos acompanham a distribuição.
+O projeto de Lucas8x atribui a formação do dicionário inicial a
+**StopAnswersAPI, de nosliper**, conforme o
+[crédito no README original](https://github.com/Lucas8x/stopots-bot/blob/92eda1341cb391da77bad21bbe6a82417928a3c6/README.md).
+Essa atribuição é preservada para a origem dos dados legados.
 
-Dados: legado original; curadoria própria; nomes geográficos do IBGE; fatos
-estruturados selecionados de Wikidata/CC0; nomenclatura factual de raças da CBKC.
-Fontes, datas e decisões estão em [data/README.md](data/README.md). Definições de
-siglas fornecidas por Yuri são identificadas como tal, não como regras oficiais.
+O aplicativo utiliza Python, Playwright, Qt/PySide6 e Shiboken; a distribuição
+desktop é construída com PyInstaller. Seus autores, licenças e avisos estão em
+[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) e nos arquivos legais dos pacotes.
 
-O produto é independente do StopotS. O nome do jogo identifica a integração;
-não representa vínculo, patrocínio ou aprovação dos responsáveis pelo serviço.
+O vocabulário reúne o dicionário legado, curadoria própria, nomes geográficos
+do IBGE, fatos estruturados selecionados de Wikidata/CC0 e nomes de raças da
+CBKC. [Fontes e critérios de revisão](data/README.md) registram a procedência.
+As definições de siglas adotadas pela curadoria não representam regras oficiais
+do StopotS.
+
+Projeto independente, sem vínculo, patrocínio ou aprovação dos responsáveis
+pelo StopotS. O nome do jogo identifica a integração.

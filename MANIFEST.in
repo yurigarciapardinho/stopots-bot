@@ -1,4 +1,4 @@
-include LICENSE AUTHORS.md CREDITS.md THIRD_PARTY_NOTICES.md README.md CHANGELOG.md
+include LICENSE AUTHORS.md CREDITS.md THIRD_PARTY_NOTICES.md README.md CHANGELOG.md CONTRIBUTING.md SECURITY.md
 recursive-include LICENSES *
 recursive-include src/stopots_v2 *.py *.js *.json *.qml *.svg *.txt *.md
 prune .runtime
@@ -9,10 +9,11 @@ recursive-include tools *.py *.sh *.Dockerfile
 recursive-include build_hooks *.py
 recursive-include scripts *.sh *.ps1
 recursive-include docs *.md
-include .gitattributes uv.lock AGENTS.md requirements.txt requirements-lab.lock requirements-legacy.txt stopots-bot.js
+include .gitattributes uv.lock requirements.txt requirements-lab.lock requirements-legacy.txt stopots-bot.js
 recursive-include config *.toml
 recursive-include data *.json *.md
 recursive-include tests *.py *.json *.html
 recursive-include stopots_bot *.py *.json
 recursive-include legacy *.bat *.ps1
 recursive-include .github *.yml *.md
+exclude AGENTS.md

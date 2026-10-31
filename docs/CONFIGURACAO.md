@@ -1,24 +1,46 @@
 # Configuração e dados locais
 
-O programa não exige `.env`, token de GitHub ou credenciais de infraestrutura.
-Não salve senhas de sala em arquivos de configuração.
+## Preferências do aplicativo
 
-| Localização padrão | Sistema |
+A interface salva apelido, tema, perfil, permissões e a preferência de redução
+de movimento. Senha da sala, link do convite, endpoint de conexão e estado ativo
+da ajuda não são preferências persistidas.
+
+| Sistema | Raiz padrão dos dados |
 | --- | --- |
-| `$XDG_STATE_HOME/stopots-assistente`, ou `~/.local/state/stopots-assistente` | Linux |
-| `%LOCALAPPDATA%/StopotsAssistente` | Windows |
-| `~/Library/Application Support/StopotsAssistente` | macOS, ainda sem validação nativa |
+| Linux | `$XDG_STATE_HOME/stopots-assistente` ou `~/.local/state/stopots-assistente` |
+| Windows | `%LOCALAPPDATA%/StopotsAssistente` |
+| macOS | `~/Library/Application Support/StopotsAssistente`; plataforma ainda sem validação nativa |
 
-`STOPOTS_RUNTIME` substitui a raiz de dados. Ela contém preferências permitidas,
-eventos e o perfil Chrome dedicado. Não compartilhe esse diretório. A GUI
-preserva apelido, tema, perfil e permissões; não persiste senha, URL de convite,
-endpoint ou estado ativo como preferências. Só uma janela controla o runtime.
+`STOPOTS_RUNTIME` substitui essa raiz. O aplicativo mantém seus arquivos em
+subdiretórios próprios, incluindo `desktop` para preferências e controle da
+sessão. Somente uma janela pode controlar o mesmo diretório de execução.
 
-Na CLI, `--config config/assistido.toml` ou `config/automatico.toml` carrega
-`[automacao]`. Flags prevalecem sobre TOML. Consulte `stopots-v2 executar --help`.
-A CLI histórica encerra sua sessão própria ao terminar; a preservação da janela
-Chrome descrita no guia de uso pertence ao aplicativo desktop.
+O perfil Chrome dedicado pode conter cookies e dados de sessão. Não compartilhe
+esse diretório nem o anexe a uma issue. O aplicativo não procura o perfil
+pessoal do Chrome e não envia telemetria própria. Chrome e StopotS mantêm suas
+comunicações normais.
 
-`QT_QUICK_BACKEND=software` é o padrão gráfico da GUI. Alterá-lo é uma opção
-avançada, sem ampliar a matriz de GPU verificada. `STOPOTS_BUILD_ROOT` define
-saídas de ferramentas de build/teste, separadamente do runtime do usuário.
+## CLI
+
+O comando `stopots-v2 executar` aceita um arquivo TOML com a tabela `[automacao]`:
+
+```bash
+stopots-v2 executar --config config/assistido.toml
+```
+
+As flags da linha de comando prevalecem sobre o arquivo. Há exemplos em
+[config/](../config/); consulte `stopots-v2 executar --help` para todas as opções.
+Pausa e retomada também podem usar o arquivo de controle da execução.
+
+Sem `STOPOTS_RUNTIME`, a CLI usa `.runtime/v2` sob o diretório de trabalho. A CLI
+encerra o Chrome que iniciou ao terminar. A preservação do navegador ao fechar
+a janela pertence ao aplicativo desktop; uma conexão CDP anexada pela CLI
+preserva os contextos externos.
+
+## Opções avançadas
+
+`QT_QUICK_BACKEND=software` é o padrão gráfico. Outro renderer pode ser testado,
+mas não amplia a matriz de compatibilidade já verificada. `STOPOTS_BUILD_ROOT`
+define a saída das ferramentas de construção e teste, separada dos dados do
+usuário. Não salve senhas em arquivos TOML ou variáveis de configuração.
