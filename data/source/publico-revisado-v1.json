@@ -1,0 +1,1372 @@
+{
+  "schema_version": 1,
+  "id": "publico-revisado-2026-10-29-v1",
+  "base_sha256": "7f5f046093bec81192b6e5e5f3804672bbeb8459513a135f69f19169d94e5615",
+  "review_policy": "Associações específicas confirmadas em fontes identificadas. Sugestões sem confirmação permanecem pendentes. Não importar respostas de jogadores como verdade.",
+  "new_categories": {
+    "tem_na_praia": {
+      "label": "Tem na Praia",
+      "language": "pt",
+      "aliases": [],
+      "includes": []
+    },
+    "tem_no_hospital": {
+      "label": "Tem no Hospital",
+      "language": "pt",
+      "aliases": [],
+      "includes": []
+    },
+    "arvore": {
+      "label": "Árvore",
+      "language": "pt",
+      "aliases": [],
+      "includes": []
+    },
+    "animal_aquatico": {
+      "label": "Animal Aquático",
+      "language": "pt",
+      "aliases": [],
+      "includes": []
+    }
+  },
+  "includes_additions": {
+    "animal": [
+      "animal_aquatico"
+    ]
+  },
+  "sources": {
+    "publico-priberam-frésia": {
+      "kind": "reference_review",
+      "url": "https://dicionario.priberam.org/frésia",
+      "accessed_at": "2026-10-29",
+      "evidence_summary": "Revisada a acepção botânica de flor, sem copiar definição.",
+      "reuse": "Fatos e nomes identificativos; definições, receitas e prosa da fonte não são reproduzidas."
+    },
+    "publico-priberam-flauta": {
+      "kind": "reference_review",
+      "url": "https://dicionario.priberam.org/flauta",
+      "accessed_at": "2026-10-29",
+      "evidence_summary": "Revisada a acepção de instrumento musical de sopro.",
+      "reuse": "Fatos e nomes identificativos; definições, receitas e prosa da fonte não são reproduzidas."
+    },
+    "publico-priberam-piano": {
+      "kind": "reference_review",
+      "url": "https://dicionario.priberam.org/piano",
+      "accessed_at": "2026-10-29",
+      "evidence_summary": "Revisada a acepção de instrumento musical de teclado.",
+      "reuse": "Fatos e nomes identificativos; definições, receitas e prosa da fonte não são reproduzidas."
+    },
+    "publico-priberam-impermeável": {
+      "kind": "reference_review",
+      "url": "https://dicionario.priberam.org/impermeável",
+      "accessed_at": "2026-10-29",
+      "evidence_summary": "Revisada a acepção substantiva de casaco; não apenas o adjetivo.",
+      "reuse": "Fatos e nomes identificativos; definições, receitas e prosa da fonte não são reproduzidas."
+    },
+    "publico-priberam-macacão": {
+      "kind": "reference_review",
+      "url": "https://dicionario.priberam.org/macacão",
+      "accessed_at": "2026-10-29",
+      "evidence_summary": "Revisada a acepção de peça de roupa.",
+      "reuse": "Fatos e nomes identificativos; definições, receitas e prosa da fonte não são reproduzidas."
+    },
+    "publico-priberam-medroso": {
+      "kind": "reference_review",
+      "url": "https://dicionario.priberam.org/medroso",
+      "accessed_at": "2026-10-29",
+      "evidence_summary": "Classe adjetiva confirmada na entrada lexical.",
+      "reuse": "Fatos e nomes identificativos; definições, receitas e prosa da fonte não são reproduzidas."
+    },
+    "publico-priberam-macaco": {
+      "kind": "reference_review",
+      "url": "https://dicionario.priberam.org/macaco",
+      "accessed_at": "2026-10-29",
+      "evidence_summary": "Revisada a acepção zoológica de mamífero primata.",
+      "reuse": "Fatos e nomes identificativos; definições, receitas e prosa da fonte não são reproduzidas."
+    },
+    "publico-priberam-gato": {
+      "kind": "reference_review",
+      "url": "https://dicionario.priberam.org/gato",
+      "accessed_at": "2026-10-29",
+      "evidence_summary": "Revisada a acepção zoológica de Felis catus, mamífero.",
+      "reuse": "Fatos e nomes identificativos; definições, receitas e prosa da fonte não são reproduzidas."
+    },
+    "publico-priberam-goiabeira": {
+      "kind": "reference_review",
+      "url": "https://dicionario.priberam.org/goiabeira",
+      "accessed_at": "2026-10-29",
+      "evidence_summary": "Revisada a acepção de árvore tropical Psidium guajava.",
+      "reuse": "Fatos e nomes identificativos; definições, receitas e prosa da fonte não são reproduzidas."
+    },
+    "publico-priberam-pinheiro": {
+      "kind": "reference_review",
+      "url": "https://dicionario.priberam.org/pinheiro",
+      "accessed_at": "2026-10-29",
+      "evidence_summary": "Revisada a acepção de árvores do gênero Pinus.",
+      "reuse": "Fatos e nomes identificativos; definições, receitas e prosa da fonte não são reproduzidas."
+    },
+    "publico-priberam-peixe": {
+      "kind": "reference_review",
+      "url": "https://dicionario.priberam.org/peixe",
+      "accessed_at": "2026-10-29",
+      "evidence_summary": "Revisada a acepção zoológica de animal que vive na água.",
+      "reuse": "Fatos e nomes identificativos; definições, receitas e prosa da fonte não são reproduzidas."
+    },
+    "publico-priberam-ingá": {
+      "kind": "reference_review",
+      "url": "https://dicionario.priberam.org/ingá",
+      "accessed_at": "2026-10-29",
+      "evidence_summary": "Revisada a acepção de fruto em vagem; não se confunde com a árvore.",
+      "reuse": "Fatos e nomes identificativos; definições, receitas e prosa da fonte não são reproduzidas."
+    },
+    "publico-priberam-parar": {
+      "kind": "reference_review",
+      "url": "https://dicionario.priberam.org/parar",
+      "accessed_at": "2026-10-29",
+      "evidence_summary": "Classe verbal confirmada na entrada lexical.",
+      "reuse": "Fatos e nomes identificativos; definições, receitas e prosa da fonte não são reproduzidas."
+    },
+    "publico-priberam-orégano": {
+      "kind": "reference_review",
+      "url": "https://dicionario.priberam.org/orégano",
+      "accessed_at": "2026-10-29",
+      "evidence_summary": "Revisada a remissão a orégão e seu uso como tempero culinário.",
+      "reuse": "Fatos e nomes identificativos; definições, receitas e prosa da fonte não são reproduzidas."
+    },
+    "publico-rae-familia": {
+      "kind": "reference_review",
+      "url": "https://dle.rae.es/familia",
+      "accessed_at": "2026-10-29",
+      "evidence_summary": "Lema espanhol confirmado no DLE da RAE-ASALE.",
+      "reuse": "Fatos e nomes identificativos; definições, receitas e prosa da fonte não são reproduzidas."
+    },
+    "publico-rae-oso": {
+      "kind": "reference_review",
+      "url": "https://dle.rae.es/oso",
+      "accessed_at": "2026-10-29",
+      "evidence_summary": "Lema espanhol confirmado no DLE da RAE-ASALE.",
+      "reuse": "Fatos e nomes identificativos; definições, receitas e prosa da fonte não são reproduzidas."
+    },
+    "publico-rae-gato": {
+      "kind": "reference_review",
+      "url": "https://dle.rae.es/gato",
+      "accessed_at": "2026-10-29",
+      "evidence_summary": "Lema espanhol confirmado no DLE da RAE-ASALE.",
+      "reuse": "Fatos e nomes identificativos; definições, receitas e prosa da fonte não são reproduzidas."
+    },
+    "publico-rae-perro": {
+      "kind": "reference_review",
+      "url": "https://dle.rae.es/perro",
+      "accessed_at": "2026-10-29",
+      "evidence_summary": "Lema espanhol confirmado no DLE da RAE-ASALE.",
+      "reuse": "Fatos e nomes identificativos; definições, receitas e prosa da fonte não são reproduzidas."
+    },
+    "publico-ipu": {
+      "kind": "reference_review",
+      "url": "https://www.metmuseum.org/exhibitions/listings/2009/sounding-the-pacific/photo-gallery",
+      "accessed_at": "2026-10-29",
+      "evidence_summary": "O museu identifica Ipu Hula como tambor de cabaça havaiano.",
+      "reuse": "Fatos e nomes identificativos; definições, receitas e prosa da fonte não são reproduzidas."
+    },
+    "publico-pizza": {
+      "kind": "reference_review",
+      "url": "https://www.pizzariadoportugaguarulhos.com.br/",
+      "accessed_at": "2026-10-29",
+      "evidence_summary": "Sabores identificados no cardápio próprio da pizzaria; somente nomes, sem receitas.",
+      "reuse": "Fatos e nomes identificativos; definições, receitas e prosa da fonte não são reproduzidas."
+    },
+    "publico-sorvete": {
+      "kind": "reference_review",
+      "url": "https://sorvetesbeijofrio.com.br/cardapio",
+      "accessed_at": "2026-10-29",
+      "evidence_summary": "Sabores identificados no cardápio próprio da sorveteria; somente nomes, sem fórmulas ou prosa.",
+      "reuse": "Fatos e nomes identificativos; definições, receitas e prosa da fonte não são reproduzidas."
+    },
+    "publico-legiao": {
+      "kind": "reference_review",
+      "url": "https://www.legiaourbana.com.br/acustico.html",
+      "accessed_at": "2026-10-29",
+      "evidence_summary": "Títulos de faixas identificados na discografia oficial; sem letras de músicas.",
+      "reuse": "Fatos e nomes identificativos; definições, receitas e prosa da fonte não são reproduzidas."
+    },
+    "publico-metallica": {
+      "kind": "reference_review",
+      "url": "https://www.metallica.com/history/",
+      "accessed_at": "2026-10-29",
+      "evidence_summary": "Grupo musical confirmado pela história publicada pela própria banda.",
+      "reuse": "Fatos e nomes identificativos; definições, receitas e prosa da fonte não são reproduzidas."
+    },
+    "publico-greenday": {
+      "kind": "reference_review",
+      "url": "https://store.greenday.com/products/dickies-x-green-day-dookie-work-jacket",
+      "accessed_at": "2026-10-29",
+      "evidence_summary": "A loja oficial identifica Green Day como banda; só o nome foi aproveitado.",
+      "reuse": "Fatos e nomes identificativos; definições, receitas e prosa da fonte não são reproduzidas."
+    },
+    "publico-oasis": {
+      "kind": "reference_review",
+      "url": "https://oasisinet.com/",
+      "accessed_at": "2026-10-29",
+      "evidence_summary": "Grupo musical identificado no site oficial e na apresentação da turnê.",
+      "reuse": "Fatos e nomes identificativos; definições, receitas e prosa da fonte não são reproduzidas."
+    },
+    "publico-ea": {
+      "kind": "reference_review",
+      "url": "https://www.ea.com/pt-br/games/it-takes-two/it-takes-two",
+      "accessed_at": "2026-10-29",
+      "evidence_summary": "Jogo eletrônico identificado pela própria produtora.",
+      "reuse": "Fatos e nomes identificativos; definições, receitas e prosa da fonte não são reproduzidas."
+    },
+    "publico-playstation": {
+      "kind": "reference_review",
+      "url": "https://www.playstation.com/pt-br/god-of-war/",
+      "accessed_at": "2026-10-29",
+      "evidence_summary": "Jogo eletrônico identificado pela própria editora.",
+      "reuse": "Fatos e nomes identificativos; definições, receitas e prosa da fonte não são reproduzidas."
+    },
+    "publico-globo": {
+      "kind": "reference_review",
+      "url": "https://memoriaglobo.globo.com/jornalismo/jornalismo-e-telejornais/fantastico/",
+      "accessed_at": "2026-10-29",
+      "evidence_summary": "Programa de televisão identificado pelo acervo da emissora.",
+      "reuse": "Fatos e nomes identificativos; definições, receitas e prosa da fonte não são reproduzidas."
+    },
+    "publico-anvisa": {
+      "kind": "reference_review",
+      "url": "https://bibliotecadigital.anvisa.gov.br/jspui/handle/anvisa/1231",
+      "accessed_at": "2026-10-29",
+      "evidence_summary": "Nome de medicamento na Farmacopeia Brasileira; apenas associação lexical, sem posologia.",
+      "reuse": "Fatos e nomes identificativos; definições, receitas e prosa da fonte não são reproduzidas."
+    },
+    "publico-santos": {
+      "kind": "reference_review",
+      "url": "https://www.santos.sp.gov.br/?q=node%2F169763",
+      "accessed_at": "2026-10-29",
+      "evidence_summary": "Prática na praia documentada pela Prefeitura de Santos; exemplo de atividade presente no ambiente.",
+      "reuse": "Fatos e nomes identificativos; definições, receitas e prosa da fonte não são reproduzidas."
+    },
+    "publico-hucam": {
+      "kind": "reference_review",
+      "url": "https://preguinho.ifrn.edu.br/?pregao=1142022&uasg=155012",
+      "accessed_at": "2026-10-29",
+      "evidence_summary": "Aquisição do equipamento para unidades assistenciais do HUCAM documentada em registro público.",
+      "reuse": "Fatos e nomes identificativos; definições, receitas e prosa da fonte não são reproduzidas."
+    },
+    "publico-timefitness": {
+      "kind": "reference_review",
+      "url": "https://timefitness.com.br/equipamentos/crono/mesa-flexora/",
+      "accessed_at": "2026-10-29",
+      "evidence_summary": "Equipamento para academia identificado pelo fabricante.",
+      "reuse": "Fatos e nomes identificativos; definições, receitas e prosa da fonte não são reproduzidas."
+    },
+    "publico-iel": {
+      "kind": "reference_review",
+      "url": "https://ielmt.empregare.com/pt-br/vaga-instrutor-de-academia_186243",
+      "accessed_at": "2026-10-29",
+      "evidence_summary": "Função de instrutor de academia documentada por vaga do IEL; exemplo de profissional no ambiente.",
+      "reuse": "Fatos e nomes identificativos; definições, receitas e prosa da fonte não são reproduzidas."
+    },
+    "publico-vw": {
+      "kind": "reference_review",
+      "url": "https://www.vw.com.br/pt/servicos-e-acessorios/servicos-e-produtos/manuais-e-garantia/manuais.html",
+      "accessed_at": "2026-10-29",
+      "evidence_summary": "Modelo de automóvel identificado no catálogo de manuais da montadora.",
+      "reuse": "Fatos e nomes identificativos; definições, receitas e prosa da fonte não são reproduzidas."
+    },
+    "publico-omo": {
+      "kind": "reference_review",
+      "url": "https://www.omo.com/br/home.html",
+      "accessed_at": "2026-10-29",
+      "evidence_summary": "Marca de produtos de limpeza identificada em seu site oficial.",
+      "reuse": "Fatos e nomes identificativos; definições, receitas e prosa da fonte não são reproduzidas."
+    },
+    "publico-consul": {
+      "kind": "reference_review",
+      "url": "https://www.consul.com.br/eletrodomesticos/geladeira---refrigerador/cycle-defrost",
+      "accessed_at": "2026-10-29",
+      "evidence_summary": "Eletrodoméstico elétrico identificado pelo fabricante; categoria ampla Eletro Eletrônico.",
+      "reuse": "Fatos e nomes identificativos; definições, receitas e prosa da fonte não são reproduzidas."
+    },
+    "publico-saude": {
+      "kind": "reference_review",
+      "url": "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/s/saude-da-crianca/primeira-infancia/alimentacao-saudavel",
+      "accessed_at": "2026-10-29",
+      "evidence_summary": "Fruta fresca citada como opção em alimentação saudável; sem generalizar todas as preparações da fruta.",
+      "reuse": "Fatos e nomes identificativos; definições, receitas e prosa da fonte não são reproduzidas."
+    },
+    "publico-nintendo": {
+      "kind": "reference_review",
+      "url": "https://zelda.nintendo.com/about/",
+      "accessed_at": "2026-10-29",
+      "evidence_summary": "Antagonista e vilão identificado na apresentação oficial de The Legend of Zelda.",
+      "reuse": "Fatos e nomes identificativos; definições, receitas e prosa da fonte não são reproduzidas."
+    },
+    "publico-cacau": {
+      "kind": "reference_review",
+      "url": "https://www.cacaushow.com.br/produto/combo-ursinho-especial-550106.html",
+      "accessed_at": "2026-10-29",
+      "evidence_summary": "Produto explicitamente oferecido para presentear; não se adiciona relação universal Objeto/Presente.",
+      "reuse": "Fatos e nomes identificativos; definições, receitas e prosa da fonte não são reproduzidas."
+    },
+    "publico-milan": {
+      "kind": "reference_review",
+      "url": "https://www.acmilan.com/en",
+      "accessed_at": "2026-10-29",
+      "evidence_summary": "Clube de futebol identificado no site oficial; nome usual Milan.",
+      "reuse": "Fatos e nomes identificativos; definições, receitas e prosa da fonte não são reproduzidas."
+    },
+    "publico-inter": {
+      "kind": "reference_review",
+      "url": "https://www.inter.it/en",
+      "accessed_at": "2026-10-29",
+      "evidence_summary": "Clube de futebol identificado no site oficial; nome usual Inter.",
+      "reuse": "Fatos e nomes identificativos; definições, receitas e prosa da fonte não são reproduzidas."
+    },
+    "publico-gremio": {
+      "kind": "reference_review",
+      "url": "https://gremio.net/conteudo/index/3",
+      "accessed_at": "2026-10-29",
+      "evidence_summary": "Clube de futebol identificado em sua apresentação institucional oficial.",
+      "reuse": "Fatos e nomes identificativos; definições, receitas e prosa da fonte não são reproduzidas."
+    },
+    "publico-pbh": {
+      "kind": "reference_review",
+      "url": "https://prefeitura.pbh.gov.br/sumob/micromobilidade/patineteseletricos",
+      "accessed_at": "2026-10-29",
+      "evidence_summary": "Equipamento de mobilidade e deslocamento urbano descrito pela Prefeitura de Belo Horizonte.",
+      "reuse": "Fatos e nomes identificativos; definições, receitas e prosa da fonte não são reproduzidas."
+    },
+    "publico-cob": {
+      "kind": "reference_review",
+      "url": "https://www.cob.org.br/time-brasil/esportes/1-polo-aquatico",
+      "accessed_at": "2026-10-29",
+      "evidence_summary": "Modalidade esportiva descrita pelo Comitê Olímpico do Brasil.",
+      "reuse": "Fatos e nomes identificativos; definições, receitas e prosa da fonte não são reproduzidas."
+    },
+    "publico-wikidata-Q335455": {
+      "kind": "wikidata_snapshot_review",
+      "url": "https://www.wikidata.org/w/index.php?title=Q335455&oldid=2560436104",
+      "accessed_at": "2026-10-29",
+      "evidence_summary": "Figura pública de atuação reconhecida no teatro e televisão, identificada como atriz e escritora brasileira.",
+      "reuse": "Fatos e nomes identificativos; definições, receitas e prosa da fonte não são reproduzidas.",
+      "license": "CC0-1.0",
+      "entity_id": "Q335455",
+      "revision": 2560436104,
+      "snapshot": "data/source/wikidata-fatos-2026-10-29.json",
+      "snapshot_sha256": "6c951866dec1c80894daa815a637e6aa52db7e02e8d4f5f152d458b8a084d63c"
+    },
+    "publico-wikidata-Q55800": {
+      "kind": "wikidata_snapshot_review",
+      "url": "https://www.wikidata.org/w/index.php?title=Q55800&oldid=2561871331",
+      "accessed_at": "2026-10-29",
+      "evidence_summary": "Figura pública da televisão, identificada como apresentadora e atriz.",
+      "reuse": "Fatos e nomes identificativos; definições, receitas e prosa da fonte não são reproduzidas.",
+      "license": "CC0-1.0",
+      "entity_id": "Q55800",
+      "revision": 2561871331,
+      "snapshot": "data/source/wikidata-fatos-2026-10-29.json",
+      "snapshot_sha256": "6c951866dec1c80894daa815a637e6aa52db7e02e8d4f5f152d458b8a084d63c"
+    },
+    "publico-wikidata-Q235940": {
+      "kind": "wikidata_snapshot_review",
+      "url": "https://www.wikidata.org/w/index.php?title=Q235940&oldid=2528928020",
+      "accessed_at": "2026-10-29",
+      "evidence_summary": "Ocupação de cantora confirmada no registro; entidade humana, não álbum homônimo.",
+      "reuse": "Fatos e nomes identificativos; definições, receitas e prosa da fonte não são reproduzidas.",
+      "license": "CC0-1.0",
+      "entity_id": "Q235940",
+      "revision": 2528928020,
+      "snapshot": "data/source/wikidata-fatos-2026-10-29.json",
+      "snapshot_sha256": "6c951866dec1c80894daa815a637e6aa52db7e02e8d4f5f152d458b8a084d63c"
+    },
+    "publico-wikidata-Q483682": {
+      "kind": "wikidata_snapshot_review",
+      "url": "https://www.wikidata.org/w/index.php?title=Q483682&oldid=2529488696",
+      "accessed_at": "2026-10-29",
+      "evidence_summary": "Ocupação de cantora confirmada no registro; excluídas a futebolista e pesquisadoras homônimas.",
+      "reuse": "Fatos e nomes identificativos; definições, receitas e prosa da fonte não são reproduzidas.",
+      "license": "CC0-1.0",
+      "entity_id": "Q483682",
+      "revision": 2529488696,
+      "snapshot": "data/source/wikidata-fatos-2026-10-29.json",
+      "snapshot_sha256": "6c951866dec1c80894daa815a637e6aa52db7e02e8d4f5f152d458b8a084d63c"
+    },
+    "publico-wikidata-Q128518": {
+      "kind": "wikidata_snapshot_review",
+      "url": "https://www.wikidata.org/w/index.php?title=Q128518&oldid=2560215401",
+      "accessed_at": "2026-10-29",
+      "evidence_summary": "Filme de 2000 de Ridley Scott; excluídos o combatente, personagem de quadrinhos e futebolista.",
+      "reuse": "Fatos e nomes identificativos; definições, receitas e prosa da fonte não são reproduzidas.",
+      "license": "CC0-1.0",
+      "entity_id": "Q128518",
+      "revision": 2560215401,
+      "snapshot": "data/source/wikidata-fatos-2026-10-29.json",
+      "snapshot_sha256": "6c951866dec1c80894daa815a637e6aa52db7e02e8d4f5f152d458b8a084d63c"
+    },
+    "publico-wikidata-Q936278": {
+      "kind": "wikidata_snapshot_review",
+      "url": "https://www.wikidata.org/w/index.php?title=Q936278&oldid=2558937474",
+      "accessed_at": "2026-10-29",
+      "evidence_summary": "Antagonista titular do filme A Múmia de 1932; não o personagem histórico egípcio.",
+      "reuse": "Fatos e nomes identificativos; definições, receitas e prosa da fonte não são reproduzidas.",
+      "license": "CC0-1.0",
+      "entity_id": "Q936278",
+      "revision": 2558937474,
+      "snapshot": "data/source/wikidata-fatos-2026-10-29.json",
+      "snapshot_sha256": "6c951866dec1c80894daa815a637e6aa52db7e02e8d4f5f152d458b8a084d63c"
+    },
+    "publico-wikidata-Q51770": {
+      "kind": "wikidata_snapshot_review",
+      "url": "https://www.wikidata.org/w/index.php?title=Q51770&oldid=2541753492",
+      "accessed_at": "2026-10-29",
+      "evidence_summary": "Alias português do antagonista Darth Sidious confirmado no registro.",
+      "reuse": "Fatos e nomes identificativos; definições, receitas e prosa da fonte não são reproduzidas.",
+      "license": "CC0-1.0",
+      "entity_id": "Q51770",
+      "revision": 2541753492,
+      "snapshot": "data/source/wikidata-fatos-2026-10-29.json",
+      "snapshot_sha256": "6c951866dec1c80894daa815a637e6aa52db7e02e8d4f5f152d458b8a084d63c"
+    },
+    "publico-wikidata-Q3013": {
+      "kind": "wikidata_snapshot_review",
+      "url": "https://www.wikidata.org/w/index.php?title=Q3013&oldid=2547705182",
+      "accessed_at": "2026-10-29",
+      "evidence_summary": "Série de televisão de 2007; não o jogo ou álbum homônimo.",
+      "reuse": "Fatos e nomes identificativos; definições, receitas e prosa da fonte não são reproduzidas.",
+      "license": "CC0-1.0",
+      "entity_id": "Q3013",
+      "revision": 2547705182,
+      "snapshot": "data/source/wikidata-fatos-2026-10-29.json",
+      "snapshot_sha256": "6c951866dec1c80894daa815a637e6aa52db7e02e8d4f5f152d458b8a084d63c"
+    },
+    "publico-wikidata-Q710324": {
+      "kind": "wikidata_snapshot_review",
+      "url": "https://www.wikidata.org/w/index.php?title=Q710324&oldid=2561614331",
+      "accessed_at": "2026-10-29",
+      "evidence_summary": "Série de televisão de anime; não o mangá homônimo.",
+      "reuse": "Fatos e nomes identificativos; definições, receitas e prosa da fonte não são reproduzidas.",
+      "license": "CC0-1.0",
+      "entity_id": "Q710324",
+      "revision": 2561614331,
+      "snapshot": "data/source/wikidata-fatos-2026-10-29.json",
+      "snapshot_sha256": "6c951866dec1c80894daa815a637e6aa52db7e02e8d4f5f152d458b8a084d63c"
+    },
+    "publico-wikidata-Q49740": {
+      "kind": "wikidata_snapshot_review",
+      "url": "https://www.wikidata.org/w/index.php?title=Q49740&oldid=2560747575",
+      "accessed_at": "2026-10-29",
+      "evidence_summary": "Jogo eletrônico de 2011; não a franquia de mídia homônima.",
+      "reuse": "Fatos e nomes identificativos; definições, receitas e prosa da fonte não são reproduzidas.",
+      "license": "CC0-1.0",
+      "entity_id": "Q49740",
+      "revision": 2560747575,
+      "snapshot": "data/source/wikidata-fatos-2026-10-29.json",
+      "snapshot_sha256": "6c951866dec1c80894daa815a637e6aa52db7e02e8d4f5f152d458b8a084d63c"
+    },
+    "publico-wikidata-Q16452687": {
+      "kind": "wikidata_snapshot_review",
+      "url": "https://www.wikidata.org/w/index.php?title=Q16452687&oldid=2515437488",
+      "accessed_at": "2026-10-29",
+      "evidence_summary": "Registro de sobrenome; não cidades homônimas.",
+      "reuse": "Fatos e nomes identificativos; definições, receitas e prosa da fonte não são reproduzidas.",
+      "license": "CC0-1.0",
+      "entity_id": "Q16452687",
+      "revision": 2515437488,
+      "snapshot": "data/source/wikidata-fatos-2026-10-29.json",
+      "snapshot_sha256": "6c951866dec1c80894daa815a637e6aa52db7e02e8d4f5f152d458b8a084d63c"
+    },
+    "publico-wikidata-Q90": {
+      "kind": "wikidata_snapshot_review",
+      "url": "https://www.wikidata.org/w/index.php?title=Q90&oldid=2560099677",
+      "accessed_at": "2026-10-29",
+      "evidence_summary": "Capital da França identificada no registro geográfico.",
+      "reuse": "Fatos e nomes identificativos; definições, receitas e prosa da fonte não são reproduzidas.",
+      "license": "CC0-1.0",
+      "entity_id": "Q90",
+      "revision": 2560099677,
+      "snapshot": "data/source/wikidata-fatos-2026-10-29.json",
+      "snapshot_sha256": "6c951866dec1c80894daa815a637e6aa52db7e02e8d4f5f152d458b8a084d63c"
+    }
+  },
+  "entries": [
+    {
+      "category": "Flor",
+      "word": "Frésia",
+      "source": "publico-priberam-frésia",
+      "state": "approved",
+      "review_note": "Revisada a acepção botânica de flor, sem copiar definição."
+    },
+    {
+      "category": "Instrumento Musical",
+      "word": "Flauta",
+      "source": "publico-priberam-flauta",
+      "state": "approved",
+      "review_note": "Revisada a acepção de instrumento musical de sopro."
+    },
+    {
+      "category": "Instrumento Musical",
+      "word": "Piano",
+      "source": "publico-priberam-piano",
+      "state": "approved",
+      "review_note": "Revisada a acepção de instrumento musical de teclado."
+    },
+    {
+      "category": "Vestuário",
+      "word": "Impermeável",
+      "source": "publico-priberam-impermeável",
+      "state": "approved",
+      "review_note": "Revisada a acepção substantiva de casaco; não apenas o adjetivo."
+    },
+    {
+      "category": "Vestuário",
+      "word": "Macacão",
+      "source": "publico-priberam-macacão",
+      "state": "approved",
+      "review_note": "Revisada a acepção de peça de roupa."
+    },
+    {
+      "category": "Adjetivo",
+      "word": "Medroso",
+      "source": "publico-priberam-medroso",
+      "state": "approved",
+      "review_note": "Classe adjetiva confirmada na entrada lexical."
+    },
+    {
+      "category": "Mamífero",
+      "word": "Macaco",
+      "source": "publico-priberam-macaco",
+      "state": "approved",
+      "review_note": "Revisada a acepção zoológica de mamífero primata."
+    },
+    {
+      "category": "Mamífero",
+      "word": "Gato",
+      "source": "publico-priberam-gato",
+      "state": "approved",
+      "review_note": "Revisada a acepção zoológica de Felis catus, mamífero."
+    },
+    {
+      "category": "Árvore",
+      "word": "Goiabeira",
+      "source": "publico-priberam-goiabeira",
+      "state": "approved",
+      "review_note": "Revisada a acepção de árvore tropical Psidium guajava."
+    },
+    {
+      "category": "Árvore",
+      "word": "Pinheiro",
+      "source": "publico-priberam-pinheiro",
+      "state": "approved",
+      "review_note": "Revisada a acepção de árvores do gênero Pinus."
+    },
+    {
+      "category": "Animal Aquático",
+      "word": "Peixe",
+      "source": "publico-priberam-peixe",
+      "state": "approved",
+      "review_note": "Revisada a acepção zoológica de animal que vive na água."
+    },
+    {
+      "category": "Fruta",
+      "word": "Ingá",
+      "source": "publico-priberam-ingá",
+      "state": "approved",
+      "review_note": "Revisada a acepção de fruto em vagem; não se confunde com a árvore."
+    },
+    {
+      "category": "Verbo",
+      "word": "Parar",
+      "source": "publico-priberam-parar",
+      "state": "approved",
+      "review_note": "Classe verbal confirmada na entrada lexical."
+    },
+    {
+      "category": "Ingrediente",
+      "word": "Orégano",
+      "source": "publico-priberam-orégano",
+      "state": "approved",
+      "review_note": "Revisada a remissão a orégão e seu uso como tempero culinário."
+    },
+    {
+      "category": "Palavra em Espanhol",
+      "word": "Familia",
+      "source": "publico-rae-familia",
+      "state": "approved",
+      "review_note": "Entrada lexical espanhola confirmada no DLE; idioma es separado de pt.",
+      "language": "es"
+    },
+    {
+      "category": "Palavra em Espanhol",
+      "word": "Oso",
+      "source": "publico-rae-oso",
+      "state": "approved",
+      "review_note": "Entrada lexical espanhola confirmada no DLE; idioma es separado de pt.",
+      "language": "es"
+    },
+    {
+      "category": "Palavra em Espanhol",
+      "word": "Gato",
+      "source": "publico-rae-gato",
+      "state": "approved",
+      "review_note": "Entrada lexical espanhola confirmada no DLE; idioma es separado de pt.",
+      "language": "es"
+    },
+    {
+      "category": "Palavra em Espanhol",
+      "word": "Perro",
+      "source": "publico-rae-perro",
+      "state": "approved",
+      "review_note": "Entrada lexical espanhola confirmada no DLE; idioma es separado de pt.",
+      "language": "es"
+    },
+    {
+      "category": "Instrumento Musical",
+      "word": "Ipu hula",
+      "source": "publico-ipu",
+      "state": "approved",
+      "review_note": "Nome de instrumento confirmado no catálogo do Metropolitan Museum; não o termo genérico cabaça."
+    },
+    {
+      "category": "Sabor de Pizza",
+      "word": "Frango",
+      "source": "publico-pizza",
+      "state": "approved",
+      "review_note": "Sabor oferecido no cardápio do estabelecimento, confirmado pelo nome da pizza."
+    },
+    {
+      "category": "Sabor de Pizza",
+      "word": "Gorgonzola",
+      "source": "publico-pizza",
+      "state": "approved",
+      "review_note": "Sabor oferecido no cardápio do estabelecimento, confirmado pelo nome da pizza."
+    },
+    {
+      "category": "Sabor de Pizza",
+      "word": "Lisboa",
+      "source": "publico-pizza",
+      "state": "approved",
+      "review_note": "Sabor oferecido no cardápio do estabelecimento, confirmado pelo nome da pizza."
+    },
+    {
+      "category": "Sabor de Pizza",
+      "word": "Lombo",
+      "source": "publico-pizza",
+      "state": "approved",
+      "review_note": "Sabor oferecido no cardápio do estabelecimento, confirmado pelo nome da pizza."
+    },
+    {
+      "category": "Sabor de Pizza",
+      "word": "Marguerita",
+      "source": "publico-pizza",
+      "state": "approved",
+      "review_note": "Sabor oferecido no cardápio do estabelecimento, confirmado pelo nome da pizza."
+    },
+    {
+      "category": "Sabor de Pizza",
+      "word": "Milho",
+      "source": "publico-pizza",
+      "state": "approved",
+      "review_note": "Sabor oferecido no cardápio do estabelecimento, confirmado pelo nome da pizza."
+    },
+    {
+      "category": "Sabor de Pizza",
+      "word": "Mussarela",
+      "source": "publico-pizza",
+      "state": "approved",
+      "review_note": "Sabor oferecido no cardápio do estabelecimento, confirmado pelo nome da pizza."
+    },
+    {
+      "category": "Sabor de Pizza",
+      "word": "Napolitana",
+      "source": "publico-pizza",
+      "state": "approved",
+      "review_note": "Sabor oferecido no cardápio do estabelecimento, confirmado pelo nome da pizza."
+    },
+    {
+      "category": "Sabor de Pizza",
+      "word": "Palmito",
+      "source": "publico-pizza",
+      "state": "approved",
+      "review_note": "Sabor oferecido no cardápio do estabelecimento, confirmado pelo nome da pizza."
+    },
+    {
+      "category": "Sabor de Pizza",
+      "word": "Peito de Peru",
+      "source": "publico-pizza",
+      "state": "approved",
+      "review_note": "Sabor oferecido no cardápio do estabelecimento, confirmado pelo nome da pizza."
+    },
+    {
+      "category": "Sabor de Pizza",
+      "word": "Pepperoni",
+      "source": "publico-pizza",
+      "state": "approved",
+      "review_note": "Sabor oferecido no cardápio do estabelecimento, confirmado pelo nome da pizza."
+    },
+    {
+      "category": "Sabor de Pizza",
+      "word": "Peruana",
+      "source": "publico-pizza",
+      "state": "approved",
+      "review_note": "Sabor oferecido no cardápio do estabelecimento, confirmado pelo nome da pizza."
+    },
+    {
+      "category": "Sabor de Pizza",
+      "word": "Pizzaiolo",
+      "source": "publico-pizza",
+      "state": "approved",
+      "review_note": "Sabor oferecido no cardápio do estabelecimento, confirmado pelo nome da pizza."
+    },
+    {
+      "category": "Sabor de Pizza",
+      "word": "Porto",
+      "source": "publico-pizza",
+      "state": "approved",
+      "review_note": "Sabor oferecido no cardápio do estabelecimento, confirmado pelo nome da pizza."
+    },
+    {
+      "category": "Sabor de Pizza",
+      "word": "Portuguesa",
+      "source": "publico-pizza",
+      "state": "approved",
+      "review_note": "Sabor oferecido no cardápio do estabelecimento, confirmado pelo nome da pizza."
+    },
+    {
+      "category": "Sabor de Pizza",
+      "word": "Quatro Queijos",
+      "source": "publico-pizza",
+      "state": "approved",
+      "review_note": "Sabor oferecido no cardápio do estabelecimento, confirmado pelo nome da pizza."
+    },
+    {
+      "category": "Sabor de Pizza",
+      "word": "Romana",
+      "source": "publico-pizza",
+      "state": "approved",
+      "review_note": "Sabor oferecido no cardápio do estabelecimento, confirmado pelo nome da pizza."
+    },
+    {
+      "category": "Sabor de Pizza",
+      "word": "Salame",
+      "source": "publico-pizza",
+      "state": "approved",
+      "review_note": "Sabor oferecido no cardápio do estabelecimento, confirmado pelo nome da pizza."
+    },
+    {
+      "category": "Sabor de Pizza",
+      "word": "Siciliana",
+      "source": "publico-pizza",
+      "state": "approved",
+      "review_note": "Sabor oferecido no cardápio do estabelecimento, confirmado pelo nome da pizza."
+    },
+    {
+      "category": "Sabor de Pizza",
+      "word": "Trás dos Montes",
+      "source": "publico-pizza",
+      "state": "approved",
+      "review_note": "Sabor oferecido no cardápio do estabelecimento, confirmado pelo nome da pizza."
+    },
+    {
+      "category": "Sabor de Pizza",
+      "word": "Tomate Seco",
+      "source": "publico-pizza",
+      "state": "approved",
+      "review_note": "Sabor oferecido no cardápio do estabelecimento, confirmado pelo nome da pizza."
+    },
+    {
+      "category": "Sabor de Pizza",
+      "word": "Toscana",
+      "source": "publico-pizza",
+      "state": "approved",
+      "review_note": "Sabor oferecido no cardápio do estabelecimento, confirmado pelo nome da pizza."
+    },
+    {
+      "category": "Sabor de Pizza",
+      "word": "Três Queijos",
+      "source": "publico-pizza",
+      "state": "approved",
+      "review_note": "Sabor oferecido no cardápio do estabelecimento, confirmado pelo nome da pizza."
+    },
+    {
+      "category": "Sabor de Sorvete",
+      "word": "Abacaxi",
+      "source": "publico-sorvete",
+      "state": "approved",
+      "review_note": "Sabor confirmado no cardápio; associação não equivale a garantia de consenso na partida."
+    },
+    {
+      "category": "Sabor de Sorvete",
+      "word": "Açaí",
+      "source": "publico-sorvete",
+      "state": "approved",
+      "review_note": "Sabor confirmado no cardápio; associação não equivale a garantia de consenso na partida."
+    },
+    {
+      "category": "Sabor de Sorvete",
+      "word": "Café",
+      "source": "publico-sorvete",
+      "state": "approved",
+      "review_note": "Sabor confirmado no cardápio; associação não equivale a garantia de consenso na partida."
+    },
+    {
+      "category": "Sabor de Sorvete",
+      "word": "Chocolate",
+      "source": "publico-sorvete",
+      "state": "approved",
+      "review_note": "Sabor confirmado no cardápio; associação não equivale a garantia de consenso na partida."
+    },
+    {
+      "category": "Sabor de Sorvete",
+      "word": "Chocomenta",
+      "source": "publico-sorvete",
+      "state": "approved",
+      "review_note": "Sabor confirmado no cardápio; associação não equivale a garantia de consenso na partida."
+    },
+    {
+      "category": "Sabor de Sorvete",
+      "word": "Doce de Leite",
+      "source": "publico-sorvete",
+      "state": "approved",
+      "review_note": "Sabor confirmado no cardápio; associação não equivale a garantia de consenso na partida."
+    },
+    {
+      "category": "Sabor de Sorvete",
+      "word": "Maracujá",
+      "source": "publico-sorvete",
+      "state": "approved",
+      "review_note": "Sabor confirmado no cardápio; associação não equivale a garantia de consenso na partida."
+    },
+    {
+      "category": "Sabor de Sorvete",
+      "word": "Prestígio",
+      "source": "publico-sorvete",
+      "state": "approved",
+      "review_note": "Sabor confirmado no cardápio; associação não equivale a garantia de consenso na partida."
+    },
+    {
+      "category": "Sabor de Sorvete",
+      "word": "Sensação",
+      "source": "publico-sorvete",
+      "state": "approved",
+      "review_note": "Sabor confirmado no cardápio; associação não equivale a garantia de consenso na partida."
+    },
+    {
+      "category": "Sabor de Sorvete",
+      "word": "Sonho de Valsa",
+      "source": "publico-sorvete",
+      "state": "approved",
+      "review_note": "Sabor confirmado no cardápio; associação não equivale a garantia de consenso na partida."
+    },
+    {
+      "category": "Sabor de Sorvete",
+      "word": "Ameixa",
+      "source": "publico-sorvete",
+      "state": "approved",
+      "review_note": "Sabor confirmado no cardápio; associação não equivale a garantia de consenso na partida."
+    },
+    {
+      "category": "Sabor de Sorvete",
+      "word": "Castanha do Pará",
+      "source": "publico-sorvete",
+      "state": "approved",
+      "review_note": "Sabor confirmado no cardápio; associação não equivale a garantia de consenso na partida."
+    },
+    {
+      "category": "Sabor de Sorvete",
+      "word": "Coco",
+      "source": "publico-sorvete",
+      "state": "approved",
+      "review_note": "Sabor confirmado no cardápio; associação não equivale a garantia de consenso na partida."
+    },
+    {
+      "category": "Sabor de Sorvete",
+      "word": "Lacta",
+      "source": "publico-sorvete",
+      "state": "approved",
+      "review_note": "Sabor confirmado no cardápio; associação não equivale a garantia de consenso na partida."
+    },
+    {
+      "category": "Sabor de Sorvete",
+      "word": "Nozes",
+      "source": "publico-sorvete",
+      "state": "approved",
+      "review_note": "Sabor confirmado no cardápio; associação não equivale a garantia de consenso na partida."
+    },
+    {
+      "category": "Sabor de Sorvete",
+      "word": "Banana Caramelizada",
+      "source": "publico-sorvete",
+      "state": "approved",
+      "review_note": "Sabor confirmado no cardápio; associação não equivale a garantia de consenso na partida."
+    },
+    {
+      "category": "Sabor de Sorvete",
+      "word": "Cereja",
+      "source": "publico-sorvete",
+      "state": "approved",
+      "review_note": "Sabor confirmado no cardápio; associação não equivale a garantia de consenso na partida."
+    },
+    {
+      "category": "Sabor de Sorvete",
+      "word": "Creme",
+      "source": "publico-sorvete",
+      "state": "approved",
+      "review_note": "Sabor confirmado no cardápio; associação não equivale a garantia de consenso na partida."
+    },
+    {
+      "category": "Sabor de Sorvete",
+      "word": "Leite Condensado",
+      "source": "publico-sorvete",
+      "state": "approved",
+      "review_note": "Sabor confirmado no cardápio; associação não equivale a garantia de consenso na partida."
+    },
+    {
+      "category": "Sabor de Sorvete",
+      "word": "Passas ao Rum",
+      "source": "publico-sorvete",
+      "state": "approved",
+      "review_note": "Sabor confirmado no cardápio; associação não equivale a garantia de consenso na partida."
+    },
+    {
+      "category": "Sabor de Sorvete",
+      "word": "Torrone",
+      "source": "publico-sorvete",
+      "state": "approved",
+      "review_note": "Sabor confirmado no cardápio; associação não equivale a garantia de consenso na partida."
+    },
+    {
+      "category": "Sabor de Sorvete",
+      "word": "Torta Alemã",
+      "source": "publico-sorvete",
+      "state": "approved",
+      "review_note": "Sabor confirmado no cardápio; associação não equivale a garantia de consenso na partida."
+    },
+    {
+      "category": "Sabor de Sorvete",
+      "word": "Brigadeiro",
+      "source": "publico-sorvete",
+      "state": "approved",
+      "review_note": "Sabor confirmado no cardápio; associação não equivale a garantia de consenso na partida."
+    },
+    {
+      "category": "Sabor de Sorvete",
+      "word": "Chiclete",
+      "source": "publico-sorvete",
+      "state": "approved",
+      "review_note": "Sabor confirmado no cardápio; associação não equivale a garantia de consenso na partida."
+    },
+    {
+      "category": "Sabor de Sorvete",
+      "word": "Baunilha",
+      "source": "publico-sorvete",
+      "state": "approved",
+      "review_note": "Sabor confirmado no cardápio; associação não equivale a garantia de consenso na partida."
+    },
+    {
+      "category": "Sabor de Sorvete",
+      "word": "Morango",
+      "source": "publico-sorvete",
+      "state": "approved",
+      "review_note": "Sabor confirmado no cardápio; associação não equivale a garantia de consenso na partida."
+    },
+    {
+      "category": "Sabor de Sorvete",
+      "word": "Limão",
+      "source": "publico-sorvete",
+      "state": "approved",
+      "review_note": "Sabor confirmado no cardápio; associação não equivale a garantia de consenso na partida."
+    },
+    {
+      "category": "Sabor de Sorvete",
+      "word": "Uva",
+      "source": "publico-sorvete",
+      "state": "approved",
+      "review_note": "Sabor confirmado no cardápio; associação não equivale a garantia de consenso na partida."
+    },
+    {
+      "category": "Sabor de Sorvete",
+      "word": "Flocos",
+      "source": "publico-sorvete",
+      "state": "approved",
+      "review_note": "Sabor confirmado no cardápio; associação não equivale a garantia de consenso na partida."
+    },
+    {
+      "category": "Sabor de Sorvete",
+      "word": "Coco Queimado",
+      "source": "publico-sorvete",
+      "state": "approved",
+      "review_note": "Sabor confirmado no cardápio; associação não equivale a garantia de consenso na partida."
+    },
+    {
+      "category": "Sabor de Sorvete",
+      "word": "Ovomaltine",
+      "source": "publico-sorvete",
+      "state": "approved",
+      "review_note": "Sabor confirmado no cardápio; associação não equivale a garantia de consenso na partida."
+    },
+    {
+      "category": "Sabor de Sorvete",
+      "word": "Ouro Branco",
+      "source": "publico-sorvete",
+      "state": "approved",
+      "review_note": "Sabor confirmado no cardápio; associação não equivale a garantia de consenso na partida."
+    },
+    {
+      "category": "Sabor de Sorvete",
+      "word": "Cookies",
+      "source": "publico-sorvete",
+      "state": "approved",
+      "review_note": "Sabor confirmado no cardápio; associação não equivale a garantia de consenso na partida."
+    },
+    {
+      "category": "Sabor de Sorvete",
+      "word": "Iogurte Grego",
+      "source": "publico-sorvete",
+      "state": "approved",
+      "review_note": "Sabor confirmado no cardápio; associação não equivale a garantia de consenso na partida."
+    },
+    {
+      "category": "Sabor de Sorvete",
+      "word": "Iogurte com Amarena",
+      "source": "publico-sorvete",
+      "state": "approved",
+      "review_note": "Sabor confirmado no cardápio; associação não equivale a garantia de consenso na partida."
+    },
+    {
+      "category": "Sabor de Sorvete",
+      "word": "Amarula",
+      "source": "publico-sorvete",
+      "state": "approved",
+      "review_note": "Sabor confirmado no cardápio; associação não equivale a garantia de consenso na partida."
+    },
+    {
+      "category": "Música",
+      "word": "Faroeste Caboclo",
+      "source": "publico-legiao",
+      "state": "approved",
+      "review_note": "Título de faixa presente na discografia oficial; nenhuma letra foi importada."
+    },
+    {
+      "category": "Música",
+      "word": "Índios",
+      "source": "publico-legiao",
+      "state": "approved",
+      "review_note": "Título de faixa presente na discografia oficial; nenhuma letra foi importada."
+    },
+    {
+      "category": "Música",
+      "word": "Mais do Mesmo",
+      "source": "publico-legiao",
+      "state": "approved",
+      "review_note": "Título de faixa presente na discografia oficial; nenhuma letra foi importada."
+    },
+    {
+      "category": "Música",
+      "word": "Pais e Filhos",
+      "source": "publico-legiao",
+      "state": "approved",
+      "review_note": "Título de faixa presente na discografia oficial; nenhuma letra foi importada."
+    },
+    {
+      "category": "Música",
+      "word": "Sereníssima",
+      "source": "publico-legiao",
+      "state": "approved",
+      "review_note": "Título de faixa presente na discografia oficial; nenhuma letra foi importada."
+    },
+    {
+      "category": "Música",
+      "word": "Teatro dos Vampiros",
+      "source": "publico-legiao",
+      "state": "approved",
+      "review_note": "Título de faixa presente na discografia oficial; nenhuma letra foi importada."
+    },
+    {
+      "category": "Música",
+      "word": "Metal Contra as Nuvens",
+      "source": "publico-legiao",
+      "state": "approved",
+      "review_note": "Título de faixa presente na discografia oficial; nenhuma letra foi importada."
+    },
+    {
+      "category": "Música",
+      "word": "Há Tempos",
+      "source": "publico-legiao",
+      "state": "approved",
+      "review_note": "Título de faixa presente na discografia oficial; nenhuma letra foi importada."
+    },
+    {
+      "category": "Música",
+      "word": "Eu Sei",
+      "source": "publico-legiao",
+      "state": "approved",
+      "review_note": "Título de faixa presente na discografia oficial; nenhuma letra foi importada."
+    },
+    {
+      "category": "Música",
+      "word": "Head On",
+      "source": "publico-legiao",
+      "state": "approved",
+      "review_note": "Título de faixa presente na discografia oficial; nenhuma letra foi importada."
+    },
+    {
+      "category": "Banda",
+      "word": "Metallica",
+      "source": "publico-metallica",
+      "state": "approved",
+      "review_note": "Grupo musical confirmado pela história publicada pela própria banda."
+    },
+    {
+      "category": "Banda",
+      "word": "Green Day",
+      "source": "publico-greenday",
+      "state": "approved",
+      "review_note": "A loja oficial identifica Green Day como banda; só o nome foi aproveitado."
+    },
+    {
+      "category": "Banda",
+      "word": "Oasis",
+      "source": "publico-oasis",
+      "state": "approved",
+      "review_note": "Grupo musical identificado no site oficial e na apresentação da turnê."
+    },
+    {
+      "category": "Game",
+      "word": "It Takes Two",
+      "source": "publico-ea",
+      "state": "approved",
+      "review_note": "Jogo eletrônico identificado pela própria produtora."
+    },
+    {
+      "category": "Game",
+      "word": "God of War",
+      "source": "publico-playstation",
+      "state": "approved",
+      "review_note": "Jogo eletrônico identificado pela própria editora."
+    },
+    {
+      "category": "Programa de TV",
+      "word": "Fantástico",
+      "source": "publico-globo",
+      "state": "approved",
+      "review_note": "Programa de televisão identificado pelo acervo da emissora."
+    },
+    {
+      "category": "Remédio",
+      "word": "Furosemida",
+      "source": "publico-anvisa",
+      "state": "approved",
+      "review_note": "Nome de medicamento na Farmacopeia Brasileira; apenas associação lexical, sem posologia."
+    },
+    {
+      "category": "Tem na Praia",
+      "word": "Frescobol",
+      "source": "publico-santos",
+      "state": "approved",
+      "review_note": "Prática na praia documentada pela Prefeitura de Santos; exemplo de atividade presente no ambiente."
+    },
+    {
+      "category": "Tem no Hospital",
+      "word": "Oxímetro",
+      "source": "publico-hucam",
+      "state": "approved",
+      "review_note": "Aquisição do equipamento para unidades assistenciais do HUCAM documentada em registro público."
+    },
+    {
+      "category": "Tem na academia",
+      "word": "Mesa flexora",
+      "source": "publico-timefitness",
+      "state": "approved",
+      "review_note": "Equipamento para academia identificado pelo fabricante."
+    },
+    {
+      "category": "Tem na academia",
+      "word": "Instrutor",
+      "source": "publico-iel",
+      "state": "approved",
+      "review_note": "Função de instrutor de academia documentada por vaga do IEL; exemplo de profissional no ambiente."
+    },
+    {
+      "category": "Carro",
+      "word": "Gol",
+      "source": "publico-vw",
+      "state": "approved",
+      "review_note": "Modelo de automóvel identificado no catálogo de manuais da montadora."
+    },
+    {
+      "category": "Marca",
+      "word": "Omo",
+      "source": "publico-omo",
+      "state": "approved",
+      "review_note": "Marca de produtos de limpeza identificada em seu site oficial."
+    },
+    {
+      "category": "Eletro Eletrônico",
+      "word": "Geladeira",
+      "source": "publico-consul",
+      "state": "approved",
+      "review_note": "Eletrodoméstico elétrico identificado pelo fabricante; categoria ampla Eletro Eletrônico."
+    },
+    {
+      "category": "Comida Saudável",
+      "word": "Maçã",
+      "source": "publico-saude",
+      "state": "approved",
+      "review_note": "Fruta fresca citada como opção em alimentação saudável; sem generalizar todas as preparações da fruta."
+    },
+    {
+      "category": "Vilão",
+      "word": "Ganondorf",
+      "source": "publico-nintendo",
+      "state": "approved",
+      "review_note": "Antagonista e vilão identificado na apresentação oficial de The Legend of Zelda."
+    },
+    {
+      "category": "Presente",
+      "word": "Ovo de Páscoa",
+      "source": "publico-cacau",
+      "state": "approved",
+      "review_note": "Produto explicitamente oferecido para presentear; não se adiciona relação universal Objeto/Presente."
+    },
+    {
+      "category": "Time Esportivo",
+      "word": "Milan",
+      "source": "publico-milan",
+      "state": "approved",
+      "review_note": "Clube de futebol identificado no site oficial; nome usual Milan."
+    },
+    {
+      "category": "Time Esportivo",
+      "word": "Inter",
+      "source": "publico-inter",
+      "state": "approved",
+      "review_note": "Clube de futebol identificado no site oficial; nome usual Inter."
+    },
+    {
+      "category": "Time Esportivo",
+      "word": "Grêmio",
+      "source": "publico-gremio",
+      "state": "approved",
+      "review_note": "Clube de futebol identificado em sua apresentação institucional oficial."
+    },
+    {
+      "category": "Meio de Transporte",
+      "word": "Patinete elétrico",
+      "source": "publico-pbh",
+      "state": "approved",
+      "review_note": "Equipamento de mobilidade e deslocamento urbano descrito pela Prefeitura de Belo Horizonte."
+    },
+    {
+      "category": "Esporte",
+      "word": "Polo aquático",
+      "source": "publico-cob",
+      "state": "approved",
+      "review_note": "Modalidade esportiva descrita pelo Comitê Olímpico do Brasil."
+    },
+    {
+      "category": "Celebridade",
+      "word": "Fernanda Montenegro",
+      "source": "publico-wikidata-Q335455",
+      "state": "approved",
+      "review_note": "Figura pública de atuação reconhecida no teatro e televisão, identificada como atriz e escritora brasileira.",
+      "sense": ""
+    },
+    {
+      "category": "Celebridade",
+      "word": "Oprah Winfrey",
+      "source": "publico-wikidata-Q55800",
+      "state": "approved",
+      "review_note": "Figura pública da televisão, identificada como apresentadora e atriz.",
+      "sense": ""
+    },
+    {
+      "category": "Cantor",
+      "word": "Ivete Sangalo",
+      "source": "publico-wikidata-Q235940",
+      "state": "approved",
+      "review_note": "Ocupação de cantora confirmada no registro; entidade humana, não álbum homônimo.",
+      "sense": ""
+    },
+    {
+      "category": "Cantor",
+      "word": "Paula Fernandes",
+      "source": "publico-wikidata-Q483682",
+      "state": "approved",
+      "review_note": "Ocupação de cantora confirmada no registro; excluídas a futebolista e pesquisadoras homônimas.",
+      "sense": ""
+    },
+    {
+      "category": "Filme",
+      "word": "Gladiador",
+      "source": "publico-wikidata-Q128518",
+      "state": "approved",
+      "review_note": "Filme de 2000 de Ridley Scott; excluídos o combatente, personagem de quadrinhos e futebolista.",
+      "sense": "filme-2000"
+    },
+    {
+      "category": "Vilão",
+      "word": "Imhotep",
+      "source": "publico-wikidata-Q936278",
+      "state": "approved",
+      "review_note": "Antagonista titular do filme A Múmia de 1932; não o personagem histórico egípcio.",
+      "sense": "ficcao-a-mumia-1932"
+    },
+    {
+      "category": "Vilão",
+      "word": "Imperador Palpatine",
+      "source": "publico-wikidata-Q51770",
+      "state": "approved",
+      "review_note": "Alias português do antagonista Darth Sidious confirmado no registro.",
+      "sense": "star-wars"
+    },
+    {
+      "category": "Série",
+      "word": "iCarly",
+      "source": "publico-wikidata-Q3013",
+      "state": "approved",
+      "review_note": "Série de televisão de 2007; não o jogo ou álbum homônimo.",
+      "sense": "serie-2007"
+    },
+    {
+      "category": "Desenho Animado",
+      "word": "One Piece",
+      "source": "publico-wikidata-Q710324",
+      "state": "approved",
+      "review_note": "Série de televisão de anime; não o mangá homônimo.",
+      "sense": "anime"
+    },
+    {
+      "category": "Game",
+      "word": "Minecraft",
+      "source": "publico-wikidata-Q49740",
+      "state": "approved",
+      "review_note": "Jogo eletrônico de 2011; não a franquia de mídia homônima.",
+      "sense": "jogo-2011"
+    },
+    {
+      "category": "Sobrenome",
+      "word": "Iglesias",
+      "source": "publico-wikidata-Q16452687",
+      "state": "approved",
+      "review_note": "Registro de sobrenome; não cidades homônimas.",
+      "sense": "sobrenome"
+    },
+    {
+      "category": "Capital",
+      "word": "Paris",
+      "source": "publico-wikidata-Q90",
+      "state": "approved",
+      "review_note": "Capital da França identificada no registro geográfico.",
+      "sense": "paris-franca"
+    }
+  ],
+  "unresolved_categories": [
+    "PDA",
+    "PCH",
+    "JLR"
+  ],
+  "limitations": [
+    "Cobertura medida no recorte público, não generalizada para todas as letras e temas.",
+    "Nomes e classificações factuais não garantem consenso dos jogadores."
+  ]
+}

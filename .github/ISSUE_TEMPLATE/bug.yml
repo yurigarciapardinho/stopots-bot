@@ -1,0 +1,29 @@
+name: Problema no assistente
+description: Relatar um comportamento reproduzível, sem credenciais.
+title: "[Problema] "
+body:
+  - type: markdown
+    attributes:
+      value: Não envie senhas, perfis, cookies ou endpoints CDP.
+  - type: input
+    id: version
+    attributes:
+      label: Versão do assistente
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Sistema, Chrome e formato instalado
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Passos, resultado esperado e resultado observado
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidências sanitizadas e mensagens de erro

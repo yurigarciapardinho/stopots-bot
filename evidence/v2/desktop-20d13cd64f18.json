@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "run_id": "20d13cd64f18",
+  "version": "2.1.0",
+  "subject": "desktop-gui",
+  "scenario": {
+    "private": true,
+    "participants": 2,
+    "rounds": 4,
+    "letters": "ABCD",
+    "pool": [
+      "Profissão",
+      "Programa de TV",
+      "Fantasia",
+      "Vilão",
+      "Animal",
+      "Carro",
+      "Brinquedo",
+      "Objeto",
+      "Sabor de Pizza",
+      "Palavra em Inglês",
+      "Tem na academia",
+      "Remédio",
+      "Comida",
+      "Time Esportivo",
+      "Música",
+      "Ave"
+    ]
+  },
+  "events": [
+    {
+      "source": "gui",
+      "event": "joined",
+      "active": true
+    },
+    {
+      "source": "host",
+      "event": "host_final",
+      "scores": [
+        240,
+        240
+      ]
+    },
+    {
+      "source": "gui",
+      "event": "gui_final",
+      "active": false,
+      "scores": [
+        240,
+        240
+      ]
+    },
+    {
+      "event": "reopened",
+      "active": false,
+      "phase": "RESULTADO_PARTIDA"
+    }
+  ],
+  "final_result_verified": true,
+  "scores": [
+    240,
+    240
+  ],
+  "chrome_survived_app_exit": true,
+  "reopened_paused_same_chrome": true,
+  "cleanup": {
+    "host_closed": true,
+    "gui_closed": true,
+    "dedicated_chrome_closed": true
+  }
+}

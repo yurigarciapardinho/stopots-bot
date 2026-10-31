@@ -1,0 +1,597 @@
+{
+  "url": "https://stopots.com/pt/[sala]",
+  "title": "StopotS - Sala 11740",
+  "visibility": "visible",
+  "focused": true,
+  "text": "SALA [teste]\nCONFIGURAÇÕES\nSAIR\nJOGADORES 2/10\n4 Jogadores\n5 Jogadores\n6 Jogadores\n7 Jogadores\n8 Jogadores\n9 Jogadores\n10 Jogadores\n11 Jogadores\n12 Jogadores\n13 Jogadores\n14 Jogadores\n20 Jogadores\n50 Jogadores\n\nLabHost\n\n0\n\nAnonimo118\n\n0\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nRODADAS\n4 Rodadas\n5 Rodadas\n6 Rodadas\n7 Rodadas\n8 Rodadas\n9 Rodadas\n10 Rodadas\n11 Rodadas\n12 Rodadas\n13 Rodadas\n14 Rodadas\n15 Rodadas\n16 Rodadas\n17 Rodadas\n18 Rodadas\nSTOP\nPadrão\nDesativado\nHost\nMaioria\nTEMPO\nRápido\nMédio\nLento\nMais lento\nSENHA\nCATEGORIAS (16)\nInfluencer\nSuper-Herói\nInstrumento Musical\nFLV\nProfissão\nRemédio\nBanda\nTem na escola\nMeio de Transporte\nTime Esportivo\nBrinquedo\nCEP\nSabor de Sorvete\nNome Masculino\nVestuário\nAve\nADD\nLETRAS (16)\nA\nB\nC\nD\nE\nF\nG\nH\nI\nJ\nK\nL\nM\nN\nO\nP\nQ\nR\nS\nT\nU\nV\nW\nX\nY\nZ\nAnonimo118\n\nentrou na sala\n\nINICIAR\nSALA [teste]\nCOMPARTILHAR\nMODO STREAM\n\nConvide seus amigos:\n\nstopots.com/pt/[sala]\nCOPIAR LINK\n\nStopotS - Jogo de stop (adedanha ou adedonha) online!",
+  "fields": [],
+  "inputs": [
+    {
+      "id": "",
+      "type": "password",
+      "name": "",
+      "placeholder": "",
+      "maxLength": -1,
+      "value": "[REDACTED]",
+      "disabled": true,
+      "readOnly": false,
+      "label": "",
+      "outer": "<input placeholder=\"\" disabled=\"\" class=\"jsx-2cb4e73d3cac0759\" type=\"password\" value=\"[REDACTED]\">"
+    },
+    {
+      "id": "",
+      "type": "text",
+      "name": "",
+      "placeholder": "Categoria",
+      "maxLength": 20,
+      "value": "",
+      "disabled": false,
+      "readOnly": false,
+      "label": "",
+      "outer": "<input placeholder=\"Categoria\" maxlength=\"20\" class=\"jsx-2cb4e73d3cac0759\" type=\"text\" value=\"[REDACTED]\">"
+    }
+  ],
+  "buttons": [
+    {
+      "text": "",
+      "disabled": true
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "SAIR",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "ADD",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "INICIAR",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "COPIAR LINK",
+      "disabled": false
+    }
+  ],
+  "headings": [
+    "JOGADORES 2/10",
+    "RODADAS",
+    "STOP",
+    "TEMPO",
+    "SENHA",
+    "CATEGORIAS (16)",
+    "LETRAS (16)",
+    "SALA [teste]"
+  ],
+  "review": [
+    {
+      "text": "A",
+      "for": "A",
+      "checked": true,
+      "type": "checkbox"
+    },
+    {
+      "text": "B",
+      "for": "B",
+      "checked": true,
+      "type": "checkbox"
+    },
+    {
+      "text": "C",
+      "for": "C",
+      "checked": true,
+      "type": "checkbox"
+    },
+    {
+      "text": "D",
+      "for": "D",
+      "checked": true,
+      "type": "checkbox"
+    },
+    {
+      "text": "E",
+      "for": "E",
+      "checked": true,
+      "type": "checkbox"
+    },
+    {
+      "text": "F",
+      "for": "F",
+      "checked": true,
+      "type": "checkbox"
+    },
+    {
+      "text": "G",
+      "for": "G",
+      "checked": true,
+      "type": "checkbox"
+    },
+    {
+      "text": "H",
+      "for": "H",
+      "checked": false,
+      "type": "checkbox"
+    },
+    {
+      "text": "I",
+      "for": "I",
+      "checked": true,
+      "type": "checkbox"
+    },
+    {
+      "text": "J",
+      "for": "J",
+      "checked": false,
+      "type": "checkbox"
+    },
+    {
+      "text": "K",
+      "for": "K",
+      "checked": false,
+      "type": "checkbox"
+    },
+    {
+      "text": "L",
+      "for": "L",
+      "checked": true,
+      "type": "checkbox"
+    },
+    {
+      "text": "M",
+      "for": "M",
+      "checked": true,
+      "type": "checkbox"
+    },
+    {
+      "text": "N",
+      "for": "N",
+      "checked": false,
+      "type": "checkbox"
+    },
+    {
+      "text": "O",
+      "for": "O",
+      "checked": true,
+      "type": "checkbox"
+    },
+    {
+      "text": "P",
+      "for": "P",
+      "checked": true,
+      "type": "checkbox"
+    },
+    {
+      "text": "Q",
+      "for": "Q",
+      "checked": false,
+      "type": "checkbox"
+    },
+    {
+      "text": "R",
+      "for": "R",
+      "checked": true,
+      "type": "checkbox"
+    },
+    {
+      "text": "S",
+      "for": "S",
+      "checked": true,
+      "type": "checkbox"
+    },
+    {
+      "text": "T",
+      "for": "T",
+      "checked": true,
+      "type": "checkbox"
+    },
+    {
+      "text": "U",
+      "for": "U",
+      "checked": false,
+      "type": "checkbox"
+    },
+    {
+      "text": "V",
+      "for": "V",
+      "checked": true,
+      "type": "checkbox"
+    },
+    {
+      "text": "W",
+      "for": "W",
+      "checked": false,
+      "type": "checkbox"
+    },
+    {
+      "text": "X",
+      "for": "X",
+      "checked": false,
+      "type": "checkbox"
+    },
+    {
+      "text": "Y",
+      "for": "Y",
+      "checked": false,
+      "type": "checkbox"
+    },
+    {
+      "text": "Z",
+      "for": "Z",
+      "checked": false,
+      "type": "checkbox"
+    }
+  ],
+  "selects": [
+    {
+      "id": "",
+      "value": "10",
+      "options": [
+        {
+          "value": "4",
+          "text": "4 Jogadores",
+          "selected": false
+        },
+        {
+          "value": "5",
+          "text": "5 Jogadores",
+          "selected": false
+        },
+        {
+          "value": "6",
+          "text": "6 Jogadores",
+          "selected": false
+        },
+        {
+          "value": "7",
+          "text": "7 Jogadores",
+          "selected": false
+        },
+        {
+          "value": "8",
+          "text": "8 Jogadores",
+          "selected": false
+        },
+        {
+          "value": "9",
+          "text": "9 Jogadores",
+          "selected": false
+        },
+        {
+          "value": "10",
+          "text": "10 Jogadores",
+          "selected": true
+        },
+        {
+          "value": "11",
+          "text": "11 Jogadores",
+          "selected": false
+        },
+        {
+          "value": "12",
+          "text": "12 Jogadores",
+          "selected": false
+        },
+        {
+          "value": "13",
+          "text": "13 Jogadores",
+          "selected": false
+        },
+        {
+          "value": "14",
+          "text": "14 Jogadores",
+          "selected": false
+        },
+        {
+          "value": "20",
+          "text": "20 Jogadores",
+          "selected": false
+        },
+        {
+          "value": "50",
+          "text": "50 Jogadores",
+          "selected": false
+        }
+      ]
+    },
+    {
+      "id": "",
+      "value": "4",
+      "options": [
+        {
+          "value": "4",
+          "text": "4 Rodadas",
+          "selected": true
+        },
+        {
+          "value": "5",
+          "text": "5 Rodadas",
+          "selected": false
+        },
+        {
+          "value": "6",
+          "text": "6 Rodadas",
+          "selected": false
+        },
+        {
+          "value": "7",
+          "text": "7 Rodadas",
+          "selected": false
+        },
+        {
+          "value": "8",
+          "text": "8 Rodadas",
+          "selected": false
+        },
+        {
+          "value": "9",
+          "text": "9 Rodadas",
+          "selected": false
+        },
+        {
+          "value": "10",
+          "text": "10 Rodadas",
+          "selected": false
+        },
+        {
+          "value": "11",
+          "text": "11 Rodadas",
+          "selected": false
+        },
+        {
+          "value": "12",
+          "text": "12 Rodadas",
+          "selected": false
+        },
+        {
+          "value": "13",
+          "text": "13 Rodadas",
+          "selected": false
+        },
+        {
+          "value": "14",
+          "text": "14 Rodadas",
+          "selected": false
+        },
+        {
+          "value": "15",
+          "text": "15 Rodadas",
+          "selected": false
+        },
+        {
+          "value": "16",
+          "text": "16 Rodadas",
+          "selected": false
+        },
+        {
+          "value": "17",
+          "text": "17 Rodadas",
+          "selected": false
+        },
+        {
+          "value": "18",
+          "text": "18 Rodadas",
+          "selected": false
+        }
+      ]
+    },
+    {
+      "id": "",
+      "value": "1",
+      "options": [
+        {
+          "value": "1",
+          "text": "Padrão",
+          "selected": true
+        },
+        {
+          "value": "2",
+          "text": "Desativado",
+          "selected": false
+        },
+        {
+          "value": "3",
+          "text": "Host",
+          "selected": false
+        },
+        {
+          "value": "4",
+          "text": "Maioria",
+          "selected": false
+        }
+      ]
+    },
+    {
+      "id": "",
+      "value": "4",
+      "options": [
+        {
+          "value": "1",
+          "text": "Rápido",
+          "selected": false
+        },
+        {
+          "value": "2",
+          "text": "Médio",
+          "selected": false
+        },
+        {
+          "value": "3",
+          "text": "Lento",
+          "selected": false
+        },
+        {
+          "value": "4",
+          "text": "Mais lento",
+          "selected": true
+        }
+      ]
+    }
+  ],
+  "epoch": "5262fdbfecdc446fb4f1e4ba7a231fbd",
+  "observed_at": 1793308276.140484,
+  "player": "host",
+  "phase": "SALA",
+  "context": [
+    "5262fdbfecdc446fb4f1e4ba7a231fbd",
+    "SALA",
+    null,
+    null,
+    []
+  ]
+}

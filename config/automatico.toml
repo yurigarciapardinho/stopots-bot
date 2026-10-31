@@ -1,0 +1,8 @@
+# Política explícita para automação. A UI ainda precisa permitir cada ação.
+[automacao]
+preencher = true
+stop = true
+exigir_todos = true
+votos = true
+avaliar = true
+continuar = true

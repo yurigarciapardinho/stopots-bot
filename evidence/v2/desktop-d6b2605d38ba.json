@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "run_id": "d6b2605d38ba",
+  "version": "2.1.0",
+  "subject": "desktop-gui",
+  "scenario": {
+    "private": false,
+    "participants": 2,
+    "rounds": 0,
+    "letters": "",
+    "pool": []
+  },
+  "events": [],
+  "final_result_verified": false,
+  "error": "AssertionError",
+  "cleanup": {
+    "host_closed": true,
+    "gui_closed": true,
+    "dedicated_chrome_closed": true
+  }
+}

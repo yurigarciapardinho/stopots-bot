@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "id": "catalogo-reforco-r-2026-10-30-v1",
+  "base_sha256": "7ac55a7f530ace597604f4c81fe90b39b47385f6fc8d73942296590049c3c53c",
+  "sources": {
+    "pixar-ratatouille-2026-10-30": {
+      "kind": "official_work_page",
+      "url": "https://www.pixar.com/ratatouille",
+      "accessed_at": "2026-10-30",
+      "scope": "Nome do longa-metragem, sem reproduzir sinopse."
+    },
+    "priberam-rola-bosta-2026-10-30": {
+      "kind": "lexical_fact_review",
+      "url": "https://dicionario.priberam.org/rola%20bosta",
+      "accessed_at": "2026-10-30",
+      "scope": "Nome de besouro; definição textual não reproduzida."
+    },
+    "sjc-reseda-2026-10-30": {
+      "kind": "official_tree_record",
+      "url": "https://arvores.sjc.sp.gov.br/14545",
+      "accessed_at": "2026-10-30",
+      "scope": "Cadastro arbóreo municipal identifica Resedá como árvore; não importa localização nem imagens."
+    }
+  },
+  "entries": [
+    {
+      "category": "Filme",
+      "word": "Ratatouille",
+      "state": "approved",
+      "source": "pixar-ratatouille-2026-10-30",
+      "review_note": "Longa-metragem identificado pela própria Pixar; fecha lacuna R da coleta."
+    },
+    {
+      "category": "Inseto",
+      "word": "Rola-bosta",
+      "state": "approved",
+      "source": "priberam-rola-bosta-2026-10-30",
+      "review_note": "Nome de besouro documentado como entomologia; hífen respeita normalização já medida da UI."
+    },
+    {
+      "category": "Árvore",
+      "word": "Resedá",
+      "state": "approved",
+      "source": "sjc-reseda-2026-10-30",
+      "review_note": "Nome popular de Lagerstroemia indica em cadastro arbóreo oficial; fecha lacuna R da coleta."
+    }
+  ]
+}

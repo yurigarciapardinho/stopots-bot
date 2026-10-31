@@ -1,0 +1,59 @@
+Licença YGP de Redistribuição Gratuita — versão 1.0
+Identificador: LicenseRef-YGP-NoResale-1.0
+Titular: Yuri Garcia Pardinho
+Copyright (c) 2026 Yuri Garcia Pardinho
+
+1. Escopo
+Esta licença aplica-se somente às contribuições autorais identificadas como YGP
+no mapa docs/PROCEDENCIA.md, na medida dos direitos detidos pelo titular. Não
+substitui licenças de terceiros nem revoga licenças anteriormente concedidas.
+Quando um arquivo contém material de terceiros, seus avisos e termos específicos
+continuam aplicáveis a esse material.
+
+2. Permissões
+O titular concede licença gratuita, mundial e não exclusiva para executar,
+estudar, copiar, modificar e redistribuir os componentes abrangidos, inclusive
+modificados, desde que a redistribuição seja gratuita e cumpra estas condições.
+O uso privado ou interno, inclusive em atividade empresarial, é permitido.
+
+3. Redistribuição e venda
+É proibido cobrar pela cópia, licença, download ou acesso aos componentes
+abrangidos, redistribuí-los em produto ou pacote pago, ou vender versões
+modificadas que os contenham, sem autorização escrita separada do titular.
+Não se pode contornar a restrição condicionando o recebimento da cópia a uma
+compra, assinatura ou pagamento apresentado sob outro nome.
+Doações voluntárias não condicionantes e serviços de suporte ou consultoria
+vendidos separadamente são permitidos quando a cópia do software permanece
+disponível gratuitamente e não é objeto da cobrança.
+
+4. Avisos e modificações
+Cada redistribuição deve acompanhar esta licença, os avisos de autoria e os
+avisos de terceiros aplicáveis. Modificações devem ser identificadas como tais.
+Não se pode atribuir ao titular alterações feitas por terceiros nem remover
+créditos legítimos. A permissão sobre contribuições próprias de um terceiro não
+altera as condições dos componentes abrangidos que sua distribuição contenha.
+
+5. Direitos preservados
+Esta licença não restringe direitos que decorram da lei ou de outra licença
+válida, inclusive permissões MIT previamente concedidas e direitos sobre
+bibliotecas LGPL. É permitida a engenharia reversa necessária à depuração de
+modificações nessas bibliotecas e sua substituição/religação conforme os termos
+aplicáveis. Bibliotecas e dados excluídos do escopo YGP não se tornam restritos
+apenas por acompanhar a distribuição. Não é concedido direito sobre marcas.
+
+6. Descumprimento
+Uma atividade fora das permissões acima não é autorizada por esta licença.
+O titular poderá conceder autorização separada ou estabelecer regularização
+por escrito. Nenhuma condição reduz direitos irrenunciáveis previstos em lei.
+
+7. Ausência de garantia
+Na extensão permitida pela legislação aplicável, os componentes são fornecidos
+no estado em que se encontram, sem garantia expressa ou implícita de adequação,
+disponibilidade do jogo ou ausência de falhas. O titular não assume obrigação
+de manutenção ou suporte. Limitações de responsabilidade não se aplicam onde
+a lei as proíba.
+
+8. Natureza da licença
+Esta é uma licença de código disponível com restrição de redistribuição onerosa;
+não é uma licença MIT, GPL ou licença open source aprovada pela OSI.
+Texto original em português. Consulte o mapa de procedência para seu alcance.

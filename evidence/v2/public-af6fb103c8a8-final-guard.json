@@ -1,0 +1,26 @@
+{
+  "subject": "public-final-observer",
+  "run_id": "af6fb103c8a8",
+  "harness_held_open": true,
+  "final_result_verified": true,
+  "ranking": {
+    "rows": [
+      [
+        "participante_1",
+        490
+      ],
+      [
+        "participante_2",
+        215
+      ],
+      [
+        "participante_3",
+        170
+      ]
+    ],
+    "semantic": "total_partida"
+  },
+  "self_alias": "participante_6",
+  "html": "<div class=\"jsx-97770b913440e076 end\"><div class=\"jsx-97770b913440e076 data\"><h2 class=\"jsx-97770b913440e076\">FIM DE JOGO!</h2><section class=\"jsx-97770b913440e076\"><span class=\"jsx-97770b913440e076 confetti\"><div></div></span><div class=\"jsx-97770b913440e076 glow\"></div><div class=\"jsx-97770b913440e076 endFirst rkg first\"><div class=\"jsx-97770b913440e076 stars\"></div><div class=\"jsx-97770b913440e076 stars\"></div><div class=\"jsx-97770b913440e076 pos\"><div class=\"jsx-bd33bceee31d2128 avatarEnd pos1\"><div class=\"jsx-cbb25b13c46fac8a avatar w44\"><div class=\"jsx-cbb25b13c46fac8a cttAvatar\"><div class=\"jsx-cbb25b13c46fac8a\"></div><div class=\"jsx-cbb25b13c46fac8a\"></div><div class=\"jsx-cbb25b13c46fac8a\"></div><div class=\"jsx-cbb25b13c46fac8a\"></div><div class=\"jsx-cbb25b13c46fac8a\"></div></div></div></div><div class=\"jsx-54ff4a39c4f43298 medal pos1 big\"><p class=\"jsx-54ff4a39c4f43298\">1</p></div></div><h4 class=\"jsx-97770b913440e076\">anonimo_1</h4><p class=\"jsx-97770b913440e076\">490 pts</p></div><div class=\"jsx-97770b913440e076 endSecond rkg second\"><div class=\"jsx-97770b913440e076 pos\"><div class=\"jsx-bd33bceee31d2128 avatarEnd pos2\"><div class=\"jsx-cbb25b13c46fac8a avatar w44\"><div class=\"jsx-cbb25b13c46fac8a cttAvatar\"><div class=\"jsx-cbb25b13c46fac8a\"></div><div class=\"jsx-cbb25b13c46fac8a\"></div><div class=\"jsx-cbb25b13c46fac8a\"></div><div class=\"jsx-cbb25b13c46fac8a\"></div><div class=\"jsx-cbb25b13c46fac8a\"></div></div></div></div><div class=\"jsx-54ff4a39c4f43298 medal pos2 big\"><p class=\"jsx-54ff4a39c4f43298\">2</p></div></div><h4 class=\"jsx-97770b913440e076\">anonimo_2</h4><p class=\"jsx-97770b913440e076\">215 pts</p></div><div class=\"jsx-97770b913440e076 endThird rkg third\"><div class=\"jsx-97770b913440e076 pos\"><div class=\"jsx-bd33bceee31d2128 avatarEnd pos3\"><div class=\"jsx-cbb25b13c46fac8a avatar w44\"><div class=\"jsx-cbb25b13c46fac8a cttAvatar\"><div class=\"jsx-cbb25b13c46fac8a\"></div><div class=\"jsx-cbb25b13c46fac8a\"></div><div class=\"jsx-cbb25b13c46fac8a\"></div><div class=\"jsx-cbb25b13c46fac8a\"></div><div class=\"jsx-cbb25b13c46fac8a\"></div></div></div></div><div class=\"jsx-54ff4a39c4f43298 medal pos3 big\"><p class=\"jsx-54ff4a39c4f43298\">3</p></div></div><h4 class=\"jsx-97770b913440e076\">anonimo_3</h4><p class=\"jsx-97770b913440e076\">170 pts</p></div></section></div><div class=\"jsx-97770b913440e076 bottom\"><div class=\"jsx-5b4772a8e8f6b580 time\"><div class=\"jsx-5b4772a8e8f6b580 bar yellow\"><span class=\"jsx-5b4772a8e8f6b580 inverted\"></span></div></div></div></div>",
+  "own_name_present": false
+}

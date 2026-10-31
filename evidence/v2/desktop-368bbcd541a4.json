@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "run_id": "368bbcd541a4",
+  "version": "2.1.0",
+  "subject": "desktop-gui",
+  "scenario": {
+    "private": false,
+    "participants": 2,
+    "rounds": 0,
+    "letters": "",
+    "pool": []
+  },
+  "events": [
+    {
+      "source": "gui",
+      "event": "joined",
+      "active": true,
+      "platform": "wayland"
+    },
+    {
+      "source": "host",
+      "event": "host_entry",
+      "participants": 2,
+      "nickname_applied": true
+    },
+    {
+      "source": "gui",
+      "event": "gui_exit",
+      "code": 0
+    },
+    {
+      "event": "reopened",
+      "active": false,
+      "phase": "SALA"
+    }
+  ],
+  "final_result_verified": false,
+  "entry_only": true,
+  "scores": null,
+  "chrome_survived_app_exit": true,
+  "reopened_paused_same_chrome": true,
+  "cleanup": {
+    "host_closed": true,
+    "gui_closed": true,
+    "dedicated_chrome_closed": false
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "subject": "ui-normalization-probe",
+  "status": "probe_completed",
+  "cases": [
+    {
+      "requested": "águia",
+      "filled": "AGUIA",
+      "after_blur": "AGUIA"
+    },
+    {
+      "requested": "Bem-te-vi",
+      "filled": "BEM TE VI",
+      "after_blur": "BEM TE VI"
+    },
+    {
+      "requested": "D'Ávila",
+      "filled": "DAVILA",
+      "after_blur": "DAVILA"
+    },
+    {
+      "requested": "arco-íris",
+      "filled": "ARCO IRIS",
+      "after_blur": "ARCO IRIS"
+    },
+    {
+      "requested": "A & B",
+      "filled": "A  B",
+      "after_blur": "A  B"
+    },
+    {
+      "requested": "água   doce",
+      "filled": "AGUA DOCE",
+      "after_blur": "AGUA DOCE"
+    },
+    {
+      "requested": "A1",
+      "filled": "A1",
+      "after_blur": "A1"
+    },
+    {
+      "requested": "A😀",
+      "filled": "A",
+      "after_blur": "A"
+    },
+    {
+      "requested": "João da Silva",
+      "filled": "JOAO DA SILVA",
+      "after_blur": "JOAO DA SILVA"
+    },
+    {
+      "requested": "Bem-te-vi",
+      "method": "keyboard",
+      "actual": "BEM TE VI"
+    },
+    {
+      "requested": "D'Ávila",
+      "method": "keyboard",
+      "actual": "DAVILA"
+    }
+  ],
+  "cleanup": {
+    "owned_browsers_disconnected": true
+  }
+}

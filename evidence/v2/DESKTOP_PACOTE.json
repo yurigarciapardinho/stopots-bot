@@ -1,0 +1,50 @@
+{
+  "version": "2.1.0",
+  "installed_wheel": true,
+  "runtime_files_matched": 25,
+  "runtime_source_sha256": {
+    "vocabulary.py": "2286529c5c103618a0c618483af711972868f29747d80641c4cd759605050ed9",
+    "cli.py": "38fb5ae197788dfa6cdb91a45d616ec2eca13a4bf422c7c31a93b8f2269cd17b",
+    "__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "domain.py": "6698bf4fb09017c33a6975bff7bd2ba8bab61625367d7cf695eb67cef948d89b",
+    "desktop_model.py": "1eb77ca227c4c23fb30fc3d269e3740bb3f133278fa035644259727c8aa357b9",
+    "desktop_engine.py": "5c581ded1b067e88b994045cb8e685910880505975fb741a1df6ff5c43cea66f",
+    "sources.py": "34cea5c7bb25aa38911986d23fe2511106bc6d63c120b11ed4fc035a646e9edc",
+    "desktop_diagnostics.py": "7534a6aea2625a1027be7272721124dda81ff8730bc7b3ed03b236abdf7fa2a6",
+    "identity.py": "8502f7425a203432584b140f5b6b7cd5fd1cd45d7685ea0f98c170bf063d24ee",
+    "desktop.py": "757008dca2a294f6018ccce633fbc6344ed67957fc54a1ac0f814f548f615129",
+    "application.py": "6275057223deb34ded3e486c1f5ed8ac100184eee855601334fd4fa214241257",
+    "__init__.py": "d3963792f96ef4f2a90f224cf445b603764a48b1fee33c1f88b0b37870ce05fa",
+    "ui_surface.py": "8cc31aa4657294b712a5058fd3f88e898d08e46eae39715c8795e981698a09a6",
+    "normalization.py": "ce6298a146516ae7b97aeeacdd3dfd6c057136e915b5b3366fdf8aac07ebe044",
+    "resources/capabilities.json": "5a30fb9ac03c11007c97dcc4a23dedcccd51fdf9d8e97a840b193b672a4c7c03",
+    "resources/vocabulary.json": "c5f055ff1e9705153a87a9a11e45cacbd6a9e46a990597cea6c5db44502b2cff",
+    "adapters/snapshot.js": "31273aea8ce6cb38d754df426a9c41991da97afdcddf1721705f9c7f33aaddd7",
+    "adapters/invitation.py": "239a2b571006d4650bc85e2abccde79f5968cc4303be09ece3792cd3385f5e24",
+    "adapters/web.py": "f1d817495faaa7c03db100c1fbdd95c03b7f13d00d091f888498f0409ca05142",
+    "adapters/chrome_session.py": "368a62e330d41f369f7d22aeac7ac72943a9f15d0dc53e827fcd156fc1709aef",
+    "adapters/entry.js": "3897efc320c9444258ce1ece3e9cb66bd7f0347db59a0f608a14747f7f9b6a9e",
+    "adapters/__init__.py": "17f6e1f6388f51784210a3622241310629474ef244f354f4b17e16a7fa605376",
+    "ui/icon.svg": "6c6caff7018326ef7ad467b83f3a4f201edfd6482bb677e3f6a79ade6f50eef6",
+    "ui/OrganicPanel.qml": "d2c6775e34ff2149292bdd61860cd593f7acbf7af1908c954d30fcf798e62a2d",
+    "ui/Main.qml": "2fa800f36dcc1f2d1765a897ed4e64b61e7551be94a3b70271226462a9b352bc"
+  },
+  "frozen_assets_match": true,
+  "installed_gui_exit": 0,
+  "playwright": "1.64.1",
+  "pyside6": "6.10.2",
+  "artifacts": {
+    "stopots-assistente_2.1.0_amd64.deb": {
+      "bytes": 260668454,
+      "sha256": "3859a4d2cf8a0f722c485712eafd9b844d10a3de66ad08a6ada8516d1debdef1"
+    },
+    "stopots_bot-2.1.0-py3-none-any.whl": {
+      "bytes": 522924,
+      "sha256": "29391135973dc580f6a3e06867f85e42de06dd4245ba16ef425f5d63357e6e54"
+    },
+    "stopots-assistente-2.1.0-linux-x86_64.tar.gz": {
+      "bytes": 260762266,
+      "sha256": "5c11fa1b717fe779c874cf15c0a2cab7087ae8b4a69b0f39379c8b0442edf0fa"
+    }
+  }
+}

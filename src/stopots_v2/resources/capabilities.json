@@ -1,0 +1,74 @@
+{
+  "as_of": "2026-10-30",
+  "release_status": "consolidacao_publica_com_validacao_dirigida",
+  "standard_mode_certified": true,
+  "host_mode_certified": false,
+  "disabled_mode_certified": false,
+  "majority_mode_certified": false,
+  "recovery_certified": false,
+  "stop_timing": "Aguardar habilitação observada; mínimo universal não estabelecido",
+  "certification_run": "b03849d5f071",
+  "certified_environment": {
+    "date": "2026-10-29",
+    "os": "Linux Pop!_OS",
+    "chrome": "151.0.7922.137",
+    "playwright": "1.64.1",
+    "participants": 2,
+    "matches": 3,
+    "rounds_per_match": 4
+  },
+  "edge_probe": {
+    "run_id": "45d76f79ce58",
+    "headed_host": true,
+    "all_assertions_passed": true
+  },
+  "final_screen": "FIM DE JOGO!",
+  "local_tests_passed": 69,
+  "normalization_revision_commit": "98cfefe4e37de1deddbcfead6fceb841c2f61a59",
+  "game_input_normalization": "stopots-web-pt-2026-10-29",
+  "normalization_probe_passed": true,
+  "certified_release_version": "2.0.0",
+  "current_release_certification": "testes_locais_e_gui_privada_ver_DESKTOP_RESULTADO",
+  "current_public_coverage_replay": {
+    "subject": "offline",
+    "baseline": 64,
+    "current": 72,
+    "fields": 72,
+    "vocabulary": "2712e9fa400d53fc6d5f7e8e3961931cabf79a495ee90048f9088e44822bc658"
+  },
+  "stop_incomplete_notice_handling": "implementado_com_contrato_local",
+  "current_vocabulary": {
+    "categories": 80,
+    "categories_with_answers": 80,
+    "approved_associations": 7986,
+    "lexemes": 7762,
+    "matrix_nonempty": 1692,
+    "matrix_cells": 2080
+  },
+  "public_topic_catalog": {
+    "useful_samples": 5,
+    "entries": 6,
+    "topics": 31,
+    "full_matches_completed": 0
+  },
+  "desktop": {
+    "implemented": true,
+    "default_profile": "Só preencher",
+    "chrome_survives_app_exit": true,
+    "pause_on_final": true,
+    "reopen_paused": true,
+    "live_policy_revision": true,
+    "private_gui_run": "20d13cd64f18",
+    "private_gui_rounds": 4,
+    "private_gui_scores": [
+      240,
+      240
+    ],
+    "vocabulary_changed": false,
+    "windows_native_verified": false,
+    "macos_native_verified": false,
+    "ubuntu_package_verification": "evidence/v2/DESKTOP_RESULTADO.json"
+  },
+  "public_release_version": "2.0.0",
+  "historical_numbering_notice": "Numerações internas preservadas; consultar docs/VALIDACAO.md."
+}

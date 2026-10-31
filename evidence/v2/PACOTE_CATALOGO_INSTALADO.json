@@ -1,0 +1,23 @@
+{
+  "installed_site_packages": true,
+  "version": "2.0.3",
+  "matched_files": 14,
+  "mismatches": [],
+  "vocabulary": "2712e9fa400d53fc6d5f7e8e3961931cabf79a495ee90048f9088e44822bc658",
+  "topics": 80,
+  "aliases_resolved": {
+    "PDA": "pda",
+    "PCH": "pch",
+    "JLR": "jlr",
+    "PAF": "paf",
+    "PÁF": "paf",
+    "MSÉ": "mse",
+    "MST": "mst",
+    "MSU": "msu"
+  },
+  "wheel_sha256": "6e6c5d80c4c963aaeb13c81d5033844c1df165e00aa91509acb19f9cd3c20ad5",
+  "wheel_matched_files": 14,
+  "coverage_cli_exit_code": 0,
+  "coverage_cli_json_valid": true,
+  "local_tests_passed": 58
+}

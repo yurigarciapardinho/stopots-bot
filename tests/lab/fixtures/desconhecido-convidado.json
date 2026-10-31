@@ -1,0 +1,56 @@
+{
+  "url": "https://stopots.com/pt/[sala]",
+  "title": "StopotS - Entrar",
+  "text": "HOME\n\nVocê foi convidado para a sala abaixo:\n\nSALA 28051\nJOGADORES\n\n1/10\n\nRODADAS\n\n0/8\n\nSTOP\n\nPADRÃO\n\nTEMPO\n\nMÉDIO\n\nCATEGORIAS (16)\nEsportista\nPalavra em Espanhol\nSobrenome\nPersonagem Fictício\nBanda\nEletro Eletrônico\nSabor de Pizza\nRemédio\nFantasia\nComida\nMeio de Transporte\nJLR\nPÁF\nAnimal\nCapital\nTem no aeroporto\nLETRAS (16)\n\nA\n\nB\n\nC\n\nD\n\nE\n\nF\n\nG\n\nI\n\nL\n\nM\n\nO\n\nP\n\nR\n\nS\n\nT\n\nV\n\nENTRAR",
+  "fields": [],
+  "inputs": [
+    {
+      "id": "",
+      "type": "text",
+      "name": "",
+      "placeholder": "",
+      "maxLength": 15,
+      "value": "Anonimo440",
+      "disabled": false,
+      "readOnly": false,
+      "label": "",
+      "outer": "<input maxlength=\"15\" class=\"jsx-2cb4e73d3cac0759\" type=\"text\" value=\"[REDACTED]\">"
+    }
+  ],
+  "buttons": [
+    {
+      "text": "HOME",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "ENTRAR",
+      "disabled": false
+    }
+  ],
+  "headings": [
+    "SALA 28051",
+    "JOGADORES",
+    "RODADAS",
+    "STOP",
+    "TEMPO",
+    "CATEGORIAS (16)",
+    "LETRAS (16)"
+  ],
+  "review": [],
+  "selects": [],
+  "epoch": "ac4c6942c9d2431b9854b51d9fbdfd80",
+  "observed_at": 1793296524.8478765,
+  "player": "convidado",
+  "phase": "DESCONHECIDO",
+  "context": [
+    "ac4c6942c9d2431b9854b51d9fbdfd80",
+    "DESCONHECIDO",
+    null,
+    null,
+    []
+  ]
+}

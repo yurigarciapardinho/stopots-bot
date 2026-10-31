@@ -1,0 +1,463 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "3cc67aa67696",
+  "subject": "adapter-spike",
+  "status": "failed",
+  "browser": "151.0.7922.137",
+  "final_result_verified": false,
+  "events": [
+    {
+      "event": "preparando_sala",
+      "at": 1793296476.6070359
+    },
+    {
+      "event": "diagnostico",
+      "at": 1793296524.8446805,
+      "player": "host",
+      "phase": "SALA",
+      "text": "SALA 28051\nCONFIGURAÇÕES\nSAIR\nJOGADORES 1/10\n4 Jogadores\n5 Jogadores\n6 Jogadores\n7 Jogadores\n8 Jogadores\n9 Jogadores\n10 Jogadores\n11 Jogadores\n12 Jogadores\n13 Jogadores\n14 Jogadores\n20 Jogadores\n50 Jogadores\n\nLabHost\n\n0\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nRODADAS\n4 Rodadas\n5 Rodadas\n6 Rodadas\n7 Rodadas\n8 Rodadas\n9 Rodadas\n10 Rodadas\n11 Rodadas\n12 Rodadas\n13 Rodadas\n14 Rodadas\n15 Rodadas\n16 Rodadas\n17 Rodadas\n18 Rodadas\nSTOP\nPadrão\nDesativado\nHost\nMaioria\nTEMPO\nRápido\nMédio\nLento\nMais lento\nSENHA\nCATEGORIAS (16)\nEsportista\nPalavra em Espanhol\nSobrenome\nPersonagem Fictício\nBanda\nEletro Eletrônico\nSabor de Pizza\nRemédio\nFantasia\nComida\nMeio de Transporte\nJLR\nPÁF\nAnimal\nCapital\nTem no aeroporto\nADD\nLETRAS (16)\nA\nB\nC\nD\nE\nF\nG\nH\nI\nJ\nK\nL\nM\nN\nO\nP\nQ\nR\nS\nT\nU\nV\nW\nX\nY\nZ\n\nENVIE FIGURINHAS\n\nINICIAR\nSALA 28051\nCOMPARTILHAR\nMODO STREAM\n\nConvide seus amigos:\n\nstopots.com/pt/28051\nCOPIAR LINK\n\nStopotS - Jogo de stop (adedanha ou adedonha) online!",
+      "headings": [
+        "JOGADORES 1/10",
+        "RODADAS",
+        "STOP",
+        "TEMPO",
+        "SENHA",
+        "CATEGORIAS (16)",
+        "LETRAS (16)",
+        "SALA 28051"
+      ],
+      "buttons": [
+        {
+          "text": "",
+          "disabled": true
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "SAIR",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "ADD",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "INICIAR",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "COPIAR LINK",
+          "disabled": false
+        }
+      ],
+      "selects": [
+        {
+          "id": "",
+          "value": "10",
+          "options": [
+            {
+              "value": "4",
+              "text": "4 Jogadores",
+              "selected": false
+            },
+            {
+              "value": "5",
+              "text": "5 Jogadores",
+              "selected": false
+            },
+            {
+              "value": "6",
+              "text": "6 Jogadores",
+              "selected": false
+            },
+            {
+              "value": "7",
+              "text": "7 Jogadores",
+              "selected": false
+            },
+            {
+              "value": "8",
+              "text": "8 Jogadores",
+              "selected": false
+            },
+            {
+              "value": "9",
+              "text": "9 Jogadores",
+              "selected": false
+            },
+            {
+              "value": "10",
+              "text": "10 Jogadores",
+              "selected": true
+            },
+            {
+              "value": "11",
+              "text": "11 Jogadores",
+              "selected": false
+            },
+            {
+              "value": "12",
+              "text": "12 Jogadores",
+              "selected": false
+            },
+            {
+              "value": "13",
+              "text": "13 Jogadores",
+              "selected": false
+            },
+            {
+              "value": "14",
+              "text": "14 Jogadores",
+              "selected": false
+            },
+            {
+              "value": "20",
+              "text": "20 Jogadores",
+              "selected": false
+            },
+            {
+              "value": "50",
+              "text": "50 Jogadores",
+              "selected": false
+            }
+          ]
+        },
+        {
+          "id": "",
+          "value": "8",
+          "options": [
+            {
+              "value": "4",
+              "text": "4 Rodadas",
+              "selected": false
+            },
+            {
+              "value": "5",
+              "text": "5 Rodadas",
+              "selected": false
+            },
+            {
+              "value": "6",
+              "text": "6 Rodadas",
+              "selected": false
+            },
+            {
+              "value": "7",
+              "text": "7 Rodadas",
+              "selected": false
+            },
+            {
+              "value": "8",
+              "text": "8 Rodadas",
+              "selected": true
+            },
+            {
+              "value": "9",
+              "text": "9 Rodadas",
+              "selected": false
+            },
+            {
+              "value": "10",
+              "text": "10 Rodadas",
+              "selected": false
+            },
+            {
+              "value": "11",
+              "text": "11 Rodadas",
+              "selected": false
+            },
+            {
+              "value": "12",
+              "text": "12 Rodadas",
+              "selected": false
+            },
+            {
+              "value": "13",
+              "text": "13 Rodadas",
+              "selected": false
+            },
+            {
+              "value": "14",
+              "text": "14 Rodadas",
+              "selected": false
+            },
+            {
+              "value": "15",
+              "text": "15 Rodadas",
+              "selected": false
+            },
+            {
+              "value": "16",
+              "text": "16 Rodadas",
+              "selected": false
+            },
+            {
+              "value": "17",
+              "text": "17 Rodadas",
+              "selected": false
+            },
+            {
+              "value": "18",
+              "text": "18 Rodadas",
+              "selected": false
+            }
+          ]
+        },
+        {
+          "id": "",
+          "value": "1",
+          "options": [
+            {
+              "value": "1",
+              "text": "Padrão",
+              "selected": true
+            },
+            {
+              "value": "2",
+              "text": "Desativado",
+              "selected": false
+            },
+            {
+              "value": "3",
+              "text": "Host",
+              "selected": false
+            },
+            {
+              "value": "4",
+              "text": "Maioria",
+              "selected": false
+            }
+          ]
+        },
+        {
+          "id": "",
+          "value": "2",
+          "options": [
+            {
+              "value": "1",
+              "text": "Rápido",
+              "selected": false
+            },
+            {
+              "value": "2",
+              "text": "Médio",
+              "selected": true
+            },
+            {
+              "value": "3",
+              "text": "Lento",
+              "selected": false
+            },
+            {
+              "value": "4",
+              "text": "Mais lento",
+              "selected": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "event": "diagnostico",
+      "at": 1793296524.8483088,
+      "player": "convidado",
+      "phase": "DESCONHECIDO",
+      "text": "HOME\n\nVocê foi convidado para a sala abaixo:\n\nSALA 28051\nJOGADORES\n\n1/10\n\nRODADAS\n\n0/8\n\nSTOP\n\nPADRÃO\n\nTEMPO\n\nMÉDIO\n\nCATEGORIAS (16)\nEsportista\nPalavra em Espanhol\nSobrenome\nPersonagem Fictício\nBanda\nEletro Eletrônico\nSabor de Pizza\nRemédio\nFantasia\nComida\nMeio de Transporte\nJLR\nPÁF\nAnimal\nCapital\nTem no aeroporto\nLETRAS (16)\n\nA\n\nB\n\nC\n\nD\n\nE\n\nF\n\nG\n\nI\n\nL\n\nM\n\nO\n\nP\n\nR\n\nS\n\nT\n\nV\n\nENTRAR",
+      "headings": [
+        "SALA 28051",
+        "JOGADORES",
+        "RODADAS",
+        "STOP",
+        "TEMPO",
+        "CATEGORIAS (16)",
+        "LETRAS (16)"
+      ],
+      "buttons": [
+        {
+          "text": "HOME",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "disabled": false
+        },
+        {
+          "text": "ENTRAR",
+          "disabled": false
+        }
+      ],
+      "selects": []
+    },
+    {
+      "event": "concluido",
+      "at": 1793296525.0814824
+    }
+  ],
+  "assertions": [],
+  "limitations": [
+    "Laboratório e adaptador mínimo; não certifica pacote v2 completo.",
+    "Candidatos usados para testar UI não representam vocabulário aprovado."
+  ],
+  "stage": "concluido",
+  "error": "Condição não observada em 35s; participante=convidado; fase=DESCONHECIDO",
+  "cleanup": {
+    "test_contexts_closed": true,
+    "remaining_pages": [
+      "principal"
+    ]
+  }
+}

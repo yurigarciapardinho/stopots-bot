@@ -1,0 +1,23 @@
+{
+  "subject": "v2-adapter-normalization",
+  "observed_at": "2026-10-29T18:51:00.534158-03:00",
+  "status": "passed",
+  "game_input_version": "stopots-web-pt-2026-10-29",
+  "profile_candidates_unchanged": true,
+  "vocabulary": "d5a0a35bdd1a55810e9376e78f7d1db2d0ae894e5d1b57dd1b6104d6c6380382",
+  "cases": [
+    {
+      "requested": "Bem-te-vi",
+      "actual": "BEM TE VI",
+      "status": "APLICADA"
+    },
+    {
+      "requested": "D'Ávila",
+      "actual": "DAVILA",
+      "status": "APLICADA"
+    }
+  ],
+  "cleanup": {
+    "owned_browsers_disconnected": true
+  }
+}

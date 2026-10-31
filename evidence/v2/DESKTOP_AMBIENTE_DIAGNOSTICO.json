@@ -1,0 +1,11 @@
+{
+  "observed_at": "2026-10-30T18:44:03.739948+00:00",
+  "subject": "isolated_container_test_environment",
+  "tmp_mode_before": "0o755",
+  "tmp_owner_uid_before": 1000,
+  "shared_memory_permission_errors": 20,
+  "observed_error": "Creating shared memory in /runtime/tmp failed: Permission denied (13)",
+  "correction": "chmod 1777 do TMPDIR isolado; o chown de limpeza transferia a posse ao uid do host e processos Chrome sem capabilities não podiam escrever",
+  "production_runtime_changes_required": false,
+  "temporary_cdp_wait_reverted": true
+}

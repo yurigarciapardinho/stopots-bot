@@ -1,0 +1,473 @@
+{
+  "url": "https://stopots.com/pt/[sala]",
+  "title": "StopotS - Sala 14929",
+  "visibility": "visible",
+  "focused": true,
+  "text": "RODADAS:\n\n1\n/\n4\n\nD\n\nSAIR\n\nLabHost\n\n0\n\nAnonimo614\n\n0\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nDisponível\n\nPREENCHA AS CATEGORIAS\n\nJLR\n\nÁRVORE\n\nINGREDIENTE\n\nSABOR DE SORVETE\n\nELETRO ELETRÔNICO\n\nPALAVRA EM ESPANHOL\n\nCARRO\n\nTIME ESPORTIVO\n\nAVE\n\nVILÃO\n\nSÉRIE\n\nBANDA\n\nENVIE FIGURINHAS\n\nSTOP!",
+  "fields": [
+    {
+      "id": "inputText-0",
+      "type": "text",
+      "name": "",
+      "placeholder": "",
+      "maxLength": 20,
+      "value": "",
+      "disabled": false,
+      "readOnly": false,
+      "label": "JLR",
+      "outer": "<input id=\"inputText-0\" maxlength=\"20\" autocomplete=\"off\" tabindex=\"1\" class=\"jsx-42179c218931b741\" type=\"text\" value=\"[REDACTED]\">"
+    },
+    {
+      "id": "inputText-1",
+      "type": "text",
+      "name": "",
+      "placeholder": "",
+      "maxLength": 20,
+      "value": "",
+      "disabled": false,
+      "readOnly": false,
+      "label": "ÁRVORE",
+      "outer": "<input id=\"inputText-1\" maxlength=\"20\" autocomplete=\"off\" tabindex=\"2\" class=\"jsx-42179c218931b741\" type=\"text\" value=\"[REDACTED]\">"
+    },
+    {
+      "id": "inputText-2",
+      "type": "text",
+      "name": "",
+      "placeholder": "",
+      "maxLength": 20,
+      "value": "",
+      "disabled": false,
+      "readOnly": false,
+      "label": "INGREDIENTE",
+      "outer": "<input id=\"inputText-2\" maxlength=\"20\" autocomplete=\"off\" tabindex=\"3\" class=\"jsx-42179c218931b741\" type=\"text\" value=\"[REDACTED]\">"
+    },
+    {
+      "id": "inputText-3",
+      "type": "text",
+      "name": "",
+      "placeholder": "",
+      "maxLength": 20,
+      "value": "",
+      "disabled": false,
+      "readOnly": false,
+      "label": "SABOR DE SORVETE",
+      "outer": "<input id=\"inputText-3\" maxlength=\"20\" autocomplete=\"off\" tabindex=\"4\" class=\"jsx-42179c218931b741\" type=\"text\" value=\"[REDACTED]\">"
+    },
+    {
+      "id": "inputText-4",
+      "type": "text",
+      "name": "",
+      "placeholder": "",
+      "maxLength": 20,
+      "value": "",
+      "disabled": false,
+      "readOnly": false,
+      "label": "ELETRO ELETRÔNICO",
+      "outer": "<input id=\"inputText-4\" maxlength=\"20\" autocomplete=\"off\" tabindex=\"5\" class=\"jsx-42179c218931b741\" type=\"text\" value=\"[REDACTED]\">"
+    },
+    {
+      "id": "inputText-5",
+      "type": "text",
+      "name": "",
+      "placeholder": "",
+      "maxLength": 20,
+      "value": "",
+      "disabled": false,
+      "readOnly": false,
+      "label": "PALAVRA EM ESPANHOL",
+      "outer": "<input id=\"inputText-5\" maxlength=\"20\" autocomplete=\"off\" tabindex=\"6\" class=\"jsx-42179c218931b741\" type=\"text\" value=\"[REDACTED]\">"
+    },
+    {
+      "id": "inputText-6",
+      "type": "text",
+      "name": "",
+      "placeholder": "",
+      "maxLength": 20,
+      "value": "",
+      "disabled": false,
+      "readOnly": false,
+      "label": "CARRO",
+      "outer": "<input id=\"inputText-6\" maxlength=\"20\" autocomplete=\"off\" tabindex=\"7\" class=\"jsx-42179c218931b741\" type=\"text\" value=\"[REDACTED]\">"
+    },
+    {
+      "id": "inputText-7",
+      "type": "text",
+      "name": "",
+      "placeholder": "",
+      "maxLength": 20,
+      "value": "",
+      "disabled": false,
+      "readOnly": false,
+      "label": "TIME ESPORTIVO",
+      "outer": "<input id=\"inputText-7\" maxlength=\"20\" autocomplete=\"off\" tabindex=\"8\" class=\"jsx-42179c218931b741\" type=\"text\" value=\"[REDACTED]\">"
+    },
+    {
+      "id": "inputText-8",
+      "type": "text",
+      "name": "",
+      "placeholder": "",
+      "maxLength": 20,
+      "value": "",
+      "disabled": false,
+      "readOnly": false,
+      "label": "AVE",
+      "outer": "<input id=\"inputText-8\" maxlength=\"20\" autocomplete=\"off\" tabindex=\"9\" class=\"jsx-42179c218931b741\" type=\"text\" value=\"[REDACTED]\">"
+    },
+    {
+      "id": "inputText-9",
+      "type": "text",
+      "name": "",
+      "placeholder": "",
+      "maxLength": 20,
+      "value": "",
+      "disabled": false,
+      "readOnly": false,
+      "label": "VILÃO",
+      "outer": "<input id=\"inputText-9\" maxlength=\"20\" autocomplete=\"off\" tabindex=\"10\" class=\"jsx-42179c218931b741\" type=\"text\" value=\"[REDACTED]\">"
+    },
+    {
+      "id": "inputText-10",
+      "type": "text",
+      "name": "",
+      "placeholder": "",
+      "maxLength": 20,
+      "value": "",
+      "disabled": false,
+      "readOnly": false,
+      "label": "SÉRIE",
+      "outer": "<input id=\"inputText-10\" maxlength=\"20\" autocomplete=\"off\" tabindex=\"11\" class=\"jsx-42179c218931b741\" type=\"text\" value=\"[REDACTED]\">"
+    },
+    {
+      "id": "inputText-11",
+      "type": "text",
+      "name": "",
+      "placeholder": "",
+      "maxLength": 20,
+      "value": "",
+      "disabled": false,
+      "readOnly": false,
+      "label": "BANDA",
+      "outer": "<input id=\"inputText-11\" maxlength=\"20\" autocomplete=\"off\" tabindex=\"12\" class=\"jsx-42179c218931b741\" type=\"text\" value=\"[REDACTED]\">"
+    }
+  ],
+  "inputs": [
+    {
+      "id": "inputText-0",
+      "type": "text",
+      "name": "",
+      "placeholder": "",
+      "maxLength": 20,
+      "value": "",
+      "disabled": false,
+      "readOnly": false,
+      "label": "JLR",
+      "outer": "<input id=\"inputText-0\" maxlength=\"20\" autocomplete=\"off\" tabindex=\"1\" class=\"jsx-42179c218931b741\" type=\"text\" value=\"[REDACTED]\">"
+    },
+    {
+      "id": "inputText-1",
+      "type": "text",
+      "name": "",
+      "placeholder": "",
+      "maxLength": 20,
+      "value": "",
+      "disabled": false,
+      "readOnly": false,
+      "label": "ÁRVORE",
+      "outer": "<input id=\"inputText-1\" maxlength=\"20\" autocomplete=\"off\" tabindex=\"2\" class=\"jsx-42179c218931b741\" type=\"text\" value=\"[REDACTED]\">"
+    },
+    {
+      "id": "inputText-2",
+      "type": "text",
+      "name": "",
+      "placeholder": "",
+      "maxLength": 20,
+      "value": "",
+      "disabled": false,
+      "readOnly": false,
+      "label": "INGREDIENTE",
+      "outer": "<input id=\"inputText-2\" maxlength=\"20\" autocomplete=\"off\" tabindex=\"3\" class=\"jsx-42179c218931b741\" type=\"text\" value=\"[REDACTED]\">"
+    },
+    {
+      "id": "inputText-3",
+      "type": "text",
+      "name": "",
+      "placeholder": "",
+      "maxLength": 20,
+      "value": "",
+      "disabled": false,
+      "readOnly": false,
+      "label": "SABOR DE SORVETE",
+      "outer": "<input id=\"inputText-3\" maxlength=\"20\" autocomplete=\"off\" tabindex=\"4\" class=\"jsx-42179c218931b741\" type=\"text\" value=\"[REDACTED]\">"
+    },
+    {
+      "id": "inputText-4",
+      "type": "text",
+      "name": "",
+      "placeholder": "",
+      "maxLength": 20,
+      "value": "",
+      "disabled": false,
+      "readOnly": false,
+      "label": "ELETRO ELETRÔNICO",
+      "outer": "<input id=\"inputText-4\" maxlength=\"20\" autocomplete=\"off\" tabindex=\"5\" class=\"jsx-42179c218931b741\" type=\"text\" value=\"[REDACTED]\">"
+    },
+    {
+      "id": "inputText-5",
+      "type": "text",
+      "name": "",
+      "placeholder": "",
+      "maxLength": 20,
+      "value": "",
+      "disabled": false,
+      "readOnly": false,
+      "label": "PALAVRA EM ESPANHOL",
+      "outer": "<input id=\"inputText-5\" maxlength=\"20\" autocomplete=\"off\" tabindex=\"6\" class=\"jsx-42179c218931b741\" type=\"text\" value=\"[REDACTED]\">"
+    },
+    {
+      "id": "inputText-6",
+      "type": "text",
+      "name": "",
+      "placeholder": "",
+      "maxLength": 20,
+      "value": "",
+      "disabled": false,
+      "readOnly": false,
+      "label": "CARRO",
+      "outer": "<input id=\"inputText-6\" maxlength=\"20\" autocomplete=\"off\" tabindex=\"7\" class=\"jsx-42179c218931b741\" type=\"text\" value=\"[REDACTED]\">"
+    },
+    {
+      "id": "inputText-7",
+      "type": "text",
+      "name": "",
+      "placeholder": "",
+      "maxLength": 20,
+      "value": "",
+      "disabled": false,
+      "readOnly": false,
+      "label": "TIME ESPORTIVO",
+      "outer": "<input id=\"inputText-7\" maxlength=\"20\" autocomplete=\"off\" tabindex=\"8\" class=\"jsx-42179c218931b741\" type=\"text\" value=\"[REDACTED]\">"
+    },
+    {
+      "id": "inputText-8",
+      "type": "text",
+      "name": "",
+      "placeholder": "",
+      "maxLength": 20,
+      "value": "",
+      "disabled": false,
+      "readOnly": false,
+      "label": "AVE",
+      "outer": "<input id=\"inputText-8\" maxlength=\"20\" autocomplete=\"off\" tabindex=\"9\" class=\"jsx-42179c218931b741\" type=\"text\" value=\"[REDACTED]\">"
+    },
+    {
+      "id": "inputText-9",
+      "type": "text",
+      "name": "",
+      "placeholder": "",
+      "maxLength": 20,
+      "value": "",
+      "disabled": false,
+      "readOnly": false,
+      "label": "VILÃO",
+      "outer": "<input id=\"inputText-9\" maxlength=\"20\" autocomplete=\"off\" tabindex=\"10\" class=\"jsx-42179c218931b741\" type=\"text\" value=\"[REDACTED]\">"
+    },
+    {
+      "id": "inputText-10",
+      "type": "text",
+      "name": "",
+      "placeholder": "",
+      "maxLength": 20,
+      "value": "",
+      "disabled": false,
+      "readOnly": false,
+      "label": "SÉRIE",
+      "outer": "<input id=\"inputText-10\" maxlength=\"20\" autocomplete=\"off\" tabindex=\"11\" class=\"jsx-42179c218931b741\" type=\"text\" value=\"[REDACTED]\">"
+    },
+    {
+      "id": "inputText-11",
+      "type": "text",
+      "name": "",
+      "placeholder": "",
+      "maxLength": 20,
+      "value": "",
+      "disabled": false,
+      "readOnly": false,
+      "label": "BANDA",
+      "outer": "<input id=\"inputText-11\" maxlength=\"20\" autocomplete=\"off\" tabindex=\"12\" class=\"jsx-42179c218931b741\" type=\"text\" value=\"[REDACTED]\">"
+    }
+  ],
+  "buttons": [
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "SAIR",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "STOP!",
+      "disabled": true
+    }
+  ],
+  "headings": [
+    "PREENCHA AS CATEGORIAS",
+    "JLR",
+    "ÁRVORE",
+    "INGREDIENTE",
+    "SABOR DE SORVETE",
+    "ELETRO ELETRÔNICO",
+    "PALAVRA EM ESPANHOL",
+    "CARRO",
+    "TIME ESPORTIVO",
+    "AVE",
+    "VILÃO",
+    "SÉRIE",
+    "BANDA"
+  ],
+  "review": [],
+  "selects": [],
+  "epoch": "020956db8f9e46739cb54800261e41c6",
+  "observed_at": 1793301620.320426,
+  "player": "convidado",
+  "phase": "ESCRITA",
+  "context": [
+    "020956db8f9e46739cb54800261e41c6",
+    "ESCRITA",
+    [
+      "1",
+      "4"
+    ],
+    null,
+    [
+      [
+        "inputText-0",
+        "JLR"
+      ],
+      [
+        "inputText-1",
+        "ÁRVORE"
+      ],
+      [
+        "inputText-2",
+        "INGREDIENTE"
+      ],
+      [
+        "inputText-3",
+        "SABOR DE SORVETE"
+      ],
+      [
+        "inputText-4",
+        "ELETRO ELETRÔNICO"
+      ],
+      [
+        "inputText-5",
+        "PALAVRA EM ESPANHOL"
+      ],
+      [
+        "inputText-6",
+        "CARRO"
+      ],
+      [
+        "inputText-7",
+        "TIME ESPORTIVO"
+      ],
+      [
+        "inputText-8",
+        "AVE"
+      ],
+      [
+        "inputText-9",
+        "VILÃO"
+      ],
+      [
+        "inputText-10",
+        "SÉRIE"
+      ],
+      [
+        "inputText-11",
+        "BANDA"
+      ]
+    ]
+  ]
+}

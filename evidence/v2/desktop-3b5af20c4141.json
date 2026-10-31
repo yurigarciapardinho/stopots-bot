@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "run_id": "3b5af20c4141",
+  "version": "2.1.0",
+  "subject": "desktop-gui",
+  "scenario": {
+    "private": false,
+    "participants": 2,
+    "rounds": 0,
+    "letters": "",
+    "pool": []
+  },
+  "events": [
+    {
+      "source": "gui",
+      "event": "joined",
+      "active": true,
+      "platform": "wayland"
+    },
+    {
+      "source": "host",
+      "event": "host_entry",
+      "participants": 2,
+      "nickname_applied": false
+    }
+  ],
+  "final_result_verified": false,
+  "error": "AssertionError",
+  "cleanup": {
+    "host_closed": true,
+    "gui_closed": true,
+    "dedicated_chrome_closed": false
+  }
+}

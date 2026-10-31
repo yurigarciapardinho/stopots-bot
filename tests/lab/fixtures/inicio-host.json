@@ -1,0 +1,79 @@
+{
+  "url": "https://stopots.com/pt",
+  "title": "StopotS - Jogo de stop (adedanha ou adedonha) online!",
+  "visibility": "visible",
+  "focused": true,
+  "text": "STOP ADEDANHA ADEDONHA\nPT\nJOGUE AGORA\nJOGAR\nCRIAR SALA\nSALAS\nCOMO JOGAR\n2. TIC-TAC\n\nPreencha as categorias com palavras que comecem com a letra sorteada\n\n2009 - 2026 Onrizon\n\nStopotS é um jogo de categorias, também conhecido como Adedanha ou Adedonha. Jogadores recebem uma letra aleatória e preenchem categorias com palavras que comecem com ela. O primeiro a completar grita “STOP!”. Então, os jogadores avaliam as respostas: 10 pontos para válidas, 5 para repetidas e 0 para incorretas.\nAndroid\niOS\nCONTATO\n|\nTERMOS\n|\nPRIVACIDADE\n|\nASSETS\n|\nNOTÍCIAS",
+  "fields": [],
+  "inputs": [
+    {
+      "id": "",
+      "type": "text",
+      "name": "",
+      "placeholder": "",
+      "maxLength": 15,
+      "value": "LabHost",
+      "disabled": false,
+      "readOnly": false,
+      "label": "",
+      "outer": "<input maxlength=\"15\" class=\"jsx-2cb4e73d3cac0759\" type=\"text\" value=\"[REDACTED]\">"
+    }
+  ],
+  "buttons": [
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "PT",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "disabled": false
+    },
+    {
+      "text": "JOGAR",
+      "disabled": false
+    },
+    {
+      "text": "CRIAR SALA",
+      "disabled": false
+    },
+    {
+      "text": "SALAS",
+      "disabled": false
+    }
+  ],
+  "headings": [
+    "STOP ADEDANHA ADEDONHA",
+    "JOGUE AGORA",
+    "COMO JOGAR",
+    "StopotS é um jogo de categorias, também conhecido como Adedanha ou Adedonha. Jogadores recebem uma letra aleatória e preenchem categorias com palavras que comecem com ela. O primeiro a completar grita “STOP!”. Então, os jogadores avaliam as respostas: 10 pontos para válidas, 5 para repetidas e 0 para incorretas."
+  ],
+  "review": [],
+  "selects": [],
+  "epoch": "5262fdbfecdc446fb4f1e4ba7a231fbd",
+  "observed_at": 1793308269.5464878,
+  "player": "host",
+  "phase": "INICIO",
+  "context": [
+    "5262fdbfecdc446fb4f1e4ba7a231fbd",
+    "INICIO",
+    null,
+    null,
+    []
+  ]
+}

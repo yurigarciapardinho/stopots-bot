@@ -1,0 +1,307 @@
+{
+  "schema_version": 1,
+  "subject": "installed-v2-cli-public-validation",
+  "run_id": "af6fb103c8a8",
+  "as_of": "2026-10-29T21:43:42.351690-03:00",
+  "status": "public_segment_validated_with_limits",
+  "versions": {
+    "chrome": "151.0.7922.137",
+    "package": "2.0.1",
+    "package_path_kind": "installed-wheel",
+    "vocabulary": "d5a0a35bdd1a55810e9376e78f7d1db2d0ae894e5d1b57dd1b6104d6c6380382",
+    "wheel_sha256": "6b6c137c8ff6a1296c0a888fd5b66f6d1a03823cdd2012cb71663fd640ac286b"
+  },
+  "product_source_commit": "3454838b4f3ba41cc0891d6a63f1f94bda119342",
+  "scenario": {
+    "public": true,
+    "entry": "JOGAR",
+    "controlled_clients": 1,
+    "entry_observed_at_round_ranking": 2,
+    "writing_rounds": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "total_rounds": 8,
+    "max_ranking_rows_observed": 10,
+    "complete_match_from_first_round": false
+  },
+  "cli": {
+    "exit_code": 0,
+    "result": {
+      "status": "concluido",
+      "final_result_verified": true,
+      "ranking": {
+        "rows": [
+          [
+            "participante_16",
+            490
+          ],
+          [
+            "participante_21",
+            215
+          ],
+          [
+            "participante_24",
+            170
+          ]
+        ],
+        "semantic": "total_partida"
+      }
+    },
+    "configured_timeout_seconds": 1500,
+    "event_span_seconds": 1481.485
+  },
+  "final": {
+    "independent_capture_verified": true,
+    "scope": "podium",
+    "podium_points": [
+      490,
+      215,
+      170
+    ],
+    "independent_points": [
+      490,
+      215,
+      170
+    ],
+    "podium_round_sums": [
+      {
+        "alias": "participante_16",
+        "final": 490,
+        "observed_round_sum": 490,
+        "matches": true
+      },
+      {
+        "alias": "participante_21",
+        "final": 215,
+        "observed_round_sum": 215,
+        "matches": true
+      },
+      {
+        "alias": "participante_24",
+        "final": 170,
+        "observed_round_sum": 170,
+        "matches": true
+      }
+    ],
+    "own_final_score_verified": false
+  },
+  "actions": {
+    "by_kind": {
+      "CONTINUAR": 6,
+      "PREENCHER": 5,
+      "CONFIRMAR_ETAPA": 67
+    },
+    "by_status": {
+      "INDETERMINADA": 7,
+      "APLICADA": 71
+    },
+    "by_kind_and_status": {
+      "CONTINUAR:INDETERMINADA": 6,
+      "PREENCHER:APLICADA": 5,
+      "CONFIRMAR_ETAPA:APLICADA": 66,
+      "CONFIRMAR_ETAPA:INDETERMINADA": 1
+    },
+    "duplicate_applied_ids": 0
+  },
+  "coverage": {
+    "rounds": [
+      {
+        "round": 3,
+        "letter": "F",
+        "fields": 12,
+        "approved_covered": 2,
+        "observed_nonempty": 6,
+        "covered_categories": [
+          "NOME MASCULINO",
+          "FLV"
+        ],
+        "missing_categories": [
+          "FLOR",
+          "PDA",
+          "PALAVRA EM ESPANHOL",
+          "SABOR DE PIZZA",
+          "MÚSICA",
+          "TEM NA PRAIA",
+          "REMÉDIO",
+          "PROGRAMA DE TV",
+          "INSTRUMENTO MUSICAL",
+          "CELEBRIDADE"
+        ],
+        "review_steps_observed": 11
+      },
+      {
+        "round": 4,
+        "letter": "M",
+        "fields": 12,
+        "approved_covered": 1,
+        "observed_nonempty": 6,
+        "covered_categories": [
+          "CEP"
+        ],
+        "missing_categories": [
+          "SABOR DE SORVETE",
+          "COMIDA SAUDÁVEL",
+          "BANDA",
+          "MAMÍFERO",
+          "GAME",
+          "ADJETIVO",
+          "JLR",
+          "PDA",
+          "TEM NA ACADEMIA",
+          "TIME ESPORTIVO",
+          "VESTUÁRIO"
+        ],
+        "review_steps_observed": 12
+      },
+      {
+        "round": 5,
+        "letter": "I",
+        "fields": 12,
+        "approved_covered": 1,
+        "observed_nonempty": 3,
+        "covered_categories": [
+          "PALAVRA EM INGLÊS"
+        ],
+        "missing_categories": [
+          "VESTUÁRIO",
+          "SÉRIE",
+          "TIME ESPORTIVO",
+          "FLV",
+          "CANTOR",
+          "SABOR DE SORVETE",
+          "VILÃO",
+          "INSTRUMENTO MUSICAL",
+          "TEM NA ACADEMIA",
+          "GAME",
+          "SOBRENOME"
+        ],
+        "review_steps_observed": 9
+      },
+      {
+        "round": 6,
+        "letter": "O",
+        "fields": 12,
+        "approved_covered": 1,
+        "observed_nonempty": 2,
+        "covered_categories": [
+          "NOME MASCULINO"
+        ],
+        "missing_categories": [
+          "SABOR DE SORVETE",
+          "TEM NO HOSPITAL",
+          "MARCA",
+          "PDA",
+          "BANDA",
+          "DESENHO ANIMADO",
+          "PRESENTE",
+          "CELEBRIDADE",
+          "INGREDIENTE",
+          "PCH",
+          "PALAVRA EM ESPANHOL"
+        ],
+        "review_steps_observed": 12
+      },
+      {
+        "round": 7,
+        "letter": "G",
+        "fields": 12,
+        "approved_covered": 0,
+        "observed_nonempty": 5,
+        "covered_categories": [],
+        "missing_categories": [
+          "GAME",
+          "ELETRO ELETRÔNICO",
+          "TIME ESPORTIVO",
+          "MAMÍFERO",
+          "SABOR DE PIZZA",
+          "VILÃO",
+          "FILME",
+          "FANTASIA",
+          "ÁRVORE",
+          "BANDA",
+          "CARRO",
+          "PALAVRA EM ESPANHOL"
+        ],
+        "review_steps_observed": 12
+      },
+      {
+        "round": 8,
+        "letter": "P",
+        "fields": 12,
+        "approved_covered": 0,
+        "observed_nonempty": 4,
+        "covered_categories": [],
+        "missing_categories": [
+          "PCH",
+          "SABOR DE PIZZA",
+          "CANTOR",
+          "CAPITAL",
+          "PALAVRA EM ESPANHOL",
+          "MEIO DE TRANSPORTE",
+          "ÁRVORE",
+          "INSTRUMENTO MUSICAL",
+          "VERBO",
+          "ANIMAL AQUÁTICO",
+          "ESPORTE",
+          "JLR"
+        ],
+        "review_steps_observed": 11
+      }
+    ],
+    "fields": 72,
+    "approved_supported_fields": 5,
+    "observed_nonempty_fields": 26,
+    "cli_fill_actions": 5,
+    "attribution": "Valores fora das ações da CLI foram observados; campos não vazios não equivalem a respostas fornecidas pelo pacote."
+  },
+  "stop": {
+    "cli_stop_actions": 0,
+    "adapter_probe_rounds": [
+      5,
+      6
+    ],
+    "accepted_probe_verified": false,
+    "ui_rejection": "Preencha corretamente todas as categorias para dar Stop",
+    "minimum_time_established": false,
+    "policy_require_all_filled": true
+  },
+  "harness": {
+    "original_status": "failed",
+    "original_final_flag": false,
+    "diagnosis": "O filho concluiu com código 0 antes da janela de estabilidade do observador; o harness classificou a corrida como falha. Saída da CLI e captura independente comprovam o final.",
+    "capture_guard_held_harness_only": true,
+    "patched_after_run": true,
+    "public_match_not_replayed_after_harness_patch": true
+  },
+  "cleanup": {
+    "owned_chrome_root_processes_running": 0,
+    "verified_by_pid_and_start_time": true
+  },
+  "limits": [
+    "Entrada no ranking da rodada 2; escrita e apuração observadas das rodadas 3–8. Não certifica partida pública desde a primeira rodada.",
+    "Somente o pódio foi extraído no final; total do próprio participante não reconciliado.",
+    "Valores não atribuíveis à CLI impedem certificar execução pública sem intervenção.",
+    "Cobertura do vocabulário é medida pelos candidatos aprovados, não pelos valores manuais nem pelo consenso dos jogadores.",
+    "STOP próprio da CLI não exercitado; tentativas separadas do adaptador com campos incompletos foram recusadas. Tempo mínimo continua não estabelecido.",
+    "Certificação privada anterior, modos e recuperação mantêm seu alcance histórico."
+  ],
+  "assertions": {
+    "installed_wheel": true,
+    "cli_concluded": true,
+    "independent_final": true,
+    "podium_points_agree": true,
+    "podium_sums_agree": true,
+    "no_duplicate_applied_ids": true,
+    "owned_browser_closed": true
+  },
+  "local_validation": {
+    "tests_passed": 47,
+    "duration_seconds": 10.52,
+    "includes_post_run_harness_regression": true
+  }
+}

@@ -1,0 +1,211 @@
+{
+  "schema_version": 1,
+  "version": "2.0.0",
+  "as_of": "2026-10-29T18:38:51-03:00",
+  "code_base_commit": "aa7ae2dfa1c987d601318e2408d6cc689ee970c1",
+  "package_tested": {
+    "adapter": "web-2.0.dev0",
+    "chrome": "151.0.7922.137",
+    "package": "2.0.0",
+    "package_sha256": "6749c1a82d3b1f90c33d3b297bdd60d720062ad73e10646f1a5feef9def7a264",
+    "playwright": "1.64.1",
+    "vocabulary": "d5a0a35bdd1a55810e9376e78f7d1db2d0ae894e5d1b57dd1b6104d6c6380382"
+  },
+  "run_id": "b03849d5f071",
+  "subject": "v2-cli-package",
+  "standard_mode_certified": true,
+  "consecutive_private_matches": 3,
+  "rounds_per_match": 4,
+  "participants": 2,
+  "rounds_verified": 12,
+  "review_observations": 288,
+  "scores": [
+    [
+      [
+        "participante_1",
+        250
+      ],
+      [
+        "participante_2",
+        250
+      ]
+    ],
+    [
+      [
+        "participante_1",
+        245
+      ],
+      [
+        "participante_2",
+        245
+      ]
+    ],
+    [
+      [
+        "participante_1",
+        245
+      ],
+      [
+        "participante_2",
+        245
+      ]
+    ]
+  ],
+  "duplicate_applied_actions": 0,
+  "action_statuses": {
+    "APLICADA": 586,
+    "INDETERMINADA": 49,
+    "OBSOLETA": 6
+  },
+  "edge_run_id": "45d76f79ce58",
+  "edge_assertions": [
+    {
+      "id": "blank_preserved",
+      "passed": true
+    },
+    {
+      "id": "wrong_initial_unchecked",
+      "passed": true
+    },
+    {
+      "id": "unknown_preserved",
+      "passed": true
+    },
+    {
+      "id": "round_rankings",
+      "passed": true
+    }
+  ],
+  "cleanup": {
+    "owned_browsers_disconnected": true,
+    "owned_contexts_closed": true
+  },
+  "limits": [
+    "Host, Desativado, Maioria e recuperação de rede não certificados",
+    "Perfil certificado: 16 temas, letras A–D, Padrão, Mais lento",
+    "Mínimo universal de STOP não estabelecido; usar habilitação da UI"
+  ],
+  "post_validation_changes": "Revisão posterior de normalização de hífen/apóstrofo e equivalência na apuração, validada por 42 testes e sonda real do adaptador; candidatos do perfil certificado comprovadamente iguais. Base editorial e release de vocabulário preservadas.",
+  "normalization_revision_commit": "98cfefe4e37de1deddbcfead6fceb841c2f61a59",
+  "normalization_probe": {
+    "subject": "v2-adapter-normalization",
+    "observed_at": "2026-10-29T18:51:00.534158-03:00",
+    "status": "passed",
+    "game_input_version": "stopots-web-pt-2026-10-29",
+    "profile_candidates_unchanged": true,
+    "vocabulary": "d5a0a35bdd1a55810e9376e78f7d1db2d0ae894e5d1b57dd1b6104d6c6380382",
+    "cases": [
+      {
+        "requested": "Bem-te-vi",
+        "actual": "BEM TE VI",
+        "status": "APLICADA"
+      },
+      {
+        "requested": "D'Ávila",
+        "actual": "DAVILA",
+        "status": "APLICADA"
+      }
+    ],
+    "cleanup": {
+      "owned_browsers_disconnected": true
+    }
+  },
+  "local_tests_passed": 42,
+  "owned_browser_smoke": {
+    "subject": "v2-cli-owned-browser-smoke",
+    "passed": true,
+    "exit_code": 2,
+    "expected_end": "prazo_encerrado",
+    "home_observed": true,
+    "same_profile_reopened": true,
+    "owned_profile_process_running_after_close": false,
+    "stale_lock_artifact": true,
+    "live_test_controls_remaining": 0
+  },
+  "final_wheel_sha256": "c6a8a8df468d3e54588b1bfe1da91d0770b2145f8e7d0f4e67f472b6f31a7835",
+  "current_release_version": "2.0.3",
+  "latest_document_update": "2026-10-30T10:51:20.871868-03:00",
+  "public_validation": {
+    "run_id": "af6fb103c8a8",
+    "as_of": "2026-10-29T21:43:42.351690-03:00",
+    "version": "2.0.1",
+    "subject": "installed-v2-cli-public",
+    "cli_concluded": true,
+    "final_independently_verified": true,
+    "writing_rounds": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "complete_public_match_certified": false,
+    "podium_points": [
+      490,
+      215,
+      170
+    ],
+    "podium_sums_reconciled": true,
+    "own_final_score_verified": false,
+    "approved_covered_fields": 5,
+    "observed_fields": 72,
+    "local_tests_passed": 47,
+    "report": "docs/v2/VALIDACAO_PUBLICA.md",
+    "evidence": "evidence/v2/PUBLICA_RESULTADO.json",
+    "wheel_sha256": "6b6c137c8ff6a1296c0a888fd5b66f6d1a03823cdd2012cb71663fd640ac286b",
+    "harness_patched_after_run": true
+  },
+  "curation_validation": {
+    "version": "2.0.2",
+    "as_of": "2026-10-29T23:19:02.916265-03:00",
+    "run_id": "bfa590fc26f8",
+    "scope": "directed_private_FIMO",
+    "local_tests_passed": 54,
+    "private_final_points": [
+      155,
+      155
+    ],
+    "cli_exit_code": 0,
+    "wheel_sha256": "d572802d7167ef956005f3fa2798659a33b21c6302069798038c6f7ad8a5ba33",
+    "vocabulary": "b690d5ae4225c48dbed21351e94e83040d8d7638abba62afaae17159db3368d0",
+    "offline_replay_fields": [
+      64,
+      72
+    ],
+    "full_public_match_certified": false,
+    "report": "docs/v2/VALIDACAO_CURADORIA.md",
+    "evidence": "evidence/v2/CURADORIA_RESULTADO.json"
+  },
+  "catalog_validation": {
+    "version": "2.0.3",
+    "subject": "read-only-ui-catalog-and-offline-vocabulary",
+    "local_tests_passed": 58,
+    "useful_public_samples": 5,
+    "public_entries": 6,
+    "visible_topics": 31,
+    "vocabulary": {
+      "approved_associations": 7986,
+      "lexemes": 7762,
+      "pending_associations": 2050,
+      "sha256": "2712e9fa400d53fc6d5f7e8e3961931cabf79a495ee90048f9088e44822bc658",
+      "source_sha256": "5ea76a5b843a6f96b4bea5e40221cd4f72f71565aeb8d32654f3a94ff65d3909"
+    },
+    "registered_categories": 80,
+    "matrix_nonempty": 1692,
+    "matrix_cells": 2080,
+    "offline_quick_replay": [
+      38,
+      38
+    ],
+    "offline_historical_replay": [
+      72,
+      72
+    ],
+    "full_public_match_certified": false,
+    "report": "docs/v2/CATALOGO_E_VOCABULARIO.md",
+    "evidence": "evidence/v2/CATALOGO_COBERTURA.json",
+    "installed_wheel_sha256": "6e6c5d80c4c963aaeb13c81d5033844c1df165e00aa91509acb19f9cd3c20ad5",
+    "package_files_matched": 14
+  }
+}
