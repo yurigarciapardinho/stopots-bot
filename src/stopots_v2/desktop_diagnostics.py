@@ -45,7 +45,11 @@ class UiDiagnostic:
                 try:
                     image=window.grabWindow()
                     assert not image.isNull(),'Janela sem renderização'
-                    assert window.height()<=760,'Janela excedeu a altura lógica planejada'
+                    # Em uma sessão real o compositor pode maximizar ou organizar
+                    # a janela em mosaico. O limite fixo pertence ao cenário sem
+                    # compositor; na sessão nativa vale a área lógica disponível.
+                    height_limit=760 if app.platformName() in ('offscreen','minimal') else window.screen().availableGeometry().height()
+                    assert window.height()<=height_limit,f'Janela excedeu a altura lógica disponível ({window.height()} > {height_limit})'
                     assert window.property('accentInk').name()==('#163136' if theme=='escuro' else '#ffffff'),'Cor do texto primário incorreta'
                     accent=(121,209,214) if theme=='escuro' else (23,102,120)
                     matches=0
@@ -54,7 +58,7 @@ class UiDiagnostic:
                             color=image.pixelColor(x,y)
                             if sum(abs(a-b) for a,b in zip(accent,(color.red(),color.green(),color.blue())))<9:matches+=1
                     assert matches>300,'As ações principais perderam a cor de destaque'
-                    self.frames.append({'theme':theme,'compact':compact,'width':image.width(),'height':image.height(),'logical_height':window.height(),'dpr':image.devicePixelRatio()})
+                    self.frames.append({'theme':theme,'compact':compact,'width':image.width(),'height':image.height(),'logical_height':window.height(),'height_limit':height_limit,'platform':app.platformName(),'dpr':image.devicePixelRatio()})
                 except Exception as exc:self.errors.append(str(exc))
                 QTimer.singleShot(50,lambda:step(i+1))
             QTimer.singleShot(250,check)
