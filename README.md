@@ -1,4 +1,4 @@
-# StopotS Assistente
+# StopotS Bot
 
 Projeto pessoal de **Yuri Garcia Pardinho** para jogar StopotS no Chrome com
 ajuda ajustável. O aplicativo oferece preenchimento de respostas, entrada por
@@ -17,7 +17,7 @@ Com Google Chrome instalado, baixe o pacote da release e execute:
 sudo apt install ./stopots-assistente_2.0.1_amd64.deb
 ```
 
-Abra **StopotS Assistente** pelo lançador de aplicativos. Também há uma versão
+Abra **StopotS Bot** pelo lançador de aplicativos. Também há uma versão
 portátil para Linux. As instruções de Windows e instalação por fonte estão no
 [guia de instalação](docs/INSTALACAO.md).
 
